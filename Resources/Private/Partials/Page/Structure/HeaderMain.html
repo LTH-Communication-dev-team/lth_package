@@ -86,23 +86,23 @@
                     </div>
                     <div class="row mt-6 d-none d-xl-block font-size-xl-lg font-weight-light">
                         <ul class="nav justify-content-end nav-header-main flex-nowrap">
-                             <f:for each="{mainnavigation}" as="mainnavigationItem" iteration="iterator">
-                                 <f:if condition="{mainnavigationItem.children}">
+                             <f:for each="{mainNavigation}" as="mainNavigationItem" iteration="iterator">
+                                 <f:if condition="{mainNavigationItem.children}">
                                     <f:then>
                                         <li class="nav-item dropdown dropdown-hover">
-                                            <a title="{mainnavigationItem.title}" class="nav-link  text-nowrap dropdown-toggle{f:if(condition:mainnavigationItem.active,then:' active')}" href="{mainnavigationItem.link}" id="dropdown-{mainnavigationItemChild.title}" aria-haspopup="true">
-                                                {mainnavigationItem.title}
+                                            <a title="{mainNavigationItem.title}" class="nav-link  text-nowrap dropdown-toggle{f:if(condition:mainNavigationItem.active,then:' active')}" href="{mainNavigationItem.link}" id="dropdown-{mainNavigationItemChild.title}" aria-haspopup="true">
+                                                {mainNavigationItem.title}
                                             </a>
-                                            <div class="dropdown-menu font-size-base" aria-labelledby="dropdown-{mainnavigationItemChild.title}">
-                                                <f:for each="{mainnavigationItem.children}" as="mainnavigationItemChild" iteration="iteratorChild">
-                                                    <a title="{mainnavigationItemChild.title}" class="dropdown-item" href="{mainnavigationItemChild.link}">{mainnavigationItemChild.title}</a>
+                                            <div class="dropdown-menu font-size-base" aria-labelledby="dropdown-{mainNavigationItemChild.title}">
+                                                <f:for each="{mainNavigationItem.children}" as="mainNavigationItemChild" iteration="iteratorChild">
+                                                    <a title="{mainNavigationItemChild.title}" class="dropdown-item" href="{mainNavigationItemChild.link}">{mainNavigationItemChild.title}</a>
                                                 </f:for>
                                             </div>
                                         </li>
                                      </f:then>
                                      <f:else>
                                          <li class="nav-item">
-                                             <a title="{mainnavigationItemChild.title}" class="nav-link" href="{mainnavigationItem.link}">{mainnavigationItem.title}</a>
+                                             <a title="{mainNavigationItemChild.title}" class="nav-link" href="{mainNavigationItem.link}">{mainNavigationItem.title}</a>
                                          </li>
                                      </f:else>
                                  </f:if>

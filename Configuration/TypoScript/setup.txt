@@ -74,17 +74,18 @@ page {
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
+                entryLevel = {$mainNavigationEntryLevel}
                 levels = 2
                 includeSpacer = 1
-                as = mainnavigation
+                as = mainNavigation
             }
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             20 {
-                entryLevel = 1
+                entryLevel = {$subNavigationEntryLevel}
                 levels = 7
                 expandAll = 1
                 includeSpacer = 1
-                as = subnavigation
+                as = subNavigation
             }
             30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             30 {

@@ -1,5 +1,5 @@
-menuStartLevel = 0
-sectionStartLevel = 1
+mainNavigationEntryLevel = 0
+subNavigationEntryLevel = 1
 plugin.tx_news {
         view {
                 templateRootPath = EXT:lth_package/Resources/Private/Templates/News/
