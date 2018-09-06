@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <f:if condition="{data.frame_class} != none">
+        <f:then>
+            <f:render section="Main" optional="true" />
+        </f:then>
+        <f:else>
+            <a id="c{data.uid}"></a>
+            <f:render section="Main" optional="true" />
+        </f:else>
+    </f:if>
+</f:spaceless>
+</html>

@@ -1,0 +1,59 @@
+{namespace lth = LTH\LthPackage\ViewHelpers}
+<f:layout name="Default"/>
+<f:section name="Header">
+
+    <f:render partial="Header/All" arguments="{_all}" />
+
+</f:section>
+<f:section name="Main">
+    <f:if condition="{lth:generic(gentype:'gp',genvar:'uuid')}!=''">
+            <div id="lthPackagePublicationsContainer">
+            </div>
+            <f:render partial="Publications/Show" arguments="{_all}" />
+    </f:if>
+    
+    <f:if condition="{lth:generic(gentype:'gp',genvar:'uuid')}==''">
+        <f:if condition="{data.pi_flexform.display}=='list'">
+            <div class="lthPackageFilterContainer">
+                <div style="clear:both;height:50px;">
+                    <f:if condition="data.pi_flexform.categories">
+                        <div id="refine" style="float:left;width:30%;background-color:#353838;color:#ffffff;height:50px;padding:17px;font-size:16px;"><span class="glyphicon glyphicon-filter"></span><span class="refine">Filter</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    </f:if>
+                    <span id="lthPackageSearchContainer"><div style="float:left;padding:15px 0px 0px 15px;width:10%"><span class="glyphicon glyphicon-search"></span></div>
+                    <div style="float:left;padding-top:10px;width:50%">
+                        <input style="border:0px;background-color:#fafafa;width:100%;box-shadow:none;" type="text" id="lthPackagePublicationsFilter" class="lthPackageFilter" name="lthPackageFilter" value="" />
+                    </div>
+                    </span>
+                </div>
+            </div>
+            <div style="clear:both;">
+                <div id="lthPackageFacetContainer"></div>
+                <div id="lthPackagePublicationsContainer"><div style="clear:both;height:20px;" id="lthPackagePublicationsHeader"></div></div>
+            </div>
+            <f:render partial="Publications/ListSimple" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.pi_flexform.display}=='studentpapers'">
+            <f:render partial="Publications/ListStudentpapers" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.pi_flexform.display}=='tagcloud'">
+            <div id="lthPackageTagcloudContainer"></div>';
+        </f:if>
+    </f:if>
+    
+    <form>
+        <input type="hidden" name="lthPackageAction" id="lthPackageAction" value="Publications" />
+        <input type="hidden" name="lthPackagePublicationsUuid" id="lthPackagePublicationsUuid" value="{lth:generic(gentype:'gp', genvar:'uuid')}" />
+        <input type="hidden" name="lthPackageKeyword" id="lthPackageKeyword" value="{lth:generic(gentype:'gp',genvar:'keyword')}" />   
+        <input type="hidden" name="lthPackageDisplay" id="lthPackageDisplay" value="{data.pi_flexform.display}" />
+        <input type="hidden" name="lthPackageFeGroups" id="lthPackageFeGroups" value="{data.pi_flexform.fe_groups}" />
+        <input type="hidden" name="lthPackageFeUsers" id="lthPackageFeUsers" value="{data.pi_flexform.fe_users}" />
+        <input type="hidden" name="lthPackageStaffDetailPage" id="lthPackageStaffDetailPage" value="{lth:generic(gentype:'detailPage',genvar:data.pi_flexform.staffDetailPage)}" />
+        <input type="hidden" name="lthPackageProjectDetailPage" id="lthPackageProjectDetailPage" value="{lth:generic(gentype:'detailPage',genvar:data.pi_flexform.projectDetailPage)}" />
+                <input type="hidden" name="lthPackagePublicationsListPage" id="lthPackagePublicationsListPage" value="{lth:generic(gentype:'detailPage',genvar:data.pi_flexform.publicationsListPage)}" />
+        <input type="hidden" name="lthPackageCategories" id="lthPackageCategories" value="{data.pi_flexform.categories}" />
+        <input type="hidden" name="lthPackageNoItemsToShow" id="lthPackageNoItemsToShow" value="{data.pi_flexform.noItemsToShow}" />
+    </form>
+    <lth:addjs additionaljs="{data.pi_flexform.display}" />
+</f:section>

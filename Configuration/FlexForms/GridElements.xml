@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+	<ROOT type="array">
+		<type>array</type>
+		<el type="array">
+			<headline type="array">
+				<TCEforms type="array">
+					<config type="array">
+						<type>input</type>
+						<size>40</size>
+						<eval>trim</eval>
+					</config>
+					<label>Headline</label>
+				</TCEforms>
+			</headline>
+ 
+			<text type="array">
+				<TCEforms type="array">
+					<config type="array">
+						<type>text</type>
+						<cols>40</cols>
+						<rows>5</rows>
+						<eval>trim</eval>
+					</config>
+					<label>Text</label>
+				</TCEforms>
+			</text>
+ 
+                    <gridbuilder>
+                        <TCEforms>
+                            <config>
+                                <type>user</type>
+                                <userFunc>user_lthpackageflex_addFieldsToFlexForm->gridbuilder</userFunc>
+                            </config>
+                        </TCEforms>
+                    </gridbuilder>
+		</el>
+	</ROOT>
+</T3DataStructure>

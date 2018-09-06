@@ -1,0 +1,156 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="General" />
+    <!--
+            =====================
+                    Templates/News/List.html
+    -->
+
+    <f:section name="content">
+	<!--TYPO3SEARCH_end-->
+        <f:if condition="{v:variable.register.get(name: 'test')}">
+            <f:then>
+                
+            </f:then>
+            <f:else>
+                
+	<f:if condition="{news}">
+            <f:then>
+                <f:if condition="{settings.templateLayout} == 1">
+                    <f:then>
+                        <div class="bg-plaster-50 nav-undecorated">
+                            <div class="container py-4">
+                                <div class="row my-8">
+                                    <div class="col-12 text-center">
+                                        <h1>Nyheter</h1>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit uisque eu diam elit morbi sollicitudin</p>
+                                        <div class="mt-5">
+                                            <f:link.page title="{category.item.title}" class="btn btn-outline-dark mx-1 mb-3" pageUid="{settings.listPid}"
+							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">Fler nyheter
+                                            </f:link.page>
+                                            <a href="#" class="btn btn-outline-dark mx-1 mb-3">Press och media</a>
+                                            <a href="#" class="btn btn-outline-dark mx-1 mb-3">Kontakt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-8">
+                                    <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                                        <n:link newsItem="{news.0}" settings="{settings}" title="{news.0.title}" class="card nav-block">
+                                            <f:if condition="{news.0.mediaPreviews}">
+                                                <f:then>
+                                                    <f:media class="card-img-top" file="{news.0.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                </f:then>
+                                            </f:if>
+                                            <div class="card-body">
+                                                <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.0.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.0.category}</p>
+                                                <h2 class="card-title nav-block-link mt-2">{news.0.title}</h2>
+                                                <p class="card-text">{news.0.teaser}</p>
+                                            </div>
+                                        </n:link>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 mb-5 ">
+                                                <n:link newsItem="{news.1}" settings="{settings}" title="{news.1.title}" class="card nav-block">
+                                                    <f:if condition="{news.1.mediaPreviews}">
+                                                        <f:then>
+                                                            <f:media class="card-img-top" file="{news.1.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                        </f:then>
+                                                    </f:if>
+                                                    <div class="card-body">
+                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.1.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.1.category}</p>
+                                                        <h3 class="card-title nav-block-link my-0">{news.1.title}</h3>
+                                                    </div>
+                                                </n:link>
+                                            </div>
+                                            <div class="col-12 col-md-6 mb-5">
+                                                <n:link newsItem="{news.2}" settings="{settings}" title="{news.2.title}" class="card nav-block">
+                                                    <f:if condition="{news.2.mediaPreviews}">
+                                                        <f:then>
+                                                            <f:media class="card-img-top" file="{news.2.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                        </f:then>
+                                                    </f:if>
+                                                    <div class="card-body">
+                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.2.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.2.category}</p>
+                                                        <h3 class="card-title nav-block-link my-0">{news.2.title}</h3>
+                                                    </div>
+                                                </n:link>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 mb-5 mb-md-0">
+                                                <n:link newsItem="{news.3}" settings="{settings}" title="{news.3.title}" class="card nav-block">
+                                                    <f:if condition="{news.3.mediaPreviews}">
+                                                        <f:then>
+                                                            <f:media class="card-img-top" file="{news.3.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                        </f:then>
+                                                    </f:if>
+                                                    <div class="card-body">
+                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.3.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.3.category}</p>
+                                                        <h3 class="card-title nav-block-link my-0">{news.3.title}</h3>
+                                                    </div>
+                                                </n:link>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <n:link newsItem="{news.4}" settings="{settings}" title="{news.4.title}" class="card nav-block">
+                                                    <f:if condition="{news.4.mediaPreviews}">
+                                                        <f:then>
+                                                            <f:media class="card-img-top" file="{news.4.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                        </f:then>
+                                                    </f:if>
+                                                    <div class="card-body">
+                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.4.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.4.category}</p>
+                                                        <h3 class="card-title nav-block-link my-0">{news.4.title}</h3>
+                                                    </div>
+                                                </n:link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:then>
+                </f:if>
+                
+                <f:if condition="{settings.templateLayout} == 2">
+                    <f:then>
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <p class="news-title"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></p>
+                        </f:for>
+                        <f:link.page pageUid="{settings.listPid}">
+                            more!!!
+                        </f:link.page>
+                    </f:then>
+                </f:if>    
+                <f:if condition="{settings.templateLayout} == ">
+                    <f:then>                        
+                        
+                        <div class="news-list-view" id="news-container-{contentObjectData.uid}">
+                            <f:if condition="{settings.hidePagination}">
+                                <f:then>
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                        </f:for>
+                                    </n:widget.paginate>
+                                </f:else>e
+                            </f:if>	
+                        </div>         
+                    </f:then>
+                </f:if>
+            </f:then>
+            <f:else>
+                <div class="no-news-found">
+                    <f:translate key="list_nonewsfound" />
+                </div>
+            </f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+            </f:else>
+        </f:if>
+</f:section>
+</html>

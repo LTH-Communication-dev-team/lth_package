@@ -1,0 +1,363 @@
+$(document).ready(function() {
+    if($('.masonryA').length > 0) {
+        $('.masonryA > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-75"><div class="masonry-tile masonry-tile-lg"></div></div>');
+        $('.masonryA > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile"></div></div>');
+
+        $('.masonryA > .masonry > .masonry-col-40 > div:eq(0)').wrap('<div class="masonry-row masonry-row-55"><div class="masonry-tile"></div></div>');
+        $('.masonryA > .masonry > .masonry-col-40 > div:eq(1)').wrap('<div class="masonry-row masonry-row-45"><div class="masonry-tile"></div></div>');
+    }
+    if($('.masonryB').length > 0) {
+        $('.masonryB > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
+        $('.masonryB > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
+
+        $('.masonryB > .masonry > .masonry-col-40 > div:eq(0)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile masonry-tile-sm"></div></div>');
+        $('.masonryB > .masonry > .masonry-col-40 > div:eq(1)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile masonry-tile-md"></div></div>');
+        $('.masonryB > .masonry > .masonry-col-40 > div:eq(2)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
+
+    }
+    if($('.masonryC').length > 0) {
+        $('.masonryC > .masonry-rows > .masonry-row-50:eq(0) > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row  masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
+        //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-60"><div class="masonry-tile"></div></div>');
+        //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-64"><div class="masonry-tile masonry-tile-md"></div></div>');
+        /*$('.masonryC > .masonry > .masonry-col-50 > div:eq(1),.masonryC > .masonry > .masonry-col-50 > div:eq(2)').wrap('<div class="masonry-row  masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>')
+        $('.masonryC > .masonry > .masonry-col-60 > div').wrap('<div class="masonry-tile masonry-tile-md"></div>');
+        $('.masonryC > .masonry > .masonry-col-40 > div').wrap('<div class="masonry-tile"></div>');
+        $('.masonryC > .masonry > .masonry-col-50').wrapAll('<div class="masonry-row masonry-row-50"></div>');
+        $('.masonryC > .masonry > .masonry-col-60,.masonryC > .masonry > .masonry-col-40').wrapAll('<div class="masonry-row masonry-row-50"></div>');*/
+    }
+    if($('.masonryD').length > 0) {
+        /*$('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-tile masonry-tile-sm"></div></div>');
+        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrap('<div class="masonry-tile"></div></div>');
+        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
+        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
+        */
+    }
+    if($('.masonryE').length > 0) {
+        $('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row > .masonry-cols > .masonry-col:eq(1) > .masonry-rows > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
+//$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(3)').wrap('<div class="masonry-tile masonry-tile-md"></div></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(0)').wrap('<div class="masonry-col masonry-col-50"></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(2)').wrapAll('<div class="masonry-col masonry-col-50"></div></div>')
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-col masonry-col-50"></div>')
+
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(1), .masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(2)').wrap('<div class="masonry-row masonry-row-50"></div>');
+        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-row').wrapAll('<div class="masonry-rows"></div>');
+    }
+    if($('.masonryF').length > 0) {
+        $('.masonryF > .masonry-rows > .masonry-row > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm">');
+    }
+    if(!getCookie('cookieConsent')) {
+        $('.alert').removeClass('hide').addClass('show');
+    }
+    $('#cookieConsent').click(function(){
+        $('.alert').removeClass('show').addClass('hide');
+        setCookie('cookieConsent');
+    });
+    if($('.full-width-dropdown__login').length > 0 && $('#lth_package_login').length > 0) {
+        $('#lth_package_login').click(function() {
+            $('.full-width-dropdown__login').toggle(500);
+        });
+    }
+    
+    if($('#lthPackageCalendarCards').length > 0) {
+        listCalendar(0,'cards');
+    }
+    if($('#lthPackageCalendarList').length > 0) {
+        listCalendar(0,'list');
+    }
+    
+    if($('#lthPackageCalendarShow').length > 0) {
+        showCalendar();
+    }
+});
+
+
+function listCalendar(setStart,type)
+{
+    var template = '';
+    if($('#calendar_ids').val()) {
+        alert('id');
+    } else {
+        $.ajax({
+            type : "POST",
+            url : 'index.php',
+            data: {
+                eID: 'lth_package',
+                action: 'listCalendar',
+                data: {
+                    setStart: setStart
+                },
+                syslang: $('html').attr('lang'),
+                sid: Math.random(),
+            },
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                if(type==='cards') {
+                    $('#lthPackageCalendarCards .col .lined-2col').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
+                } else if(type==='list') {
+                    $('#lthPackageCalendarList').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
+                }
+            },
+            success: function(d) {
+                //console.log(d.data);
+                if(d.facet && setStart >= 0) {
+                    if($('#lthPackageCalendarCategories').length === 1) {
+                        $.each( d.facet, function( key, value ) {
+                            $.each( value, function( key1, value1 ) {
+                                $('#lthPackageCalendarCategories').append('<a href="#" class="btn btn-primary mx-1 mb-3">' + value1[0].toString() + ' (' + value1[1] + ')</a>');
+                            });
+                        });
+                    }
+                }
+
+                if(d.data) {
+                    if(type==='cards') {
+                        $('#lthPackageCalendarCards .col .lined-2col').empty();
+                    } else if(type==='list') {
+                        $('#lthPackageCalendarList').empty();
+                    }
+                    $.each( d.data, function( key, aData ) {
+                        if(type==='cards') {
+                            template = $('#lthPackageCalendarCardsTemplate').html();
+                        } else if(type==='list') {
+                            template = $('#lthPackageCalendarListTemplate').html();
+                        }
+                        var title = '';
+                        var categoryName = '';
+                        var pathalias = '';
+                        var id = '';
+                        var link = '';
+                        if(aData.startTime) {
+                            var objDate = new Date(aData.startTime);
+                            var locale = "sv-se";
+                            var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                            var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                            var calDate = objDate.getDate();
+                            var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                            var calYear = objDate.getFullYear();
+                            template = template.replace('###date###', calDate);
+                            template = template.replace('###month###', calMonth);
+                        }
+                        if(aData.endTime) {
+                            objDate = new Date(aData.endTime);
+                            var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        }
+                        //console.log(calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
+                        if(calDate && calStartTime && calEndTime && calYear && calLongMonth) {
+                            template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
+                        }
+                        //26 april 2018 kl. 13:15–17:00
+                        if(aData.id) id = aData.id;
+                        
+                        if(aData.title) title = aData.title;
+                        if(aData.categoryName) categoryName = aData.categoryName;
+                        if(aData.pathalias) pathalias = aData.pathalias;
+                        template = template.replace('###id###', id);
+                        template = template.replace('###title###', title);
+                        template = template.replace('###categoryName###', categoryName);
+                        template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
+                        //console.log(template);
+                        if(type==='cards') {
+                            $('#lthPackageCalendarCards .col .lined-2col').append(template);
+                        } else if(type==='list') {
+                            $('#lthPackageCalendarList').append(template);
+                        }
+                        
+                        /*$('#' + id).click(function(){
+                            showCalendar(id)
+                        });*/
+                    });
+                    /*$('#lthPackageCalendarCards .col .lined-2col, #lthPackageCalendarList').append(setStart - 6);*/
+                    /*$('#prev-btn').off('click');
+                    $('#next-btn').off('click');
+                    $('#prev-btn').on('click', function(e){
+                        e.preventDefault();
+                        listCalendar(setStart - 6);
+                    });
+                    $('#next-btn').on('click', function(e){
+                        e.preventDefault();
+                        listCalendar(setStart + 6);
+                    });*/
+                } 
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
+            }
+        });
+    }
+}
+
+
+function showCalendar()
+{
+    //alert(window.location.href);
+    //var eventId = $('#lthPackageEventId').val();
+    var eventId = window.location.href.split('(').pop().split(')').shift();
+    var calId = $('#lthPackageCalId').val();
+    
+    if(eventId) {
+        $.ajax({
+            type : "POST",
+            url : 'index.php',
+            data: {
+                eID: 'lth_package',
+                action: 'showCalendar',
+                data: {
+                    calId: calId,
+                    eventId: eventId
+                },
+                syslang: $('html').attr('lang'),
+                sid: Math.random(),
+            },
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                $('#lthPackageCalendarShow').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
+            },
+            success: function(d) {
+                $('#lthPackageCalendarShow').empty();
+                
+                if(d.data) {
+                    if(d.data.startTime) {
+                        var objDate = new Date(d.data.startTime);
+                        var locale = "sv-se";
+                        var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                        var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                        var calDate = objDate.getDate();
+                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calYear = objDate.getFullYear();
+
+                    }
+                    if(d.data.endTime) {
+                        objDate = new Date(d.data.endTime);
+                        var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                    }
+                    //$('#lthPackageCalendar .col .lined-2col').empty();
+
+                    if(d.data.title) {
+                        $('#page_title h1, article h1').text(d.data.title).css('max-width','650px').css('margin-bottom','18px');
+                    }
+                    if(d.data.lead) {
+                        $('#lthPackageCalendarShow').append('<p>' + d.data.lead + '</p>');
+                    }
+                    if(d.data.abstract) {
+                        $('#lthPackageCalendarShow').append('<p>' + d.data.abstract + '</p>');
+                    }
+                    $('#lthPackageCalendarShow').append('<p><b>Plats: </b>' + d.data.location + '</p>');
+                    if(d.data.location) {
+                        $('#lthPackageCalendarShow').append('<p><b>Plats: </b>' + calYear + calMonth + calDate + calStartTime + '</p>');
+                    }
+                    if(d.data.prevId) {
+                        $('#lthPackagePrevBtn').attr('href','event/' + d.data.prevTitle + '(' + d.data.prevId + ')');
+                    } else {
+                        $('#lthPackagePrevBtn').hide();
+                    }
+                    if(d.data.nextId) {
+                        $('#lthPackageNextBtn').attr('href','event/' + d.data.nextTitle + '(' + d.data.nextId + ')');
+                    } else {
+                        $('#lthPackageNextBtn').hide();
+                    }
+                } 
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
+            }
+        });
+    }
+}
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+/*
+ * 
+ <div class="masonry-container masonry-container-2by1">
+	<div class="masonry masonry-wide masonry-cols">
+		<div class="masonry-col masonry-col-50">
+			<div class="masonry-row masonry-row-100">
+				<div class="masonry-tile">
+					<a href="#" class="nav-block bg-copper-50">
+						<div class="p-3 p-xl-5">
+							<h1><span class="a nav-block-link">Kompletterande utbildning för dig med utländsk examen&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-sm"></i></span></span>
+							</h1>
+							<p>För dig som har en utländsk examen inom företagsekonomi eller systemvetenskap och som vill komma in på den svenska arbetsmarknaden.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="masonry-col masonry-col-50">
+			<div class="masonry-row masonry-row-50">
+				<div class="masonry-cols">
+					<div class="masonry-col masonry-col-50">
+						<div class="masonry-tile masonry-tile-sm">
+							<a href="#" class="nav-block masonry-tile-img">
+								<div class="masonry-tile-img-bg">
+									<img src="/assets/toolkit/images/placeholder_1.jpg" alt="" class="">
+								</div>
+								<div class="masonry-tile-img-content">
+									<div class="blockline">
+										<h1><span class="a nav-block-link">Ekonomihögskolans finansprogram bland de 50 bästa i världen&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-sm"></i></span></span>
+										</h1>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="masonry-col masonry-col-50">
+						<div class="masonry-tile masonry-tile-sm">
+							<a href="#" class="nav-block masonry-tile-img">
+								<div class="masonry-tile-img-bg">
+									<img src="/assets/toolkit/images/placeholder_2.jpg" alt="" class="">
+								</div>
+								<div class="masonry-tile-img-content">
+									<div class="blockline">
+										<h1><span class="a nav-block-link">Nyhet! BSc International Business startar i höst&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-sm"></i></span></span>
+										</h1>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="masonry-row masonry-row-50">
+				<div class="masonry-tile">
+					<a href="#" class="nav-block bg-flower">
+						<div class="p-3 p-lg-5 p-xl-7">
+							<h1><span class="a nav-block-link">Öppettider i sommar&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-sm"></i></span></span>
+							</h1>
+							<p>Under sommaren har Ekonomihögskolans reception och bibliotek begränsade öppettider. Även huvudentrén har andra öppettider sommartid.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ */

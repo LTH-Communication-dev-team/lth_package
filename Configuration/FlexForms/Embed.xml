@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <embed>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:embed.embed</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </embed>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

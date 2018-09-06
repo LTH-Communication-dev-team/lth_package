@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!-- Breadcrumb start -->
+<div id="breadcrumb_wrapper" class="container-31">
+    <nav id="breadcrumb_content" class="grid-31">
+            <ul class="clearfix">
+                <f:for each="{breadcrumb}" as="item">
+                    <li class="{f:if(condition: item.current, then: 'active')}">
+                        <f:if condition="{item.current}">
+                            <f:then>
+                                <li>{item.title}</li>
+                            </f:then>
+                            <f:else>
+                                <a href="{item.link}" title="{item.title}">
+                                    <li>{item.title} > </li>
+                                </a>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+    </nav>
+</div>
+<!-- Breadcrumb end -->
+</html>

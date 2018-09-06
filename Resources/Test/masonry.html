@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+
+  float: left;
+  background: #D26;
+  border-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-item--width2 { width: 320px; }
+.grid-item--width3 { width: 480px; }
+.grid-item--width4 { width: 640px; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+        </style>
+        
+    </head>
+    <body>
+<!--
+col(0,0,4,6,Sucker5)
+col(0,4,5,6,sucker1ab)
+col(6,0,5,2,sucker3)
+col(6,5,4,4,sucker2)
+col(8,0,5,2,Edit)
+-->
+<div class="grid">
+    <div class="grid-item"></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+  <div class="grid-item"><img src="../Public/Images/carousel_6.jpg" style="height:200px;width:200px;" alt=""/></div>
+</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+        <script src="masonry.pkgd.js" type="text/javascript"></script>
+        <script>
+            $('.grid').masonry({
+  itemSelector: '.grid-item'
+});
+        </script>
+    </body>
+</html>

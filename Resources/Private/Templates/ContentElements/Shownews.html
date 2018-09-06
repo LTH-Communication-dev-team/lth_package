@@ -1,0 +1,20 @@
+<f:layout name="Default"/>
+<f:section name="Header">
+
+    <f:render partial="Header/All" arguments="{_all}" />
+
+</f:section>
+<f:section name="Main">
+        <f:render partial="{data.pi_flexform.settings.templateLayout}"/>
+        <div id="lthPackageContent">
+            
+        </div>
+    <form>    
+        <input type="hidden" name="lthPackageAction" id="lthPackageAction" value = "news" />
+        <input type="hidden" name="switchableControllerActions" id="switchableControllerActions" value = "{data.pi_flexform.switchableControllerActions}" />
+        <input type="hidden" name="settingsCategories" id="settingsCategories" value = "{data.pi_flexform.settings.categories}" />
+        <input type="hidden" name="settingsStartingpoint" id="settingsStartingpoint" value = "{data.pi_flexform.settings.startingpoint}" />
+        <input type="hidden" name="settingsTemplateLayout" id="settingsTemplateLayout" value = "{data.pi_flexform.settings.templateLayout}" />
+    </form>
+
+</f:section>

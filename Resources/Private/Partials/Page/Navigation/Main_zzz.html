@@ -1,0 +1,47 @@
+<!-- Navigation start -->
+<div id="navigation_wrapper" class="container-31 hide-xs">
+    <div id="navigation_content" class="grid-31">
+        <nav id="main_navigation" class="grid-20 alpha">
+            <ul id="main-nav-menu" class="menuItem clearfix">
+                <f:for each="{mainnavigation}" as="mainnavigationItem">
+                    <li class="menuItem"><span><a href="{mainnavigationItem.link}">{mainnavigationItem.title}</a></span></li>
+                </f:for>
+            </ul>
+        </nav>
+        <div id="searchshortcuts" class="grid-11 omega">
+        <div id="shortcuts" style="width: 89px;">
+            <p>
+                <span id="shortcutsContainer">
+                    <span>Genvägar</span>
+                    <span id="shortcuts_icon"></span>
+                </span>
+            </p>
+            <div id="shortcuts_wrapper">
+                <ul>
+                    <li><a href="/omlth/ledigatjanster/">Lediga anställningar</a></li>
+                    <li><a href="http://www.student.lth.se/schema/">Schema</a></li>
+                    <li><a href="http://www.student.lth.se/studievagledning/">Studievägledning</a></li>
+                    <li><a href="/institutioner/">Institutioner</a></li>
+
+                    <li><a href="http://www.vattenhallen.lth.se/">Vattenhallen</a></li>
+                    <li><a href="http://www.hbg.lth.se/">LTH Ingenjörshögskolan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="search">
+            <f:if condition="{TSFE.sys_language_uid} == 1">
+                <f:then>
+                    <form id="searchsiteformlth" action="/sok/" method="post" accept-charset="UTF-8">
+                </f:then>
+                <f:else>
+                    <form id="searchsiteformlth" action="/english/search/" method="post" accept-charset="UTF-8">
+                </f:else>
+            </f:if>
+                <input type="hidden" id="searchsitetab" name="searchsitetab" value="">
+                <input name="query" id="searchsite" type="text" placeholder="Sök på lth.se">
+                <input id="searchsite_submit" type="submit" value="Sök">
+            </form>
+        </div>
+      </div>
+    </div>
+</div>

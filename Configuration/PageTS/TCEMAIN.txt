@@ -1,0 +1,378 @@
+#################
+#### TCEMAIN ####
+#################
+TCEMAIN {
+    permissions {
+        groupid = 1
+        user = show, editcontent, edit, new, delete
+        group = show, editcontent, edit, new, delete
+        everybody =
+    }
+    translateToHidden = 1
+}
+
+tx_news.templateLayouts {
+        1 = Top Story and three News
+        2 = Short list
+}
+
+
+tx_gridelements {
+    overruleRecords = 1
+
+    setup {
+        2-cols-50-50 {
+            title = 2 columns 50-50
+            description = 2 columns contentelement 50-50 ratio
+            topLevelLayout = 0
+            config {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                }
+            }
+            flexformDS = FILE:EXT:lth_package/Configuration/FlexForms/GridElements.xml
+        }
+        2-cols-75-25 {
+            title = 2 columns 75-25
+            description = 2 columns contentelement 75-25 ratio
+            topLevelLayout = 0
+            config {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        3-cols-33-33-33 {
+            title = 3-Columns
+            description = 3-columns contentelement
+            topLevelLayout = 0
+            config {
+                colCount = 3
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Normal
+                                colPos = 12
+                            }
+                            3 {
+                                name = Right
+                                colPos = 13
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        4-cols-25-25-25-25 {
+            title = 4-Columns
+            description = 4-columns contentelement
+            topLevelLayout = 0
+            config {
+                colCount = 4
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Normal
+                                colPos = 12
+                            }
+                            3 {
+                                name = Right
+                                colPos = 13
+                            }
+                            4 {
+                                name = Border
+                                colPos = 14
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryA {
+            title = MasonryA
+            description = MasonryA
+            topLevelLayout = 0
+            iconIdentifier = MasonryA
+            config {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryB {
+            title = MasonryB
+            description = MasonryB
+            topLevelLayout = 0
+            iconIdentifier = MasonryB
+            config {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryC {
+            title = MasonryC
+            description = MasonryC
+            topLevelLayout = 0
+            iconIdentifier = MasonryC
+            config {
+                colCount = 2
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 21
+                            }
+                            2 {
+                                name = Right
+                                colPos = 22
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryD {
+            title = MasonryD
+            description = MasonryD
+            topLevelLayout = 0
+            iconIdentifier = MasonryD
+            config {
+                colCount = 3
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Outer Left
+                                rowspan = 2
+                                colPos = 11
+                            }
+                            2 {
+                                name = Left
+                                colPos = 12
+                            }
+                            3 {
+                                name = Normal
+                                colPos = 13
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Right
+                                colPos = 21
+                                colspan = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryE {
+            title = MasonryE
+            description = MasonryE
+            topLevelLayout = 0
+            iconIdentifier = MasonryE
+            config {
+                colCount = 3
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Outer Left
+                                rowspan = 2
+                                colPos = 11
+                            }
+                            2 {
+                                name = Left
+                                colPos = 12
+                            }
+                            3 {
+                                name = Normal
+                                colPos = 13
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Right
+                                colPos = 21
+                                colspan = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        MasonryF {
+            title = MasonryF
+            description = MasonryF
+            topLevelLayout = 0
+            iconIdentifier = MasonryF
+            config {
+                colCount = 2
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Upper Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Upper Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Lower Left
+                                colPos = 21
+                            }
+                            2 {
+                                name = Lower Right
+                                colPos = 22
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        NavBlockDark {
+            title = NavBlockDark
+            description = NavBlockDark
+            topLevelLayout = 0
+            iconIdentifier = NavBlockDark
+            config {
+                colCount = 3
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Normal
+                                colPos = 12
+                            }
+                            3 {
+                                name = Right
+                                colPos = 13
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        NavBlockLight {
+            title = NavBlockLight
+            description = NavBlockLight
+            topLevelLayout = 0
+            iconIdentifier = NavBlockLight
+            config {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                            2 {
+                                name = Right
+                                colPos = 12
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

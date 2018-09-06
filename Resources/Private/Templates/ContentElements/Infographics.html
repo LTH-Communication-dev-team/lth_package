@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <f:if condition="{data.pi_flexform.infographicstype}=='animateonscroll'">
+            <f:then>
+                <div id="infographics-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor} mt-6 p-5 text-center">
+                    <h2 class="mt-0 mb-5">{data.pi_flexform.header}</h2>
+                    <div class="row">
+                        <f:for each="{data.pi_flexform.infographicItem}" as="iItem" iteration="iteration">
+                            <div class="col">
+                                <div class="flex-column" data-aos="zoom-in-up"{iItem.dataaosdelay}>
+                                    <div>
+                                        <h1 class="m-0"><i class="{iItem.icon}"></i></h1>
+                                    </div>
+                                    <div>
+                                        <f:format.html>{iItem.title}</f:format.html>
+                                    </div>
+                                    <div>
+                                        <p class="small">{iItem.subtitle}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.infographicstype}=='circleprogress'">
+            <f:then>
+                <div id="infographics-{data.uid}" class="row">
+                    <div class="col-12 col-lg-8 mt-5">
+                        <div class="row text-center">
+                            <f:for each="{data.pi_flexform.infographicItem}" as="iItem" iteration="iteration">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="circle-progress mx-auto" data-value="{iItem.dataValue}">
+                                        <div class="circle-progress-value">
+                                            <span class="count-up">{iItem.title}</span>%
+					</div>
+                                    </div>
+                                    <div class="mt-3 text-uppercase font-weight-bold small">
+                                        {iItem.subtitle}
+                                    </div>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+    </f:section>
+</html>

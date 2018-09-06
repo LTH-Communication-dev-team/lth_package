@@ -1,0 +1,17 @@
+menuStartLevel = 0
+sectionStartLevel = 1
+plugin.tx_news {
+        view {
+                templateRootPath = EXT:lth_package/Resources/Private/Templates/News/
+                partialRootPath = EXT:lth_package/Resources/Private/Partials/News/
+                layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/
+        }
+}
+plugin.tx_news {
+        view.twb {
+                templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
+                partialRootPath = EXT:lth_package/Resources/Private/Partials/News/Styles/
+                layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/Styles/
+                widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
+        }
+}

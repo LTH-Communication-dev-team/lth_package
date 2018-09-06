@@ -1,0 +1,3 @@
+Griden definieras i setup i templaten lth_package FRÅN TYPO3s WEBGRÄNSSNITT
+
+setup: Z:\typo3conf\ext\lth_package\Configuration\PageTS\TCEMAIN.txt

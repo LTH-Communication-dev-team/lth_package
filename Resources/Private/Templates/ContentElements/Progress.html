@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width:{data.pi_flexform.sofar}%" aria-valuenow="{data.pi_flexform.sofar}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="row flex-nowrap text-center">
+            <f:for each="{data.pi_flexform.steps}" as="stepItem">
+                <f:if condition="{stepItem.container.currentstep}">
+                    <f:then>
+                        <div class="col text-black font-weight-bold">
+                            <h2 class="h6">{stepItem.container.step}</h2>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="col text-dark-grey">
+                            <h2 class="h6">{stepItem.container.step}</h2>
+                        </div>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </div>
+    </f:section>
+</html>

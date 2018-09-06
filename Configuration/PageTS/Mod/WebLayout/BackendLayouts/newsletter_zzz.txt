@@ -1,0 +1,29 @@
+################################
+## BACKENDLAYOUT: NEWSLETTER ###
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            newsletter {
+                title = Newsletter
+                config {
+                    backend_layout {
+                        colCount = 2
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:backend_layout.column.normal
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:lth_package/Resources/Public/Images/BackendLayouts/newsletter.gif
+            }
+        }
+    }
+}

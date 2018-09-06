@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <infoboxtype>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default>contact</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.contact</numIndex>
+                                        <numIndex index="1">contact</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.icons</numIndex>
+                                        <numIndex index="1">icons</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.iconsvertical</numIndex>
+                                        <numIndex index="1">iconsvertical</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.nav</numIndex>
+                                        <numIndex index="1">nav</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.readmore</numIndex>
+                                        <numIndex index="1">readmore</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </infoboxtype>
+                    <header>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.header</label>
+                            <displayCond>FIELD:infoboxtype:IN:nav,readmore</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </header>
+                    <bodytext>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.bodytext</label>
+                            <displayCond>FIELD:infoboxtype:IN:contact,readmore</displayCond>
+                            <config>
+                                <type>text</type>
+                                <cols>48</cols>
+                                <rows>5</rows>
+                            </config>
+                            <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
+                        </TCEforms>
+                    </bodytext>
+                    <link>
+                        <TCEforms>
+                            <label>Read more link</label>
+                            <displayCond>FIELD:infoboxtype:IN:readmore</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                            <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
+                        </TCEforms>
+                    </link>
+                    <icontextcolor>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.icontextcolor</label>
+                            <displayCond>FIELD:infoboxtype:IN:icons,iconsvertical</displayCond>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default></default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.black</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.white</numIndex>
+                                        <numIndex index="1">text-white </numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </icontextcolor>
+                    <backgroundcolor>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.backgroundcolor</label>
+                            <config>
+                                <type>select</type>
+                                <default>sky.gif</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <fileFolder>EXT:lth_package/Resources/Public/Icons/SysColors/</fileFolder>
+                                <fileFolder_extList>png,jpg,jpeg,gif</fileFolder_extList>
+                                <fileFolder_recursions>0</fileFolder_recursions>
+                                <size>1</size>
+                                <minitems>0</minitems>
+                                <maxitems>1</maxitems>
+                                <selicon_cols>8</selicon_cols>
+                            </config>
+                        </TCEforms>
+                    </backgroundcolor>
+                    <icons>
+                        <section>1</section>
+                        <type>array</type>
+                        <displayCond>FIELD:infoboxtype:IN:icons,iconsvertical</displayCond>
+                        <el>
+                            <container>
+                                <title>Icon</title>
+                                <type>array</type>
+                                <el>
+                                    <title>
+                                        <TCEforms>
+                                            <label>Title</label>
+                                            <config>
+                                                <type>input</type>
+                                                <size>48</size>
+                                            </config>
+                                        </TCEforms>
+                                    </title>
+                                    <bodytext>
+                                        <TCEforms>
+                                            <label>Bodytext</label>
+                                                <config>
+                                                    <type>text</type>
+                                                    <cols>24</cols>
+                                                    <rows>3</rows>
+                                                </config>
+                                        </TCEforms>
+                                    </bodytext>
+                                    <icon>
+                                        <TCEforms>
+                                            <label>Icons</label>
+                                            <config>
+                                                <type>select</type>
+                                                <renderType>selectSingle</renderType>
+                                                <default>far fa-address-book fa-lg</default>
+                                                <items type="array">
+                                                    <numIndex index="0" type="array">
+                                                    <numIndex index="0">&#xf2b9; address-book</numIndex>
+                                                    <numIndex index="1">far fa-address-book fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="1" type="array">
+                                                    <numIndex index="0">&#xf2bb; address-card</numIndex>
+                                                    <numIndex index="1">far fa-address-card fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="2" type="array">
+                                                    <numIndex index="0">&#xf556; angry</numIndex>
+                                                    <numIndex index="1">far fa-angry fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="3" type="array">
+                                                    <numIndex index="0">&#xf358; arrow-alt-circle-down</numIndex>
+                                                    <numIndex index="1">far fa-arrow-alt-circle-down fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="4" type="array">
+                                                    <numIndex index="0">&#xf359; arrow-alt-circle-left</numIndex>
+                                                    <numIndex index="1">far fa-arrow-alt-circle-left fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="5" type="array">
+                                                    <numIndex index="0">&#xf35a; arrow-alt-circle-right</numIndex>
+                                                    <numIndex index="1">far fa-arrow-alt-circle-right fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="6" type="array">
+                                                    <numIndex index="0">&#xf35b; arrow-alt-circle-up</numIndex>
+                                                    <numIndex index="1">far fa-arrow-alt-circle-up fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="7" type="array">
+                                                    <numIndex index="0">&#xf0f3; bell</numIndex>
+                                                    <numIndex index="1">far fa-bell fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="8" type="array">
+                                                    <numIndex index="0">&#xf1f6; bell-slash</numIndex>
+                                                    <numIndex index="1">far fa-bell-slash fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="9" type="array">
+                                                    <numIndex index="0">&#xf02e; bookmark</numIndex>
+                                                    <numIndex index="1">far fa-bookmark fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="10" type="array">
+                                                    <numIndex index="0">&#xf1ad; building</numIndex>
+                                                    <numIndex index="1">far fa-building fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="11" type="array">
+                                                    <numIndex index="0">&#xf133; calendar</numIndex>
+                                                    <numIndex index="1">far fa-calendar fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="12" type="array">
+                                                    <numIndex index="0">&#xf073; calendar-alt</numIndex>
+                                                    <numIndex index="1">far fa-calendar-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="13" type="array">
+                                                    <numIndex index="0">&#xf274; calendar-check</numIndex>
+                                                    <numIndex index="1">far fa-calendar-check fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="14" type="array">
+                                                    <numIndex index="0">&#xf272; calendar-minus</numIndex>
+                                                    <numIndex index="1">far fa-calendar-minus fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="15" type="array">
+                                                    <numIndex index="0">&#xf271; calendar-plus</numIndex>
+                                                    <numIndex index="1">far fa-calendar-plus fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="16" type="array">
+                                                    <numIndex index="0">&#xf273; calendar-times</numIndex>
+                                                    <numIndex index="1">far fa-calendar-times fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="17" type="array">
+                                                    <numIndex index="0">&#xf150; caret-square-down</numIndex>
+                                                    <numIndex index="1">far fa-caret-square-down fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="18" type="array">
+                                                    <numIndex index="0">&#xf191; caret-square-left</numIndex>
+                                                    <numIndex index="1">far fa-caret-square-left fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="19" type="array">
+                                                    <numIndex index="0">&#xf152; caret-square-right</numIndex>
+                                                    <numIndex index="1">far fa-caret-square-right fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="20" type="array">
+                                                    <numIndex index="0">&#xf151; caret-square-up</numIndex>
+                                                    <numIndex index="1">far fa-caret-square-up fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="21" type="array">
+                                                    <numIndex index="0">&#xf080; chart-bar</numIndex>
+                                                    <numIndex index="1">far fa-chart-bar fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="22" type="array">
+                                                    <numIndex index="0">&#xf058; check-circle</numIndex>
+                                                    <numIndex index="1">far fa-check-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="23" type="array">
+                                                    <numIndex index="0">&#xf14a; check-square</numIndex>
+                                                    <numIndex index="1">far fa-check-square fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="24" type="array">
+                                                    <numIndex index="0">&#xf111; circle</numIndex>
+                                                    <numIndex index="1">far fa-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="25" type="array">
+                                                    <numIndex index="0">&#xf328; clipboard</numIndex>
+                                                    <numIndex index="1">far fa-clipboard fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="26" type="array">
+                                                    <numIndex index="0">&#xf017; clock</numIndex>
+                                                    <numIndex index="1">far fa-clock fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="27" type="array">
+                                                    <numIndex index="0">&#xf24d; clone</numIndex>
+                                                    <numIndex index="1">far fa-clone fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="28" type="array">
+                                                    <numIndex index="0">&#xf20a; closed-captioning</numIndex>
+                                                    <numIndex index="1">far fa-closed-captioning fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="29" type="array">
+                                                    <numIndex index="0">&#xf075; comment</numIndex>
+                                                    <numIndex index="1">far fa-comment fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="30" type="array">
+                                                    <numIndex index="0">&#xf27a; comment-alt</numIndex>
+                                                    <numIndex index="1">far fa-comment-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="31" type="array">
+                                                    <numIndex index="0">&#xf4ad; comment-dots</numIndex>
+                                                    <numIndex index="1">far fa-comment-dots fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="32" type="array">
+                                                    <numIndex index="0">&#xf086; comments</numIndex>
+                                                    <numIndex index="1">far fa-comments fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="33" type="array">
+                                                    <numIndex index="0">&#xf14e; compass</numIndex>
+                                                    <numIndex index="1">far fa-compass fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="34" type="array">
+                                                    <numIndex index="0">&#xf0c5; copy</numIndex>
+                                                    <numIndex index="1">far fa-copy fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="35" type="array">
+                                                    <numIndex index="0">&#xf1f9; copyright</numIndex>
+                                                    <numIndex index="1">far fa-copyright fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="36" type="array">
+                                                    <numIndex index="0">&#xf09d; credit-card</numIndex>
+                                                    <numIndex index="1">far fa-credit-card fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="37" type="array">
+                                                    <numIndex index="0">&#xf567; dizzy</numIndex>
+                                                    <numIndex index="1">far fa-dizzy fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="38" type="array">
+                                                    <numIndex index="0">&#xf192; dot-circle</numIndex>
+                                                    <numIndex index="1">far fa-dot-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="39" type="array">
+                                                    <numIndex index="0">&#xf044; edit</numIndex>
+                                                    <numIndex index="1">far fa-edit fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="40" type="array">
+                                                    <numIndex index="0">&#xf0e0; envelope</numIndex>
+                                                    <numIndex index="1">far fa-envelope fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="41" type="array">
+                                                    <numIndex index="0">&#xf2b6; envelope-open</numIndex>
+                                                    <numIndex index="1">far fa-envelope-open fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="42" type="array">
+                                                    <numIndex index="0">&#xf06e; eye</numIndex>
+                                                    <numIndex index="1">far fa-eye fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="43" type="array">
+                                                    <numIndex index="0">&#xf070; eye-slash</numIndex>
+                                                    <numIndex index="1">far fa-eye-slash fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="44" type="array">
+                                                    <numIndex index="0">&#xf15b; file</numIndex>
+                                                    <numIndex index="1">far fa-file fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="45" type="array">
+                                                    <numIndex index="0">&#xf15c; file-alt</numIndex>
+                                                    <numIndex index="1">far fa-file-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="46" type="array">
+                                                    <numIndex index="0">&#xf1c6; file-archive</numIndex>
+                                                    <numIndex index="1">far fa-file-archive fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="47" type="array">
+                                                    <numIndex index="0">&#xf1c7; file-audio</numIndex>
+                                                    <numIndex index="1">far fa-file-audio fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="48" type="array">
+                                                    <numIndex index="0">&#xf1c9; file-code</numIndex>
+                                                    <numIndex index="1">far fa-file-code fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="49" type="array">
+                                                    <numIndex index="0">&#xf1c3; file-excel</numIndex>
+                                                    <numIndex index="1">far fa-file-excel fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="50" type="array">
+                                                    <numIndex index="0">&#xf1c5; file-image</numIndex>
+                                                    <numIndex index="1">far fa-file-image fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="51" type="array">
+                                                    <numIndex index="0">&#xf1c1; file-pdf</numIndex>
+                                                    <numIndex index="1">far fa-file-pdf fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="52" type="array">
+                                                    <numIndex index="0">&#xf1c4; file-powerpoint</numIndex>
+                                                    <numIndex index="1">far fa-file-powerpoint fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="53" type="array">
+                                                    <numIndex index="0">&#xf1c8; file-video</numIndex>
+                                                    <numIndex index="1">far fa-file-video fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="54" type="array">
+                                                    <numIndex index="0">&#xf1c2; file-word</numIndex>
+                                                    <numIndex index="1">far fa-file-word fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="55" type="array">
+                                                    <numIndex index="0">&#xf024; flag</numIndex>
+                                                    <numIndex index="1">far fa-flag fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="56" type="array">
+                                                    <numIndex index="0">&#xf579; flushed</numIndex>
+                                                    <numIndex index="1">far fa-flushed fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="57" type="array">
+                                                    <numIndex index="0">&#xf07b; folder</numIndex>
+                                                    <numIndex index="1">far fa-folder fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="58" type="array">
+                                                    <numIndex index="0">&#xf07c; folder-open</numIndex>
+                                                    <numIndex index="1">far fa-folder-open fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="60" type="array">
+                                                    <numIndex index="0">&#xf119; frown</numIndex>
+                                                    <numIndex index="1">far fa-frown fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="61" type="array">
+                                                    <numIndex index="0">&#xf57a; frown-open</numIndex>
+                                                    <numIndex index="1">far fa-frown-open fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="62" type="array">
+                                                    <numIndex index="0">&#xf1e3; futbol</numIndex>
+                                                    <numIndex index="1">far fa-futbol fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="63" type="array">
+                                                    <numIndex index="0">&#xf3a5; gem</numIndex>
+                                                    <numIndex index="1">far fa-gem fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="64" type="array">
+                                                    <numIndex index="0">&#xf57f; grimace</numIndex>
+                                                    <numIndex index="1">far fa-grimace fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="65" type="array">
+                                                    <numIndex index="0">&#xf580; grin</numIndex>
+                                                    <numIndex index="1">far fa-grin fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="66" type="array">
+                                                    <numIndex index="0">&#xf581; grin-alt</numIndex>
+                                                    <numIndex index="1">far fa-grin-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="67" type="array">
+                                                    <numIndex index="0">&#xf582; grin-beam</numIndex>
+                                                    <numIndex index="1">far fa-grin-beam fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="68" type="array">
+                                                    <numIndex index="0">&#xf583; grin-beam-sweat</numIndex>
+                                                    <numIndex index="1">far fa-grin-beam-sweat fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="69" type="array">
+                                                    <numIndex index="0">&#xf584; grin-hearts</numIndex>
+                                                    <numIndex index="1">far fa-grin-hearts fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="70" type="array">
+                                                    <numIndex index="0">&#xf585; grin-squint</numIndex>
+                                                    <numIndex index="1">far fa-grin-squint fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="71" type="array">
+                                                    <numIndex index="0">&#xf586; grin-squint-tears</numIndex>
+                                                    <numIndex index="1">far fa-grin-squint-tears fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="72" type="array">
+                                                    <numIndex index="0">&#xf587; grin-stars</numIndex>
+                                                    <numIndex index="1">far fa-grin-stars fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="73" type="array">
+                                                    <numIndex index="0">&#xf588; grin-tears</numIndex>
+                                                    <numIndex index="1">far fa-grin-tears fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="74" type="array">
+                                                    <numIndex index="0">&#xf589; grin-tongue</numIndex>
+                                                    <numIndex index="1">far fa-grin-tongue fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="75" type="array">
+                                                    <numIndex index="0">&#xf58a; grin-tongue-squint</numIndex>
+                                                    <numIndex index="1">far fa-grin-tongue-squint fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="76" type="array">
+                                                    <numIndex index="0">&#xf58b; grin-tongue-wink</numIndex>
+                                                    <numIndex index="1">far fa-grin-tongue-wink fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="77" type="array">
+                                                    <numIndex index="0">&#xf58c; grin-wink</numIndex>
+                                                    <numIndex index="1">far fa-grin-wink fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="78" type="array">
+                                                    <numIndex index="0">&#xf258; hand-lizard</numIndex>
+                                                    <numIndex index="1">far fa-hand-lizard fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="79" type="array">
+                                                    <numIndex index="0">&#xf256; hand-paper</numIndex>
+                                                    <numIndex index="1">far fa-hand-paper fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="80" type="array">
+                                                    <numIndex index="0">&#xf25b; hand-peace</numIndex>
+                                                    <numIndex index="1">far fa-hand-peace fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="81" type="array">
+                                                    <numIndex index="0">&#xf0a7; hand-point-down</numIndex>
+                                                    <numIndex index="1">far fa-hand-point-down fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="82" type="array">
+                                                    <numIndex index="0">&#xf0a5; hand-point-left</numIndex>
+                                                    <numIndex index="1">far fa-hand-point-left fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="83" type="array">
+                                                    <numIndex index="0">&#xf0a4; hand-point-right</numIndex>
+                                                    <numIndex index="1">far fa-hand-point-right fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="84" type="array">
+                                                    <numIndex index="0">&#xf0a6; hand-point-up</numIndex>
+                                                    <numIndex index="1">far fa-hand-point-up fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="85" type="array">
+                                                    <numIndex index="0">&#xf25a; hand-pointer</numIndex>
+                                                    <numIndex index="1">far fa-hand-pointer fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="86" type="array">
+                                                    <numIndex index="0">&#xf255; hand-rock</numIndex>
+                                                    <numIndex index="1">far fa-hand-rock fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="87" type="array">
+                                                    <numIndex index="0">&#xf257; hand-scissors</numIndex>
+                                                    <numIndex index="1">far fa-hand-scissors fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="88" type="array">
+                                                    <numIndex index="0">&#xf259; hand-spock</numIndex>
+                                                    <numIndex index="1">far fa-hand-spock fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="89" type="array">
+                                                    <numIndex index="0">&#xf2b5; handshake</numIndex>
+                                                    <numIndex index="1">far fa-handshake fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="90" type="array">
+                                                    <numIndex index="0">&#xf0a0; hdd</numIndex>
+                                                    <numIndex index="1">far fa-hdd fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="91" type="array">
+                                                    <numIndex index="0">&#xf004; heart</numIndex>
+                                                    <numIndex index="1">far fa-heart fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="92" type="array">
+                                                    <numIndex index="0">&#xf0f8; hospital</numIndex>
+                                                    <numIndex index="1">far fa-hospital fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="93" type="array">
+                                                    <numIndex index="0">&#xf254; hourglass</numIndex>
+                                                    <numIndex index="1">far fa-hourglass fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="94" type="array">
+                                                    <numIndex index="0">&#xf2c1; id-badge</numIndex>
+                                                    <numIndex index="1">far fa-id-badge fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="95" type="array">
+                                                    <numIndex index="0">&#xf2c2; id-card</numIndex>
+                                                    <numIndex index="1">far fa-id-card fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="96" type="array">
+                                                    <numIndex index="0">&#xf03e; image</numIndex>
+                                                    <numIndex index="1">far fa-image fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="97" type="array">
+                                                    <numIndex index="0">&#xf302; images</numIndex>
+                                                    <numIndex index="1">far fa-images fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="98" type="array">
+                                                    <numIndex index="0">&#xf11c; keyboard</numIndex>
+                                                    <numIndex index="1">far fa-keyboard fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="99" type="array">
+                                                    <numIndex index="0">&#xf596; kiss</numIndex>
+                                                    <numIndex index="1">far fa-kiss fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="100" type="array">
+                                                    <numIndex index="0">&#xf597; kiss-beam</numIndex>
+                                                    <numIndex index="1">far fa-kiss-beam fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="101" type="array">
+                                                    <numIndex index="0">&#xf598; kiss-wink-heart</numIndex>
+                                                    <numIndex index="1">far fa-kiss-wink-heart fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="102" type="array">
+                                                    <numIndex index="0">&#xf599; laugh</numIndex>
+                                                    <numIndex index="1">far fa-laugh fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="103" type="array">
+                                                    <numIndex index="0">&#xf59a; laugh-beam</numIndex>
+                                                    <numIndex index="1">far fa-laugh-beam fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="104" type="array">
+                                                    <numIndex index="0">&#xf59b; laugh-squint</numIndex>
+                                                    <numIndex index="1">far fa-laugh-squint fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="105" type="array">
+                                                    <numIndex index="0">&#xf59c; laugh-wink</numIndex>
+                                                    <numIndex index="1">far fa-laugh-wink fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="106" type="array">
+                                                    <numIndex index="0">&#xf094; lemon</numIndex>
+                                                    <numIndex index="1">far fa-lemon fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="107" type="array">
+                                                    <numIndex index="0">&#xf1cd; life-ring</numIndex>
+                                                    <numIndex index="1">far fa-life-ring fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="108" type="array">
+                                                    <numIndex index="0">&#xf0eb; lightbulb</numIndex>
+                                                    <numIndex index="1">far fa-lightbulb fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="109" type="array">
+                                                    <numIndex index="0">&#xf022; list-alt</numIndex>
+                                                    <numIndex index="1">far fa-list-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="110" type="array">
+                                                    <numIndex index="0">&#xf279; map</numIndex>
+                                                    <numIndex index="1">far fa-map fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="111" type="array">
+                                                    <numIndex index="0">&#xf11a; meh</numIndex>
+                                                    <numIndex index="1">far fa-meh fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="112" type="array">
+                                                    <numIndex index="0">&#xf5a4; meh-blank</numIndex>
+                                                    <numIndex index="1">far fa-meh-blank fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="113" type="array">
+                                                    <numIndex index="0">&#xf5a5; meh-rolling-eyes</numIndex>
+                                                    <numIndex index="1">far fa-meh-rolling-eyes fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="114" type="array">
+                                                    <numIndex index="0">&#xf146; minus-square</numIndex>
+                                                    <numIndex index="1">far fa-minus-square fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="115" type="array">
+                                                    <numIndex index="0">&#xf3d1; money-bill-alt</numIndex>
+                                                    <numIndex index="1">far fa-money-bill-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="116" type="array">
+                                                    <numIndex index="0">&#xf186; moon</numIndex>
+                                                    <numIndex index="1">far fa-moon fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="117" type="array">
+                                                    <numIndex index="0">&#xf1ea; newspaper</numIndex>
+                                                    <numIndex index="1">far fa-newspaper fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="118" type="array">
+                                                    <numIndex index="0">&#xf247; object-group</numIndex>
+                                                    <numIndex index="1">far fa-object-group fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="119" type="array">
+                                                    <numIndex index="0">&#xf248; object-ungroup</numIndex>
+                                                    <numIndex index="1">far fa-object-ungroup fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="120" type="array">
+                                                    <numIndex index="0">&#xf1d8; paper-plane</numIndex>
+                                                    <numIndex index="1">far fa-paper-plane fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="121" type="array">
+                                                    <numIndex index="0">&#xf28b; pause-circle</numIndex>
+                                                    <numIndex index="1">far fa-pause-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="122" type="array">
+                                                    <numIndex index="0">&#xf144; play-circle</numIndex>
+                                                    <numIndex index="1">far fa-play-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="123" type="array">
+                                                    <numIndex index="0">&#xf0fe; plus-square</numIndex>
+                                                    <numIndex index="1">far fa-plus-square fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="124" type="array">
+                                                    <numIndex index="0">&#xf059; question-circle</numIndex>
+                                                    <numIndex index="1">far fa-question-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="125" type="array">
+                                                    <numIndex index="0">&#xf25d; registered</numIndex>
+                                                    <numIndex index="1">far fa-registered fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="126" type="array">
+                                                    <numIndex index="0">&#xf5b3; sad-cry</numIndex>
+                                                    <numIndex index="1">far fa-sad-cry fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="127" type="array">
+                                                    <numIndex index="0">&#xf5b4; sad-tear</numIndex>
+                                                    <numIndex index="1">far fa-sad-tear fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="128" type="array">
+                                                    <numIndex index="0">&#xf0c7; save</numIndex>
+                                                    <numIndex index="1">far fa-save fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="129" type="array">
+                                                    <numIndex index="0">&#xf14d; share-square</numIndex>
+                                                    <numIndex index="1">far fa-share-square fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="130" type="array">
+                                                    <numIndex index="0">&#xf118; smile</numIndex>
+                                                    <numIndex index="1">far fa-smile fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="131" type="array">
+                                                    <numIndex index="0">&#xf5b8; smile-beam</numIndex>
+                                                    <numIndex index="1">far fa-smile-beam fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="132" type="array">
+                                                    <numIndex index="0">&#xf4da; smile-wink</numIndex>
+                                                    <numIndex index="1">far fa-smile-wink fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="133" type="array">
+                                                    <numIndex index="0">&#xf2dc; snowflake</numIndex>
+                                                    <numIndex index="1">far fa-snowflake fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="134" type="array">
+                                                    <numIndex index="0">&#xf0c8; square</numIndex>
+                                                    <numIndex index="1">far fa-square fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="135" type="array">
+                                                    <numIndex index="0">&#xf005; star</numIndex>
+                                                    <numIndex index="1">far fa-star fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="136" type="array">
+                                                    <numIndex index="0">&#xf089; star-half</numIndex>
+                                                    <numIndex index="1">far fa-star-half fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="137" type="array">
+                                                    <numIndex index="0">&#xf249; sticky-note</numIndex>
+                                                    <numIndex index="1">far fa-sticky-note fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="138" type="array">
+                                                    <numIndex index="0">&#xf28d; stop-circle</numIndex>
+                                                    <numIndex index="1">far fa-stop-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="139" type="array">
+                                                    <numIndex index="0">&#xf185; sun</numIndex>
+                                                    <numIndex index="1">far fa-sun fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="140" type="array">
+                                                    <numIndex index="0">&#xf5c2; surprise</numIndex>
+                                                    <numIndex index="1">far fa-surprise fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="141" type="array">
+                                                    <numIndex index="0">&#xf165; thumbs-down</numIndex>
+                                                    <numIndex index="1">far fa-thumbs-down fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="142" type="array">
+                                                    <numIndex index="0">&#xf164; thumbs-up</numIndex>
+                                                    <numIndex index="1">far fa-thumbs-up fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="143" type="array">
+                                                    <numIndex index="0">&#xf057; times-circle</numIndex>
+                                                    <numIndex index="1">far fa-times-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="144" type="array">
+                                                    <numIndex index="0">&#xf5c8; tired</numIndex>
+                                                    <numIndex index="1">far fa-tired fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="145" type="array">
+                                                    <numIndex index="0">&#xf2ed; trash-alt</numIndex>
+                                                    <numIndex index="1">far fa-trash-alt fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="146" type="array">
+                                                    <numIndex index="0">&#xf007; user</numIndex>
+                                                    <numIndex index="1">far fa-user fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="147" type="array">
+                                                    <numIndex index="0">&#xf2bd; user-circle</numIndex>
+                                                    <numIndex index="1">far fa-user-circle fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="148" type="array">
+                                                    <numIndex index="0">&#xf410; window-close</numIndex>
+                                                    <numIndex index="1">far fa-window-close fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="149" type="array">
+                                                    <numIndex index="0">&#xf2d0; window-maximize</numIndex>
+                                                    <numIndex index="1">far fa-window-maximize fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="150" type="array">
+                                                    <numIndex index="0">&#xf2d1; window-minimize</numIndex>
+                                                    <numIndex index="1">far fa-window-minimize fa-lg</numIndex>
+                                                    </numIndex>
+                                                    <numIndex index="151" type="array">
+                                                    <numIndex index="0">&#xf2d2; window-restore</numIndex>
+                                                    <numIndex index="1">far fa-window-restore fa-lg</numIndex>
+                                                    </numIndex>
+                                                </items>
+                                            </config>
+                                        </TCEforms>
+                                    </icon>
+                                </el>
+                            </container>
+                        </el>
+                    </icons>
+                    <links>
+                        <section>1</section>
+                        <type>array</type>
+                        <displayCond>FIELD:infoboxtype:IN:nav</displayCond>
+                        <el>
+                            <container>
+                                <title>Link</title>
+                                <type>array</type>
+                                <el>
+                                    <linktext>
+                                        <TCEforms>
+                                            <label>Link text</label>
+                                            <config>
+                                                <type>input</type>
+                                                <size>48</size>
+                                            </config>
+                                        </TCEforms>
+                                    </linktext>
+                                    
+                                    <link>
+                                        <TCEforms>
+                                            <label>Link</label>
+                                            <config>
+                                                <type>input</type>
+                                                <size>48</size>
+                                            </config>
+                                        </TCEforms>
+                                    </link>
+                                </el>
+                            </container>
+                        </el>
+                    </links>
+                    <fixColorBoxes>
+                        <TCEforms>
+                            <config>
+                                <type>user</type>
+                                <userFunc>user_lthpackageflex_addFieldsToFlexForm->fixColorBoxes</userFunc>
+                            </config>
+                        </TCEforms>
+                    </fixColorBoxes>
+                    <fixFontawesomeClass>
+                        <TCEforms>
+                            <config>
+                                <type>user</type>
+                                <userFunc>user_lthpackageflex_addFieldsToFlexForm->fixFontawesomeClass</userFunc>
+                            </config>
+                        </TCEforms>
+                    </fixFontawesomeClass>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

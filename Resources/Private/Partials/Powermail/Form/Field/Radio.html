@@ -1,0 +1,24 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="">
+	<label class="" title="{field.description}">
+		<vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
+	</label>
+
+        <f:for each="{field.modifiedSettings}" as="setting" iteration="index">
+                <div class="form-check">
+                        <f:form.radio
+                                        property="{field.marker}"
+                                        value="{setting.value}"
+                                        checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
+                                        id="powermail_field_{field.marker}_{index.cycle}"
+                                        additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field, iteration:index)}"
+                                        class="form-check-input" />
+                        <label class="form-check-label" for="powermail_field_{field.marker}_{index.cycle}">{setting.value}</label>
+                </div>
+        </f:for>
+
+        <f:if condition="{settings.validation.client}">
+                <div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
+        </f:if>
+</div>

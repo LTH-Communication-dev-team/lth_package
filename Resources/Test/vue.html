@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .vue-grid-item {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" style="width:100%;">
+        <grid-layout
+            :layout="layout"
+            :col-num="12"
+            :row-height="30"
+            :is-draggable="false"
+            :is-resizable="false"
+            :is-mirrored="false"
+            :vertical-compact="true"
+            :margin="[10, 10]"
+            :use-css-transforms="true"
+    >
+
+        <grid-item v-for="item in layout"
+                   :x="item.x"
+                   :y="item.y"
+                   :w="item.w"
+                   :h="item.h"
+                   :i="item.i">
+            <div v-html="item.c"></div>
+        </grid-item>
+    </grid-layout>
+        </div>
+    <script src="../Public/JavaScript/Dist/vue.min.js" type="text/javascript"></script>
+        <script src="../Public/JavaScript/Dist/vue-grid-layout.min.js" type="text/javascript"></script>
+        <script>
+            var testLayout =  [{"x":0,"y":4,"w":6,"h":5,"i":"0","id":"0","c":"sucker1ab","moved":false},{"x":6,"y":5,"w":4,"h":4,"i":"1","id":"1","c":"sucker2","moved":false},{"x":6,"y":0,"w":2,"h":5,"i":"2","id":"2","c":"sucker3","moved":false},{"x":0,"y":0,"w":6,"h":4,"i":"4","id":"4","c":"Sucker5","moved":false},{"x":8,"y":0,"w":2,"h":5,"i":"5","id":"5","c":"Edit"}];
+            var GridLayout = VueGridLayout.GridLayout;
+            var GridItem = VueGridLayout.GridItem;
+
+            new Vue({
+                el: '#app',
+                components: {
+                    GridLayout,
+                    GridItem,
+                },
+                data: {
+                    layout: testLayout,
+                },
+            });
+        </script>
+    </body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="sv" dir="ltr" class="no-js">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2018 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+<base href="http://vkans-th0.kh.lth.lu.se/">
+
+<title>Forskning: LTH-Package</title>
+
+</head>
+<body id="p42935">
+                 <div id="app" class="masonry-container"></div>
+                 <grid-layout
+            :layout="layout"
+            :col-num="12"
+            :row-height="30"
+            :is-draggable="false"
+            :is-resizable="false"
+            :is-mirrored="false"
+            :vertical-compact="true"
+            :margin="[10, 10]"
+            :use-css-transforms="true"
+    ><grid-item v-for="item in layout"
+                   :x="item.x"
+                   :y="item.y"
+                   :w="item.w"
+                   :h="item.h"
+                   :i="item.i">
+                         <div v-html="item.c"></div>
+                     </grid-item>
+                 </grid-layout>
+                     
+             <script src="/typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/vue.min.js" type="text/javascript"></script>
+             <script src="/typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/vue-grid-layout.min.js" type="text/javascript"></script>
+             <script>
+            var testLayout =  [{"x":0,"y":0,"w":6,"h":4,"i":"4","id":"4","c":"Sucker5","moved":false},{"x":0,"y":4,"w":6,"h":5,"i":"0","id":"0","c":"sucker1ab","moved":false},{"x":6,"y":0,"w":2,"h":5,"i":"2","id":"2","c":"sucker3","moved":false},{"x":6,"y":5,"w":4,"h":4,"i":"1","id":"1","c":"sucker2","moved":false},{"x":8,"y":0,"w":2,"h":5,"i":"5","id":"5","c":"Edit"}];
+            var GridLayout = VueGridLayout.GridLayout;
+            var GridItem = VueGridLayout.GridItem;
+
+            new Vue({
+                el: '#app',
+                components: {
+                    GridLayout,
+                    GridItem,
+                },
+                data: {
+                    layout: testLayout,
+                },
+            });
+        </script>
+
+</body>
+</html>
+-->

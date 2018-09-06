@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+<v:variable.register.set name="test" value="12345"/>
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+
+<div style="display:block;overflow: auto;padding:10px 0 20px 0;margin:15px 0 15px 0;border-bottom:1px #dedede solid;" class="">
+
+    <f:if condition="{newsItem.istopnews}">
+    
+    <f:then>
+        
+            <div class="col-md-10">
+                <f:if condition="{newsItem.mediaPreviews}">
+                        <f:then>
+                            <div style="">
+                                <f:media style="width:100%;height:auto;" class="img-responsive" file="{newsItem.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                            </div>
+                        </f:then>
+                </f:if>
+            </div>
+            <div class="col-md-10">
+                <f:if condition="{newsItem.categories}">
+                    <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
+                </f:if>
+                <h2 class="title">
+                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                        {newsItem.title}
+                    </n:link>
+                </h2>
+                <div class="" itemprop="description">
+                    {newsItem.teaser}
+                </div>
+            </div>
+    </f:then>
+    <f:else>
+            <div class="col-md-4">
+                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    <f:if condition="{newsItem.mediaPreviews}">
+                        <f:then>
+                            <div style="">
+                                <f:media style="width:100%;height:auto;" class="img-responsive" file="{newsItem.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                            </div>
+                        </f:then>
+                    </f:if>
+                </n:link>
+            </div>
+
+            <div class="{f:if(condition:newsItem.mediaPreviews,then:'col-md-6',else:'col-md-10')} articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <f:if condition="{newsItem.categories}">
+                    <f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
+                </f:if>
+                <h2 class="title">
+                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                        {newsItem.title}
+                    </n:link>
+                </h2>
+
+
+                <!-- teaser -->
+                <div class="" itemprop="description">
+                    <n:removeMediaTags>
+                        <f:if condition="{newsItem.teaser}">
+                            <f:then>
+                                    {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+                            </f:then>
+                            <f:else>
+                                    {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+                            </f:else>
+                        </f:if>
+                    </n:removeMediaTags>
+                </div>
+
+
+            </div>
+       
+    </f:else>
+    
+</f:if>
+</div>
+</html>

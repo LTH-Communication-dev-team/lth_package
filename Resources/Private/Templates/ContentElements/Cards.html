@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <div id="cards-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} py-9">
+            <div class="container">
+                <div class="row my-8">
+                    <div class="col-12 text-center">
+                        <h1>{data.pi_flexform.header}</h1>
+                        <p>{data.pi_flexform.intro}</p>
+                        <f:if condition="{data.pi_flexform.buttons}">
+                            <div class="mt-5">
+                                <f:for each="{data.pi_flexform.buttons}" as="button">
+                                    <f:link.page pageUid="{button.container.link}" class="btn btn-primary mx-1 mb-3">{button.container.title}</f:link.page>
+                                </f:for>
+                            </div>
+                        </f:if>
+                    </div>
+                </div>
+                <div class="row">
+                    <f:for each="{data.pi_flexform.imageItems}" as="imageItem">
+                        <div class="col-12 col-lg-4 mb-3 mx-auto">
+                            <a href="{imageItem.link}" class="card nav-block">
+                                <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" class="card-img-top" />
+                                <div class="card-body">
+                                    <h2 class="card-title mt-0">{imageItem.title}</h2>
+                                    <p class="card-text">{imageItem.description}</p>
+                                    <div class="nav-block-link">{imageItem.alternative}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                                </div>
+                            </a>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</html>
+<!--
+<div class="bg-stone-25 py-9">
+	<div class="container">
+		<div class="row my-8">
+			<div class="col-12 text-center ">
+				<h1>Utbildning</h1>
+				<p>På Ekonomihögskolan i Lund finns några av Sveriges populäraste utbildningar inom ekonomi och systemvetenskap.</p>
+				<div class="mt-5">
+					<a href="button1.html" class="btn btn-primary mx-1 mb-3">Nybörjarprogram</a>
+					<a href="button2.html" class="btn btn-primary mx-1 mb-3">Magister- &amp; masterprogram</a>
+					<a href="button3.html" class="btn btn-primary mx-1 mb-3">Kurser</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12  col-lg-4 mb-3 mx-auto">
+				<a href="card1.html" class="card nav-block">
+                    <img class="card-img-top" src="/assets/toolkit/images/placeholder_1.jpg" alt="Studera utomlands bildbeskrivning.">
+                    <div class="card-body">
+                        <h2 class="card-title mt-0">Studera utomlands</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Curabitur egestas nisi risus, sed vestibulum ex commodo sit amet. Integer lobortis ullamcorper lacus quis blandit.</p>
+                        <div class="nav-block-link">Läs mer om studera utomlands&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                    </div>
+                </a>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 mb-3 mx-auto">
+				<a href="card2.html" class="card nav-block">
+                    <img class="card-img-top" src="/assets/toolkit/images/placeholder_2.jpg" alt="BSc International Business bildbeskrivning.">
+                    <div class="card-body">
+                        <h2 class="card-title mt-0">Nyhet! BSc International Business</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.</p>
+                        <div class="nav-block-link">Läs mer om BSc International Business&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                    </div>
+                </a>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 mb-3 mx-auto">
+				<a href="card3.html" class="card nav-block">
+                    <img class="card-img-top" src="/assets/toolkit/images/placeholder_3.jpg" alt="Internships bildbeskrivning.">
+                    <div class="card-body">
+                        <h2 class="card-title mt-0">Internships</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.</p>
+                        <div class="nav-block-link">Läs mer om internships&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                    </div>
+                </a>
+			</div>
+		</div>
+	</div>
+</div>
+-->

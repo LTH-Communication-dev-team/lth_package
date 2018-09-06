@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="bg-dark d-none d-lg-block">
+        <div class="container-fluid mw-xl py-0">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark font-size-sm font-weight-light p-0 text-white">
+                <div class="collapse navbar-collapse nmx-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav bd-navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.lu.se/">{f:translate(key:'to_lund_university',extensionName:'lth_package')}</a>
+                        </li>
+                    </ul>
+
+                    <f:if condition="{headnav}">
+                        <f:then>
+                            <ul class="navbar-nav flex-row ml-auto">
+                                <lth:explode data="{headnav}" as="rows">
+                                    <f:if condition="{rows}">
+                                            <f:for each="{rows}" as="row" iteration="iterateRow">
+                                                <li class="nav-item">
+                                                    <lth:explode data="{row}" delimiter="," as="content">
+                                                        <a title="{content.0}" class="nav-link px-3" href="{content.1}">{content.0}</a>
+                                                    </lth:explode>
+                                                </li>
+                                            </f:for>
+                                    </f:if>
+                                </lth:explode>
+                            </ul>
+                            <ul class="navbar-nav flex-row ml-3">
+                                <f:if condition="{headnavdrop}">
+                                    <li class="nav-item dropdown dropdown-hover">
+                                        <a class="nav-link dropdown-toggle px-3" href="https://www.lth.se/" id="navbarDropdown" aria-haspopup="true">
+                                            {f:translate(key:'info_for',extensionName:'lth_package')} &nbsp;<i class="fal fa-chevron-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right text-primary" aria-labelledby="navbarDropdown">
+                                            <lth:explode data="{headnavdrop}" as="rows">
+                                                <f:if condition="{rows}">
+                                                        <f:for each="{rows}" as="row" iteration="iterateRow">
+                                                            <lth:explode data="{row}" delimiter="," as="content">
+                                                                <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
+                                                            </lth:explode>
+                                                        </f:for>
+                                                </f:if>
+                                            </lth:explode>
+                                        </div>
+                                    </li>
+                                </f:if>
+                            </ul>
+                        </f:then>
+                    </f:if>
+                </div>
+            </nav>
+        </div>
+    </div>
+</html>

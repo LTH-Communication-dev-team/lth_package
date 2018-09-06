@@ -1,0 +1,15 @@
+css-filer
+
+Javascript-filer
+
+Typoscript
+
+Huvudmall: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Default.html
+
+main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Default.html
+
+News: Z:\typo3conf\ext\lth_package\Resources\Private\Templates\News\Styles\News\List.html
+
+Backend layouts Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
+
+Content elements Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\ContentElements\Default.html

@@ -1,0 +1,26 @@
+#################
+#### TCEFORM ####
+#################
+TCEFORM {
+    pages {
+        layout {
+            removeItems = 2,3
+            altLabels {
+                1 = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:frontend_layout.notitle
+            }
+        }
+    }
+    #tt_content {
+    #    layout {
+    #        types {
+    #            gridelements_pi1 {
+    #                removeItems = 1,2,3
+    #                addItems {
+    #                    100 = Nav Block Dark
+    #                    110 = Nav Block Light
+    #                }
+    #            }
+    #        }
+    #    }
+    #}
+}

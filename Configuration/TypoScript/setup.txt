@@ -1,0 +1,418 @@
+################
+#### HELPER ####
+################
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/ParseFunc.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/DynamicContent.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/PageClass.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/Plugin.txt">
+
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Banner.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Calendar.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Cards.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Carousel.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Embed.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Figure.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infobox.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infographics.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Nav.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Masonry.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Progress.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Title.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Toggle.txt">
+
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = {$page.favicon.file}
+
+    bodyTagCObject = COA
+    bodyTagCObject {
+        10 = TEXT
+        10.data = TSFE:id
+        10.noTrimWrap = | id="p|"|
+        20 =< lib.page.class
+        20.stdWrap.noTrimWrap = | class="|"|
+        wrap = <body|>
+    }
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = pagelayout
+
+            pagets__landingpage = TEXT
+            pagets__landingpage.value = Landingpage
+
+            default = TEXT
+            default.value = Default
+        }
+
+        templateRootPaths {
+            0 = EXT:lth_package/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:lth_package/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:lth_package/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                includeSpacer = 1
+                as = mainnavigation
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                entryLevel = 1
+                levels = 7
+                expandAll = 1
+                includeSpacer = 1
+                as = subnavigation
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = rootline
+                special.range = 0|-1
+                includeNotInMenu = 1
+                as = breadcrumb
+                if {
+                    value = {$page.theme.breadcrumbEnableLevel}
+                    value {
+                        insertData = 1
+                        prioriCalc = 1
+                        stdWrap.wrap = |-1
+                    }
+                    isGreaterThan {
+                        data = level
+                    }
+                }
+            }
+            40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            40 {
+                special = language
+                special.value = {$page.theme.language.languageValue}
+                as = languagenavigation
+                if {
+                    isTrue = {$page.theme.language.languageValue}
+                }
+            }
+            50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            50 {
+                special = {$page.theme.meta.navigationType}
+                special.value = {$page.theme.meta.navigationValue}
+                includeNotInMenu = {$page.theme.meta.includeNotInMenu}
+                as = metanavigation
+                if {
+                    isTrue = {$page.theme.meta.navigationValue}
+                }
+            }
+        }
+
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            logo {
+                file = {$page.logo.file}
+                fileInverted = {$page.logo.fileInverted}
+                height = {$page.logo.height}
+                width = {$page.logo.width}
+                linktitle = {$page.logo.linktitle}
+            }
+            breadcrumb {
+                enable = {$page.theme.breadcrumb}
+            }
+            navigation {
+                style = {$page.theme.navigationstyle}
+                type = {$page.theme.navigationtype}
+            }
+            copyright {
+                enable = {$page.theme.copyright.enable}
+                text = {$page.theme.copyright.text}
+            }
+            meta {
+                enable = {$page.theme.meta.enable}
+            }
+            language {
+                enable = {$page.theme.language.enable}
+            }
+        }
+
+        #################
+        ### VARIABLES ###
+        #################
+        variables {
+            pageTitle = TEXT
+            pageTitle.data = page:title
+            siteTitle = TEXT
+            siteTitle.data = TSFE:tmpl|setup|sitetitle
+            rootPage = TEXT
+            rootPage.data = leveluid:0
+            author = COA
+            author.5 = TEXT
+            author.5.data = levelfield:-1, author_email, slide
+            author.5.typolink.parameter.data = levelfield:-1, author_email, slide
+            author.5.wrap.lang.sv = Sidansvarig:&nbsp;|
+            author.5.wrap.lang.en = Page Manager:&nbsp;|
+            author.10 = TEXT
+            author.10.data = page:lastUpdated
+            author.10.date = Y-m-d
+            author.10.wrap = &nbsp;&#124;&nbsp;|
+            author.10.ifEmpty.data = register:SYS_LASTCHANGED
+            headnav = TEXT
+            headnav.data = levelfield: -1, tx_lthpackage_headnav, slide
+            headnavdrop = TEXT
+            headnavdrop.data = levelfield: -1, tx_lthpackage_headnavdrop, slide
+            subsitetitle = TEXT
+            subsitetitle.data = levelfield: -1, tx_lthpackage_subsitetitle, slide
+            username = TEXT
+            username.data = TSFE:fe_user|user|username
+            layout = TEXT
+            layout {
+                field = layout
+            }
+        }
+
+        stdWrap.replacement {
+            1 {
+                search = http://###BACKEND_URL###/
+                replace.typolink {
+                    parameter = typo3/
+                    returnLast = url
+                }
+            }
+            2 {
+                search = ###FRONTEND_URL###
+                replace.typolink {
+                    parameter.data = leveluid:0
+                    returnLast = url
+                }
+            }
+            3 {
+                search = ###CURRENTYEAR###
+                replace {
+                    data = date:U
+                    strftime = %Y
+                }
+            }
+            4 {
+                search = ###SPACE###
+                replace {
+                    char = 32
+                }
+            }
+        }
+    }
+
+    meta {
+        # New notation available since TYPO3 7.4
+        # see https://forge.typo3.org/issues/67360 for more details
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        google = {$page.meta.google}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSS {
+        f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
+        googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
+        toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
+        lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
+    }
+
+    includeJSFooterlibs {
+        
+        #jQuery = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery-3.3.1.min.js
+        #bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        #bootstrapbundlemin = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.bundle.min.js
+        toolkitjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/toolkit.js
+        #masonry = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/masonry.pkgd.min.js
+        lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
+    }
+
+}
+
+
+####################
+#### TT_CONTENT ####
+####################
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = /
+    typolinkEnableLinksAcrossDomains = 1
+    #no_cache = {$config.no_cache}
+    pageTitleFirst = 1
+    linkVars = L
+    #prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = 1
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    #sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    #headerComment = {$config.headerComment}
+
+    // Enable RealUrl
+    tx_realurl_enable = 1
+    simulateStaticDocuments = 0
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Language Settings
+    sys_language_uid = 0
+    sys_language_overlay = 1
+    sys_language_mode = content_fallback
+    sys_language_uid = 0
+    language = sv
+    locale_all = sv_SE.utf8
+    htmlTag_setParams = lang="sv" dir="ltr" class="no-js fontawesome-i2svg-active fontawesome-i2svg-complete"
+
+    // Compression and Concatenation of CSS and JS Files
+    #compressJs = {$config.compressJs}
+    #compressCss = {$config.compressCss}
+    #concatenateJs = {$config.concatenateJs}
+    #concatenateCss = {$config.concatenateCss}
+}
+
+
+#############################
+#### LANGUAGE CONDITIONS ####
+#############################
+[globalVar = GP:L = 0]
+    config {
+        sys_language_uid = 0
+        language = sv
+        locale_all = se_SV.UTF-8
+        htmlTag_setParams = lang="sv" dir="ltr" class="no-js"
+    }
+[global]
+[globalVar = GP:L = 2]
+    config {
+        sys_language_uid = 2
+        language = en
+        locale_all = en_EN.UTF-8
+        htmlTag_setParams = lang="en" dir="ltr" class="no-js"
+    }
+[global]
+
+plugin.tx_news {
+    settings {
+        list {
+            media.image.width = 200
+            media.image.height = 400
+            paginate.insertAbove = 0
+        }
+        link {
+            skipControllerAndAction = 1
+        }
+        detail {
+            errorHandling = showStandaloneTemplate,EXT:lth_package/Resources/Private/Templates/News/DetailNotFound.html,404
+        }
+    }
+}
+
+##############################
+########### LIB ##############
+##############################
+lib.gpvar = COA
+lib.gpvar {
+  # Schuetzt vor XSS, daher auch ein COA!
+  stdWrap.htmlSpecialChars = 1
+  10 = TEXT
+  10 {
+    dataWrap = GP:{current}
+    insertData = 1
+    wrap3 = {|}
+  }
+}

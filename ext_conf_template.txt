@@ -1,0 +1,8 @@
+  # cat=basic/dev/160; type=input; label=Solr Host
+solrHost=
+  # cat=basic/dev/161; type=input; label=Solr Path
+solrPath=
+  # cat=basic/dev/162; type=input; label=Solr Port
+solrPort=
+  # cat=basic/dev/163; type=input; label=Solr Timeout
+solrTimeout=

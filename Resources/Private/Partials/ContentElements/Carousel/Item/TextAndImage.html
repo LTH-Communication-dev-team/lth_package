@@ -1,0 +1,28 @@
+<div class="valign">
+    <div class="carousel-text vcontainer lead" {f:if(condition: item.data.text_color,then: 'style="color: {item.data.text_color};"')}>
+        <h{item.data.header_layout}><f:format.htmlentitiesDecode>{item.data.header}</f:format.htmlentitiesDecode></h{item.data.header_layout}>
+        <f:format.html>{item.data.bodytext}</f:format.html>
+    </div>
+    <div class="carousel-image vcontainer">
+        <f:if condition="{item.images.0}">
+            <f:if condition="{data.layout} == 110">
+                <f:then>
+                    <f:image
+                        image="{item.images.0}"
+                        title="{item.images.0.title}"
+                        alt="{item.images.0.alternative}"
+                        width="400"
+                        height="400c" />
+                </f:then>
+                <f:else>
+                    <f:image
+                        image="{item.images.0}"
+                        title="{item.images.0.title}"
+                        alt="{item.images.0.alternative}"
+                        width="600"
+                        height="600c" />
+                </f:else>
+            </f:if>
+        </f:if>
+    </div>
+</div>

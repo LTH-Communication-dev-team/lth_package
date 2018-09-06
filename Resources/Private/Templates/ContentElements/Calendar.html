@@ -1,0 +1,152 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers"  data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <f:if condition="{data.pi_flexform.layout}=='cards'">
+            <f:then>
+                <div id="calendar-{data.uid}" class="container py-4">
+                    <div class="row my-8">
+                        <div class="col-12 text-center">
+                            <h1>{f:translate(key:'calendar',extensionName:'lth_package')}</h1>
+                            <f:if condition="{data.pi_flexform.subheader}">
+                                <f:then><p>{data.pi_flexform.subheader}</p></f:then>
+                            </f:if>
+                            <div id="lthPackageCalendarCategories" class="mt-5">
+                                <f:if condition="{data.pi_flexform.listingPage}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{data.pi_flexform.listingPage}" class="btn btn-primary mx-1 mb-3">{f:translate(key:'more_events',extensionName:'lth_package')}</f:link.typolink>
+                                    </f:then>
+                                    <f:else>
+                                        <a href="events" class="btn btn-primary mx-1 mb-3">{f:translate(key:'more_events',extensionName:'lth_package')}</a>
+                                    </f:else>
+                                </f:if>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row my-5" id="lthPackageCalendarCards">
+                        <div class="col">
+                            <div class="lined lined-2col">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <script id="lthPackageCalendarCardsTemplate" type="text/x-jquery-templ">
+                        <div class="lined-item p-0">
+                            <a id="###id###" href="###link###" class="nav-block nav-block-plaster-25 px-5 py-3 nmx-3 d-flex flex-row h-100">
+                                <div class="calendar-list-date">
+                                    <h1>###date###</h1>
+                                    <p>###month###</p>
+                                </div>
+                                <div class="calendar-card-text">
+                                    <div class="calendar-card-meta">
+                                        <date datetime="###dateTime###">###dateTime###</date>&nbsp;|&nbsp;<span class="calendar-card-category">###categoryName###</span>
+                                        <p class="calendar-card-title nav-block-link">###title###</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </script>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.layout}=='eventcards'">
+            <f:then>
+                <div class="bg-sky-25 mb-8">
+                    <div class="container py-6">
+                        <div class="row mb-5">
+                            <div class="col">
+                                <h2 class="m-0">Kalendarium <a href="#" class="ml-3"><span class="sr-only">RSS-flöde</span> <i class="fas fa-rss fa-xs"></i></a></h2>
+                            </div>
+                        </div>
+                        <div class="row" id="lthPackageCalendar">
+                            <div class="col">
+                                <div class="lined lined-3col">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 text-right font-weight-normal">
+                            <div class="col text-right">
+                                <a href="#">{f:translate(key:'more_events',extensionName:'lth_package')}</a>
+                            </div>
+                        </div>
+                        <script id="lthPackageCalendarEventCardsTemplate" type="text/x-jquery-templ">
+                            <div class="lined-item">
+                                <a class="calendar-card nav-block" href="card1.html">
+                                    <div class="calendar-card-img">
+                                        <img class="card-img-top" src="/assets/toolkit/images/placeholder_1_square.jpg" alt="Den svenska välfärdsstatens framväxt. Hälsa och välfärd i ett livscykelperspektiv">
+                                    </div>
+                                    <div class="calendar-card-text">
+                                        <div class="calendar-card-meta">
+                                            <date>###dateTime###</date> | <span class="calendar-card-category">###categoryName###</span>
+                                        </div>
+                                        <p class="calendar-card-title nav-block-link">###title###</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </script> 
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.layout}=='list'">
+            <f:then>
+                <div id="calendar-{data.uid}">
+                    <h2>{f:translate(key:'calendar',extensionName:'lth_package')}</h2>
+                    <div id="lthPackageCalendarList" class="border-bottom pb-3"></div>
+                    <div class="mt-5 text-right font-weight-normal">
+                        <f:if condition="{data.pi_flexform.listingPage}">
+                            <f:then>
+                                <f:link.typolink parameter="{data.pi_flexform.listingPage}">{f:translate(key:'more_events',extensionName:'lth_package')}&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-lg"></i></span></f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <a href="events" class="nav-undecorated">{f:translate(key:'more_events',extensionName:'lth_package')}&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </div>
+                <script id="lthPackageCalendarListTemplate" type="text/x-jquery-templ">
+                    <a href="###link###" id="###id###" class="nav-block nav-block-plaster-25 p-3 nmx-3 d-flex flex-row align-items-center">
+                        <div class="calendar-list-date">
+                            <h1 class="m-0">###date###</h1>
+                            <p class="m-0">###month###</p>
+                        </div>
+                        <div class="ml-3">
+                            <p class="mb-2 font-size-sm"><date datetime="###dateTime###">###dateTime###</date> | ###categoryName###</p>
+                            <p class="m-0"><span class="nav-block-link">###title###</span></p>
+                        </div>
+                    </a>
+                </script>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.layout}=='single'">
+            <f:then>
+                <div id="lthPackageCalendarShow" class="border-bottom pb-3"></div>
+                <div>
+                    <a id="lthPackagePrevBtn" href="javascript:" class="btn btn-warning">Prev</a>
+                    <a id="lthPackageNextBtn" href="javascript:" class="btn btn-primary">Next</a>
+                </div>
+            </f:then>
+        </f:if>
+        <input type="hidden" id="lthPackageCalId" value="{data.pi_flexform.calId}"/>
+        <!-- <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                  
+                <div class="modal-footer">
+                    <button id="prev-btn-modal" class="btn btn-warning">Prev</button>
+                    <button id="next-btn-modal" class="btn btn-primary">Next</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+    </f:section>
+</html>

@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <f:for each="{data.pi_flexform.imageItems}" as="imageItem">
+            <figure class="figure">
+                <f:image src="{imageItem.uid}" treatIdAsReference="1" class="figure-img img-fluid m-0" width="NULL" height="NULL" />
+                <f:if condition="{imageItem.description}">
+                    <figcaption class="figure-caption bg-dark text-white p-2">{imageItem.description}</figcaption>
+                </f:if>
+            </figure>
+        </f:for>
+    </f:section>
+</html>

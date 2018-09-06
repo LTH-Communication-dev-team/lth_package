@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <f:if condition="{data.tx_lthpackage_breadcrumb}">
+            <f:then>
+                <div class="container-fluid mw-lg-xl border-bottom border-lg-0 px-2 px-lg-3 py-2 pt-lg-3 pb-lg-0">
+                    <nav aria-label="breadcrumb">
+                        <f:render partial="Structure/HeaderBreadCrumb" arguments="{_all}"/>
+                    </nav>
+                </div>
+            </f:then>
+        </f:if>
+        
+        <main role="main" class="my-4 my-lg-{f:if(condition:subsitetitle,then:'5',else:'8')}">
+            <f:if condition="{subsitetitle}">
+                <f:then>
+                    <div class="container">
+                        <div class="row p-3">
+                            <div class="col p-3 bg-plaster-25">
+                                <h1 class="h3 my-0"><a href="#" class="">{subsitetitle}</a></h1>
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+            </f:if>
+            <f:if condition="{data.tx_lthpackage_leftnav}">
+                <f:then>
+                    <div class="container">
+                        <div class="row">
+                            <div id="subnavigation" class="d-none d-lg-block col-lg-3 col-xl-3 collapse">
+                                <f:render partial="Navigation/Subnavigation" arguments="{_all}"/>
+                            </div>
+                            <f:if condition="{f:cObject(typoscriptObjectPath:'lib.dynamicContent',data:'2')}">
+                                <f:then>
+                                    <div class="col-12 col-lg-6 col-xl-6 mb-6 mb-lg-0">
+                                        <article>
+                                            <h1>{pageTitle}</h1>
+                                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+                                        </article>
+                                    </div>
+                                    <div class="col-12 col-lg-3 col-xl-3">
+                                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <div class="col-12 col-lg-9 col-xl-9 mb-9 mb-lg-0">
+                                        <article>
+                                            <h1>{pageTitle}</h1>
+                                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+                                        </article>
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-xl-6">
+                                <div class="border-top border-dark mt-5 py-3">
+                                    <f:format.raw>{author}</f:format.raw>
+                                </div>            
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+            </f:if>
+                
+        </main>          
+    </f:section>
+</html>

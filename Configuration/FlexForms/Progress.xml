@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <sofar>
+                        <TCEforms>
+                            <label>Step width so far</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default>5</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">5%</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">10%</numIndex>
+                                        <numIndex index="1">10</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">15%</numIndex>
+                                        <numIndex index="1">15</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">20%</numIndex>
+                                        <numIndex index="1">20</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">25%</numIndex>
+                                        <numIndex index="1">25</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">25%</numIndex>
+                                        <numIndex index="1">25</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">30%</numIndex>
+                                        <numIndex index="1">30</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">35%</numIndex>
+                                        <numIndex index="1">35</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">40%</numIndex>
+                                        <numIndex index="1">40</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">45%</numIndex>
+                                        <numIndex index="1">45</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">50%</numIndex>
+                                        <numIndex index="1">50</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">55%</numIndex>
+                                        <numIndex index="1">55</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">60%</numIndex>
+                                        <numIndex index="1">60</numIndex>
+                                    </numIndex>
+                                    <numIndex index="13" type="array">
+                                        <numIndex index="0">65%</numIndex>
+                                        <numIndex index="1">65</numIndex>
+                                    </numIndex>
+                                    <numIndex index="14" type="array">
+                                        <numIndex index="0">70%</numIndex>
+                                        <numIndex index="1">70</numIndex>
+                                    </numIndex>
+                                    <numIndex index="15" type="array">
+                                        <numIndex index="0">75%</numIndex>
+                                        <numIndex index="1">75</numIndex>
+                                    </numIndex>
+                                    <numIndex index="16" type="array">
+                                        <numIndex index="0">80%</numIndex>
+                                        <numIndex index="1">80</numIndex>
+                                    </numIndex>
+                                    <numIndex index="17" type="array">
+                                        <numIndex index="0">85%</numIndex>
+                                        <numIndex index="1">85</numIndex>
+                                    </numIndex>
+                                    <numIndex index="18" type="array">
+                                        <numIndex index="0">90%</numIndex>
+                                        <numIndex index="1">90</numIndex>
+                                    </numIndex>
+                                    <numIndex index="19" type="array">
+                                        <numIndex index="0">95%</numIndex>
+                                        <numIndex index="1">95</numIndex>
+                                    </numIndex>
+                                    <numIndex index="20" type="array">
+                                        <numIndex index="0">100%</numIndex>
+                                        <numIndex index="1">100</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </sofar>            
+                    <steps>
+                        <section>1</section>
+                        <type>array</type>
+                        <el>
+                            <container>
+                                <title>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:progress.item</title>
+                                <type>array</type>
+                                <el>
+                                    <step>
+                                        <TCEforms>
+                                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:progress.item</label>
+                                            <config>
+                                                <type>text</type>
+                                                <cols>24</cols>
+                                                <rows>3</rows>
+                                            </config>
+                                        </TCEforms>
+                                    </step>
+                                    <currentstep>
+                                        <TCEforms>
+                                            <label>Current Step</label>
+                                            <config>
+                                                <type>check</type>
+                                            </config>
+                                        </TCEforms>
+                                    </currentstep>
+                                </el>
+                            </container>
+                        </el>
+                    </steps>                    
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

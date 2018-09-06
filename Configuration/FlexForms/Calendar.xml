@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <layout>
+                        <TCEforms>
+                            <label>Layout</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <default>cards</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Cards</numIndex>
+                                        <numIndex index="1">cards</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Event cards</numIndex>
+                                        <numIndex index="1">eventcards</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">List</numIndex>
+                                        <numIndex index="1">list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Single</numIndex>
+                                        <numIndex index="1">single</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </layout>
+                    <subheader>
+                        <TCEforms>
+                            <label>Subheader</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </subheader>
+                    <calId>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:calender_id</label>
+                            <config>
+                            <type>select</type>
+                                <size>10</size>
+                                <autoSizeMax>40</autoSizeMax>
+                                <minitems>0</minitems>
+                                <maxitems>40</maxitems>
+                                <itemsProcFunc>user_lthpackageflex_addFieldsToFlexForm->getCalendarIds</itemsProcFunc>
+                            </config>
+                        </TCEforms>
+                    </calId>
+                    <listingPage>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:listing_page</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>0</minitems>
+                                <show_thumbs>1</show_thumbs>
+                                <wizards>
+                                    <suggest>
+                                        <type>suggest</type>
+                                        <default>
+                                            <searchWholePhrase>1</searchWholePhrase>
+                                        </default>
+                                    </suggest>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </listingPage>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <main role="main" class="">
+            <div class="container-fluid mx-0 px-0 nav-undecorated">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+            </div>
+            <div class="container" style="margin-top:30px;">
+                <div class="row">
+                    <div id="subnavigation" class="d-none d-lg-block col-lg-3 col-xl-3 collapse">
+                        <f:render partial="Navigation/Subnavigation" arguments="{_all}"/>
+                    </div>
+                    <div class="col-12 col-lg-9 col-xl-9 mb-9 mb-lg-0">
+                        <article>
+                            <h1>{pageTitle}</h1>
+                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1'}"/>
+                        </article>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-6">
+                        <div class="border-top border-dark mt-5 py-3">
+                            <f:format.raw>{author}</f:format.raw>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </main>
+    </f:section>
+</html>

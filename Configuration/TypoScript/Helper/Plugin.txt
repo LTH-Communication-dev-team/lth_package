@@ -1,0 +1,23 @@
+plugin.tx_powermail {
+    view {
+        templateRootPaths {
+            1 = EXT:lth_package/Resources/Private/Templates/Powermail/
+            2 = EXT:powermail/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:lth_package/Resources/Private/Partials/Powermail/
+            2 = EXT:powermail/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:lth_package/Resources/Private/Layouts/Powermail/
+            2 = EXT:powermail/Resources/Private/Layouts/
+        }
+    }
+}
+
+plugin.tx_felogin_pi1 {
+  #templateFile = fileadmin/templates/felogin/template.html
+  storagePid = 1534,{$grsp}
+  recursive = 250
+  redirectMode = login
+}

@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{subnavigation}">
+        <f:then>
+            <ul class="nav-accordion nav-collapse nav-undecorated">
+                <f:render section="SubnavigationItem" arguments="{menu:subnavigation}" />
+            </ul>
+        </f:then>
+    </f:if>
+    <f:section name="SubnavigationItem">
+        <f:for each="{menu}" as="item" iteration="iterator">
+            <f:if condition="{item.children}">
+                <f:then>
+                    <li>
+                        <a title="{item.title}" href="{item.link}" class="nav-link collapse {f:if(condition:item.active,then:'active',else:'collapsed')}">
+                            <div class="float-right"><i class="fal fa-chevron-right"></i></div>{item.title}
+                        </a>
+                        <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}" id="{item.title}">
+                            <f:render section="SubnavigationItem" arguments="{menu:item.children}" />
+                        </ul>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li><a title="{item.title}" href="{item.link}" class="nav-link">{item.title}</a></li>
+                </f:else>
+            </f:if>
+        </f:for>
+    </f:section>
+</html>

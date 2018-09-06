@@ -1,0 +1,256 @@
+0. Skapa ev tabellen i ext_tables.sql
+
+
+1. Configuration\PageTS\Mod\Wizards\newContentElement.txt
+    Klistra in:
+                lth_package_###elementname### {
+                    iconIdentifier = content-lthpackage-###elementname###
+                    title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###
+                    description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###.description
+                    tt_content_defValues {
+                        CType = ###elementname###
+                    }
+                }
+
+
+2. Configuration\PageTS\TCEFORM.txt
+    Här kan man ändra layoutfältet
+
+
+3. Configuration\TCA\Overrides\tt_content_element_###elementname###.php
+    Skapa en ny fil enligt mönstret ovan med innehållet:
+                defined('TYPO3_MODE') || die();
+
+                /***************
+                 * Add Content Element
+                 */
+                if (!is_array($GLOBALS['TCA']['tt_content']['types']['###elementname###'])) {
+                    $GLOBALS['TCA']['tt_content']['types']['###elementname###'] = [];
+                }
+
+                /***************
+                 * Add content element to seletor list
+                 */
+                \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+                    'tt_content',
+                    'CType',
+                    [
+                        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###',
+                        '###elementname###',
+                        'content-lthpackage-###elementname###'
+                    ],
+                    '--div--',
+                    'after'
+                );
+
+                /***************
+                 * Assign Icon
+                 */
+                $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['###elementname###'] = 'content-lthpackage-###elementname###';
+
+                $GLOBALS['TCA']['tt_content']['types']['###elementname###'] = array_replace_recursive(
+                    $GLOBALS['TCA']['tt_content']['types']['###elementname###'],
+                    [
+                        'showitem' => '
+                            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+                                --palette--;;,
+                            pi_flexform;,                                
+     
+                            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                                --palette--;;language,
+                                
+                            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                                --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.visibility;visibility,
+                                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+                                
+                            --div--;Categories,
+                                categories,
+                                
+                            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+                        '
+                    ]
+                );
+
+                /***************
+                 * Register fields
+                 */
+                /*$GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
+                    $GLOBALS['TCA']['tt_content']['columns'],
+                    [
+                        'external_media_source' => [
+                            'label' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:field.external_media_source',
+                            'config' => [
+                                'type' => 'input',
+                                'size' => 50,
+                                'eval' => 'trim',
+                                'max' => 1024,
+                            ]
+                        ],
+                        'external_media_ratio' => [
+                            'label' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:field.external_media_ratio',
+                            'config' => [
+                                'type' => 'select',
+                                'renderType' => 'selectSingle',
+                                'items' => [
+                                    ['16:9', '16by9'],
+                                    ['4:3', '4by3'],
+                                ]
+                            ]
+                        ]
+                    ]
+                );
+                */
+                /***************
+                 * Register palettes
+
+                $GLOBALS['TCA']['tt_content']['palettes']['external_media'] = [
+                    'showitem' => '
+                        external_media_source, --linebreak--,
+                        external_media_ratio
+                    '
+                ];*/
+
+                /***************
+                 * Add flexForms for content element configuration
+                 */
+                \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+                    '*',
+                    'FILE:EXT:lth_package/Configuration/FlexForms/###Elementname###.xml',
+                    '###elementname###'
+                );
+
+
+4. Configuration\FlexForms\###Elementname###.xml /*FLEXFORM */
+    Om definition ovan, skapa ny fil.
+
+
+5. Configuration\TypoScript\setup.txt
+    Klistra in:
+                <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/###Elementname###.txt">
+
+
+6. Skapa ny fil: Configuration\TypoScript\ContentElement\###Elementname###.txt
+
+    Med innehåll:
+                #################################################
+                #### CTYPE: LTH PACKAGE SHOW ###elementname### ####
+                #################################################
+
+                tt_content.###elementname### >
+                tt_content.###elementname### = FLUIDTEMPLATE
+                tt_content.###elementname### {
+
+                    ################
+                    ### TEMPLATE ###
+                    ################
+                    templateName = ###elementname###
+                    templateRootPaths {
+                        0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
+                        #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
+                        20 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+                    }
+                    partialRootPaths {
+                        0 = EXT:lth_package/Resources/Private/Partials/ContentElements/
+                        10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+                        20 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
+                    }
+                    layoutRootPaths {
+                        0 = EXT:lth_package/Resources/Private/Layouts/ContentElements/
+                        #10 = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+                        20 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/
+                    }
+
+                    ##########################
+                    ### DATA PREPROCESSING ###
+                    ##########################
+                    dataProcessing {
+                        10 = LTH\LthPackage\DataProcessing\FlexFormProcessor
+                    }
+
+                }
+
+
+7. Resources\Private\Language\Backend.xlf
+    Klistra in:
+
+                <trans-unit id="content_element.###elementname###">
+                    <source>Show news</source>
+                </trans-unit>
+                <trans-unit id="content_element.###elementname###.description">
+                    <source>Insert Show news with different contents (header / text with image / pure HTML)</source>
+                </trans-unit>
+                <trans-unit id="###elementname###">
+                    <source>Show news</source>
+                </trans-unit>
+                <trans-unit id="###elementname###.options">
+                    <source>Show news Options</source>
+                </trans-unit>
+                <trans-unit id="###elementname###_item">
+                    <source>Show news Item</source>
+                </trans-unit>
+                <trans-unit id="###elementname###_item.tt_content">
+                    <source>Show news</source>
+                </trans-unit>
+
+
+8. Skapa ny fil: Resources\Private\Templates\ContentElements\###Elementname###.html med innehåll:
+                <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+                <f:layout name="Default"/>
+                <f:section name="Header">
+
+                    <f:render partial="Header/All" arguments="{_all}" />
+
+                </f:section>
+                <f:section name="Main">
+                    <form>
+                        <div id="lthPackageContent">
+
+                        </div>
+                        <input type="hidden" name="lthPackageAction" id="lthPackageAction" value = "publications" />
+                        <input type="hidden" name="whatToDisplay" id="whatToDisplay" value = "{data.pi_flexform.whatToDisplay}" />
+                        <input type="hidden" name="categorySelection" id="categorySelection" value = "{data.pi_flexform.categorySelection}" />
+                    </form>
+
+                </f:section>
+
+                <!-- Detta är bara ett exempel. Mkt viktig fil -->
+                </html>
+
+9. ext_tables.php
+
+    Klistra in:
+                $iconRegistry->registerIcon(
+                    'content-lthpackage-###elementname###',
+                    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/###elementname###.svg']
+                );
+
+    Kopiera en annan ikon-fil och spara som: Resources/Public/Icons/ContentElements/###elementname###.svg
+
+
+10. Töm cachen! Inifrån typo3 och radera typo3temp-filerna.
+
+
+
+20 {
+            table = tx_lthpackage_promos_item
+            pidInList.field = pid
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+            orderBy = sorting
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = background_image
+                    as = backgroundImage
+                }
+                20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                20 {
+                    references.fieldName = image
+                    as = images
+                }
+            }
+        }

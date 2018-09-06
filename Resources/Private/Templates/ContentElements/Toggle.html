@@ -1,0 +1,105 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+        <f:if condition="{data.pi_flexform.toggletype}=='accordion'">
+            <f:then>
+                <div id="{data.uid}-toggle-accordion" class="accordion">
+                    <f:for each="{data.pi_flexform.toggleItem}" as="toggleItem" iteration="iterator">
+                        <div class="card">
+                            <div class="card-header" id="heading{iterator.index}">
+                                <h5>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{iterator.index}" aria-expanded="{f:if(condition:iterator.isFirst,then:'true',else:'false')}" aria-controls="collapse{iterator.index}">
+                                        <div class="float-right"><i class="fal fa-chevron-right"></i></div>{toggleItem.toggleshowhide}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse{iterator.index}" class="collapse{f:if(condition: iterator.isFirst,then:' show')}" aria-labelledby="heading{iterator.index}" data-parent="#{data.uid}-toggle-accordion">
+                                <div class="card-body">
+                                    <f:format.raw><p>{toggleItem.bodytext}</p></f:format.raw>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.toggletype}=='cardA'">
+            <f:then>
+                
+                <div id="{data.uid}-toggle-cardA" class="expand expand-show bg-{data.pi_flexform.backgroundcolor} mb-3">
+                    <div class="expand-content">
+                        <div class="expand-content-lead">
+                            <div class="row">
+				<div class="col flex-grow-1">
+                                    <f:format.raw>{data.pi_flexform.teaser}</f:format.raw>
+				</div>
+                                <f:if condition="{data.pi_flexform.imageItems.0}">
+                                    <f:then>
+                                        <div class="col flex-grow-0">
+                                            <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" class="" />
+                                        </div>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                        <div class="expand-content-body">
+                            <f:format.raw>{data.pi_flexform.bodytext}</f:format.raw>
+                        </div>
+                    </div>
+                    <div class="expand-control">
+                        <div class="expand-closed">
+                            {data.pi_flexform.toggleShow}&nbsp;<span class="ml-1"><i class="fal fa-chevron-down"></i></span>
+                        </div>
+                        <div class="expand-open">
+                            {data.pi_flexform.toggleHide}&nbsp;<span class="ml-1"><i class="fal fa-chevron-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.toggletype}=='cardB'">
+            <f:then>
+                <div id="{data.uid}-toggle-cardB" class="expand expand-show bg-{data.pi_flexform.backgroundcolor} mb-3">
+                    <div class="expand-content">
+                        <div class="expand-content-lead">
+                            <p><img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" style="width:100%;height:auto;" /></p>
+                        </div>
+                        <div class="expand-content-body">
+                            <f:format.raw>{data.pi_flexform.bodytext}</f:format.raw>
+                        </div>
+                    </div>
+                    <div class="expand-control">
+                        <div class="expand-closed">
+                            {data.pi_flexform.toggleShow}&nbsp;<span class="ml-1"><i class="fal fa-chevron-down"></i></span>
+                        </div>
+                        <div class="expand-open">
+                            {data.pi_flexform.toggleHide}&nbsp;<span class="ml-1"><i class="fal fa-chevron-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.toggletype}=='cardC'">
+            <f:then>
+                <div id="{data.uid}-toggle-cardC" class="expand expand-show bg-{data.pi_flexform.backgroundcolor} mb-3">
+                    <div class="expand-content">
+                        <div class="expand-content-lead">
+                            <f:format.raw>{data.pi_flexform.teaser}</f:format.raw>
+                        </div>
+                        <div class="expand-content-body">
+                            <f:format.raw>{data.pi_flexform.bodytext}</f:format.raw>
+                        </div>
+                    </div>
+                    <div class="expand-control">
+                        <div class="expand-closed">
+                            {data.pi_flexform.toggleShow}&nbsp;<span class="ml-1"><i class="fal fa-chevron-down"></i></span>
+                        </div>
+                        <div class="expand-open">
+                            {data.pi_flexform.toggleHide}&nbsp;<span class="ml-1"><i class="fal fa-chevron-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+        </f:if> 
+    </f:section>
+</html>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="sv" datatype="plaintext" original="messages" date="2018-04-12T09:11:39Z"
+          product-name="lth_package">
+        <header/>
+        <body>
+
+            <trans-unit id="skiptomaincontent">
+                <source>Skip to main content</source>
+            </trans-unit>
+
+            <trans-unit id="scrolltop">
+                <source>Scroll to top</source>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb">
+                <source>You are here:</source>
+            </trans-unit>
+
+            <trans-unit id="previous">
+                <source>Previous</source>
+            </trans-unit>
+
+            <trans-unit id="next">
+                <source>Next</source>
+            </trans-unit>
+
+            <trans-unit id="externalmediaunsupported">
+                <source>The external media source %s is not supported. Please provide a valid YouTube or Vimeo URL.</source>
+            </trans-unit>
+            
+            <trans-unit id="pages.lth_package_headnav">
+                <source>Header navigation</source>
+            </trans-unit>
+            
+            <trans-unit id="menu">
+                <source>Menu</source>
+                <target>Meny</target>
+            </trans-unit>
+            
+            <trans-unit id="hide_menu">
+                <source>Hide menu</source>
+                <target>Göm meny</target>
+            </trans-unit>
+            
+            <trans-unit id="listen">
+                <source>Listen</source>
+                <target>Lyssna</target>
+            </trans-unit>
+            
+            <trans-unit id="search">
+                <source>Search</source>
+                <target>Sök</target>
+            </trans-unit>
+            
+            <trans-unit id="cookie.consent">
+                <source>This site uses cookies to enhance the user experience. By continuing to use the site you agree that cookies are used according to our</source>
+                <target>Den här webbplatsen använder cookies för att förbättra användarupplevelsen. Genom att fortsätta använda webbplatsen samtycker du till att cookies används enligt vår</target>
+            </trans-unit>
+            
+            <trans-unit id="cookie.policy">
+                <source>Cookie Policy</source>
+                <target>cookie-policy</target>
+            </trans-unit>
+            
+            <trans-unit id="close">
+                <source>Close</source>
+                <target>Stäng</target>
+            </trans-unit>
+            
+            <trans-unit id="to_lund_university">
+                <source>To Lund University</source>
+                <target>Till Lunds Universitet</target>
+            </trans-unit>
+            
+            <trans-unit id="info_for">
+                <source>Info for</source>
+                <target>Info för</target>
+            </trans-unit>
+            
+            <trans-unit id="language_selector">
+                <source>Svenska</source>
+                <target>English</target>
+            </trans-unit>
+            
+            <trans-unit id="calendar">
+                <source>Calendar</source>
+                <target>Kalendarium</target>
+            </trans-unit>
+            
+            <trans-unit id="more_events">
+                <source>More events</source>
+                <target>Fler händelser</target>
+            </trans-unit>
+            
+            <trans-unit id="contact">
+                <source>Contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            
+            <trans-unit id="read_more">
+                <source>Read more</source>
+                <target>Läs mer</target>
+            </trans-unit>
+            
+            <trans-unit id="login">
+                <source>Login</source>
+                <target>Logga in</target>
+            </trans-unit>
+            
+            <trans-unit id="logout">
+                <source>Logout</source>
+                <target>Logga ut</target>
+            </trans-unit>
+            
+            <trans-unit id="menu">
+                <source>Menu</source>
+                <source>Meny</source>
+            </trans-unit>
+            
+            <trans-unit id="more_events">
+                <source>More events</source>
+                <source>Fler händelser</source>
+            </trans-unit>
+            
+            <trans-unit id="search">
+                <source>Search</source>
+                <source>Sök</source>
+            </trans-unit>
+            
+            <trans-unit id="show_and_hide_searchfield">
+                <source>Show and hide searchfield</source>
+                <source>Visa och dölj sökfält</source>
+            </trans-unit>
+           
+           <trans-unit id="show_menu">
+                <source>Show menu</source>
+                <source>Visa meny</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

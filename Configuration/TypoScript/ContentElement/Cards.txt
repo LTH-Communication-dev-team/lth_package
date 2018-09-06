@@ -1,0 +1,44 @@
+#################################################
+########### CTYPE: LTH PACKAGE CARDS ############
+#################################################
+
+tt_content.cards >
+tt_content.cards = FLUIDTEMPLATE
+tt_content.cards {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = cards
+    templateRootPaths {
+        0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        0 = EXT:lth_package/Resources/Private/Partials/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
+    }
+    layoutRootPaths {
+        0 = EXT:lth_package/Resources/Private/Layouts/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = LTH\LthPackage\DataProcessing\FlexFormProcessor
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+                references {
+                        table = tt_content
+                        fieldName = image
+                }
+                as = images
+        }
+    }
+
+}

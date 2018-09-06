@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{responsive}">
+        <f:then>
+            <ul class="nav-accordion nav-undecorated border-0 nav-collapse font-size-sm">
+                <f:render section="ResponsiveNavigationItem" arguments="{menu:responsive}" />
+                <li>
+                    <a class="nav-link" href="#"><i class="fal fa-bullhorn"></i> {f:translate(key:'listen',extensionName:'lth_package')}</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#"><i class="fal fa-globe"></i> {f:translate(key:'language_selector',extensionName:'lth_package')}</a>
+                </li>
+                <li>
+                </li>
+            </ul>
+        </f:then>
+    </f:if>
+    <f:section name="ResponsiveNavigationItem">
+        <f:for each="{menu}" as="item" iteration="iterator">
+            <f:if condition="{item.children}">
+                <f:then>
+                    <li>
+                        <a title="{item.title}" href="#sm-{item.title}" class="nav-link collapse {f:if(condition:item.active,then:'active',else:'collapsed')}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="sm-{item.title}">
+                            <div class="float-right"><i class="fal fa-chevron-right"></i></div>{item.title}
+                        </a>
+                        <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}" id="sm-{item.title}">
+                            <f:render section="SubnavigationItem" arguments="{menu:item.children}" />
+                        </ul>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li><a title="{item.title}" href="{item.link}" class="nav-link">{item.title}</a></li>
+                </f:else>
+            </f:if>
+        </f:for>
+    </f:section>
+</html>

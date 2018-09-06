@@ -1,0 +1,32 @@
+#################################################
+################ CTYPE: INFOBOX ################
+#################################################
+
+tt_content.infobox >
+tt_content.infobox = FLUIDTEMPLATE
+tt_content.infobox {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Infobox
+    templateRootPaths {
+        0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:lth_package/Resources/Private/Partials/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+    }
+    layoutRootPaths {
+        0 = EXT:lth_package/Resources/Private/Layouts/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = LTH\LthPackage\DataProcessing\FlexFormProcessor
+    }
+}

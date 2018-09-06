@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <script id="solrTemplate" type="text/x-jquery-templ">
+        <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#1a">Översikt</a></li>
+      <li><a data-toggle="tab" href="#2a">Cite</a></li>
+      <li><a data-toggle="tab" href="#3a">Bibtex</a></li>
+    </ul>
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="1a">
+                <div id="lthsolrAbstract">
+                    <div class="textblock more-content" style="height: 80px; overflow: hidden;">###abstract###</div>
+
+                    <a href="#" onclick="showMore();return false;" class="readmore" data-height="144">###more###</a>
+                </div>
+
+                <div>
+                    ###authors###
+                    ###organisations###
+                    ###externalOrganisations###
+                    ###keywords_uka###
+                    ###keywords_user###
+                    ###language###
+                    ###pages###
+                    ###numberOfPages###
+                    ###journalTitle###
+                    ###volume###
+                    ###journalNumber###
+                    ###publicationStatus###
+                    ###peerReview###
+                </div>
+            </div>
+
+            <div class="tab-pane" id="2a">
+                ###cite###
+            </div>
+
+            <div class="tab-pane" id="3a">
+                ###bibtex###
+            </div>
+
+        </div>
+
+    </script>
+</html>
