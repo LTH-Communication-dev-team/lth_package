@@ -4,8 +4,8 @@ defined('TYPO3_MODE') || die();
 /***************
  * Add Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['cards'])) {
-    $GLOBALS['TCA']['tt_content']['types']['cards'] = [];
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['teasercards'])) {
+    $GLOBALS['TCA']['tt_content']['types']['teasercards'] = [];
 }
 
 /***************
@@ -15,9 +15,9 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['cards'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.cards',
-        'cards',
-        'content-lthpackage-cards'
+        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards',
+        'teasercards',
+        'content-lthpackage-teasercards'
     ],
     '--div--',
     'after'
@@ -26,10 +26,10 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['cards'])) {
 /***************
  * Assign Icon
  */
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['cards'] = 'content-lthpackage-cards';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['teasercards'] = 'content-lthpackage-teasercards';
 
-$GLOBALS['TCA']['tt_content']['types']['cards'] = array_replace_recursive(
-    $GLOBALS['TCA']['tt_content']['types']['cards'],
+$GLOBALS['TCA']['tt_content']['types']['teasercards'] = array_replace_recursive(
+    $GLOBALS['TCA']['tt_content']['types']['teasercards'],
     [
         'showitem' => '
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
@@ -95,6 +95,6 @@ $GLOBALS['TCA']['tt_content']['palettes']['external_media'] = [
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     '*',
-    'FILE:EXT:lth_package/Configuration/FlexForms/Cards.xml',
-    'cards'
+    'FILE:EXT:lth_package/Configuration/FlexForms/Teasercards.xml',
+    'teasercards'
 );

@@ -11,17 +11,20 @@
 ##########################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Banner.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Calendar.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Cards.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Card.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Carousel.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Embed.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Figure.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infobox.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infographics.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Nav.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Navigation.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Masonry.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Progress.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Teasercards.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Title.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Toggle.txt">
+
+lib.stdheader.10.2.wrap = <h1>|</h1>
 
 ##############
 #### PAGE ####
@@ -92,7 +95,6 @@ page {
                 special = rootline
                 special.range = 0|-1
                 includeNotInMenu = 1
-                as = breadcrumb
                 if {
                     value = {$page.theme.breadcrumbEnableLevel}
                     value {
@@ -104,26 +106,36 @@ page {
                         data = level
                     }
                 }
+                as = breadcrumbNavigation
             }
             40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             40 {
-                special = language
-                special.value = {$page.theme.language.languageValue}
-                as = languagenavigation
-                if {
-                    isTrue = {$page.theme.language.languageValue}
-                }
+                entryLevel = {$mainNavigationEntryLevel}
+                levels = 7
+                expandAll = 1
+                includeSpacer = 1
+                includeNotInMenu = 1
+                as = mobileNavigation
             }
-            50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            50 {
-                special = {$page.theme.meta.navigationType}
-                special.value = {$page.theme.meta.navigationValue}
-                includeNotInMenu = {$page.theme.meta.includeNotInMenu}
-                as = metanavigation
-                if {
-                    isTrue = {$page.theme.meta.navigationValue}
-                }
-            }
+            #40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            #40 {
+            #    special = language
+            #    special.value = {$page.theme.language.languageValue}
+            #    as = languagenavigation
+            #    if {
+            #        isTrue = {$page.theme.language.languageValue}
+            #    }
+            #}
+            #50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            #50 {
+            ##    special = {$page.theme.meta.navigationType}
+            #    special.value = {$page.theme.meta.navigationValue}
+            #    includeNotInMenu = {$page.theme.meta.includeNotInMenu}
+            #    as = metanavigation
+             #   if {
+            #        isTrue = {$page.theme.meta.navigationValue}
+            #    }
+            #}
         }
 
         ################
@@ -161,7 +173,7 @@ page {
         #################
         variables {
             pageTitle = TEXT
-            pageTitle.data = page:title
+            pageTitle.data = page:subtitle // page:nav_title // page:title
             siteTitle = TEXT
             siteTitle.data = TSFE:tmpl|setup|sitetitle
             rootPage = TEXT
@@ -181,6 +193,8 @@ page {
             headnav.data = levelfield: -1, tx_lthpackage_headnav, slide
             headnavdrop = TEXT
             headnavdrop.data = levelfield: -1, tx_lthpackage_headnavdrop, slide
+            otherLanguageLink = TEXT
+            otherLanguageLink.lang.sv = english
             subsitetitle = TEXT
             subsitetitle.data = levelfield: -1, tx_lthpackage_subsitetitle, slide
             username = TEXT
@@ -292,19 +306,25 @@ page {
     }
 
     includeCSS {
-        f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
-        googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
-        toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
+        #f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
+        #googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
+        #toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
         lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
+        maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.css
     }
 
     includeJSFooterlibs {
         
         #jQuery = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery-3.3.1.min.js
-        #bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        #
         #bootstrapbundlemin = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.bundle.min.js
-        toolkitjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/toolkit.js
+        #toolkitjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/toolkit.js
+        mainminjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/main.min.js
+        bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        fontawesomemin = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/fontawesome.min.js
+        rwdImageMaps = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery.rwdImageMaps.min.js
         #masonry = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/masonry.pkgd.min.js
+        typeaheadbundlejs = typo3conf/ext/lth_package/Resources/Public/JavaScript/typeahead.bundle.js
         lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
     }
 

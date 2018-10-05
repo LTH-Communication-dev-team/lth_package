@@ -19,10 +19,9 @@
                         <div class="carousel-inner">
                             <f:for each="{data.pi_flexform.imageItems}" as="imageItem" iteration="iterator">
                                 <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}">
-                                    <div class="nav-block h-100">
-					<a href="slide1.html" class="carousel-img-container">
+                                        <f:link.typolink parameter="{imageItem.link}" class="nav-block h-100">
                                             <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" class="carousel-img" />
-                                        </a>
+                                        </f:link.typolink>
 					<div class="carousel-caption">
                                             <div class="container">
 						<p>
@@ -30,7 +29,6 @@
 						</p>
                                             </div>
 					</div>
-                                    </div>
                                 </div>
                             </f:for>    
                         </div>

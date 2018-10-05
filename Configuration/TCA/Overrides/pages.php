@@ -85,22 +85,6 @@ call_user_func(
                             'rows' => '3'
 			]
 		],
-                'tx_lthpackage_leftnav' => [
-			'exclude' => 1,
-			'label'   => 'Show left navigation',
-			'config' => [
-				'type' => 'check',
-                                'default' => '1'
-			]
-		],
-                'tx_lthpackage_breadcrumb' => [
-			'exclude' => 1,
-			'label'   => 'Show breadcrumb navigation',
-			'config' => [
-				'type' => 'check',
-                                'default' => '1'
-			]
-		],
                 'tx_lthpackage_subsitetitle' => [
 			'exclude' => 1,
 			'label'   => 'Show sub site title',

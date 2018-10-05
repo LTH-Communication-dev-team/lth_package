@@ -1,15 +1,43 @@
-css-filer
+css-filer: Z:\typo3conf\ext\lth_package\Resources\Public\Css
+        Dist: komprimerade filer som används i produktion
 
-Javascript-filer
+Javascript-filer: Z:\typo3conf\ext\lth_package\Resources\Public\JavaScript
+        Dist: komprimerade filer som används i produktion
+        
 
-Typoscript
+Typoscript: Z:\typo3conf\ext\lth_package\Configuration\Typoscript
 
-Huvudmall: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Default.html
 
-main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Default.html
 
-News: Z:\typo3conf\ext\lth_package\Resources\Private\Templates\News\Styles\News\List.html
+Huvudmallar: 
+        Default: 
+            Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
+            Valfri toppbild, breadcrumb, vänsternavigering article och högerkolumn samt footer. 
+            Mallsida: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Default.html
+            - Mobil navigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MobileNavigation.html
+            - Top Bar:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\TopBar.html
+            - Header:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Header.html
+                  a. MainNavigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MainNavigation.html
+            - Main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Default.html
+                  a. Content top
+                  b. Bread crumb
+                  c. Left nav
+                  d. Content normal
+                  e. Content right
+            - Footer: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Footer.html
 
-Backend layouts Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
+        Landing page: 
+            - Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\landingpage.txt
+            - En spalt och footer.
+            - Mallsida: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Landingpage.html
+            - Mobil navigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MobileNavigation.html
+            - Top Bar:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\TopBar.html
+            - Header:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Header.html
+                    a. MainNavigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MainNavigation.html
+            - Main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Landingpage.html
+                    a. Content normal
+            - Footer: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Footer.html
+
+
 
 Content elements Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\ContentElements\Default.html

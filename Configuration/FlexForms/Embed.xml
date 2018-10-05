@@ -21,6 +21,182 @@
                             </config>
                         </TCEforms>
                     </embed>
+                    <marginTop>
+                        <TCEforms>
+                            <label>Margin Top</label>
+                            <config>
+                                <type>select</type>
+                                <default>0px</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">0px</numIndex>
+                                        <numIndex index="1">0px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">5px</numIndex>
+                                        <numIndex index="1">5px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">10px</numIndex>
+                                        <numIndex index="1">10px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">15px</numIndex>
+                                        <numIndex index="1">15px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">20px</numIndex>
+                                        <numIndex index="1">20px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">25px</numIndex>
+                                        <numIndex index="1">25px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">30px</numIndex>
+                                        <numIndex index="1">30px</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>0px</default>
+                                <selectedListStyle>width:20px</selectedListStyle>
+                                <itemListStyle>width:20px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </marginTop>
+                    <marginRight>
+                        <TCEforms>
+                            <label>Margin Right</label>
+                            <config>
+                                <type>select</type>
+                                <default>0px</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">0px</numIndex>
+                                        <numIndex index="1">0px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">5px</numIndex>
+                                        <numIndex index="1">5px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">10px</numIndex>
+                                        <numIndex index="1">10px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">15px</numIndex>
+                                        <numIndex index="1">15px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">20px</numIndex>
+                                        <numIndex index="1">20px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">25px</numIndex>
+                                        <numIndex index="1">25px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">30px</numIndex>
+                                        <numIndex index="1">30px</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>0px</default>
+                                <selectedListStyle>width:20px</selectedListStyle>
+                                <itemListStyle>width:20px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </marginRight>
+                    <marginBottom>
+                        <TCEforms>
+                            <label>Margin Bottom</label>
+                            <config>
+                                <type>select</type>
+                                <default>0px</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">0px</numIndex>
+                                        <numIndex index="1">0px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">5px</numIndex>
+                                        <numIndex index="1">5px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">10px</numIndex>
+                                        <numIndex index="1">10px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">15px</numIndex>
+                                        <numIndex index="1">15px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">20px</numIndex>
+                                        <numIndex index="1">20px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">25px</numIndex>
+                                        <numIndex index="1">25px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">30px</numIndex>
+                                        <numIndex index="1">30px</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>0px</default>
+                                <selectedListStyle>width:20px</selectedListStyle>
+                                <itemListStyle>width:20px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </marginBottom>
+                    <marginLeft>
+                        <TCEforms>
+                            <label>Margin Left</label>
+                            <config>
+                                <type>select</type>
+                                <default>0px</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">0px</numIndex>
+                                        <numIndex index="1">0px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">5px</numIndex>
+                                        <numIndex index="1">5px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">10px</numIndex>
+                                        <numIndex index="1">10px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">15px</numIndex>
+                                        <numIndex index="1">15px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">20px</numIndex>
+                                        <numIndex index="1">20px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">25px</numIndex>
+                                        <numIndex index="1">25px</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">30px</numIndex>
+                                        <numIndex index="1">30px</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                                <default>0px</default>
+                                <selectedListStyle>width:20px</selectedListStyle>
+                                <itemListStyle>width:20px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </marginLeft>
                 </el>
             </ROOT>
         </sDEF>

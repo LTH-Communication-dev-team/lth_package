@@ -12,8 +12,10 @@ TCEMAIN {
 }
 
 tx_news.templateLayouts {
-        1 = Top Story and three News
-        2 = Short list
+    1 = List
+    2 = Short list
+    3 = Top Story and three News
+    4 = News Cards in a row or column
 }
 
 
@@ -21,6 +23,25 @@ tx_gridelements {
     overruleRecords = 1
 
     setup {
+        1-col-100 {
+            title = 1 column 100
+            description = 1 column contentelement 100 ratio
+            topLevelLayout = 0
+            config {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Normal
+                                colPos = 11
+                            }
+                        }
+                    }
+                }
+            }
+        }
         2-cols-50-50 {
             title = 2 columns 50-50
             description = 2 columns contentelement 50-50 ratio
@@ -43,7 +64,6 @@ tx_gridelements {
                     }
                 }
             }
-            flexformDS = FILE:EXT:lth_package/Configuration/FlexForms/GridElements.xml
         }
         2-cols-75-25 {
             title = 2 columns 75-25
@@ -69,8 +89,62 @@ tx_gridelements {
             }
         }
         3-cols-33-33-33 {
-            title = 3-Columns
+            title = 3-Columns 33-33-33
             description = 3-columns contentelement
+            topLevelLayout = 0
+            config {
+                colCount = 3
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Normal
+                                colPos = 12
+                            }
+                            3 {
+                                name = Right
+                                colPos = 13
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        3-cols-leftnav-art-right {
+            title = 3-Columns left nav article right
+            description = 3-Columns left nav article right
+            topLevelLayout = 0
+            config {
+                colCount = 3
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Left
+                                colPos = 11
+                            }
+                            2 {
+                                name = Normal
+                                colPos = 12
+                            }
+                            3 {
+                                name = Right
+                                colPos = 13
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        3-cols-left-art-right {
+            title = 3-Columns left article right
+            description = 3-Columns left article right
             topLevelLayout = 0
             config {
                 colCount = 3
@@ -106,20 +180,55 @@ tx_gridelements {
                     1 {
                         columns {
                             1 {
-                                name = Left
+                                name = One
                                 colPos = 11
                             }
                             2 {
-                                name = Normal
+                                name = Two
                                 colPos = 12
                             }
                             3 {
-                                name = Right
+                                name = Three
                                 colPos = 13
                             }
                             4 {
-                                name = Border
+                                name = Four
                                 colPos = 14
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        5-cols-20-20-20-20-20 {
+            title = 5-Columns
+            description = 5-columns contentelement
+            topLevelLayout = 0
+            config {
+                colCount = 5
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = One
+                                colPos = 11
+                            }
+                            2 {
+                                name = Two
+                                colPos = 12
+                            }
+                            3 {
+                                name = Three
+                                colPos = 13
+                            }
+                            4 {
+                                name = Four
+                                colPos = 14
+                            }
+                            5 {
+                                name = Five
+                                colPos = 15
                             }
                         }
                     }

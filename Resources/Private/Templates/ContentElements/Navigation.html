@@ -1,0 +1,78 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+         <f:if condition="{data.pi_flexform.navigationType}=='navigationBlock'">
+            <f:then>
+                <f:render section="NavigationBlockSection" arguments="{uid:data.uid,navblockTitle:data.pi_flexform.navblockTitle,
+                          parentgrid_tx_gridelements_backend_layout:data.parentgrid_tx_gridelements_backend_layout,
+                          navblockLinks:data.pi_flexform.navblockLinks,
+                          navblockLink:data.pi_flexform.navblockLink}" />
+            </f:then>
+         </f:if>
+        <f:if condition="{data.pi_flexform.navigationType}=='subNavigation'">
+            <f:then>
+                <div id="subnavigation" class="d-none d-xl-block collapse">
+                    <f:render partial="Navigation/Subnavigation" arguments="{_all}"/>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.navigationType}=='breadcrumbNavigation'">
+            <f:then>
+                <div class="container pt-2 pt-lg-3 ">
+                    <nav aria-label="breadcrumb">
+                        <f:render partial="Navigation/BreadcrumbNavigation" arguments="{_all}"/>
+                    </nav>
+                </div>
+            </f:then>
+        </f:if>
+    </f:section>
+    <f:section name="NavigationBlockSection">
+        <f:if condition="{navblockTitle}">
+                <f:then>
+                    <f:if condition="{parentgrid_tx_gridelements_backend_layout}=='NavBlockDark'">
+                        <f:then>
+                            <div class="nav-footer mb-3 mb-lg-4">
+                            <a href="#" data-target="#dark-section{uid}" class="text-uppercase font-weight-normal no-events-lg nav-undecorated nav-link collapsed" 
+                               data-toggle="collapse" aria-expanded="false" aria-controls="dark-section{uid}">
+                                <div class="float-right text-dark-25 d-lg-none"><i class="fal fa-chevron-right"></i></div>
+                                {data.pi_flexform.navblockTitle}
+                            </a>
+                        </f:then>
+                    </f:if>
+                    <f:if condition="{parentgrid_tx_gridelements_backend_layout}=='NavBlockLight'">
+                        <f:then>
+                            <h2 class="mt-0 text-black">{data.pi_flexform.navblockTitle}</h2>
+                            <p>{data.pi_flexform.navblockSubtitle}</p>
+                        </f:then>
+                    </f:if>
+                </f:then>
+            </f:if>
+            <f:if condition="{navblockLinks}">
+                <f:then>
+                    <f:if condition="{parentgrid_tx_gridelements_backend_layout}=='NavBlockDark'">
+                        <f:then>
+                            <div class="collapse collapse-lg" id="dark-section{data.uid}">
+                                <ul class="nav flex-column gcpy-2 gcpy-lg-1 gcpx-0">
+                                    <f:for each="{navblockLink}" as="linkItem" iteration="iteration">
+                                        <li class="nav-item"><a href="{linkItem.link}" class="nav-link">{linkItem.linktext}</a></li>
+                                    </f:for>
+                                </ul>
+                            </div>
+                            </div>
+                        </f:then>
+                    </f:if>    
+                    <f:if condition="{parentgrid_tx_gridelements_backend_layout}=='NavBlockLight'">
+                        <f:then>
+                            <div class="nav flex-column border-bottom mt-5">
+                                <f:for each="{navblockLink}" as="linkItem" iteration="iteration">
+                                    <div class="nav-item border-top">
+                                        <a href="{linkItem.link}" class="nav-link py-3 pl-0">{linkItem.linktext} &nbsp;<span class="ml-1 float-right"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
+                                    </div>
+                                </f:for>                    
+                            </div>
+                        </f:then>
+                    </f:if>
+                </f:then>
+            </f:if>
+    </f:section>
+</html>

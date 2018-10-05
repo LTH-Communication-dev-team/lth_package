@@ -6,12 +6,43 @@ plugin.tx_news {
                 partialRootPath = EXT:lth_package/Resources/Private/Partials/News/
                 layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/
         }
-}
-plugin.tx_news {
         view.twb {
                 templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
                 partialRootPath = EXT:lth_package/Resources/Private/Partials/News/Styles/
                 layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/Styles/
                 widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
         }
+}
+
+plugin.tx_powermail {
+    settings {
+        styles {
+            bootstrap {
+              formClasses = 
+              fieldWrappingClasses =
+              labelClasses =
+              offsetClasses =
+            }
+        }
+        cardmain.pid = 0
+        cardmain.confirmation = 0
+        cardmain.optin = 0
+        cardmain.moresteps = 0
+        cardmisc.forceJavaScriptDatePicker = 1
+        cardmisc.htmlForHtmlFields = 1
+        cardmisc.htmlForLabels = 1
+        cardstyles.bootstrap.numberOfColumns = 1
+        cardstyles.framework.numberOfColumns = 0
+        cardstyles.bootstrap.fieldAndLabelWrappingClasses = 
+    }
+}
+
+############
+### PAGE ###
+############
+page {
+    meta {
+        viewport = width=device-width, initial-scale=1
+        compatible = ie=edge
+    }
 }

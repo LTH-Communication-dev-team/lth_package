@@ -8,7 +8,9 @@
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
             </trans-unit>
-            
+            <trans-unit id="tx_gridelements_backend_layout_wizard_label">
+                <source>Sucker</source>
+            </trans-unit>
             <trans-unit id="advanced">
                 <source>Sucker!</source>
             </trans-unit>
@@ -188,6 +190,9 @@
             </trans-unit>
             <trans-unit id="backend_layout.column.left">
                 <source>Left</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.top">
+                <source>Top</source>
             </trans-unit>
             <trans-unit id="frontend_layout.notitle">
                 <source>No title</source>
@@ -430,36 +435,68 @@
                     <source>Figure</source>
                 </trans-unit>
                 
-                <trans-unit id="content_element.cards">
-                    <source>Cards</source>
-                </trans-unit>
-                <trans-unit id="content_element.cards.description">
-                    <source>Cards</source>
-                </trans-unit>
-                <trans-unit id="cards">
-                    <source>Cards</source>
-                </trans-unit>
-                <trans-unit id="cards.options">
-                    <source>Cards Options</source>
-                </trans-unit>
-                <trans-unit id="cards_item">
-                    <source>Cards Item</source>
-                </trans-unit>
-                <trans-unit id="cards_item.tt_content">
-                    <source>Cards</source>
-                </trans-unit>
-                <trans-unit id="cards.title">
-                    <source>Title</source>
-                </trans-unit>
-                <trans-unit id="cards.intro">
-                    <source>Intro</source>
-                </trans-unit>
-                <trans-unit id="cards.card">
+                <trans-unit id="content_element.card">
                     <source>Card</source>
                 </trans-unit>
-                <trans-unit id="cards.backgroundcolor">
+                <trans-unit id="content_element.card.description">
+                    <source>Card</source>
+                </trans-unit>
+                <trans-unit id="card">
+                    <source>Card</source>
+                </trans-unit>
+                <trans-unit id="card.options">
+                    <source>Card Options</source>
+                </trans-unit>
+                <trans-unit id="card_item">
+                    <source>Card Item</source>
+                </trans-unit>
+                <trans-unit id="card_item.tt_content">
+                    <source>Card</source>
+                </trans-unit>
+                <trans-unit id="card.title">
+                    <source>Title</source>
+                </trans-unit>
+                <trans-unit id="card.intro">
+                    <source>Intro</source>
+                </trans-unit>
+                <trans-unit id="card.card">
+                    <source>Card</source>
+                </trans-unit>
+                <trans-unit id="card.backgroundcolor">
                     <source>Backgroundcolor</source>
                 </trans-unit>
+                
+                <trans-unit id="content_element.teasercards">
+                    <source>Cards</source>
+                </trans-unit>
+                <trans-unit id="content_element.teasercards.description">
+                    <source>Cards</source>
+                </trans-unit>
+                <trans-unit id="teasercards">
+                    <source>Cards</source>
+                </trans-unit>
+                <trans-unit id="teasercards.options">
+                    <source>Cards Options</source>
+                </trans-unit>
+                <trans-unit id="teasercards_item">
+                    <source>Cards Item</source>
+                </trans-unit>
+                <trans-unit id="teasercards_item.tt_content">
+                    <source>Cards</source>
+                </trans-unit>
+                <trans-unit id="teasercards.title">
+                    <source>Title</source>
+                </trans-unit>
+                <trans-unit id="teasercards.intro">
+                    <source>Intro</source>
+                </trans-unit>
+                <trans-unit id="teasercards.card">
+                    <source>Card</source>
+                </trans-unit>
+                <trans-unit id="teasercards.backgroundcolor">
+                    <source>Backgroundcolor</source>
+                </trans-unit>
+                
                 <trans-unit id="content_element.icons">
                     <source>Show icons</source>
                 </trans-unit>
@@ -518,23 +555,23 @@
             <trans-unit id="infographics.header">
                 <source>Header</source>
             </trans-unit>
-                <trans-unit id="content_element.nav">
-                    <source>Nav</source>
+                <trans-unit id="content_element.navigation">
+                    <source>Navigation</source>
                 </trans-unit>
-                <trans-unit id="content_element.nav.description">
-                    <source>Insert nav</source>
+                <trans-unit id="content_element.navigation.description">
+                    <source>Insert navigation</source>
                 </trans-unit>
-                <trans-unit id="nav">
-                    <source>Nav</source>
+                <trans-unit id="navigation">
+                    <source>Navigation</source>
                 </trans-unit>
-                <trans-unit id="nav.options">
-                    <source>Nav Options</source>
+                <trans-unit id="navigation.options">
+                    <source>Navigation Options</source>
                 </trans-unit>
-                <trans-unit id="nav_item">
-                    <source>Nav Item</source>
+                <trans-unit id="nnavigation_item">
+                    <source>Navigation Item</source>
                 </trans-unit>
-                <trans-unit id="nav_item.tt_content">
-                    <source>Nav</source>
+                <trans-unit id="navigation_item.tt_content">
+                    <source>Navigation</source>
                 </trans-unit>
                 
                 <trans-unit id="content_element.masonry">

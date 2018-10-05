@@ -88,11 +88,16 @@ class FlexFormProcessor implements DataProcessorInterface
         //check sys file reference
         if($flexformData['figureImage'] || $flexformData['carouselImages'] || $flexformData['bannerImage'] || $flexformData['titleImage'] || $flexformData['toggleImage']) {
             $i=0;
+            $scope = $flexformData['figureImage'] . $flexformData['carouselImages'] . $flexformData['bannerImage'] . $flexformData['titleImage'] . $flexformData['toggleImage'];
             $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
-                    "uid IN(" . $flexformData['figureImage'] . $flexformData['carouselImages'] . $flexformData['bannerImage'] . $flexformData['titleImage'] . $flexformData['toggleImage'] .")","","","");
+                    "uid IN(" . addslashes($scope) .")","","","");
             while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
-                $flexformData['imageItems'][] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
                     'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['imageItems'][] = $flexformData['imageItemsTemp'][$sortValue];
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($res);
         }
@@ -221,13 +226,22 @@ class FlexFormProcessor implements DataProcessorInterface
             
                    
             //$this->sortBy("x", $gridArray);
-            array_multisort(array_column($gridArray, 'x'), SORT_ASC,
+            /*array_multisort(array_column($gridArray, 'x'), SORT_ASC,
                 array_column($gridArray, 'y'),      SORT_ASC,
                 $gridArray);
             foreach($gridArray as $key => $val) {
                 if($val['x'] != $oldX) {
                     $content .= '<div class="masonry-col masonry-col-50">';
                 }
+            }*/
+            foreach($gridArray as $key => $value) {
+                $gridContent = $value['c'];
+                $gridContent = explode('||',$gridContent);
+                $gridContentTitle = $gridContent[0];
+                $gridContentText = $gridContent[1];
+                $gridContentImage = $gridContent[2];
+                $gridContentEmbed = $gridContent[3];
+                $gridContentHtml = $gridContent[4];
             }
             $flexformData['gridbuilder'] = json_encode($gridArray);
             /*echo '<pre>';

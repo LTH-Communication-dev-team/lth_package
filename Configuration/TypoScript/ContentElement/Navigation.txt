@@ -2,14 +2,14 @@
 #### CTYPE: LTH PACKAGE NAV ####
 #################################################
 
-tt_content.nav >
-tt_content.nav = FLUIDTEMPLATE
-tt_content.nav {
+tt_content.navigation >
+tt_content.navigation = FLUIDTEMPLATE
+tt_content.navigation {
 
     ################
     ### TEMPLATE ###
     ################
-    templateName = nav
+    templateName = navigation
     templateRootPaths {
         0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
         #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
@@ -17,7 +17,7 @@ tt_content.nav {
     }
     partialRootPaths {
         0 = EXT:lth_package/Resources/Private/Partials/ContentElements/
-        #10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+        10 = EXT:lth_package/Resources/Private/Partials/Page/
         #20 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
     }
     layoutRootPaths {
@@ -31,6 +31,32 @@ tt_content.nav {
     ##########################
     dataProcessing {
         10 = LTH\LthPackage\DataProcessing\FlexFormProcessor
+        20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        20 {
+            entryLevel = {$subNavigationEntryLevel}
+            levels = 7
+            expandAll = 1
+            includeSpacer = 1
+            as = subNavigation
+        }
+        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        30 {
+            special = rootline
+            special.range = 0|-1
+            includeNotInMenu = 1
+            if {
+                value = {$page.theme.breadcrumbEnableLevel}
+                value {
+                    insertData = 1
+                    prioriCalc = 1
+                    stdWrap.wrap = |-1
+                }
+                isGreaterThan {
+                    data = level
+                }
+            }
+            as = breadcrumbNavigation
+        }
     }
 
 }

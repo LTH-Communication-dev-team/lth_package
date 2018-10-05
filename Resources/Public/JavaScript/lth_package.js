@@ -72,6 +72,200 @@ $(document).ready(function() {
     if($('#lthPackageCalendarShow').length > 0) {
         showCalendar();
     }
+    
+    if($("#header-search-field").length > 0) {
+        $('#header-search-field').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            source: function (query, processSync, processAsync) {
+              //processSync(['This suggestion appears immediately', 'This one too']);
+                return $.ajax({
+                    url: "index.php", 
+                    type: 'GET',
+                    //data: {query: query},
+                    data: {
+                        query: query,
+                        eID : 'lth_solr',
+                        action: 'searchShort',
+                        sid : Math.random()
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                      // in this example, json is simply an array of strings
+                        //return processAsync(json);
+                        jsonObj = [];
+                        $.each(data, function(key, aData) {
+                            //console.log(aData);
+                            if(aData.id==='lu' && aData.value) {
+                                //console.log($(aData.value).filter('.hit'));
+                                var i=0;
+                                var obj = aData.value[1].search_result;
+                                for (var key in obj) {
+                                    if (obj.hasOwnProperty(key)) {
+                                        var val = obj[key];
+                                        if(i<5) {
+                                            item = {};
+                                            item ["id"] = 'lu_'+i;
+                                            item ["label"] = val.label;
+                                            item ["value"] = val.label;
+                                            item ["type"] = aData.type;
+                                            jsonObj.push(item);
+                                        }
+                                    }
+                                    i++;
+                                }
+                            } else if(aData.id==='lth' && aData.value) {
+                                var i=0;
+                                var i=0;
+                                var obj = aData.value[0].search_result;
+                                for (var key in obj) {
+                                    if (obj.hasOwnProperty(key)) {
+                                        var val = obj[key];
+                                        if(i<5) {
+                                            item = {};
+                                            item ["id"] = 'lth_'+i;
+                                            item ["label"] = val.label;
+                                            item ["value"] = val.label;
+                                            item ["type"] = aData.type;
+                                            jsonObj.push(item);
+                                        }
+                                    }
+                                    i++;
+                                }
+                            } else if(aData.value) {
+                                item = {}
+                                item ["id"] = aData.id;
+                                item ["label"] = aData.label;
+                                item ["value"] = aData.value;
+                                item ["type"] = aData.type;
+                                jsonObj.push(item);
+                            }
+                        });
+                        //response( jsonObj );
+                        //console.log(jsonObj);
+                        processAsync(jsonObj);
+                    }
+                });
+            },
+            limit: 12,
+            display: function (suggestion) {
+                return suggestion.label;
+            },
+            async: true,
+        }).on('typeahead:select', function(event, select) {
+            window.location.href = $('#header-search-form').find('form').attr('action') + '?term='+select.id;
+        })/*.on('typeahead:render', function(event, items) {
+            console.log(event);
+            var result = items.map(function(a) {return a.label;});
+            processAsync(result).bind();
+            
+        })*/;
+    }
+
+    /*if($("#header-search-field").length > 0) {
+        $("#header-search-field").autocomplete({
+            source: function( request, response ) {
+                $.ajax({
+                    url: "index.php",
+                    dataType: "json",
+                    data: {
+                        query: request.term,
+                        eID : 'lth_solr',
+                        action: 'searchShort',
+                        sid : Math.random()
+                    },
+                    type : "GET",
+                    dataType: "json",
+                    success: function( data ) {
+                        jsonObj = [];
+                        $.each(data, function(key, aData) {
+                            console.log(aData);
+                            if(aData.id==='lu' && aData.value) {
+                                var i=0;
+                                var obj = aData.value[1].search_result;
+                                for (var key in obj) {
+                                    if (obj.hasOwnProperty(key)) {
+                                        var val = obj[key];
+                                        if(i<5) {
+                                            item = {};
+                                            item ["id"] = 'lu_'+i;
+                                            item ["label"] = val.label;
+                                            item ["value"] = val.label;
+                                            item ["type"] = aData.type;
+                                            jsonObj.push(item);
+                                        }
+                                    }
+                                    i++;
+                                }
+                            } else if(aData.id==='lth' && aData.value) {
+                                var i=0;
+                                var i=0;
+                                var obj = aData.value[0].search_result;
+                                for (var key in obj) {
+                                    if (obj.hasOwnProperty(key)) {
+                                        var val = obj[key];
+                                        if(i<5) {
+                                            item = {};
+                                            item ["id"] = 'lth_'+i;
+                                            item ["label"] = val.label;
+                                            item ["value"] = val.label;
+                                            item ["type"] = aData.type;
+                                            jsonObj.push(item);
+                                        }
+                                    }
+                                    i++;
+                                }
+                            } else if(aData.id==='lth' && aData.value) {
+                                var i=0;
+                                var i=0;
+                                var obj = aData.value[0].search_result;
+                                for (var key in obj) {
+                                    if (obj.hasOwnProperty(key)) {
+                                        var val = obj[key];
+                                        if(i<5) {
+                                            item = {};
+                                            item ["id"] = 'lth_'+i;
+                                            item ["label"] = val.label;
+                                            item ["value"] = val.label;
+                                            item ["type"] = aData.type;
+                                            jsonObj.push(item);
+                                        }
+                                    }
+                                    i++;
+                                }
+                            } else if(aData.value) {
+                                item = {}
+                                item ["id"] = aData.id;
+                                item ["label"] = aData.label;
+                                item ["value"] = aData.value;
+                                item ["type"] = aData.type;
+                                jsonObj.push(item);
+                            }
+                        });
+                        response( jsonObj );
+                    }
+                });
+                },
+                minLength: 3,
+                select: function( event, ui ) {
+                  window.location.href = $('#searchsiteformlth').attr('action') + '?term='+ui.item.id;
+                },
+                open: function() {
+                    $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+                },
+                close: function() {
+                    $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+                }
+            }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+            return $( '<li style="min-height:20px;"></li>' ).data("item.autocomplete", item)
+                .append( '<a title="' + item.value + '(' + item.type + ')">' + trimData(item.value,40)  + '</a>')
+                .appendTo( ul );
+        };
+    }*/
+
 });
 
 

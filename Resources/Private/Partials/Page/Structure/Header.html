@@ -1,53 +1,142 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
-    <div class="bg-dark d-none d-lg-block">
-        <div class="container-fluid mw-xl py-0">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark font-size-sm font-weight-light p-0 text-white">
-                <div class="collapse navbar-collapse nmx-2" id="navbarSupportedContent">
-                    <ul class="navbar-nav bd-navbar-nav flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.lu.se/">{f:translate(key:'to_lund_university',extensionName:'lth_package')}</a>
-                        </li>
-                    </ul>
-
-                    <f:if condition="{headnav}">
-                        <f:then>
-                            <ul class="navbar-nav flex-row ml-auto">
-                                <lth:explode data="{headnav}" as="rows">
-                                    <f:if condition="{rows}">
-                                            <f:for each="{rows}" as="row" iteration="iterateRow">
-                                                <li class="nav-item">
-                                                    <lth:explode data="{row}" delimiter="," as="content">
-                                                        <a title="{content.0}" class="nav-link px-3" href="{content.1}">{content.0}</a>
-                                                    </lth:explode>
-                                                </li>
-                                            </f:for>
-                                    </f:if>
-                                </lth:explode>
-                            </ul>
-                            <ul class="navbar-nav flex-row ml-3">
-                                <f:if condition="{headnavdrop}">
-                                    <li class="nav-item dropdown dropdown-hover">
-                                        <a class="nav-link dropdown-toggle px-3" href="https://www.lth.se/" id="navbarDropdown" aria-haspopup="true">
-                                            {f:translate(key:'info_for',extensionName:'lth_package')} &nbsp;<i class="fal fa-chevron-down"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right text-primary" aria-labelledby="navbarDropdown">
-                                            <lth:explode data="{headnavdrop}" as="rows">
-                                                <f:if condition="{rows}">
-                                                        <f:for each="{rows}" as="row" iteration="iterateRow">
-                                                            <lth:explode data="{row}" delimiter="," as="content">
-                                                                <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
-                                                            </lth:explode>
-                                                        </f:for>
-                                                </f:if>
-                                            </lth:explode>
-                                        </div>
-                                    </li>
-                                </f:if>
-                            </ul>
-                        </f:then>
-                    </f:if>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="border-bottom">
+        <div class="container-fluid mw-xl">
+            <div class="row m-0 py-3">
+                <div class="col p-0">
+                    <div class="header-logo header-logo-lth">
+                        <a href="/" title="Lunds Tekniska Högskola">
+                            <img src="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png" 
+                                 srcset="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png 1x,/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@2x.png 2x" 
+                                 class="mw-100"
+                                 alt="Lunds Tekniska Högskola">
+                        </a>
+                    </div>
                 </div>
-            </nav>
+                <div class="col d-flex flex-column align-items-end justify-content-end">
+                    <div class="row mw-36 w-100 h-100 h-lg-auto flex-column justify-content-between align-items-end font-size-sm font-size-sm-base">
+                        <nav class="nav text-center h-100 h-lg-auto align-items-center d-lg-none">
+                            <div class="nav-item">
+                                <a class="ml-2 p-1 d-block nav-undecorated" 
+                                   href="#header-search-form" 
+                                   data-toggle="collapse"
+                                   aria-controls="header-search-form" aria-expanded="false"
+                                   aria-label="{f:translate(key:'show_and_hide_searchfield',extensionName:'lth_package')}">
+                                    <i class="fal fa-search"></i><br />{f:translate(key:'search',extensionName:'lth_package')}
+                                </a>
+                            </div>
+                            <div class="nav-item">
+                                <a class="ml-2 p-1 d-block" 
+                                   href="#" 
+                                   data-toggle="modal" 
+                                   data-target="#nav-mobile"
+                                   aria-controls="nav-mobile" 
+                                   aria-expanded="false" 
+                                   aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
+                                    <i class="fal fa-bars"></i><br />{f:translate(key:'menu',extensionName:'lth_package')}
+                                </a>
+                            </div>
+                        </nav>
+                        <div class="d-none d-lg-flex flex-column flex-xl-row w-100 justify-content-end">
+                            <nav class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0">
+                                <div class="nav-item flex-xl-grow-1">
+                                    <form class="form-inline px-lg-3">
+                                        <div class="input-group input-group-round input-group-sm w-100 flex">
+                                            <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field" />
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary px-2" type="submit">
+                                                    <span class="mr-2">{f:translate(key:'search',extensionName:'lth_package')}</span>
+                                                    <i class="fal fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </nav>
+                            <nav class="nav align-items-center justify-content-end">
+                                <div class="nav-item">
+                                    <a class="nav-link" href="{listenLink}"><i class="fal fa-bullhorn"></i>{f:translate(key:'listen',extensionName:'lth_package')}</a>
+                                </div>
+                                <div class="nav-item d-none d-lg-block">
+                                    <a class="nav-link" href="/{otherLanguageLink}"><i class="fal fa-globe"></i>{f:translate(key:'language_selector',extensionName:'lth_package')}</a>
+                                </div>
+                                <!-- Added login/logout BEGIN -->
+                                <div class="nav-item d-none d-lg-block">
+                                    <a id="lth_package_login" class="nav-link" alt="{username}" href="javascript:"><i class="fal fa-user"></i>
+                                        <f:security.ifAuthenticated>
+                                            <f:then>
+                                                {f:translate(key:'logout',extensionName:'lth_package')}
+                                            </f:then>
+                                            <f:else>
+                                                {f:translate(key:'login',extensionName:'lth_package')}
+                                            </f:else>
+                                        </f:security.ifAuthenticated>
+                                    </a>
+                                </div>
+                                <!-- Added login/logout END -->
+                                <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
+                                    <a class="nav-link" 
+                                       href="#" 
+                                       data-toggle="modal" 
+                                       data-target="#nav-mobile" 
+                                       aria-controls="nav-mobile" 
+                                       aria-expanded="false"
+                                       aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
+                                    <i class="fal fa-bars"></i> {f:translate(key:'menu',extensionName:'lth_package')}</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row mt-6 d-none d-xl-block font-size-xl-lg font-weight-light">
+                        <f:render partial="Navigation/MainNavigation" arguments="{_all}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login box test start 
+        <div class="full-width-dropdown__lvl-down js__full-width-dropdown__lvl-down _lvl-2 full-width-dropdown__login" data-parent-lvl1="229">
+            <div class="m-auto">
+		<form action="http://vkans-th0.kh.lth.lu.se/" onsubmit="return true;" method="post">
+			<div class="hidden">
+				<input type="hidden" name="logintype" value="login">
+				<input type="hidden" name="pid" value="178">
+				<input type="hidden" name="redirect_url" value="?eID=FlyOutAjaxLoginController&amp;returnUrl=https%3A%2F%2Ftypo3.org%2F&amp;cHash=f39081a83e725c491517fe02937d570a">
+			</div>
+			<h4>Enter your credentials below to sign in</h4>
+			<div class="form-control__wrp">
+				<input class="form-control" name="user" type="text" onfocusout="isEmpty(this)" id="login-user">
+				<span class="form-control__placeholder">Username</span>
+				<i class="form-control__icon fa fa-user" aria-hidden="true"></i>
+			</div>
+			<div class="form-control__wrp">
+				<input class="form-control" name="pass" data-rsa-encryption="" onfocus="rsaauthInit()" onfocusout="isEmpty(this)" type="password" id="login-pass">
+				<span class="form-control__placeholder">Password</span>
+				<i class="form-control__icon fa fa-key" aria-hidden="true"></i>
+			</div>
+			<div class="d-flex justify-content-end align-items-center form-nav">
+				
+					<a href="https://my.typo3.org/index.php?id=12&amp;tx_felogin_pi1%5Bforgot%5D=1" class="small">Forgot password?</a>
+				
+				<button type="submit" class="btn btn-outline-light btn-lg">Login</button>
+				
+					<a href="https://my.typo3.org/index.php?id=2" class="btn btn-outline-light btn-lg">Sign up</a>
+				
+			</div>
+		</form>
+            </div>
+        </div>
+         Login box test end -->
+        <div class="header-search-form collapse collapse-lg pb-2 px-2" id="header-search-form">
+            <form action="/sok/" class="form-inline px-lg-3">
+                <div class="input-group input-group-round input-group-sm w-100 flex">
+                    <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field-mobile" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-2" type="submit">
+                            <span class="mr-2">{f:translate(key:'search',extensionName:'lth_package')}</span>
+                            <i class="fal fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </html>

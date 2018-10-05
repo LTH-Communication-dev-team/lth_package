@@ -1,20 +1,17 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:if condition="{responsive}">
+    <f:if condition="{mobileNavigation}">
         <f:then>
-            <ul class="nav-accordion nav-undecorated border-0 nav-collapse font-size-sm">
-                <f:render section="ResponsiveNavigationItem" arguments="{menu:responsive}" />
+            <ul class="nav-accordion border-0 nav-collapse font-size-sm nav-undecorated">
                 <li>
-                    <a class="nav-link" href="#"><i class="fal fa-bullhorn"></i> {f:translate(key:'listen',extensionName:'lth_package')}</a>
+                    <a href=".html" data-target="#" class="nav-link collapse collapsed " data-toggle="collapse" aria-expanded="false" aria-controls="">
+                        Start
+                    </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="#"><i class="fal fa-globe"></i> {f:translate(key:'language_selector',extensionName:'lth_package')}</a>
-                </li>
-                <li>
-                </li>
+                <f:render section="MobileNavigationItem" arguments="{menu:mobileNavigation}" />
             </ul>
         </f:then>
     </f:if>
-    <f:section name="ResponsiveNavigationItem">
+    <f:section name="MobileNavigationItem">
         <f:for each="{menu}" as="item" iteration="iterator">
             <f:if condition="{item.children}">
                 <f:then>
@@ -23,7 +20,7 @@
                             <div class="float-right"><i class="fal fa-chevron-right"></i></div>{item.title}
                         </a>
                         <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}" id="sm-{item.title}">
-                            <f:render section="SubnavigationItem" arguments="{menu:item.children}" />
+                            <f:render section="MobileNavigationItem" arguments="{menu:item.children}" />
                         </ul>
                     </li>
                 </f:then>

@@ -1,0 +1,37 @@
+Template layouts: Z:\typo3conf\ext\lth_package\Configuration\PageTS\TCEMAIN.txt
+
+Templaterootpath: Z:\typo3conf\ext\lth_package\Configuration\TypoScript\constants.txt
+    plugin.tx_news {
+            view {
+                    templateRootPath = EXT:lth_package/Resources/Private/Templates/News/
+                    partialRootPath = EXT:lth_package/Resources/Private/Partials/News/
+                    layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/
+            }
+    }
+    plugin.tx_news {
+            view.twb {
+                    templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
+                    partialRootPath = EXT:lth_package/Resources/Private/Partials/News/Styles/
+                    layoutRootPath = EXT:lth_package/Resources/Private/Layouts/News/Styles/
+                    widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:lth_package/Resources/Private/Templates/News/Styles/
+            }
+    }
+
+Settings: Z:\typo3conf\ext\lth_package\Configuration\TypoScript\setup.txt
+    plugin.tx_news {
+        settings {
+            list {
+                media.image.width = 200
+                media.image.height = 400
+                paginate.insertAbove = 0
+            }
+            link {
+                skipControllerAndAction = 1
+            }
+            detail {
+                errorHandling = showStandaloneTemplate,EXT:lth_package/Resources/Private/Templates/News/DetailNotFound.html,404
+            }
+        }
+    }
+
+Templates: News: Z:\typo3conf\ext\lth_package\Resources\Private\Templates\News\Styles\News\List.html

@@ -1,15 +1,15 @@
-#################################################
-########### CTYPE: LTH PACKAGE CARDS ############
-#################################################
+#######################################################
+########### CTYPE: LTH PACKAGE TEASERCARDS ############
+#######################################################
 
-tt_content.cards >
-tt_content.cards = FLUIDTEMPLATE
-tt_content.cards {
+tt_content.teasercards >
+tt_content.teasercards = FLUIDTEMPLATE
+tt_content.teasercards {
 
     ################
     ### TEMPLATE ###
     ################
-    templateName = cards
+    templateName = teasercards
     templateRootPaths {
         0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
         #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}

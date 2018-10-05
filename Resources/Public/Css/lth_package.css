@@ -1,4 +1,4 @@
-.full-width-dropdown__login {
+/* .full-width-dropdown__login {
         display:none;
         position:absolute;
         top:170px;
@@ -25,8 +25,8 @@
 }
 
 .lthPackageLoader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -34,8 +34,8 @@
 }
 
 .lthPackageLoaderMedium {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -84,7 +84,6 @@ article {
 }
 
 .lthPackageFilterContainer {
-    /*padding:8px 8px 2px 8px;*/
     margin-bottom:0px;
     background-color:#fafafa;
     border-bottom: 1px #ebebeb solid;
@@ -127,11 +126,6 @@ article {
     cursor: text;
 }
 
-/*.close {
-    color: #fff !important; 
-    opacity: 1 !important;
-}*/
-
 #lthPackagePublicationsFilter {
     background-color:#fafafa;
     border: none !important;
@@ -166,5 +160,40 @@ article {
   .powermail_fieldwrap.nolabel  > fieldset > legend {
       display: none;
   }
-  
-  
+ 
+  .container {
+    width: 800px;
+    margin: 50px auto;
+  }
+  .typeahead-wrapper {
+    display: block;
+    margin: 50px 0;
+  }
+  .tt-dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #000;
+  }
+  .tt-suggestion {
+    background-color: #ccc;
+    border: 1px solid #000;
+  }
+  .triggered-events {
+    float: right;
+    width: 500px;
+    height: 300px;
+  }
+  */
+  #header-search-field {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .tt-suggestion.tt-selectable {
+      white-space: nowrap;
+  }
+  .tt-dataset.tt-dataset-0 {
+      background-color:#ffffff;
+      margin-top:15px;
+      padding:12px;
+      border:1px solid #cccccc;
+      border-radius:15px;
+  }

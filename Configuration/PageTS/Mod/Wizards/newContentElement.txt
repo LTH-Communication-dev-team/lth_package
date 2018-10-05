@@ -1,6 +1,31 @@
 ####################################
 #### BOOTSTRAP CONTENT ELEMENTS ####
 ####################################
+#move "general plugin" to "special(lth) elements" tab
+# put this into Page TSConfig
+#mod.wizards.newContentElement.wizardItems {
+#    lth {
+#        elements.MasonryF < mod.wizards.newContentElement.wizardItems.gridelements.elements.MasonryF
+#        show := addToList(MasonryF)
+#    }
+#    gridelements.elements.MasonryF >
+#}
+
+#[gridelements_MasonryF] => Array
+#        (
+#            [title] => MasonryF
+#            [description] => MasonryF
+#            [params] => &defVals[tt_content][CType]=gridelements_pi1&defVals[tt_content][tx_gridelements_backend_layout]=MasonryF
+##            [tt_content_defValues] => Array
+ #               (
+ #                   [CType] => gridelements_pi1
+ #                   [tx_gridelements_backend_layout] => MasonryF
+ #               )
+#
+#            [iconIdentifier] => MasonryF
+#        )
+
+
 mod.wizards {
     newContentElement {
         wizardItems {
@@ -23,12 +48,12 @@ mod.wizards {
                             CType = calendar
                         }
                     }
-                    lth_package_cards {
-                        iconIdentifier = content-lthpackage-cards
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.cards
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.cards.description
+                    lth_package_card {
+                        iconIdentifier = content-lthpackage-card
+                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.card
+                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.card.description
                         tt_content_defValues {
-                            CType = cards
+                            CType = card
                         }
                     }
                     lth_package_carousel {
@@ -79,12 +104,12 @@ mod.wizards {
                             CType = masonry
                         }
                     }
-                    lth_package_nav {
-                        iconIdentifier = content-lthpackage-nav
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.nav
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.nav.description
+                    lth_package_navigation {
+                        iconIdentifier = content-lthpackage-navigation
+                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.navigation
+                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.navigation.description
                         tt_content_defValues {
-                            CType = nav
+                            CType = navigation
                         }
                     }
                     lth_package_progress {
@@ -93,6 +118,14 @@ mod.wizards {
                         description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.progress.description
                         tt_content_defValues {
                             CType = progress
+                        }
+                    }
+                    lth_package_teasercards {
+                        iconIdentifier = content-lthpackage-teasercards
+                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards
+                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards.description
+                        tt_content_defValues {
+                            CType = teasercards
                         }
                     }
                     lth_package_title {

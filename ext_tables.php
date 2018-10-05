@@ -96,6 +96,11 @@ $iconRegistry->registerIcon(
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/calendar.svg']
 );
 $iconRegistry->registerIcon(
+    'content-lthpackage-card',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/card.svg']
+);
+$iconRegistry->registerIcon(
     'content-lthpackage-embed',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/embed.svg']
@@ -106,24 +111,19 @@ $iconRegistry->registerIcon(
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/figure.svg']
 );
 $iconRegistry->registerIcon(
-    'content-lthpackage-cards',
-    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/cards.svg']
-);
-$iconRegistry->registerIcon(
     'content-lthpackage-infographics',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/infographics.svg']
 );
 $iconRegistry->registerIcon(
-    'content-lthpackage-nav',
+    'content-lthpackage-navigation',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/nav.svg']
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/navigation.svg']
 );
 $iconRegistry->registerIcon(
     'content-lthpackage-masonry',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/nav.svg']
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/navigation.svg']
 );
 $iconRegistry->registerIcon('MasonryA',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class, 
@@ -155,6 +155,11 @@ $iconRegistry->registerIcon(
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/progress.svg']
 );
 $iconRegistry->registerIcon(
+    'content-lthpackage-teasercards',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/teasercards.svg']
+);
+$iconRegistry->registerIcon(
     'content-lthpackage-title',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/title.svg']
@@ -178,7 +183,7 @@ $iconRegistry->registerIcon(
     unset($GLOBALS['TBE_MODULES_EXT']['xMOD_db_new_content_el']['addElClasses']['tx_indexed_search_pi_wizicon']);
 }*/
 
-$GLOBALS["TYPO3_CONF_VARS"]["FE"]["addRootLineFields"] .= ",author,author_email,tx_lthpackage_headnav,tx_lthpackage_headnavdrop,tx_lthpackage_leftnav,tx_lthpackage_breadcrumb,tx_lthpackage_subsitetitle";
+$GLOBALS["TYPO3_CONF_VARS"]["FE"]["addRootLineFields"] .= ",author,author_email,tx_lthpackage_headnav,tx_lthpackage_headnavdrop,tx_lthpackage_subsitetitle";
 
 
 /***************

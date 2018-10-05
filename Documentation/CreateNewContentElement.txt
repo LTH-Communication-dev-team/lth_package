@@ -230,6 +230,10 @@
 
 10. Töm cachen! Inifrån typo3 och radera typo3temp-filerna.
 
+CSS:
+.mb-5, .my-5 {
+    margin-bottom: 2rem !important;
+
 
 
 20 {

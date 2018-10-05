@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    <f:section name="Main">
+
+        <f:if condition="{data.pi_flexform.cardType}=='highlighted'">
+            <f:then>
+                <f:link.typolink parameter="{data.pi_flexform.link}" class="card nav-block bg-{data.pi_flexform.backgroundcolor}">
+                    <div id="card-{data.uid}" class="card-img" style="height:auto;">
+                        <div class="card-img-container">
+                            <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" alt="{data.pi_flexform.figureImage.alternative}" width="NULL" height="NULL" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class=" h2 nav-block-link m-0">{data.pi_flexform.header}</h3>
+                        <p class=" mt-3">{data.pi_flexform.bodytext}</p>
+                    </div>
+                </f:link.typolink>
+            </f:then>
+        </f:if>
+        
+        <f:if condition="{data.pi_flexform.cardType}=='teaser'">
+            <f:then>
+                <f:link.typolink parameter="{data.pi_flexform.link}" class="card nav-block bg-{data.pi_flexform.backgroundcolor}">
+                    <div id="card-{data.uid}" class="card-img" style="height:auto;">
+                        <div class="card-img-container">
+                            <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" alt="{data.pi_flexform.figureImage.alternative}" width="NULL" height="NULL" />
+                        </div>  
+                    </div>
+                    <div class="card-body">
+                        <h3 class=" h2 nav-block-link m-0">{data.pi_flexform.header}</h3>
+                        <p class=" mt-3">{data.pi_flexform.bodytext}</p>
+                        <div class="nav-block-link ">{data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i></div>
+                    </div>
+                </f:link.typolink>
+            </f:then>
+        </f:if>
+        
+        <f:if condition="{data.pi_flexform.cardType}=='cta'">
+            <f:then>
+                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block p-3 w-100 flex-column justify-content-between bg-{data.pi_flexform.backgroundcolor}">
+                    <div id="card-{data.uid}" class="mb-5">
+                        <h3 class=" nav-block-link m-0">{data.pi_flexform.header}</h3>
+                    </div>
+                    <div class="nav-block-link ">{data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i></div>
+                </f:link.typolink>
+            </f:then>
+        </f:if>
+    </f:section>
+</html>

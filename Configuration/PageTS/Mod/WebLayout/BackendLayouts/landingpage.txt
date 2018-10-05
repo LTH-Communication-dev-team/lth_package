@@ -8,34 +8,21 @@ mod {
                 title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:backend_layout.landingpage
                 config {
                     backend_layout {
-                        colCount = 2
-                        rowCount = 2
+                        colCount = 1
+                        rowCount = 1
                         rows {
                             1 {
                                 columns {
                                     1 {
                                         name = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:backend_layout.column.normal
                                         colPos = 0
-                                        colspan = 2
-                                    }
-                                }
-                            }
-                            2 {
-                                columns {
-                                    1 {
-                                        name = Nav
-                                        colPos = 
-                                    }
-                                    2 {
-                                        name = Right (put content here, the left column is just a placeholder to indicate the navigation on the page)
-                                        colPos = 1
                                     }
                                 }
                             }
                         }
                     }
                 }
-                icon = EXT:lth_package/Resources/Public/Images/BackendLayouts/faculty.gif
+                icon = EXT:lth_package/Resources/Public/Images/BackendLayouts/landingpage.gif
             }
         }
     }

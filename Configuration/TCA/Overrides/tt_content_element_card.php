@@ -4,8 +4,8 @@ defined('TYPO3_MODE') || die();
 /***************
  * Add Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['nav'])) {
-    $GLOBALS['TCA']['tt_content']['types']['nav'] = [];
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['card'])) {
+    $GLOBALS['TCA']['tt_content']['types']['card'] = [];
 }
 
 /***************
@@ -15,9 +15,9 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['nav'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.nav',
-        'nav',
-        'content-lthpackage-nav'
+        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.card',
+        'card',
+        'content-lthpackage-card'
     ],
     '--div--',
     'after'
@@ -26,10 +26,10 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['nav'])) {
 /***************
  * Assign Icon
  */
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['nav'] = 'content-lthpackage-nav';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['card'] = 'content-lthpackage-card';
 
-$GLOBALS['TCA']['tt_content']['types']['nav'] = array_replace_recursive(
-    $GLOBALS['TCA']['tt_content']['types']['nav'],
+$GLOBALS['TCA']['tt_content']['types']['card'] = array_replace_recursive(
+    $GLOBALS['TCA']['tt_content']['types']['card'],
     [
         'showitem' => '
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
@@ -95,6 +95,6 @@ $GLOBALS['TCA']['tt_content']['palettes']['external_media'] = [
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     '*',
-    'FILE:EXT:lth_package/Configuration/FlexForms/Nav.xml',
-    'nav'
+    'FILE:EXT:lth_package/Configuration/FlexForms/Card.xml',
+    'card'
 );

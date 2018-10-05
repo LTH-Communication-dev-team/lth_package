@@ -17,6 +17,26 @@
             <f:then>
                 <f:if condition="{settings.templateLayout} == 1">
                     <f:then>
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <p class="news-title"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></p>
+                        </f:for>
+                        <f:link.page pageUid="{settings.listPid}">
+                            more!!!
+                        </f:link.page>
+                    </f:then>
+                </f:if>
+                <f:if condition="{settings.templateLayout} == 2">
+                    <f:then>
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <p class="news-title"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></p>
+                        </f:for>
+                        <f:link.page pageUid="{settings.listPid}">
+                            more!!!
+                        </f:link.page>
+                    </f:then>
+                </f:if>
+                <f:if condition="{settings.templateLayout} == 3">
+                    <f:then>
                         <div class="bg-plaster-50 nav-undecorated">
                             <div class="container py-4">
                                 <div class="row my-8">
@@ -110,17 +130,45 @@
                         </div>
                     </f:then>
                 </f:if>
-                
-                <f:if condition="{settings.templateLayout} == 2">
+                <f:if condition="{settings.templateLayout} == 4">
                     <f:then>
-                        <f:for each="{news}" as="newsItem" iteration="iterator">
-                            <p class="news-title"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></p>
-                        </f:for>
-                        <f:link.page pageUid="{settings.listPid}">
-                            more!!!
-                        </f:link.page>
+                        <div class="bg-plaster-50">
+                            <div class="container py-4">
+                                <div class="row my-8">
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <div class="col">
+                                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card nav-block">
+                                                <f:if condition="{newsItem.mediaPreviews}">
+                                                    <f:then>
+                                                        <f:media class="card-img-top" file="{newsItem.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                    </f:then>
+                                                </f:if>
+                                                <div class="card-body">
+                                                    <div class="meta">
+                                                        <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
+                                                        <span class="meta-category">{newsItem.categories.0.title}</span>
+                                                    </div>
+                                                    <h3 class="card-title nav-block-link my-0">{newsItem.title}</h3>
+                                                    <p class=" mt-3">{newsItem.teaser}</p>
+                                                </div>
+                                            </n:link>
+                                        </div>
+                                    </f:for>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mt-5 text-right font-weight-normal">
+                                            <f:link.page pageUid="{settings.listPid}" class="nav-undecorated">
+                                                Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                            </f:link.page>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </f:then>
-                </f:if>    
+                </f:if>
+                   
                 <f:if condition="{settings.templateLayout} == ">
                     <f:then>                        
                         
