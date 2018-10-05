@@ -1,5 +1,6 @@
 mainNavigationEntryLevel = 0
 subNavigationEntryLevel = 1
+mobileNavigationEntryLevel = 0
 plugin.tx_news {
         view {
                 templateRootPath = EXT:lth_package/Resources/Private/Templates/News/

@@ -110,11 +110,11 @@ page {
             }
             40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             40 {
-                entryLevel = {$mainNavigationEntryLevel}
+                entryLevel = {$mobileNavigationEntryLevel}
                 levels = 7
                 expandAll = 1
                 includeSpacer = 1
-                includeNotInMenu = 1
+                #includeNotInMenu = 1
                 as = mobileNavigation
             }
             #40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
