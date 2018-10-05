@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Added login/logout BEGIN -->
+                                <div class="nav-item d-none d-lg-block">
+                                    <a id="lth_package_login" class="nav-link" alt="{username}" href="javascript:"><i class="fal fa-user"></i>
+                                        <f:security.ifAuthenticated>
+                                            <f:then>
+                                                {f:translate(key:'logout',extensionName:'lth_package')}
+                                            </f:then>
+                                            <f:else>
+                                                {f:translate(key:'login',extensionName:'lth_package')}
+                                            </f:else>
+                                        </f:security.ifAuthenticated>
+                                    </a>
+                                </div>
+                                <!-- Added login/logout END -->
+    </body>
+</html>

@@ -59,20 +59,6 @@
                                 <div class="nav-item d-none d-lg-block">
                                     <a class="nav-link" href="/{otherLanguageLink}"><i class="fal fa-globe"></i>{f:translate(key:'language_selector',extensionName:'lth_package')}</a>
                                 </div>
-                                <!-- Added login/logout BEGIN -->
-                                <div class="nav-item d-none d-lg-block">
-                                    <a id="lth_package_login" class="nav-link" alt="{username}" href="javascript:"><i class="fal fa-user"></i>
-                                        <f:security.ifAuthenticated>
-                                            <f:then>
-                                                {f:translate(key:'logout',extensionName:'lth_package')}
-                                            </f:then>
-                                            <f:else>
-                                                {f:translate(key:'login',extensionName:'lth_package')}
-                                            </f:else>
-                                        </f:security.ifAuthenticated>
-                                    </a>
-                                </div>
-                                <!-- Added login/logout END -->
                                 <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
                                     <a class="nav-link" 
                                        href="#" 

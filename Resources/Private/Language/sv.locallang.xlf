@@ -70,7 +70,7 @@
             
             <trans-unit id="to_lund_university">
                 <source>To Lund University</source>
-                <target>Till Lunds Universitet</target>
+                <target>Till Lunds universitet</target>
             </trans-unit>
             
             <trans-unit id="info_for">
