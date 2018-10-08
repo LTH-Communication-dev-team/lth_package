@@ -386,16 +386,18 @@ config {
     #concatenateCss = {$config.concatenateCss}
     contentObjectExceptionHandler = 0
     admPanel = 0
-    baseURL = {$baseURL}
+    #baseURL = {$baseURL}
+    absRefPrefix = auto
+    baseURL >
 }
 
 #========================================================================
 # https Fix. Replace http in baseURL. Replace with absrefprefix in future
 # afer fixing extension that don't work eg. feedit -MP 2013/12/02
 #========================================================================
-[globalString = _SERVER|HTTPS=on]
-    config.baseURL := replaceString(http|https).  
-[global]
+#[globalString = _SERVER|HTTPS=on]
+#    config.baseURL := replaceString(http|https).  
+#[global]
 
 
 #############################
