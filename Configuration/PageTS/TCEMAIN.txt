@@ -3,7 +3,7 @@
 #################
 TCEMAIN {
     permissions {
-        groupid = 1
+        groupid = 47
         user = show, editcontent, edit, new, delete
         group = show, editcontent, edit, new, delete
         everybody =
