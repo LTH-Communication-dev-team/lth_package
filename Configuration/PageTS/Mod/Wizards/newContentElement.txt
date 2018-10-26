@@ -96,12 +96,12 @@ mod.wizards {
                             CType = infographics
                         }
                     }
-                    lth_package_masonry {
-                        iconIdentifier = content-lthpackage-masonry
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonry
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonry.description
+                    lth_package_masonrytile {
+                        iconIdentifier = content-lthpackage-masonrytile
+                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile
+                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile.description
                         tt_content_defValues {
-                            CType = masonry
+                            CType = masonrytile
                         }
                     }
                     lth_package_navigation {

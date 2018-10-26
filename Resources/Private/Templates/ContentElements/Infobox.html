@@ -1,17 +1,29 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
+        <f:if condition="{data.pi_flexform.infoboxtype}=='default'">
+            <f:then>
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                    <f:if condition="{data.pi_flexform.header}">
+                        <f:then>
+                            <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
+                        </f:then>
+                    </f:if>
+                    <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
+                </div>
+            </f:then>
+        </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='contact'">
             <f:then>
-                <div id="infobox-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} mb-6 p-5">
-                    <h1 class="h3 mt-0 mb-3">{f:translate(key:'contact',extensionName:'lth_package')}</h1>
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                    <h3 class="h3 mt-0 mb-3">{f:translate(key:'contact',extensionName:'lth_package')}</h3>
                     <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
                 </div>
             </f:then>
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='icons'">
             <f:then>
-                <div id="infobox-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor} mb-6 p-5">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor}">
                     <f:for each="{data.pi_flexform.iconItems}" as="iconItem" iteration="iteration">
                         <div class="row mb-5">
                             <div class="col-12 col-xl mb-5 mb-xl-0 d-flex flex-row">
@@ -39,16 +51,16 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='iconsvertical'">
             <f:then>
-                <div id="infobox-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor} mb-6 p-5">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
                     <f:for each="{data.pi_flexform.iconItems}" as="iconItem" iteration="iteration">
                         <div class="row mb-3">
-                                <div class="col-2 text-center">
-                                        <i class="{iconItem.icon}"></i>
-                                </div>
-                                <div class="col">
-                                        <h4 class="m-0">{iconItem.title}</h4>
-                                        <p>{iconItem.bodytext}</p>
-                                </div>
+                            <div class="col-2 text-center">
+                                <i class="{iconItem.icon}"></i>
+                            </div>
+                            <div class="col">
+                                <h4 class="m-0">{iconItem.title}</h4>
+                                <p>{iconItem.bodytext}</p>
+                            </div>
                         </div>
                     </f:for>
                 </div>
@@ -56,8 +68,8 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='nav'">
             <f:then>
-                <div id="infobox-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} mb-6 p-5">
-                        <h1 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h1>
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                        <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
                         <ul class="nav flex-column gcpx-0 gcpy-1">
                             <f:for each="{data.pi_flexform.linkItems}" as="linkItem" iteration="iteration">
                                 <li class="nav-item">
@@ -70,12 +82,22 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='readmore'">
             <f:then>
-                <div id="infobox-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} mb-6 p-5">
-                    <h1 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h1>
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                    <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
                     <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
-                    <div class="text-right font-weight-normal nav-undecorated">
-                        <a href="{data.pi_flexform.link}">{f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
-                    </div>
+                    <f:if condition="{data.pi_flexform.readMoreLinkText}">
+                        <f:then>
+                            <div class="text-right font-weight-normal nav-undecorated">
+                                <a href="{data.pi_flexform.link}">{data.pi_flexform.readMoreLinkText}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
+                            </div>                            
+                        </f:then>
+                        <f:else>
+                            <div class="text-right font-weight-normal">
+                                <a href="{data.pi_flexform.link}" class="nav-undecorated">{f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i></a>
+                            </div>
+                        </f:else>
+                    </f:if>
+
                 </div>
             </f:then>
         </f:if>

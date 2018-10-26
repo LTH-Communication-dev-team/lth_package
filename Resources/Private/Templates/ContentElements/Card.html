@@ -2,6 +2,22 @@
     <f:layout name="Default"/>
     <f:section name="Main">
 
+        <f:if condition="{data.pi_flexform.cardType}=='default'">
+            <f:then>
+                <f:link.typolink parameter="{data.pi_flexform.link}" class="card nav-block bg-{data.pi_flexform.backgroundcolor}">
+                    <div id="card-{data.uid}" class="card-img">
+                        <div class="card-img-container">
+                            <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" alt="{data.pi_flexform.figureImage.alternative}" width="NULL" height="NULL" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class=" h2 nav-block-link m-0">{data.pi_flexform.header}</h3>
+                        <p class=" mt-3"><f:format.html>{data.pi_flexform.bodytext}</f:format.html></p>
+                    </div>
+                </f:link.typolink>
+            </f:then>
+        </f:if>
+        
         <f:if condition="{data.pi_flexform.cardType}=='highlighted'">
             <f:then>
                 <f:link.typolink parameter="{data.pi_flexform.link}" class="card nav-block bg-{data.pi_flexform.backgroundcolor}">
@@ -12,7 +28,7 @@
                     </div>
                     <div class="card-body">
                         <h3 class=" h2 nav-block-link m-0">{data.pi_flexform.header}</h3>
-                        <p class=" mt-3">{data.pi_flexform.bodytext}</p>
+                        <p class=" mt-3"><f:format.html>{data.pi_flexform.bodytext}</f:format.html></p>
                     </div>
                 </f:link.typolink>
             </f:then>
@@ -43,6 +59,21 @@
                     </div>
                     <div class="nav-block-link ">{data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i></div>
                 </f:link.typolink>
+            </f:then>
+        </f:if>
+        
+        <f:if condition="{data.pi_flexform.cardType}=='phototext'">
+            <f:then>
+                <div class="card bg-transparent mb-5">
+                    <div class="px-lg-9">
+                        <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" class="card-image-top card-image-narrow" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mt-0">{data.pi_flexform.header}</h5>
+                        <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                        <f:format.raw>{data.pi_flexform.htmltext}</f:format.raw>
+                    </div>
+                </div>
             </f:then>
         </f:if>
     </f:section>

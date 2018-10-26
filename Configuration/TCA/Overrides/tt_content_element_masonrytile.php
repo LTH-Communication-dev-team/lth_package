@@ -2,8 +2,8 @@
 /***************
 * Add Content Element
 */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['masonry'])) {
-   $GLOBALS['TCA']['tt_content']['types']['masonry'] = [];
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['masonrytile'])) {
+   $GLOBALS['TCA']['tt_content']['types']['masonrytile'] = [];
 }
 
 /***************
@@ -13,9 +13,9 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['masonry'])) {
    'tt_content',
    'CType',
    [
-       'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonry',
-       'masonry',
-       'content-lthpackage-masonry'
+       'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile',
+       'masonrytile',
+       'content-lthpackage-masonrytile'
    ],
    '--div--',
    'after'
@@ -24,10 +24,10 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['masonry'])) {
 /***************
 * Assign Icon
 */
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['masonry'] = 'content-lthpackage-masonry';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['masonrytile'] = 'content-lthpackage-masonrytile';
 
-$GLOBALS['TCA']['tt_content']['types']['masonry'] = array_replace_recursive(
-   $GLOBALS['TCA']['tt_content']['types']['masonry'],
+$GLOBALS['TCA']['tt_content']['types']['masonrytile'] = array_replace_recursive(
+   $GLOBALS['TCA']['tt_content']['types']['masonrytile'],
    [
        'showitem' => '
                             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
@@ -93,6 +93,6 @@ $GLOBALS['TCA']['tt_content']['palettes']['external_media'] = [
 */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
    '*',
-   'FILE:EXT:lth_package/Configuration/FlexForms/Masonry.xml',
-   'masonry'
+   'FILE:EXT:lth_package/Configuration/FlexForms/Masonrytile.xml',
+   'masonrytile'
 );

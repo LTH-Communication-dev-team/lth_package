@@ -8,6 +8,7 @@ $(document).ready( function () {
             showNews(switchableControllerActions, settingsCategories, settingsStartingpoint, settingsTemplateLayout);
         }
     }
+    
 });
 
 

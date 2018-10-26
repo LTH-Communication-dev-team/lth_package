@@ -1,15 +1,15 @@
-#################################################
-######### CTYPE: LTH PACKAGE MASONRY #########
-#################################################
+#####################################################
+##### CTYPE: LTH PACKAGE MASONRY IMAGE TILE #########
+#####################################################
 
-tt_content.masonry >
-tt_content.masonry = FLUIDTEMPLATE
-tt_content.masonry {
+tt_content.masonrytile >
+tt_content.masonrytile = FLUIDTEMPLATE
+tt_content.masonrytile {
 
     ################
     ### TEMPLATE ###
     ################
-    templateName = masonry
+    templateName = masonrytile
     templateRootPaths {
         0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
         #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}

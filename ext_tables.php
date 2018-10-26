@@ -116,12 +116,12 @@ $iconRegistry->registerIcon(
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/infographics.svg']
 );
 $iconRegistry->registerIcon(
-    'content-lthpackage-navigation',
+    'content-lthpackage-masonrytile',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/navigation.svg']
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/masonrytile.svg']
 );
 $iconRegistry->registerIcon(
-    'content-lthpackage-masonry',
+    'content-lthpackage-navigation',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/navigation.svg']
 );

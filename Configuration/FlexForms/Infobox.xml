@@ -18,25 +18,29 @@
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
-                                <default>contact</default>
+                                <default>default</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
+                                        <numIndex index="0">Default</numIndex>
+                                        <numIndex index="1">default</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.contact</numIndex>
                                         <numIndex index="1">contact</numIndex>
                                     </numIndex>
-                                    <numIndex index="1" type="array">
+                                    <numIndex index="2" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.icons</numIndex>
                                         <numIndex index="1">icons</numIndex>
                                     </numIndex>
-                                    <numIndex index="2" type="array">
+                                    <numIndex index="3" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.iconsvertical</numIndex>
                                         <numIndex index="1">iconsvertical</numIndex>
                                     </numIndex>
-                                    <numIndex index="3" type="array">
+                                    <numIndex index="4" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.nav</numIndex>
                                         <numIndex index="1">nav</numIndex>
                                     </numIndex>
-                                    <numIndex index="4" type="array">
+                                    <numIndex index="5" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type.readmore</numIndex>
                                         <numIndex index="1">readmore</numIndex>
                                     </numIndex>
@@ -47,7 +51,7 @@
                     <header>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.header</label>
-                            <displayCond>FIELD:infoboxtype:IN:nav,readmore</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,nav,readmore</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>20</size>
@@ -58,7 +62,7 @@
                     <bodytext>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.bodytext</label>
-                            <displayCond>FIELD:infoboxtype:IN:contact,readmore</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contact,readmore</displayCond>
                             <config>
                                 <type>text</type>
                                 <cols>48</cols>
@@ -67,17 +71,16 @@
                             <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
                         </TCEforms>
                     </bodytext>
-                    <link>
+                    <readMoreLinkText>
                         <TCEforms>
-                            <label>Read more link</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.readMoreLinkText</label>
                             <displayCond>FIELD:infoboxtype:IN:readmore</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>20</size>
                             </config>
-                            <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
                         </TCEforms>
-                    </link>
+                    </readMoreLinkText>
                     <icontextcolor>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.icontextcolor</label>

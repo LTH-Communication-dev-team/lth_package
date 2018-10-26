@@ -84,7 +84,7 @@ class FlexFormProcessor implements DataProcessorInterface
             return $processedData;
         }
         $flexformData = $this->flexFormService->convertFlexFormContentToArray($originalValue);
-        
+
         //check sys file reference
         if($flexformData['figureImage'] || $flexformData['carouselImages'] || $flexformData['bannerImage'] || $flexformData['titleImage'] || $flexformData['toggleImage']) {
             $i=0;

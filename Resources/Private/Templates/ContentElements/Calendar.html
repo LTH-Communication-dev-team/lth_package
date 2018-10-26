@@ -127,6 +127,216 @@
                 </div>
             </f:then>
         </f:if>
+
+        <f:if condition="{data.pi_flexform.layout}=='portal'">
+            <f:then>
+                <div id="lthPackageCalendarPortal" class="container">
+                    <div class="row my-5">
+                        <div class="">
+                            <div class="hero-title">
+                                <h1>Kalendarium</h1>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="lthPackageCalendarPortalTop" class="row my-5">
+                        <div class="col-12 col-lg-3">
+                            
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <a href="/events/disputationer/" class="card nav-block p-3 h-100 w-100 flex-column justify-content-between bg-flower-50">
+                                <div class="mb-5">
+                                    <h3 class=" nav-block-link m-0">Kommande disputationer</h3>
+                                </div>
+                                <div class="nav-block-link ">Läs mer&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="row my-5">
+                        <div class="col-12 col-lg-9 col-xl-9">
+                            <div class="">
+                                <div class="hero-title">
+                                    <h2>Kommande evenemang</h2>
+                                </div>
+                            </div>
+                            <!-- Filter start -->
+                            <form action="#" class="form my-5">
+                                <div class="row">
+                                    <div class="col-12 col-md">
+                                        <div class="form-group">
+                                            <label class="w-100">
+                                                Datum från
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent text-bronze"><i class="fal fa-calendar-alt  fa-lg"></i></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" name="date" value="2018-09-10" placeholder="YYYY-MM-DD" pattern="'\d{4}-\d{2}-\d{2}" >
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md">
+                                        <div class="form-group">
+                                            <label class="w-100">
+                                                Datum till
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent text-bronze"><i class="fal fa-calendar-alt  fa-lg"></i></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" name="date" value="2018-12-10" placeholder="YYYY-MM-DD" pattern="'\d{4}-\d{2}-\d{2}" >
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md">
+                                        <div class="form-group">
+                                            <label class="w-100">
+                                                <select class="form-control custom-select" name="" placeholder="Intresseområde">
+                                                    <option>Intresseområde</option>
+                                                    <option>Lorem ipsum</option>
+                                                    <option>Aliquam</option>
+                                                    <option>Vestibulum</option>
+                                                    <option>Nunc dignissim</option>
+                                                    <option>Cras ornare</option>
+                                                    <option>Vivamus</option>
+                                                    <option>Praesent</option>
+                                                    <option>Fusce nibh</option>
+                                                    <option>Integer vitae</option>
+                                                    <option>Vestibulum</option>
+                                                    <option>Ut aliquam</option>
+                                                    <option>Cras iaculis</option>
+                                                    <option>Donec quis</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md">
+                                        <div class="form-group">
+                                            <label class="w-100">
+                                                <select class="form-control custom-select" name="" placeholder="Händelsetyp">
+                                                    <option>Händelsetyp</option>
+                                                    <option>Lorem ipsum</option>
+                                                    <option>Aliquam</option>
+                                                    <option>Vestibulum</option>
+                                                    <option>Nunc dignissim</option>
+                                                    <option>Cras ornare</option>
+                                                    <option>Vivamus</option>
+                                                    <option>Praesent</option>
+                                                    <option>Fusce nibh</option>
+                                                    <option>Integer vitae</option>
+                                                    <option>Vestibulum</option>
+                                                    <option>Ut aliquam</option>
+                                                    <option>Cras iaculis</option>
+                                                    <option>Donec quis</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md">
+                                        <div class="form-group">
+                                            <label class="w-100">
+                                                <div class="input-group rounded-0">
+                                                    <input type="text" class="form-control" name="" placeholder="Skriv för att filtrera" />
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary rounded-0" type="submit">Sök</button>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Filter end -->
+                            <!-- Cal list begin -->
+                            <div id="lthPackageCalendarPortalList" class="row my-5">
+                                
+                            </div>
+                            <!-- Cal list end -->
+                            <!--pagination start -->
+                            <nav aria-label="Pagination" class="my-3">
+                                <ul class="pagination pagination-sm">
+                                </ul>
+                            </nav>
+                            <!--pagination end -->
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="">
+                                <div class="hero-title">
+                                    <h2>Pågånde evenemang</h2>
+                                </div>
+                            </div>
+                            <!-- Current list begin -->
+                            <div id="lthPackageCalendarPortalCurrent" class="">
+                                <div class="">
+                                    <div class="col">
+                                        <div class=" mt-5 text-right font-weight-normal">
+                                            <a href="../../#.html" class="nav-undecorated ">Till alla kommande evenemang&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Current list end -->
+                        </div>
+                    </div>
+                </div>
+                <script id="lthPackageCalendarCardTemplate" type="text/x-jquery-templ">
+                    <a href="###link###" class="card nav-block nav-block-plaster-25 nav-block-hover-plaster-25" title="###title###">
+                        <div class="card-img p-0">
+                            <div class="card-img-container">
+                                <img src="###image###" alt="###title###" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="meta ">
+                                <date class="meta-date">###dateTime###</date>
+                                <span class="meta-category">###categoryName###</span>
+                                <div class="meta-location">###location###</div>
+                            </div>
+                            <h3 class="nav-block-link m-0">###title###</h3>
+                        </div>
+                    </a>
+                </script>
+                <script id="lthPackageCalendarListTemplate" type="text/x-jquery-templ">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="border-bottom border-sm-0">
+                                <a href="###link###" class="card card-item nav-block" alt="###title###">
+                                    <div class="card-img d-none d-sm-flex">
+                                        <div class="card-img-container">
+                                            <img src="###image###" />
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="meta ">
+                                            <date class="meta-date">###dateTime###</date>
+                                            <span class="meta-category">###categoryName###</span>
+                                            <div class="meta-location">###location###</div>
+                                        </div>
+
+                                        <h3 class="nav-block-link mt-0 mb-2 h4">###title###</h3>
+                                        <p>###lead###</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+            </f:then>
+        </f:if>
+        
         <input type="hidden" id="lthPackageCalId" value="{data.pi_flexform.calId}"/>
         <!-- <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

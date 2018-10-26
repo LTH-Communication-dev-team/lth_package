@@ -151,6 +151,9 @@
             <trans-unit id="infobox.type">
                 <source>Type of infobox</source>
             </trans-unit>
+            <trans-unit id="readMoreLinkText">
+                <source>Text on Read more link (default Read more)</source>
+            </trans-unit>
             
             <trans-unit id="content_element.staff">
                 <source>Show staff</source>
@@ -465,6 +468,12 @@
                 <trans-unit id="card.backgroundcolor">
                     <source>Backgroundcolor</source>
                 </trans-unit>
+                <trans-unit id="card.bodytext">
+                    <source>Bodytext</source>
+                </trans-unit>
+                <trans-unit id="card.htmltext">
+                    <source>HTML</source>
+                </trans-unit>
                 
                 <trans-unit id="content_element.teasercards">
                     <source>Cards</source>
@@ -574,23 +583,32 @@
                     <source>Navigation</source>
                 </trans-unit>
                 
-                <trans-unit id="content_element.masonry">
-                    <source>Masonry</source>
+                <trans-unit id="content_element.masonrytile">
+                    <source>Masonry Tile</source>
                 </trans-unit>
-                <trans-unit id="content_element.masonry.description">
-                    <source>Insert masonry</source>
+                <trans-unit id="content_element.masonrytile.description">
+                    <source>Insert Masonry Tile</source>
                 </trans-unit>
-                <trans-unit id="masonry">
-                    <source>Show masonry</source>
+                <trans-unit id="masonrytile">
+                    <source>Masonry Tile</source>
                 </trans-unit>
-                <trans-unit id="masonry.options">
-                    <source>Show masonry Options</source>
+                <trans-unit id="masonrytile.options">
+                    <source>Masonry Tile Options</source>
                 </trans-unit>
-                <trans-unit id="masonry_item">
-                    <source>Show masonry Item</source>
+                <trans-unit id="masonrytile.bodytext">
+                    <source>Bodytext</source>
                 </trans-unit>
-                <trans-unit id="masonry_item.tt_content">
-                    <source>Show masonry</source>
+                <trans-unit id="masonrytile.header">
+                    <source>Header</source>
+                </trans-unit>
+                <trans-unit id="masonrytile.image">
+                    <source>Image</source>
+                </trans-unit>
+                <trans-unit id="masonrytile.link">
+                    <source>Link</source>
+                </trans-unit>
+                <trans-unit id="masonrytile.backgroundcolor">
+                    <source>Background Color</source>
                 </trans-unit>
                 
                 <trans-unit id="content_element.progress">

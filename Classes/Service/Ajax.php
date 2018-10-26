@@ -47,6 +47,9 @@ switch($action) {
     case 'showCalendar':
         $content = showCalendar($data, $config);
         break;
+    case 'portalCalendar':
+        $content = portalCalendar($data, $config);
+        break;
 }
 
 print $content;
@@ -98,6 +101,118 @@ function sucker()
         );
     }
 $resArray = array('data' => $data, 'facet' => $facetResult, 'query' => $queryToSet . count($prefetch));
+    return json_encode($resArray);
+}
+
+
+function portalCalendar($data, $config)
+{    
+    $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['lth_package']);
+    $syslang = addslashes($data['syslang']);
+    if(!$syslang) $syslang = "sv";
+    $currentDate = gmDate("Y-m-d\TH:i:s\Z");
+    $setStart = intval($data['setStart']);
+    $more = (string)$data['more'];
+
+    $config = array(
+        'endpoint' => array(
+            'localhost' => array(
+                'host' => $settings['solrHost'],
+                'port' => $settings['solrPort'],
+                'path' => "/solr/core_$syslang/",//$settings['solrPath'],
+                'timeout' => $settings['solrTimeout']
+            )
+        )
+    );
+    $fieldArray = array("id","title","categoryId","categoryName","startTime","endTime","location","lead","image");
+    
+    $client = new Solarium\Client($config);
+    
+    $query = $client->createSelect();
+
+    $query->addSorts(array("dateOrder" => "asc"));
+    if($more==='false') {
+        $queryToSetTopList = 'docType:calendar AND (startTime:[' . substr($currentDate,0,10) . 'T00:00:00Z TO *])';
+        $queryToSetCurrent = 'docType:calendar AND (startTime:[* TO ' . $currentDate . '] AND endTime:[' . $currentDate . ' TO *])';
+        $query->setStart($setStart)->setRows(11);
+    } else {
+        $queryToSetTopList = 'docType:calendar AND (startTime:[' . substr($currentDate,0,10) . 'T00:00:00Z TO *])';
+        //$queryToSet = 'docType:calendar AND startTime:[* TO ' . $currentDate . ']';
+        //$query->addSorts(array("dateOrder" => "desc"));
+        $query->setStart(abs($setStart * 8))->setRows(8);
+    }
+    
+    if($data["calId"]) {
+        $queryToSet = ' AND calender_ids:' . $calId;
+    }
+    
+    $query->setFields($fieldArray);
+    
+    $query->setQuery($queryToSetTopList);
+    
+    $facetSet = $query->getFacetSet();
+        
+    $facetSet->createFacetField('category')->setField('categoryName');
+    
+    $responseTopList = $client->select($query);
+    
+    $numFound = $responseTopList->getNumFound();
+
+    $facetCategory = $responseTopList->getFacetSet()->getFacet('category');
+    
+    foreach ($facetCategory as $value => $count) {
+        if($count > 0) $facetResult["category"][] = array($value, $count, $facetHeader);
+    }
+    
+    if($more==='false') {
+        $query->setStart(0)->setRows(3);
+        $query->setQuery($queryToSetCurrent);
+        $responseCurrent = $client->select($query);
+    }
+    
+    $dataTop = array();
+    $dataList = array();
+    $dataTemp = array();
+    $i = 0;
+    if($responseTopList) {
+        foreach ($responseTopList as $document) {
+            $dataTemp = array(
+                "id" => $document->id,
+                "title" => $document->title,
+                "startTime" => $document->startTime,
+                "endTime" => $document->endTime,
+                "location" => $document->location,
+                "categoryName" => $document->categoryName,
+                "lead" => $document->lead,
+                "image" => $document->image
+            );
+            if($i < 3 && $more==='false') {
+                $dataTop[] = $dataTemp;
+            } else {
+                $dataList[] = $dataTemp;
+            }
+            $i++;
+        }
+    }
+        
+    if($responseCurrent) {
+        foreach ($responseCurrent as $document) {
+            $dataCurrent[] = array(
+                "id" => $document->id,
+                "title" => $document->title,
+                "startTime" => $document->startTime,
+                "endTime" => $document->endTime,
+                "location" => $document->location,
+                "categoryName" => $document->categoryName,
+                "lead" => $document->lead,
+                "image" => $document->image
+            );
+        }
+    }
+        
+    
+    $resArray = array('dataTop' => $dataTop, 'dataList' => $dataList, 'dataCurrent' => $dataCurrent, 'facet' => $facetResult, 'numFound' => $numFound, 'query' => $queryToSet);
+    
     return json_encode($resArray);
 }
 

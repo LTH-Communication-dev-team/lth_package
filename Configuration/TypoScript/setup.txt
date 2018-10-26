@@ -17,8 +17,8 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Figure.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infobox.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infographics.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Masonrytile.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Navigation.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Masonry.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Progress.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Teasercards.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Title.txt">
@@ -309,8 +309,8 @@ page {
         #f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
         #googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
         #toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
-        lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
         maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.css
+        lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
     }
 
     includeJSFooterlibs {
@@ -344,7 +344,7 @@ config {
     typolinkEnableLinksAcrossDomains = 1
     #no_cache = {$config.no_cache}
     pageTitleFirst = 1
-    linkVars = L
+    linkVars = L(0,2)
     #prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
     metaCharset = utf-8

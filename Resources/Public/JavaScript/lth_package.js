@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    if($('.masonryA').length > 0) {
+    if($('.masonryAA').length > 0) {
         $('.masonryA > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-75"><div class="masonry-tile masonry-tile-lg"></div></div>');
         $('.masonryA > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile"></div></div>');
 
         $('.masonryA > .masonry > .masonry-col-40 > div:eq(0)').wrap('<div class="masonry-row masonry-row-55"><div class="masonry-tile"></div></div>');
         $('.masonryA > .masonry > .masonry-col-40 > div:eq(1)').wrap('<div class="masonry-row masonry-row-45"><div class="masonry-tile"></div></div>');
     }
-    if($('.masonryB').length > 0) {
+    if($('.masonryBB').length > 0) {
         $('.masonryB > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
         $('.masonryB > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
         $('.masonryB > .masonry > .masonry-col-40 > div:eq(2)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
 
     }
-    if($('.masonryC').length > 0) {
+    if($('.masonryCC').length > 0) {
         $('.masonryC > .masonry-rows > .masonry-row-50:eq(0) > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row  masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
         //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-60"><div class="masonry-tile"></div></div>');
         //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-64"><div class="masonry-tile masonry-tile-md"></div></div>');
@@ -25,14 +25,14 @@ $(document).ready(function() {
         $('.masonryC > .masonry > .masonry-col-50').wrapAll('<div class="masonry-row masonry-row-50"></div>');
         $('.masonryC > .masonry > .masonry-col-60,.masonryC > .masonry > .masonry-col-40').wrapAll('<div class="masonry-row masonry-row-50"></div>');*/
     }
-    if($('.masonryD').length > 0) {
+    if($('.masonryDD').length > 0) {
         /*$('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-tile masonry-tile-sm"></div></div>');
         $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrap('<div class="masonry-tile"></div></div>');
         $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
         $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
         */
     }
-    if($('.masonryE').length > 0) {
+    if($('.masonryEE').length > 0) {
         $('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row > .masonry-cols > .masonry-col:eq(1) > .masonry-rows > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
 //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(3)').wrap('<div class="masonry-tile masonry-tile-md"></div></div>');
         //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
@@ -46,7 +46,7 @@ $(document).ready(function() {
         //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(1), .masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(2)').wrap('<div class="masonry-row masonry-row-50"></div>');
         //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-row').wrapAll('<div class="masonry-rows"></div>');
     }
-    if($('.masonryF').length > 0) {
+    if($('.masonryFF').length > 0) {
         $('.masonryF > .masonry-rows > .masonry-row > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm">');
     }
     if(!getCookie('cookieConsent')) {
@@ -61,7 +61,10 @@ $(document).ready(function() {
             $('.full-width-dropdown__login').toggle(500);
         });
     }
-    
+
+    if($('#lthPackageCalendarPortal').length > 0) {
+        portalCalendar(0,false);
+    }
     if($('#lthPackageCalendarCards').length > 0) {
         listCalendar(0,'cards');
     }
@@ -165,108 +168,214 @@ $(document).ready(function() {
         })*/;
     }
 
-    /*if($("#header-search-field").length > 0) {
-        $("#header-search-field").autocomplete({
-            source: function( request, response ) {
-                $.ajax({
-                    url: "index.php",
-                    dataType: "json",
-                    data: {
-                        query: request.term,
-                        eID : 'lth_solr',
-                        action: 'searchShort',
-                        sid : Math.random()
-                    },
-                    type : "GET",
-                    dataType: "json",
-                    success: function( data ) {
-                        jsonObj = [];
-                        $.each(data, function(key, aData) {
-                            console.log(aData);
-                            if(aData.id==='lu' && aData.value) {
-                                var i=0;
-                                var obj = aData.value[1].search_result;
-                                for (var key in obj) {
-                                    if (obj.hasOwnProperty(key)) {
-                                        var val = obj[key];
-                                        if(i<5) {
-                                            item = {};
-                                            item ["id"] = 'lu_'+i;
-                                            item ["label"] = val.label;
-                                            item ["value"] = val.label;
-                                            item ["type"] = aData.type;
-                                            jsonObj.push(item);
-                                        }
-                                    }
-                                    i++;
-                                }
-                            } else if(aData.id==='lth' && aData.value) {
-                                var i=0;
-                                var i=0;
-                                var obj = aData.value[0].search_result;
-                                for (var key in obj) {
-                                    if (obj.hasOwnProperty(key)) {
-                                        var val = obj[key];
-                                        if(i<5) {
-                                            item = {};
-                                            item ["id"] = 'lth_'+i;
-                                            item ["label"] = val.label;
-                                            item ["value"] = val.label;
-                                            item ["type"] = aData.type;
-                                            jsonObj.push(item);
-                                        }
-                                    }
-                                    i++;
-                                }
-                            } else if(aData.id==='lth' && aData.value) {
-                                var i=0;
-                                var i=0;
-                                var obj = aData.value[0].search_result;
-                                for (var key in obj) {
-                                    if (obj.hasOwnProperty(key)) {
-                                        var val = obj[key];
-                                        if(i<5) {
-                                            item = {};
-                                            item ["id"] = 'lth_'+i;
-                                            item ["label"] = val.label;
-                                            item ["value"] = val.label;
-                                            item ["type"] = aData.type;
-                                            jsonObj.push(item);
-                                        }
-                                    }
-                                    i++;
-                                }
-                            } else if(aData.value) {
-                                item = {}
-                                item ["id"] = aData.id;
-                                item ["label"] = aData.label;
-                                item ["value"] = aData.value;
-                                item ["type"] = aData.type;
-                                jsonObj.push(item);
-                            }
-                        });
-                        response( jsonObj );
-                    }
-                });
-                },
-                minLength: 3,
-                select: function( event, ui ) {
-                  window.location.href = $('#searchsiteformlth').attr('action') + '?term='+ui.item.id;
-                },
-                open: function() {
-                    $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-                },
-                close: function() {
-                    $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-                }
-            }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-            return $( '<li style="min-height:20px;"></li>' ).data("item.autocomplete", item)
-                .append( '<a title="' + item.value + '(' + item.type + ')">' + trimData(item.value,40)  + '</a>')
-                .appendTo( ul );
-        };
-    }*/
+    if($('.newsCategoryList').length > 0 && $('.newsCategoryContainer').length > 0) {
+        var catList = {};
+        $('.newsCategoryList').each(function() {
+            var txt = $(this).text();
+            if (catList[txt]) {
+                $(this).remove();
+            } else {
+                catList[txt] = true;
+                $('.newsCategoryContainer').append('<li class="nav-item"><a href="#">'+txt+'</a></li>');
+                $(this).remove();
+            }
+        });
+    }
 
 });
+
+function portalCalendar(setStart, more)
+{
+
+    var template = '';
+
+    $.ajax({
+        type : "POST",
+        url : 'index.php',
+        data: {
+            eID: 'lth_package',
+            action: 'portalCalendar',
+            data: {
+                setStart: setStart,
+                more: more
+            },
+            syslang: $('html').attr('lang'),
+            sid: Math.random(),
+        },
+        //contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            if(setStart === 0 && !more) {
+                $('#lthPackageCalendarPortalTop > div:eq(0), #lthPackageCalendarPortalTop > div:eq(1), #lthPackageCalendarPortalTop > div:eq(2),#lthPackageCalendarPortalList,#lthPackageCalendarPortalCurrent').html('<div class="lthPackageLoader"></div>');
+            } else {
+                //console.log(setStart);
+                $('#lthPackageCalendarPortalList').html('<div class="lthPackageLoader"></div>');
+                $('.pagination li').remove();
+            }
+        },
+        success: function(d) {
+            
+            $('.lthPackageLoader').remove();
+            if(d.dataTop) {
+                var i = 0;
+                $.each( d.dataTop, function( key, aData ) {
+                    template = $('#lthPackageCalendarCardTemplate').html();
+                    var title = '';
+                    var categoryName = '';
+                    var location = '';
+                    var id = '';
+                    var image = '/typo3conf/ext/lth_package/Resources/Public/Images/seal-300x200@1x.jpg';
+                    if(aData.startTime) {
+                        var objDate = new Date(aData.startTime);
+                        var locale = "sv-se";
+                        //var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                        var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                        var calDate = objDate.getDate();
+                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        //var calYear = objDate.getFullYear();
+                        template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                    }
+                    if(aData.id) id = aData.id;
+                    if(aData.title) title = aData.title;
+                    if(aData.categoryName) categoryName = aData.categoryName;
+                    if(aData.location) location = aData.location;
+                    if(aData.image) image = aData.image;
+                    template = template.replace('###id###', id);
+                    template = template.replace(/###title###/g, title);
+                    template = template.replace('###categoryName###', categoryName);
+                    template = template.replace('###location###', location);
+                    template = template.replace('###image###', image);
+                    template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
+                    //console.log(i);
+                    $('#lthPackageCalendarPortalTop > div:eq('+i+')').html(template);
+                    i++;                    
+                });
+            }
+            if(d.dataList) {
+                $.each( d.dataList, function( key, aData ) {
+                    template = $('#lthPackageCalendarListTemplate').html();
+                    var title = '';
+                    var categoryName = '';
+                    var location = '';
+                    var id = '';
+                    var lead = '';
+                    var image = '/typo3conf/ext/lth_package/Resources/Public/Images/seal-300x200@1x.jpg';
+                    if(aData.startTime) {
+                        var objDate = new Date(aData.startTime);
+                        var locale = "sv-se";
+                        //var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                        var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                        var calDate = objDate.getDate();
+                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        //var calYear = objDate.getFullYear();
+                        template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                    }
+                    if(aData.id) id = aData.id;
+                    if(aData.title) title = aData.title;
+                    if(aData.categoryName) categoryName = aData.categoryName;
+                    if(aData.lead) lead = aData.lead;
+                    if(aData.location) location = aData.location;
+                    if(aData.image) image = aData.image;
+                    template = template.replace('###id###', id);
+                    template = template.replace(/###title###/g, title);
+                    template = template.replace('###categoryName###', categoryName);
+                    template = template.replace('###lead###', lead);
+                    template = template.replace('###location###', location);
+                    template = template.replace('###image###', image);
+                    template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
+                    //console.log(i);
+                    $('#lthPackageCalendarPortalList').append(template);
+                });
+            }
+            if(d.dataCurrent) {
+                var i = 0;
+                $.each( d.dataCurrent, function( key, aData ) {
+                    template = $('#lthPackageCalendarCardTemplate').html();
+                    var title = '';
+                    var categoryName = '';
+                    var location = '';
+                    var id = '';
+                    var image = '/typo3conf/ext/lth_package/Resources/Public/Images/seal-300x200@1x.jpg';
+                    if(aData.startTime) {
+                        var objDate = new Date(aData.startTime);
+                        var locale = "sv-se";
+                        //var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                        var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                        var calDate = objDate.getDate();
+                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        //var calYear = objDate.getFullYear();
+                        template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                    }
+                    if(aData.id) id = aData.id;
+                    if(aData.title) title = aData.title;
+                    if(aData.categoryName) categoryName = aData.categoryName;
+                    if(aData.location) location = aData.location;
+                    if(aData.image) image = aData.image;
+                    template = template.replace('###id###', id);
+                    template = template.replace(/###title###/g, title);
+                    template = template.replace('###categoryName###', categoryName);
+                    template = template.replace('###location###', location);
+                    template = template.replace('###image###', image);
+                    template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
+                    //console.log(i);
+                    $('#lthPackageCalendarPortalCurrent').prepend(template);
+                    i++;                    
+                });
+            }
+            if(d.numFound) {
+                var pageRows = 8;
+                var totalPages = Math.ceil(d.numFound / pageRows);
+                var activeClass = '';
+                var addOn = setStart / 8;
+                var ii = 1;
+                
+                $('.pagination').append('<li class="page-item"><a class="page-link" href="javascript:" onclick="portalCalendar(0,true);return false;"><span class="page-icon"><i class="fal fa-chevron-left fa-sm"></i></span><span class="page-label"> Föregående</span></a></li>');
+                for (var i = setStart; i <= (setStart+3); i++) {
+                        if(setStart === i) {
+                            activeClass = ' active';
+                        } else {
+                            activeClass = '';
+                        }
+                        $('.pagination').append('<li class="page-item'+activeClass+'"><a class="page-link" href="javascript:" onclick="portalCalendar('+i+',true);return false;">'+(i+1)+'</a></li>');
+                }
+                $('.pagination').append('<li class="page-item"><a class="page-link" href="javascript:" onclick="portalCalendar('+totalPages+',true);return false;"><span class="page-label">Nästa </span><span class="page-icon"><i class="fal fa-chevron-right fa-sm"></i></span></a></li>');
+                if(setStart === 0) {
+                    $('.pagination li:first').addClass('disabled');
+                }
+                if(setStart === totalPages) {
+                    $('.pagination li:last').addClass('disabled');
+                }
+                /*if(totalPages > 4) {
+                    noLoops = 3;
+                } else {
+                    noLoops = totalPages;
+                }
+                for (var i = (1+addOn); i <= (noLoops+addOn); i++) {
+                    if((setStart+1) === ii) {
+                        activeClass = ' active';
+                    } else {
+                        activeClass = '';
+                    }
+                    $('.pagination li:nth-child('+ii+')').after('<li class="page-item'+activeClass+'"><a class="page-link" href="javascript:" onclick="portalCalendar('+(setStart+(8*i))+');return false;">'+i+'</a></li>');
+                    ii++;
+                }
+                if(totalPages > 4) {
+                    
+                    $('.pagination li:nth-child('+ii+')').after('<li class="page-item"><span class="page-text"><i class="fal fa-ellipsis-h"></i></span></li>');
+                    i++;
+                    $('.pagination li:nth-child('+ii+')').after('<li class="page-item"><a class="page-link" href="#">'+totalPages+'</a></li>');
+                    $('.pagination li:last').click(function(){portalCalendar((setStart+8));return false;});
+                }
+                if(setStart > 0) {
+                    $('.pagination li:first').click(function(){portalCalendar((0));return false;});
+                }*/
+            }
+        },
+        failure: function(errMsg) {
+            console.log(errMsg);
+        }
+    });
+}
 
 
 function listCalendar(setStart,type)

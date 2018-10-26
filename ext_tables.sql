@@ -5,7 +5,6 @@ CREATE TABLE tt_content (
     tx_lthpackage_promos_item int(11) unsigned DEFAULT '0',
 );
 
-
 #
 # Table structure for table 'pages'
 #

@@ -1,0 +1,122 @@
+                            Eget innehållselement       Ingår i mallarna        Färdigt
+Banner:                     ja                          nej                     
+Breadcrumbs:                ja                          ja
+Button
+ - Primary                  nej                         ?
+ - Secondary                nej                         ?
+ - Dark                     nej                         ?
+ - Link                     nej                         ?
+Byline                      nej                         ja
+Calendar                   
+ - Calendar cards           nej (i lth_solr)            nej
+ - Calendar event cards     nej (i lth_solr)            nej
+ - Calendar list            nej (i lth_solr)            nej
+ - Event card column        nej (i lth_solr)            nej
+ - Event card row           nej (i lth_solr)            nej
+Card
+ - Default                  ja                          nej
+ - Event                    ja                          nej
+ - Highlighted              ja                          nej
+ - Teaser                   ja                          nej
+ - Cta                      ja                          nej
+Carousel                    ja                          nej
+Columns                     nej                         nej
+Cookiebar                   nej                         ja
+Embed                       ja                          nej
+Figure                      ja                          nej
+Footer                      nej                         ja
+Form
+ - Checkbox
+    - Default
+    - With help
+ - Date
+ - File
+    - Default
+    - With help
+ - Password
+    - Default
+    - With help
+ - Radio
+ - Radio Group
+ - Search
+ - Select
+    - Default
+    - Multiple
+ - Submit
+ - Text
+    - Default
+    - With Help
+    - Disabled
+ - Textarea
+    - Default
+    - With Help
+    - Disabled
+Header                      nej                             ja
+Icon                        ?                               ?
+Infobox
+ - Default                  ja                              nej
+ - Contact
+ - Icons Vertical
+ - Icons
+ - Nav
+ - Readmore
+Infographics
+ - Animate On Scroll        ja                              nej
+ - Circle Progress          ja                              nej
+Links
+ - Link                     Editorn
+ - Read More Link
+    - Default               Editorn
+    - Block                 Editorn
+    - Container             Editorn
+List Item                    ?                               ?
+Lists
+ - Ordered Lists            Editorn
+ - Unordered Lists          Editorn
+Masonry
+ - Masonry Layout
+    - Layout A              Gridelements?
+    - Layout B              Gridelements
+    - Layout C              Gridelements
+    - Layout D              Gridelements
+    - Layout E              Gridelements
+    - Layout F              Gridelements
+ - Masonry Image Tile
+ - Masonry Text Tile
+Nav List                    Editorn ?
+Navigation
+ - Mobile Navigation        nej                                 ja
+ - Navigation block
+    - Dark
+    - Light
+ - Navigation Section
+News
+Pagination                  nej                                 nej
+Progress                    ja                                  nej
+Side Navigation             nej                                 ja
+Swipe
+ - Default                  ?
+ - Cta                      ?
+ - Mobile                   ?
+Table                       editorn
+Tabs                        ?                                   ?
+Tag???
+Teaser Cards                ja                                  nej
+Title???
+Toggle Accordion            ja                                  nej
+Toggle Card
+ - Card A                   ja                                  nej
+ - Card B                   ja                                  nej
+ - Card C                   ja                                  nej
+Typography
+ - Blockquote
+ - Heading
+    - Level 1
+    - Level 2
+    - Level 3
+    - Level 4
+ - Kicker
+ - Paragraph
+    - Default
+    - Lead
+    - Link
