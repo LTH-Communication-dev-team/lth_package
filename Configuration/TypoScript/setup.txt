@@ -374,10 +374,10 @@ config {
     sys_language_uid = 0
     sys_language_overlay = 1
     sys_language_mode = content_fallback
-    sys_language_uid = 0
-    language = sv
-    locale_all = sv_SE.utf8
-    htmlTag_setParams = lang="sv" dir="ltr" class="no-js fontawesome-i2svg-active fontawesome-i2svg-complete"
+    #sys_language_uid = 0
+    #language = sv
+    #locale_all = sv_SE.utf8
+    #htmlTag_setParams = lang="sv" dir="ltr" class="no-js fontawesome-i2svg-active fontawesome-i2svg-complete"
 
     // Compression and Concatenation of CSS and JS Files
     #compressJs = {$config.compressJs}
