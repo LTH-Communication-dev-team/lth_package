@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <header>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:title.header</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:title.header</label>
                             <config>
                                 <type>input</type>
                                 <size>30</size>
@@ -23,7 +23,7 @@
                     </header>
                     <subheader>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:title.subheader</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:title.subheader</label>
                             <config>
                                 <type>text</type>
                                 <cols>24</cols>
@@ -33,7 +33,7 @@
                     </subheader>
                     <titleImage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:title.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:title.image</label>
                             <config>
                             <type>inline</type>
                             <foreign_table>sys_file_reference</foreign_table>
@@ -92,6 +92,14 @@
                             </config>
                         </TCEforms>
                     </titleImage>
+                    <bleedImage>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:title.bleedImage</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </bleedImage>
                 </el>
             </ROOT>
         </sDEF>

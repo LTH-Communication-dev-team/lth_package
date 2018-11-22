@@ -1,0 +1,211 @@
+config {
+  contentObjectExceptionHandler = 0
+  admPanel = 0
+  #baseUrl = http://vkans-th0.kh.lth.lu.se/
+}
+tt_content.gridelements_pi1.20.10.setup >
+tt_content.gridelements_pi1.20.10.setup {
+    1-col-100 < lib.gridelements.defaultGridSetup
+    1-col-100 {
+        columns {
+            11 < .default
+            11.wrap = <div class="col">|</div>
+        }
+        wrap = <div class="container"><div class="row my-5">|</div></div>
+    }
+    2-cols-50-50 < lib.gridelements.defaultGridSetup
+    2-cols-50-50 {
+        columns {
+            11 < .default
+            12 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/2-cols-50-50.html
+        }
+    }
+    2-cols-75-25 < lib.gridelements.defaultGridSetup
+    2-cols-75-25 {
+        columns {
+            11 < .default
+            12 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/2-cols-75-25.html
+        }
+    }
+    TabArticleContent < lib.gridelements.defaultGridSetup
+    TabArticleContent {
+        columns {
+            11 < .default
+            12 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/TabArticleContent.html
+        }
+    }
+    3-cols-33-33-33 < lib.gridelements.defaultGridSetup
+    3-cols-33-33-33 {
+        columns {
+            11 < .default
+            #11.wrap = <div class="col">|</div>
+            12 < .default
+            #12.wrap = <div class="col">|</div>
+            13 < .default
+            #13.wrap = <div class="col">|</div>
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/3-cols-33-33-33.html
+        }
+    }
+    3-cols-left-art-right < lib.gridelements.defaultGridSetup
+    3-cols-left-art-right {
+        columns {
+            11 < .default
+            11.wrap = <div class="col-12 col-xl-3">|</div>
+            12 < .default
+            12.wrap = <div class="col-12 col-xl-6 mb-6 mb-xl-0"><div class="article">|</div></div>
+            13 < .default
+            13.wrap = <div class="col-12 col-xl-3">|</div>
+        }
+        wrap = <div class="container my-lg-8"><div class="row">|</div></div>
+    }
+    4-cols-25-25-25-25 < lib.gridelements.defaultGridSetup
+    4-cols-25-25-25-25 {
+        columns {
+            11 < .default
+            12 < .default
+            13 < .default
+            14 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/4-cols-25-25-25-25.html
+        }
+    }
+    5-cols-20-20-20-20-20 < lib.gridelements.defaultGridSetup
+    5-cols-20-20-20-20-20 {
+        columns {
+            11 < .default
+            11.wrap = <div class="col">|</div>
+            12 < .default
+            12.wrap = <div class="col">|</div>
+            13 < .default
+            13.wrap = <div class="col">|</div>
+            14 < .default
+            14.wrap = <div class="col">|</div>
+            15 < .default
+            15.wrap = <div class="col">|</div>
+        }
+        dataWrap = <div class="container"><h2>{field:header}</h2><div class="row my-5">|</div></div>
+    }
+    MasonryA < lib.gridelements.defaultGridSetup
+    MasonryA {
+        columns {
+            11 < .default
+            12 < .default
+            21 < .default
+            22 < .default
+
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryA.html
+        }
+    }
+    MasonryB < lib.gridelements.defaultGridSetup
+    MasonryB {
+        columns {
+            11 < .default
+            12 < .default
+            21 < .default
+            31 < .default
+            32 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryB.html
+        }
+    }
+    MasonryC < lib.gridelements.defaultGridSetup
+    MasonryC {
+        columns {
+            11 < .default
+            12 < .default
+            21 < .default
+            31 < .default
+            32 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryC.html
+        }
+    }
+    MasonryD < lib.gridelements.defaultGridSetup
+    MasonryD {
+        columns {
+            11 < .default
+            12 < .default
+            13 < .default
+            21 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryD.html
+        }
+    }
+    MasonryE < lib.gridelements.defaultGridSetup
+    MasonryE {
+        columns {
+            11 < .default
+            12 < .default
+            13 < .default
+            21 < .default
+            31 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryE.html
+        }
+    }
+    MasonryF < lib.gridelements.defaultGridSetup
+    MasonryF {
+        columns {
+            11 < .default
+            12 < .default
+            21 < .default
+            31 < .default
+            32 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/MasonryF.html
+        }
+    }
+    NavBlockDark < lib.gridelements.defaultGridSetup
+    NavBlockDark {
+        columns {
+            11 < .default
+            12 < .default
+            13 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/NavBlockDark.html
+        }
+    }
+    NavBlockLight < lib.gridelements.defaultGridSetup
+    NavBlockLight {
+        columns {
+            11 < .default
+            12 < .default
+        }
+        cObject = FLUIDTEMPLATE
+        cObject {
+          file = typo3conf/ext/lth_package/Resources/Private/Templates/GridElements/NavBlockLight.html
+        }
+    }
+}

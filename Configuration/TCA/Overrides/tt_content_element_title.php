@@ -15,7 +15,7 @@
         'tt_content',
         'CType',
         [
-            'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.title',
+            'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.title',
             'title',
             'content-lthpackage-title'
         ],

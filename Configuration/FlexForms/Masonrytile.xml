@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <header>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:masonrytile.header</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:masonrytile.header</label>
                             <config>
                                 <type>input</type>
                                 <size>30</size>
@@ -23,7 +23,7 @@
                     </header>
                     <bodytext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:masonrytile.bodytext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:masonrytile.bodytext</label>
                             <config>
                                 <type>text</type>
                                 <cols>24</cols>
@@ -33,7 +33,7 @@
                     </bodytext>
                     <figureImage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:masonrytile.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:masonrytile.image</label>
                             <config>
                                 <type>inline</type>
                                 <foreign_table>sys_file_reference</foreign_table>
@@ -122,10 +122,10 @@
                     </link>
                     <backgroundcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:masonrytile.backgroundcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:masonrytile.backgroundcolor</label>
                             <config>
                                 <type>select</type>
-                                <default>sky.gif</default>
+                                <default>none.gif</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0"></numIndex>

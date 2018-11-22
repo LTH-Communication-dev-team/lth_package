@@ -5,8 +5,8 @@
     Klistra in:
                 lth_package_###elementname### {
                     iconIdentifier = content-lthpackage-###elementname###
-                    title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###
-                    description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###.description
+                    title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.###elementname###
+                    description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.###elementname###.description
                     tt_content_defValues {
                         CType = ###elementname###
                     }
@@ -35,7 +35,7 @@
                     'tt_content',
                     'CType',
                     [
-                        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.###elementname###',
+                        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.###elementname###',
                         '###elementname###',
                         'content-lthpackage-###elementname###'
                     ],

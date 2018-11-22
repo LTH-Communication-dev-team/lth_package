@@ -7,7 +7,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
@@ -112,12 +112,12 @@
                         <type>array</type>
                         <el>
                             <container>
-                                <title>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:progress.item</title>
+                                <title>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:progress.item</title>
                                 <type>array</type>
                                 <el>
                                     <step>
                                         <TCEforms>
-                                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:progress.item</label>
+                                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:progress.item</label>
                                             <config>
                                                 <type>text</type>
                                                 <cols>24</cols>

@@ -302,139 +302,148 @@
                             }
                         </style>
                         <div class="container">
-                        <div class="masonry-container masonry-container-3by2">
-                            <div class="masonry masonry-wide masonry-rows">
-                                <div class="masonry-row masonry-row-60">
-                                    <div class="masonry-tile">
-                                        <n:link newsItem="{news.0}" settings="{settings}" title="{news.0.title}" class="nav-block masonry-tile-img">
-                                            <div class="masonry-tile-img-bg">
-                                                <img src="{f:uri.image(src:news.0.falMedia.0.uid,treatIdAsReference:1,crop:news.0.falMedia.0.crop)}" title="{news.0.falMedia.0.title}" alt="{news.0.falMedia.0.alt}" />
-                                            </div>
-                                            <div class="masonry-tile-img-content">
-                                                <div class="blockline">
-                                                    <h1>
-                                                        <span class="a nav-block-link">
-                                                            {news.0.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
-                                                        </span>
-                                                    </h1>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="masonry-container masonry-container-3by2">
+                                        <div class="masonry masonry-wide masonry-rows">
+                                            <div class="masonry-row masonry-row-60">
+                                                <div class="masonry-tile">
+                                                    <n:link newsItem="{news.0}" settings="{settings}" title="{news.0.title}" class="nav-block masonry-tile-img">
+                                                        <div class="masonry-tile-img-bg">
+                                                            <img src="{f:uri.image(src:news.0.falMedia.0.uid,treatIdAsReference:1,crop:news.0.falMedia.0.crop)}" title="{news.0.falMedia.0.title}" alt="{news.0.falMedia.0.alt}" />
+                                                        </div>
+                                                        <div class="masonry-tile-img-content">
+                                                            <div class="blockline">
+                                                                <h1>
+                                                                    <span class="a nav-block-link">
+                                                                        {news.0.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
+                                                                    </span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </n:link>
                                                 </div>
                                             </div>
-                                        </n:link>
-                                    </div>
-                                </div>
-                                <div class="masonry-row masonry-row-40">
-                                    <div class="masonry-cols">
-                                        <div class="masonry-col masonry-col-50">
-                                            <div class="masonry-tile">
-                                                <n:link newsItem="{news.0}" settings="{settings}" title="{news.1.title}" class="nav-block masonry-tile-img">
-                                                    <div class="masonry-tile-img-bg">
-                                                        <img src="{f:uri.image(src:news.1.falMedia.0.uid,treatIdAsReference:1,crop:news.1.falMedia.0.crop)}" title="{news.1.falMedia.0.title}" alt="{news.1.falMedia.0.alt}" />
-                                                    </div>
-                                                    <div class="masonry-tile-img-content">
-                                                        <div class="blockline">
-                                                            <h1>
-                                                                <span class="a nav-block-link">
-                                                                    {news.1.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
-                                                                </span>
-                                                            </h1>
+                                            <div class="masonry-row masonry-row-40">
+                                                <div class="masonry-cols">
+                                                    <div class="masonry-col masonry-col-50">
+                                                        <div class="masonry-tile">
+                                                            <n:link newsItem="{news.0}" settings="{settings}" title="{news.1.title}" class="nav-block masonry-tile-img">
+                                                                <div class="masonry-tile-img-bg">
+                                                                    <img src="{f:uri.image(src:news.1.falMedia.0.uid,treatIdAsReference:1,crop:news.1.falMedia.0.crop)}" title="{news.1.falMedia.0.title}" alt="{news.1.falMedia.0.alt}" />
+                                                                </div>
+                                                                <div class="masonry-tile-img-content">
+                                                                    <div class="blockline">
+                                                                        <h1>
+                                                                            <span class="a nav-block-link">
+                                                                                {news.1.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
+                                                                            </span>
+                                                                        </h1>
+                                                                    </div>
+                                                                </div>
+                                                            </n:link>
                                                         </div>
                                                     </div>
-                                                </n:link>
-                                            </div>
-                                        </div>
-                                        <div class="masonry-col masonry-col-50">
-                                            <div class="masonry-tile">
-                                                <n:link newsItem="{news.2}" settings="{settings}" title="{news.2.title}" class="nav-block masonry-tile-img">
-                                                    <div class="masonry-tile-img-bg">
-                                                        <img src="{f:uri.image(src:news.2.falMedia.0.uid,treatIdAsReference:1,crop:news.2.falMedia.0.crop)}" title="{news.2.falMedia.0.title}" alt="{news.2.falMedia.0.alt}" />
-                                                    </div>
-                                                    <div class="masonry-tile-img-content">
-                                                        <div class="blockline">
-                                                            <h1>
-                                                                <span class="a nav-block-link">
-                                                                    {news.1.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
-                                                                </span>
-                                                            </h1>
+                                                    <div class="masonry-col masonry-col-50">
+                                                        <div class="masonry-tile">
+                                                            <n:link newsItem="{news.2}" settings="{settings}" title="{news.2.title}" class="nav-block masonry-tile-img">
+                                                                <div class="masonry-tile-img-bg">
+                                                                    <img src="{f:uri.image(src:news.2.falMedia.0.uid,treatIdAsReference:1,crop:news.2.falMedia.0.crop)}" title="{news.2.falMedia.0.title}" alt="{news.2.falMedia.0.alt}" />
+                                                                </div>
+                                                                <div class="masonry-tile-img-content">
+                                                                    <div class="blockline">
+                                                                        <h1>
+                                                                            <span class="a nav-block-link">
+                                                                                {news.1.title}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i>
+                                                                            </span>
+                                                                        </h1>
+                                                                    </div>
+                                                                </div>
+                                                            </n:link>
                                                         </div>
                                                     </div>
-                                                </n:link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        <div class="container">
-                            <div class="row my-5">
-                                <div class="hero">
-                                    <div class="hero-title">
-                                        <h2>Senaste nyheter</h2>
-                                    </div>
-                                </div>
-                                <div class="col-9">
+                        <div class="container mt-5 mb-9">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 mb-5 mb-lg-0">
                                     <div class="row">
-                                        
-                                        <f:for each="{news}" as="newsItem" iteration="iterator">
-                                            <f:if condition="{newsItem.categories}">
-                                                <f:for each="{newsItem.categories}" as="newsCategoryItem">
-                                                    <li class="newsCategoryList">{newsCategoryItem.title}</li>
-                                                </f:for>
-                                            </f:if>
-                                            <f:if condition="{iterator.index} > 2">
-                                                <f:then>
-                                                    <div class="col-12 newsItemRow">
-                                                        <div class="border-bottom border-sm-0">
-                                                            <a href="../preview/event-detail-page.html" class="card card-item nav-block " title="Modelling Probability of Default in the Nordics - In this Master’s thesis, data from a pediatric intensive care unit for children and yo…">
-                                                                <div class="card-img d-none d-sm-flex">
-                                                                    <div class="card-img-container">
-                                                                        <f:if condition="{newsItem.falMedia}">
-                                                                            <f:then>
-                                                                                <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:news.2.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
-                                                                            </f:then>
-                                                                            <f:else>
-                                                                                <img src="typo3conf/ext/lth_package/Resources/Public/Images/placeholder_1@1x.jpg" srcset="../../images/placeholder_1@1x.jpg 1x, ../../images/placeholder_1@2x.jpg 2x" alt="desc" class=" item-list-item-image">
-                                                                            </f:else>
-                                                                        </f:if>
-                                                                    </div>
+                                        <div class="col">
+                                            <h2 class="mt-0 mb-4">Senaste nyheter</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                                <f:if condition="{newsItem.categories}">
+                                                    <f:for each="{newsItem.categories}" as="newsCategoryItem">
+                                                        <li class="nav-item newsCategoryList"><a href="#" class="nav-link py-1">{newsCategoryItem.title}</a></li>
+                                                    </f:for>
+                                                </f:if>
+                                                <f:if condition="{iterator.index} > 2">
+                                                    <f:then>
+                                                        <a href="../preview/event-detail-page.html" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto" title="Modelling Probability of Default in the Nordics - In this Master’s thesis, data from a pediatric intensive care unit for children and yo…">
+                                                            <div class="card-img card-img-lg w-md-auto p-0">
+                                                                <div class="card-img-container">
+                                                                    <f:if condition="{newsItem.falMedia}">
+                                                                        <f:then>
+                                                                            <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:news.2.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
+                                                                        </f:then>
+                                                                        <f:else>
+                                                                            <img src="typo3conf/ext/lth_package/Resources/Public/Images/placeholder_1@1x.jpg" srcset="../../images/placeholder_1@1x.jpg 1x, ../../images/placeholder_1@2x.jpg 2x" alt="desc" class=" item-list-item-image">
+                                                                        </f:else>
+                                                                    </f:if>
                                                                 </div>
-                                                                <div class="card-body">
-                                                                    <div class="meta ">
-                                                                        <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
-                                                                    </div>
-
-                                                                    <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
-                                                                    <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
+                                                            </div>
+                                                            <div class="card-body p-0 pt-3 pb-6 py-md-0">
+                                                                <div class="meta mb-0">
+                                                                    <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: "%d %M %Y")}</date>
                                                                 </div>
-                                                            </a>
-
-                                                        </div>
-                                                    </div>
-                                                </f:then>
-                                            </f:if>
-                                        </f:for>
+                                                                <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
+                                                                <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
+                                                            </div>
+                                                        </a>
+                                                    </f:then>
+                                                </f:if>
+                                            </f:for>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class=" mt-5 text-right font-weight-normal">
-                                                <a href="../../#.html" class="nav-undecorated ">Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                                <a href="../../#.html" class="nav-undecorated ">
+                                                    Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right fa-w-16 fa-lg"></i>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
-                                    <div class="infobox bg-flower-50 ">
-                                        <h3 class=" h3 mt-0 mb-3">Nyhetskategorier</h3>
-                                        <ul class="nav flex-column gcpx-0 gcpy-1 newsCategoryContainer">
-                                        </ul>
+                                <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="bg-flower-25 p-5 mb-5">
+                                                <h3 class="mt-0 mb-3">Nyhetskategorier</h3>
+                                                <ul class="nav flex-column nmx-3 newsCategoryContainer">
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-  <div id="twitter" name="tab3" class="tabContentBox"> 
-      <a class="twitter-timeline" href="https://twitter.com/LTHinfo?ref_src=twsrc%5Etfw">Tweets by LTH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div id="twitter" name="tab3" class="mb-5 tabContentBox"> 
+                                                <a class="twitter-timeline" href="https://twitter.com/LTHinfo?ref_src=twsrc%5Etfw">Tweets by LTH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                                
+                        </div>
+                      
                     </f:then>
                 </f:if>        
                         
@@ -472,3 +481,7 @@
         </f:if>
 </f:section>
 </html>
+
+<!--
+
+-->

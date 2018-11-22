@@ -215,6 +215,38 @@ class FlexFormProcessor implements DataProcessorInterface
             }
         }
         
+        if($flexformData['marginTop']) {
+            if(intval($flexformData['marginTop'])) {
+                $flexformData['marginTop'] = 'margin-top:' . $flexformData['marginTop'] . 'px;';
+            } else {
+                $flexformData['marginTop'] = '';
+            }
+        }
+        
+        if($flexformData['marginRight']) {
+            if(intval($flexformData['marginRight'])) {
+                $flexformData['marginRight'] = 'margin-right:' . $flexformData['marginRight'] . 'px;';
+            } else {
+                $flexformData['marginRight'] = '';
+            }
+        }
+        
+        if($flexformData['marginBottom']) {
+            if(intval($flexformData['marginBottom'])) {
+                $flexformData['marginBottom'] = 'margin-bottom:' . $flexformData['marginBottom'] . 'px;';
+            } else {
+                $flexformData['marginBottom'] = '';
+            }
+        }
+        
+        if($flexformData['marginLeft']) {
+            if(intval($flexformData['marginLeft'])) {
+                $flexformData['marginLeft'] = 'margin-left:' . $flexformData['marginLeft'] . 'px;';
+            } else {
+                $flexformData['marginLeft'] = '';
+            }
+        }
+        
         if($flexformData['gridbuilder']) {
             $content = '';
             $oldX = '';

@@ -25,6 +25,39 @@
                 </div>
             </f:then>
         </f:if>
+        <f:if condition="{data.pi_flexform.navigationType}=='tabNavigation'">
+            <f:then>
+                <div class="container mb-9">
+                    <f:render partial="Navigation/TabNavigation" arguments="{_all}"/>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.pi_flexform.navigationType}=='stickyNavbar'">
+            <f:then>
+                <div class="sticky-xl-top bg-white">
+                    <div class="container">
+                        <div class="border-xl-top border-bottom py-xl-3 container-fill mx-xl-0">
+                            <nav class="navbar navbar-expand-xl px-0">
+                                <div class="collapse navbar-collapse border-bottom border-xl-bottom-0" id="sticky-navbar">
+                                    <ul class="navbar-nav mr-auto text-center text-xl-left">
+                                        <li class="nav-item d-none d-xl-block">
+                                            <span class="navbar-text">Navbar label:</span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-undecorated px-3" href="#">Nav Item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="navbar-toggler text-center w-100 collapsed rounded-0 my-0 py-3" type="button" data-toggle="collapse" href="#sticky-navbar" aria-controls="sticky-navbar" aria-expanded="false" aria-label="Visa navigation">
+                                    <span class="collapse-show-inline small">Visa: Navbar label &nbsp;<i class="fal fa-lg fa-chevron-circle-down"></i></span>
+                                    <span class="collapse-hide-inline small">Dölj: Navbar label &nbsp;<i class="fal fa-lg fa-chevron-circle-up"></i></span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>                
+            </f:then>
+        </f:if>
     </f:section>
     <f:section name="NavigationBlockSection">
         <f:if condition="{navblockTitle}">

@@ -15,7 +15,7 @@ defined('TYPO3_MODE') || die();
                     'tt_content',
                     'CType',
                     [
-                        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.banner',
+                        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.banner',
                         'banner',
                         'content-lthpackage-banner'
                     ],
@@ -61,7 +61,7 @@ defined('TYPO3_MODE') || die();
     $GLOBALS['TCA']['tt_content']['columns'],
     [
         'tx_lthpackage_banner_item' => [
-            'label' => 'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner_item',
+            'label' => 'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner_item',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_lthpackage_banner_item',

@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <toggletype>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.type</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type</label>
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
@@ -21,19 +21,19 @@
                                 <default>accordion</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.type.accordion</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.type.accordion</numIndex>
                                         <numIndex index="1">accordion</numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.type.cardA</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.type.cardA</numIndex>
                                         <numIndex index="1">cardA</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.type.cardB</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.type.cardB</numIndex>
                                         <numIndex index="1">cardB</numIndex>
                                     </numIndex>
                                     <numIndex index="3" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.type.cardC</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.type.cardC</numIndex>
                                         <numIndex index="1">cardC</numIndex>
                                     </numIndex>
                                 </items>
@@ -42,11 +42,11 @@
                     </toggletype>
                     <backgroundcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.backgroundcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.backgroundcolor</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardB,cardC</displayCond>
                             <config>
                                 <type>select</type>
-                                <default>sky.gif</default>
+                                <default>none.gif</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0"></numIndex>
@@ -64,7 +64,7 @@
                     </backgroundcolor>
                     <toggleShow>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.show</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.show</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardB,cardC</displayCond>
                             <config>
                                 <type>input</type>
@@ -75,7 +75,7 @@
                     </toggleShow>
                     <toggleHide>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.hide</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.hide</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardB,cardC</displayCond>
                             <config>
                                 <type>input</type>
@@ -86,7 +86,7 @@
                     </toggleHide>
                     <teaser>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.teaser</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.teaser</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardC</displayCond>
                             <config>
                                 <type>text</type>
@@ -98,7 +98,7 @@
                     </teaser>
                     <bodytext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.bodytext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.bodytext</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardB,cardC</displayCond>
                             <config>
                                 <type>text</type>
@@ -119,7 +119,7 @@
                                 <el>
                                     <toggleshowhide>
                                         <TCEforms>
-                                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.showhide</label>
+                                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.showhide</label>
                                             <displayCond>FIELD:toggletype:IN:accordion</displayCond>
                                             <config>
                                                 <type>input</type>
@@ -130,7 +130,7 @@
                                     </toggleshowhide>
                                     <bodytext>
                                         <TCEforms>
-                                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.bodytext</label>
+                                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.bodytext</label>
                                             <displayCond>FIELD:toggletype:IN:accordion</displayCond>
                                             <config>
                                                 <type>text</type>
@@ -146,7 +146,7 @@
                     </toggleItems>
                     <toggleImage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:toggle.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.image</label>
                             <displayCond>FIELD:toggletype:IN:cardA,cardB</displayCond>
                             <config>
                             <type>inline</type>

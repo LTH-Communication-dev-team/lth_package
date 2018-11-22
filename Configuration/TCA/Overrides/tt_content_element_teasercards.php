@@ -15,7 +15,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['teasercards'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards',
+        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.teasercards',
         'teasercards',
         'content-lthpackage-teasercards'
     ],

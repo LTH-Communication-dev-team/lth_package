@@ -6,7 +6,7 @@ TCEFORM {
         layout {
             removeItems = 2,3
             altLabels {
-                1 = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:frontend_layout.notitle
+                1 = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:frontend_layout.notitle
             }
         }
     }

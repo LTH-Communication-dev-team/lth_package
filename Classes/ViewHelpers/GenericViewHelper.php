@@ -34,6 +34,15 @@ class GenericViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
                 );
                 return $content;
                 break;
+            case 'inArray':
+                $content = $GLOBALS['TSFE']->cObj->typoLink_URL(
+                    array(
+                        'parameter' => $genvar,
+                        'forceAbsoluteUrl' => true,
+                    )
+                );
+                return $content;
+                break;
         }        
     }
 }

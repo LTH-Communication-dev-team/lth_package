@@ -15,7 +15,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['staff'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.staff',
+        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.staff',
         'staff',
         'content-lthpackage-staff'
     ],
@@ -37,7 +37,7 @@ $GLOBALS['TCA']['tt_content']['types']['staff'] = array_replace_recursive(
         'showitem' => '
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-            --div--;LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:staff.options,
+            --div--;LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:staff.options,
                 pi_flexform;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:advanced,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,

@@ -7,7 +7,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
@@ -55,7 +55,7 @@
                     </subheader>
                     <calId>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:calender_id</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:calender_id</label>
                             <config>
                             <type>select</type>
                                 <size>10</size>
@@ -68,7 +68,7 @@
                     </calId>
                     <listingPage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:listing_page</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:listing_page</label>
                             <config>
                                 <type>group</type>
                                 <internal_type>db</internal_type>

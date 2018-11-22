@@ -11,9 +11,9 @@ Typoscript: Z:\typo3conf\ext\lth_package\Configuration\Typoscript
 
 Huvudmallar: 
         Default: 
-            Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
-            Valfri toppbild, breadcrumb, vänsternavigering article och högerkolumn samt footer. 
-            Mallsida: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Default.html
+            - Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
+            - Valfri toppbild, breadcrumb, vänsternavigering, article och högerkolumn samt footer. 
+            - Mallsida: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Default.html
             - Mobil navigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MobileNavigation.html
             - Top Bar:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\TopBar.html
             - Header:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Header.html
@@ -36,6 +36,22 @@ Huvudmallar:
                     a. MainNavigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MainNavigation.html
             - Main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Landingpage.html
                     a. Content normal
+            - Footer: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Footer.html
+
+        Tab navigation: 
+            - Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\tabnavigation.txt
+            - Valfri toppbild, breadcrumb, tabnavigering, article och högerkolumn samt footer. 
+            - Mallsida: Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\Page\Tabnavigation.html
+            - Mobil navigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MobileNavigation.html
+            - Top Bar:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\TopBar.html
+            - Header:  Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Header.html
+                  a. MainNavigation: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Navigation\MainNavigation.html
+            - Main content : Z:\typo3conf\ext\lth_package\Resources\Private\Templates\Page\Tabnavigation.html
+                  a. Content top
+                  b. Bread crumb
+                  c. Left nav
+                  d. Content normal
+                  e. Content right
             - Footer: Z:\typo3conf\ext\lth_package\Resources\Private\Partials\Page\Structure\Footer.html
 
 

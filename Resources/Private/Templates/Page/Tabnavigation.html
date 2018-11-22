@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <div class="container pt-2 pt-lg-3 ">
+            <nav aria-label="breadcrumb">
+                <f:render partial="Navigation/BreadcrumbNavigation" arguments="{_all}"/>
+            </nav>
+        </div>
+        <f:if condition="{f:cObject(typoscriptObjectPath:'lib.dynamicContent',data:'1')}">
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1'}"/>
+        </f:if>
+        <main class="">
+            <div class="container">
+                <f:render partial="Navigation/Tabnavigation" arguments="{_all}"/>
+            </div>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+        </main>          
+    </f:section>
+</html>

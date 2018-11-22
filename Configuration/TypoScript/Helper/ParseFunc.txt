@@ -38,7 +38,7 @@ lib.parseFunc {
         }
     }
     allowTags := addToList(a, abbr, acronym, address, article, aside, b, bdo)
-    allowTags := addToList(big, blockquote, br, caption, center, cite, code, col)
+    allowTags := addToList(big, blockquote, br, caption, center, cite, code, col, footer)
     allowTags := addToList(colgroup, dd, del, dfn, dl, div, dt, em, font)
     allowTags := addToList(footer, header, h1, h2, h3, h4, h5, h6, hr, i, img)
     allowTags := addToList(ins, kbd, label, li, link, meta, nav, ol, p, pre, q)
@@ -63,7 +63,7 @@ lib.parseFunc {
 #######################
 lib.parseFunc_RTE < lib.parseFunc
 lib.parseFunc_RTE {
-    externalBlocks := addToList(article, aside, blockquote, div, dd, dl, footer)
+    externalBlocks := addToList(article, aside, blockquote, div, dd, dl, i, footer)
     externalBlocks := addToList(header, nav, ol, section, table, ul)
     externalBlocks {
         blockquote {
@@ -89,18 +89,18 @@ lib.parseFunc_RTE {
                 HTMLparser {
                     tags {
                         table {
-                            fixAttrib {
-                                class {
-                                    default = table
-                                    always = 1
-                                    list = table
-                                }
-                            }
+                            #fixAttrib {
+                            #    class {
+                            #        default = table
+                            #        always = 0
+                             #       list = table
+                            #    }
+                            #}
                         }
                     }
                     keepNonMatchedTags = 1
                 }
-                 wrap = <div class="table-responsive">|</div>
+                #wrap = <div class="table-responsive">|</div>
             }
             HTMLtableCells = 1
             HTMLtableCells {
@@ -142,7 +142,7 @@ lib.parseFunc_RTE {
         HTMLparser = 1
         HTMLparser {
             keepNonMatchedTags = 1
-            htmlSpecialChars = 2
+            htmlSpecialChars = 0
         }
     }
 }

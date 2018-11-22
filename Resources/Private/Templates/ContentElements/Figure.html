@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
-        <figure class="figure">
-            <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" class="figure-img img-fluid m-0" width="NULL" height="NULL" />
+        <figure class="figure" style="{data.pi_flexform.marginTop}{data.pi_flexform.marginRight}{data.pi_flexform.marginBottom}{data.pi_flexform.marginLeft}">
+            <img class="figure-img img-fluid m-0" src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" />
             <f:if condition="{imageItem.description}">
                 <figcaption class="figure-caption bg-dark text-white p-2">{imageItem.description}</figcaption>
             </f:if>

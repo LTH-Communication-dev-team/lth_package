@@ -13,7 +13,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['masonrytile'])) {
    'tt_content',
    'CType',
    [
-       'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile',
+       'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.masonrytile',
        'masonrytile',
        'content-lthpackage-masonrytile'
    ],

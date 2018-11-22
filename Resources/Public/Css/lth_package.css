@@ -208,6 +208,27 @@ article {
     animation: spin 2s linear infinite;
 }
 
+
+.lthPackageProgramArskursTable tbody td {
+    border-top:0px;
+    border-bottom: 6px #ffffff solid;
+    background-color:#e0ede3;
+    border-right:24px #ffffff solid;
+}
+
+.lthPackageProgramArskursTable thead th {
+    border-bottom: 6px #ffffff solid;
+    border-right:24px #ffffff solid;
+}
+
+.lthPackageProgramArskursTable thead tr {
+    background-color:#ffffff;
+}
+
+.lthPackageProgramArskursTable .thead-dark th{
+    border-color:#ffffff;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }

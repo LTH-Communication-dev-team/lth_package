@@ -5,7 +5,7 @@ mod {
     web_layout {
         BackendLayouts {
             landingpage {
-                title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:backend_layout.landingpage
+                title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.landingpage
                 config {
                     backend_layout {
                         colCount = 1
@@ -14,7 +14,7 @@ mod {
                             1 {
                                 columns {
                                     1 {
-                                        name = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:backend_layout.column.normal
+                                        name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.normal
                                         colPos = 0
                                     }
                                 }

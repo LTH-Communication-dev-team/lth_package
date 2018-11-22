@@ -1,7 +1,7 @@
 ################
 #### HELPER ####
 ################
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/ParseFunc.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/ParseFunc.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/DynamicContent.txt">
 #<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/PageClass.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/Helper/Plugin.txt">
@@ -54,6 +54,9 @@ page {
             pagets__landingpage = TEXT
             pagets__landingpage.value = Landingpage
 
+            pagets__tabnavigation = TEXT
+            pagets__tabnavigation.value = Tabnavigation
+
             default = TEXT
             default.value = Default
         }
@@ -78,7 +81,7 @@ page {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
                 entryLevel = {$mainNavigationEntryLevel}
-                levels = 2
+                levels = 1
                 includeSpacer = 1
                 as = mainNavigation
             }
@@ -116,6 +119,12 @@ page {
                 includeSpacer = 0
                 #includeNotInMenu = 1
                 as = mobileNavigation
+            }
+            50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            50 {
+                entryLevel = {$tabNavigationEntryLevel}
+                levels = 1
+                as = tabNavigation
             }
             #40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             #40 {
@@ -336,6 +345,7 @@ page {
 ####################
 
 
+
 ################
 #### CONFIG ####
 ################
@@ -374,10 +384,9 @@ config {
     sys_language_uid = 0
     sys_language_overlay = 1
     sys_language_mode = content_fallback
-    #sys_language_uid = 0
-    #language = sv
-    #locale_all = sv_SE.utf8
-    #htmlTag_setParams = lang="sv" dir="ltr" class="no-js fontawesome-i2svg-active fontawesome-i2svg-complete"
+    language = sv
+    locale_all = sv_SE.utf8
+    htmlTag_setParams = lang="sv" class="fontawesome-i2svg-active fontawesome-i2svg-complete"
 
     // Compression and Concatenation of CSS and JS Files
     #compressJs = {$config.compressJs}
@@ -408,7 +417,7 @@ config {
         sys_language_uid = 0
         language = sv
         locale_all = se_SV.UTF-8
-        htmlTag_setParams = lang="sv" dir="ltr" class="no-js"
+        htmlTag_setParams = lang="sv" class="fontawesome-i2svg-active fontawesome-i2svg-complete"
     }
 [global]
 [globalVar = GP:L = 2]
@@ -416,7 +425,7 @@ config {
         sys_language_uid = 2
         language = en
         locale_all = en_EN.UTF-8
-        htmlTag_setParams = lang="en" dir="ltr" class="no-js"
+        htmlTag_setParams = lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete"
     }
 [global]
 

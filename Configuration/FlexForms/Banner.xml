@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <header>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.header</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.header</label>
                             <config>
                                 <type>input</type>
                                 <size>30</size>
@@ -23,7 +23,7 @@
                     </header>
                     <bodytext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.bodytext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.bodytext</label>
                             <config>
                                 <type>text</type>
                                 <cols>24</cols>
@@ -33,7 +33,7 @@
                     </bodytext>
                     <bannerImage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.image</label>
                             <config>
                             <type>inline</type>
                             <foreign_table>sys_file_reference</foreign_table>
@@ -94,7 +94,7 @@
                     </bannerImage>
                     <backgroundcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.backgroundcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.backgroundcolor</label>
                             <config>
                                 <type>select</type>
                                 <items type="array">
@@ -114,7 +114,7 @@
                     </backgroundcolor>
                     <buttontext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.buttontext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.buttontext</label>
                             <config>
                                 <type>input</type>
                                 <size>20</size>

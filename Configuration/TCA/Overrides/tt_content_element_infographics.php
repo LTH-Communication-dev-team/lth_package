@@ -15,7 +15,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['infographics'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.infographics',
+        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.infographics',
         'infographics',
         'content-lthpackage-infographics'
     ],

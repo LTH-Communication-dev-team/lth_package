@@ -30,140 +30,140 @@ mod.wizards {
     newContentElement {
         wizardItems {
             lth {
-                header = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:theme_name
+                header = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:theme_name
                 elements {
                     lth_package_banner {
                         iconIdentifier = content-lthpackage-banner
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.banner
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.banner.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.banner
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.banner.description
                         tt_content_defValues {
                             CType = banner
                         }
                     }
                     lth_package_calendar {
                         iconIdentifier = content-lthpackage-calendar
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.calendar
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.calendar.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.calendar
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.calendar.description
                         tt_content_defValues {
                             CType = calendar
                         }
                     }
                     lth_package_card {
                         iconIdentifier = content-lthpackage-card
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.card
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.card.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.card
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.card.description
                         tt_content_defValues {
                             CType = card
                         }
                     }
                     lth_package_carousel {
                         iconIdentifier = content-lthpackage-carousel
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.carousel
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.carousel.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.carousel
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.carousel.description
                         tt_content_defValues {
                             CType = carousel
                         }
                     }
                     lth_package_embed {
                         iconIdentifier = content-lthpackage-embed
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.embed
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.embed.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.embed
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.embed.description
                         tt_content_defValues {
                             CType = embed
                         }
                     }
                     lth_package_figure {
                         iconIdentifier = content-lthpackage-figure
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.figure
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.figure.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.figure
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.figure.description
                         tt_content_defValues {
                             CType = figure
                         }
                     }
                     lth_package_infobox {
                         iconIdentifier = content-lthpackage-infobox
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.infobox
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.infobox.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.infobox
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.infobox.description
                         tt_content_defValues {
                             CType = infobox
                         }
                     }
                     lth_package_infographics {
                         iconIdentifier = content-lthpackage-infographics
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.infographics
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.infographics.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.infographics
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.infographics.description
                         tt_content_defValues {
                             CType = infographics
                         }
                     }
                     lth_package_masonrytile {
                         iconIdentifier = content-lthpackage-masonrytile
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.masonrytile.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.masonrytile
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.masonrytile.description
                         tt_content_defValues {
                             CType = masonrytile
                         }
                     }
                     lth_package_navigation {
                         iconIdentifier = content-lthpackage-navigation
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.navigation
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.navigation.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.navigation
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.navigation.description
                         tt_content_defValues {
                             CType = navigation
                         }
                     }
                     lth_package_progress {
                         iconIdentifier = content-lthpackage-progress
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.progress
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.progress.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.progress
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.progress.description
                         tt_content_defValues {
                             CType = progress
                         }
                     }
                     lth_package_teasercards {
                         iconIdentifier = content-lthpackage-teasercards
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.teasercards.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.teasercards
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.teasercards.description
                         tt_content_defValues {
                             CType = teasercards
                         }
                     }
                     lth_package_title {
                         iconIdentifier = content-lthpackage-title
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.title
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.title.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.title
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.title.description
                         tt_content_defValues {
                             CType = title
                         }
                     }
                     lth_package_toggle {
                         iconIdentifier = content-lthpackage-toggle
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.toggle
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.toggle.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.toggle
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.toggle.description
                         tt_content_defValues {
                             CType = toggle
                         }
                     }
                     lth_package_shownews {
                         iconIdentifier = content-lthpackage-shownews
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.shownews
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.shownews.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.shownews
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.shownews.description
                         tt_content_defValues {
                             CType = shownews
                         }
                     }
                     lth_package_publications {
                         iconIdentifier = content-lthpackage-publications
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.publications
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.publications.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.publications
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.publications.description
                         tt_content_defValues {
                             CType = publications
                         }
                     }
                     lth_package_staff {
                         iconIdentifier = content-lthpackage-staff
-                        title = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.staff
-                        description = LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.staff.description
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.staff
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.staff.description
                         tt_content_defValues {
                             CType = staff
                         }

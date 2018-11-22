@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    <ul class="nav nav-tabs nav-undecorated" id="tabControls" role="tablist">
+        <f:if condition="{lth:InArray(haystack:tabNavigation,needle:'active')}">
+            <f:then>
+                <f:for each="{tabNavigation}" as="item" iteration="iterator">
+                    <li class="nav-item">
+                        <f:if condition="{item.active}">
+                            <f:then>
+                                <a class="nav-link active" href="{item.link}" role="tab" aria-selected="true">
+                                    {item.title}
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <a class="nav-link" href="{item.link}" role="tab" aria-selected="false">
+                                    {item.title}
+                                </a>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </f:then>
+            <f:else>
+                <f:for each="{tabNavigation}" as="item" iteration="iterator">
+                    <li class="nav-item">
+                        <f:if condition="{iterator.index}==0">
+                            <f:then>
+                                <a class="nav-link active" href="{item.link}" role="tab" aria-selected="true">
+                                    {item.title}
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <a class="nav-link" href="{item.link}" role="tab" aria-selected="false">
+                                    {item.title}
+                                </a>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </f:else>
+        </f:if>
+        
+    </ul>
+</html>

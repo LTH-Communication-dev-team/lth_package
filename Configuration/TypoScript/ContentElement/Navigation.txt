@@ -56,6 +56,12 @@ tt_content.navigation {
             #}
             as = breadcrumbNavigation
         }
+        50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        50 {
+            entryLevel = {$tabNavigationEntryLevel}
+            levels = 2
+            as = tabNavigation
+        }
     }
 
 }

@@ -3,21 +3,36 @@
     <f:section name="Main">
         <f:if condition="{data.pi_flexform.imageItems.0}">
             <f:then>
-                <div class="hero hero-img">
-                    <div class="img-bg">
-                        <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" />
-                    </div>
-                    <div class="hero-title">
-                        <f:format.raw><h1>{data.pi_flexform.header}</h1>
-                        <p>{data.pi_flexform.subheader}</p></f:format.raw>
-                    </div>
-                </div>
+                <f:if condition="{data.pi_flexform.bleedImage}">
+                    <f:then>
+                        <div class="hero hero-img">
+                            <div class="img-bg">
+                                <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" />
+                            </div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="container mb-9">
+                            <div class="hero hero-img">
+                                <div class="img-bg">
+                                    <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" />
+                                </div>
+                                <div class="hero-title">
+                                    <f:format.raw><h1>{data.pi_flexform.header}</h1>
+                                    <p>{data.pi_flexform.subheader}</p></f:format.raw>
+                                </div>
+                            </div>
+                        </div>
+                    </f:else>
+                </f:if>
             </f:then>
             <f:else>
-                <div class="hero">
-                    <div class="hero-title">
-                        <f:format.raw><h1>{data.pi_flexform.header}</h1>
-                        <p>{data.pi_flexform.subheader}</p></f:format.raw>
+                <div class="container mb-9">
+                    <div class="hero">
+                        <div class="hero-title">
+                            <f:format.raw><h1>{data.pi_flexform.header}</h1>
+                            <p>{data.pi_flexform.subheader}</p></f:format.raw>
+                        </div>
                     </div>
                 </div>
             </f:else>

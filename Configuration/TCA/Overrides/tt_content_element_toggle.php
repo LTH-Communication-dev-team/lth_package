@@ -15,7 +15,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['toggle'])) {
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:content_element.toggle',
+        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.toggle',
         'toggle',
         'content-lthpackage-toggle'
     ],

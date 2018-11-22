@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>                  
                     <carouselImages>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:banner.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:banner.image</label>
                             <config>
                                 <type>inline</type>
                                 <foreign_table>sys_file_reference</foreign_table>

@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <cardType>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.type</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.type</label>
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
@@ -46,7 +46,7 @@
                     </cardType>
                     <header>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.title</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.title</label>
                             <config>
                                 <type>input</type>
                                 <size>20</size>
@@ -55,7 +55,7 @@
                     </header>
                     <bodytext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.bodytext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.bodytext</label>
                             <config>
                                 <type>text</type>
                                 <cols>24</cols>
@@ -66,7 +66,7 @@
                     </bodytext>
                     <htmltext>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.htmltext</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.htmltext</label>
                             <config>
                                 <type>text</type>
                                 <cols>40</cols>
@@ -76,10 +76,10 @@
                     </htmltext>
                     <backgroundcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.backgroundcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.backgroundcolor</label>
                             <config>
                                 <type>select</type>
-                                <default>sky.gif</default>
+                                <default>none.gif</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0"></numIndex>
@@ -137,7 +137,7 @@
                     </readMoreLinkText>
                     <figureImage>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:card.image</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.image</label>
                             <config>
                                 <type>inline</type>
                                 <foreign_table>sys_file_reference</foreign_table>

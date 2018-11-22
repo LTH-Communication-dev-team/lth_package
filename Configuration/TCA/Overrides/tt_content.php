@@ -8,7 +8,7 @@ defined('TYPO3_MODE') || die();
     'tt_content',
     'CType',
     [
-        'LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:theme_name',
+        'LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:theme_name',
         '--div--'
     ],
     '--div--',

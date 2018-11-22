@@ -7,7 +7,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                     <el>
@@ -31,6 +31,10 @@
                                         <numIndex index="2" type="array">
                                             <numIndex index="0">Breadcrumb Navigation</numIndex>
                                             <numIndex index="1">breadcrumbNavigation</numIndex>
+                                        </numIndex>
+                                        <numIndex index="3" type="array">
+                                            <numIndex index="0">Tab Navigation</numIndex>
+                                            <numIndex index="1">tabNavigation</numIndex>
                                         </numIndex>
                                     </items>
                                 </config>

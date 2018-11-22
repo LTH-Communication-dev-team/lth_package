@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
-          product-name="lth_package">
+    <file source-language="en" target-language="sv" datatype="plaintext" original="messages" date="2018-04-12T09:11:39Z" product-name="lth_package">
         <header/>
         <body>
-
+            <trans-unit id="bleed">
+                <source>Bleed</source>
+                <target state="translated">Utfallande</target>
+            </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
             </trans-unit>
@@ -173,9 +175,16 @@
             <trans-unit id="staff_item.tt_content">
                 <source>Show staff</source>
             </trans-unit>
+            
             <trans-unit id="backend_layout.landingpage">
                 <source>Landing page</source>
+                <target state="translated">Landningssida</target>
             </trans-unit>
+            <trans-unit id="backend_layout.tabnavigation">
+                <source>Tab navigation</source>
+                <target state="translated">Tab-navigering</target>
+            </trans-unit>
+            
             <trans-unit id="backend_layout.newsletter">
                 <source>Newsletter</source>
             </trans-unit>
@@ -239,7 +248,8 @@
             <trans-unit id="content_element.carousel.description">
                 <source>Insert Carouselelement with different contents (header / text with image / pure HTML)</source>
             </trans-unit>
-                        <trans-unit id="carousel.options">
+            
+            <trans-unit id="carousel.options">
                 <source>Carousel Options</source>
             </trans-unit>
              <trans-unit id="carousel.interval">
@@ -658,6 +668,11 @@
                     <source>Image</source>
                 </trans-unit>
                 
+                <trans-unit id="title.bleedImage">
+                    <source>Bleed Image</source>
+                    <target state="translated">Utfallande bild</target>
+                </trans-unit>
+                        
                 <trans-unit id="toggle.type.accordion">
                     <source>Toggle Accordion</source>
                 </trans-unit>

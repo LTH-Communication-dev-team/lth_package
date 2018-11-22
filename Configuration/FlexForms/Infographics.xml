@@ -7,13 +7,13 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                    <sheetTitle>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:settings</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <infographicstype>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infographics.type</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infographics.type</label>
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
@@ -34,7 +34,7 @@
                     </infographicstype>
                     <icontextcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infobox.icontextcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.icontextcolor</label>
                             <displayCond>FIELD:infographicstype:IN:animateonscroll</displayCond>
                             <config>
                                 <type>select</type>
@@ -42,11 +42,11 @@
                                 <default></default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infographics.black</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infographics.black</numIndex>
                                         <numIndex index="1"></numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infographics.white</numIndex>
+                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infographics.white</numIndex>
                                         <numIndex index="1">text-white </numIndex>
                                     </numIndex>
                                 </items>
@@ -55,11 +55,11 @@
                     </icontextcolor>
                     <backgroundcolor>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infographics.backgroundcolor</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infographics.backgroundcolor</label>
                             <displayCond>FIELD:infographicstype:IN:animateonscroll</displayCond>
                             <config>
                                 <type>select</type>
-                                <default>sky.gif</default>
+                                <default>none.gif</default>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0"></numIndex>
@@ -77,7 +77,7 @@
                     </backgroundcolor>
                     <header>
                         <TCEforms>
-                            <label>LLL:EXT:lth_package/Resources/Private/Language/Backend.xlf:infographics.header</label>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infographics.header</label>
                             <displayCond>FIELD:infographicstype:IN:animateonscroll</displayCond>
                             <config>
                                 <type>input</type>

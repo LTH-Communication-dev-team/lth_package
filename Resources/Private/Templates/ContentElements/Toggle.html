@@ -26,7 +26,7 @@
         <f:if condition="{data.pi_flexform.toggletype}=='cardA'">
             <f:then>
                 
-                <div id="{data.uid}-toggle-cardA" class="expand expand-show bg-{data.pi_flexform.backgroundcolor} mb-3">
+                <div id="{data.uid}-toggle-cardA" class="expand bg-{data.pi_flexform.backgroundcolor} mb-3">
                     <div class="expand-content">
                         <div class="expand-content-lead">
                             <div class="row">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="expand-content-body">
-                            <f:format.raw>{data.pi_flexform.bodytext}</f:format.raw>
+                            <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
                         </div>
                     </div>
                     <div class="expand-control">
