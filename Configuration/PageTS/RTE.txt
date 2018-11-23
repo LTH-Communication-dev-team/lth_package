@@ -123,7 +123,7 @@ RTE.default {
     // This option doesn't exist in RTE. We use it to copy the value into the corresponding properties
     allowedTags (
         b, strong, i, em, u, strike, del, big, small, sub, sup, ol, ul, li, a, link,
-        br, p, pre, h1, h2, h3, h4, hr, span,footer,i
+        br, p, pre, h1, h2, h3, h4, hr, span,footer,i,
         table, tr, th, td, thead, tbody, tfoot
     )
 
@@ -141,7 +141,7 @@ RTE.default {
 ################################################
 #### RTE BUTTON CONFIG                      ####
 ################################################
-#RTE.default.buttons {
+RTE.default.buttons {
 #
 #    // Remove html tags that are not suitable for an editor to maintain
 #    formatblock {
@@ -178,11 +178,11 @@ RTE.default {
 #    justifyfull.useClass = text-justify
 #
 #    // Make borders for tables visible default
-#    toggleborders {
-#        setOnTableCreation = 1
-#        setOnRTEOpen = 1
-#    }
-#}
+    toggleborders {
+        setOnTableCreation = 1
+        setOnRTEOpen = 1
+    }
+}
 
 ################################################
 #### RTE APPEARANCE                         ####

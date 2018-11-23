@@ -71,40 +71,58 @@
                     </figureImage>
                     <marginTop>
                         <TCEforms>
-                            <label>Margin Top</label>
+                            <label>Margin Top (numeric value)</label>
                             <config>
                                 <type>input</type>
-                                <size>20</size>
+                                <size>5</size>
                             </config>
                         </TCEforms>
                     </marginTop>
                     <marginRight>
                         <TCEforms>
-                            <label>Margin Right</label>
+                            <label>Margin Right (numeric value)</label>
                             <config>
                                 <type>input</type>
-                                <size>20</size>
+                                <size>5</size>
                             </config>
                         </TCEforms>
                     </marginRight>
                     <marginBottom>
                         <TCEforms>
-                            <label>Margin Bottom</label>
+                            <label>Margin Bottom (numeric value)</label>
                             <config>
                                 <type>input</type>
-                                <size>20</size>
+                                <size>5</size>
                             </config>
                         </TCEforms>
                     </marginBottom>
                     <marginLeft>
                         <TCEforms>
-                            <label>Margin Left</label>
+                            <label>Margin Left (numeric value)</label>
                             <config>
                                 <type>input</type>
-                                <size>20</size>
+                                <size>5</size>
                             </config>
                         </TCEforms>
                     </marginLeft>
+                    <maxWidth>
+                        <TCEforms>
+                            <label>Max Width (numeric value)</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </maxWidth>
+                    <maxHeight>
+                        <TCEforms>
+                            <label>Max Height (numeric value)</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </maxHeight>
                 </el>
             </ROOT>
         </sDEF>

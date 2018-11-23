@@ -1,16 +1,16 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default" />
     <f:section name="Main">
         <div class="container">
             <div class="tab-content my-5" id="myTabContent">
                 <div class="tab-pane show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                     <div class="row">
-                                <div class="col-12 col-lg-6 offset-lg-1">
-                                    <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
-                                </div>
+                        <div class="col-12 col-lg-6 offset-lg-1" style="{lth:ColPadding(padding:data.flexform_paddingCol1)}">
+                            <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
+                        </div>
+                        <div class="col-12 col-lg-4" style="{lth:ColPadding(padding:data.flexform_paddingCol2)}">
+                            <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
+                        </div>
                     </div>
                 </div>
             </div>

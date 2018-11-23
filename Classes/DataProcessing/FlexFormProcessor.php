@@ -247,6 +247,22 @@ class FlexFormProcessor implements DataProcessorInterface
             }
         }
         
+        if($flexformData['maxWidth']) {
+            if(intval($flexformData['maxWidth'])) {
+                $flexformData['maxWidth'] = 'max-width:' . $flexformData['maxWidth'] . 'px;';
+            } else {
+                $flexformData['maxWidth'] = '';
+            }
+        }
+        
+        if($flexformData['maxHeight']) {
+            if(intval($flexformData['maxHeight'])) {
+                $flexformData['maxHeight'] = 'max-height:' . $flexformData['maxHeight'] . 'px;';
+            } else {
+                $flexformData['maxHeight'] = '';
+            }
+        }
+        
         if($flexformData['gridbuilder']) {
             $content = '';
             $oldX = '';
