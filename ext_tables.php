@@ -149,6 +149,10 @@ $iconRegistry->registerIcon('MasonryF',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class, 
     ['source' => 'EXT:lth_package/Resources/Public/Icons/Backend/Grids/MasonryF.svg']
 );
+$iconRegistry->registerIcon('MasonryG',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class, 
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/Backend/Grids/MasonryG.svg']
+);
 $iconRegistry->registerIcon(
     'content-lthpackage-progress',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

@@ -35,7 +35,8 @@ tt_content.navigation {
             entryLevel = {$subNavigationEntryLevel}
             levels = 7
             expandAll = 1
-            includeSpacer = 1
+            includeSpacer = 0
+            includeNotInMenu = 0
             as = subNavigation
         }
         30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor

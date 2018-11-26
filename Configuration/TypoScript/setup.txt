@@ -90,7 +90,8 @@ page {
                 entryLevel = {$subNavigationEntryLevel}
                 levels = 7
                 expandAll = 1
-                includeSpacer = 1
+                includeSpacer = 0
+                
                 as = subNavigation
             }
             30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -117,7 +118,7 @@ page {
                 levels = 7
                 expandAll = 1
                 includeSpacer = 0
-                #includeNotInMenu = 1
+                includeNotInMenu = 0
                 as = mobileNavigation
             }
             50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor

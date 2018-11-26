@@ -837,6 +837,64 @@ tx_gridelements {
                 }
             }
         }
+
+        MasonryG {
+            title = MasonryG
+            description = MasonryG
+            topLevelLayout = 0
+            iconIdentifier = MasonryG
+            config {
+                colCount = 3
+                rowCount = 3
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Top Left (Masonry G)
+                                rowspan = 2
+                                colPos = 11
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                            2 {
+                                name = Top Right 1 (Masonry G)
+                                colPos = 12
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                            3 {
+                                name = Top Right 2 (Masonry G)
+                                colPos = 13
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Top Right 3 (Masonry G)
+                                colPos = 21
+                                colspan = 2
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Bottom left (Masonry G)
+                                colPos = 31
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                            2 {
+                                name = Bottom Right (Masonry G)
+                                colPos = 32
+                                colspan = 2
+                                allowed = embed,masonrytile,infographics,html
+                            }
+                        }
+                    }
+                }
+            }
+        }
         NavBlockDark {
             title = NavBlockDark
             description = NavBlockDark
