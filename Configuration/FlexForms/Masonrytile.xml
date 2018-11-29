@@ -110,7 +110,13 @@
                                             </urlParameters>
                                         </module>
                                         <icon>link_popup.gif</icon>
-                                        <script>browse_links.php?mode=wizard</script>
+                                        <module type="array">
+                                                <name>wizard_element_browser</name>
+                                                <urlParameters type="array">
+                                                        <mode>wizard</mode>
+                                                        <act>file</act>
+                                                </urlParameters>
+                                        </module>
                                         <params>
                                             <!--<blindLinkOptions>page,file,folder,url,spec</blindLinkOptions>-->
                                         </params>
