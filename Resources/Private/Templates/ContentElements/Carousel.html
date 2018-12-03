@@ -1,12 +1,12 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
-        <f:if condition="{data.pi_flexform.imageItems}">
+        <f:if condition="{data.pi_flexform.carouselImages}">
             <f:then>
                 <div class="container-fluid mx-0 px-0 nav-undecorated">
                     <div id="carousel-{data.uid}" class="carousel slide" data-ride="carousel" data-pause="false">
                         <ol class="carousel-indicators">
-                            <f:for each="{data.pi_flexform.imageItems}" as="imageItem" iteration="iterator">
+                            <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
                                 <li data-target="#carousel-{data.uid}" data-slide-to="{iterator.index}" class="{f:if(condition: iterator.isFirst,then:'active')}"><span class="sr-only">{imageItem.alternative}</span></li>
                             </f:for>
                         </ol>
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="carousel-inner">
-                            <f:for each="{data.pi_flexform.imageItems}" as="imageItem" iteration="iterator">
+                            <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
                                 <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}">
                                         <f:link.typolink parameter="{imageItem.link}" class="nav-block h-100">
                                             <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" class="carousel-img" />

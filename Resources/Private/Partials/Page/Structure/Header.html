@@ -1,79 +1,81 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <div class="border-bottom">
         <div class="container-fluid mw-xl">
-            <div class="row m-0 py-3">
+            <div class="row m-0 py-3 py-lg-5">
                 <div class="col p-0">
-                    <div class="header-logo header-logo-lth">
-                        <a href="/" title="Lunds Tekniska Högskola">
-                            <img src="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png" 
-                                 srcset="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png 1x,/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@2x.png 2x" 
-                                 class="mw-100"
-                                 alt="Lunds Tekniska Högskola">
-                        </a>
-                    </div>
-                </div>
-                <div class="col d-flex flex-column align-items-end justify-content-end">
-                    <div class="row mw-36 w-100 h-100 h-lg-auto flex-column justify-content-between align-items-end font-size-sm font-size-sm-base">
-                        <nav class="nav text-center h-100 h-lg-auto align-items-center d-lg-none">
-                            <div class="nav-item">
-                                <a class="ml-2 p-1 d-block nav-undecorated" 
-                                   href="#header-search-form" 
-                                   data-toggle="collapse"
-                                   aria-controls="header-search-form" aria-expanded="false"
-                                   aria-label="{f:translate(key:'show_and_hide_searchfield',extensionName:'lth_package')}">
-                                    <i class="fal fa-search"></i><br />{f:translate(key:'search',extensionName:'lth_package')}
-                                </a>
-                            </div>
-                            <div class="nav-item">
-                                <a class="ml-2 p-1 d-block" 
-                                   href="#" 
-                                   data-toggle="modal" 
-                                   data-target="#nav-mobile"
-                                   aria-controls="nav-mobile" 
-                                   aria-expanded="false" 
-                                   aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
-                                    <i class="fal fa-bars"></i><br />{f:translate(key:'menu',extensionName:'lth_package')}
-                                </a>
-                            </div>
-                        </nav>
-                        <div class="d-none d-lg-flex flex-column flex-xl-row w-100 justify-content-end">
-                            <nav class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0">
-                                <div class="nav-item flex-xl-grow-1">
-                                    <form class="form-inline px-lg-3">
-                                        <div class="input-group input-group-round input-group-sm w-100 flex">
-                                            <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field" />
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary px-2" type="submit">
-                                                    <span class="mr-2">{f:translate(key:'search',extensionName:'lth_package')}</span>
-                                                    <i class="fal fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </nav>
-                            <nav class="nav align-items-center justify-content-end">
-                                <div class="nav-item">
-                                    <a class="nav-link" href="{listenLink}"><i class="fal fa-bullhorn"></i>{f:translate(key:'listen',extensionName:'lth_package')}</a>
-                                </div>
-                                <div class="nav-item d-none d-lg-block">
-                                    <a class="nav-link" href="/{otherLanguageLink}"><i class="fal fa-globe"></i>{f:translate(key:'language_selector',extensionName:'lth_package')}</a>
-                                </div>
-                                <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
-                                    <a class="nav-link" 
-                                       href="#" 
-                                       data-toggle="modal" 
-                                       data-target="#nav-mobile" 
-                                       aria-controls="nav-mobile" 
-                                       aria-expanded="false"
-                                       aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
-                                    <i class="fal fa-bars"></i> {f:translate(key:'menu',extensionName:'lth_package')}</a>
-                                </div>
-                            </nav>
+                    <div class="d-flex justify-content-between align-items-center h-100">
+                        <div class="header-logo  header-logo-lth flex-grow-1 flex-lg-grow-0">
+                            <a href="/" title="{siteTitle}">
+                                <img src="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png" 
+                                     srcset="/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@1x.png 1x,/typo3conf/ext/lth_package/Resources/Public/Images/lth_logo@2x.png 2x" 
+                                     class="mw-100"
+                                     alt="{siteTitle}">
+                            </a>
                         </div>
-                    </div>
-                    <div class="row mt-6 d-none d-xl-block font-size-xl-lg font-weight-light">
-                        <f:render partial="Navigation/MainNavigation" arguments="{_all}"/>
+                        <div class="flex-shrink-1 flex-lg-shrink-0 flex-grow-0 d-flex flex-column justify-content-between h-100 mh-120">
+                            <div class="h-lg-auto flex-column justify-content-between align-items-end font-size-sm font-size-sm-base flex-grow-0">
+                                <nav class="nav text-center h-100 h-lg-auto align-items-center d-lg-none flex-nowrap">
+                                    <div class="nav-item">
+                                        <a class="ml-2 p-1 d-block nav-undecorated" 
+                                            href="#header-search-form" 
+                                            data-toggle="collapse"
+                                            aria-controls="header-search-form" aria-expanded="false"
+                                            aria-label="{f:translate(key:'show_and_hide_searchfield',extensionName:'lth_package')}">
+                                             <i class="fal fa-search"></i><br />{f:translate(key:'search',extensionName:'lth_package')}
+                                        </a>
+                                    </div>
+                                    <div class="nav-item">
+                                        <a class="ml-2 p-1 d-block" 
+                                           href="#" 
+                                           data-toggle="modal" 
+                                           data-target="#nav-mobile"
+                                           aria-controls="nav-mobile" 
+                                           aria-expanded="false" 
+                                           aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
+                                            <i class="fal fa-bars"></i><br />{f:translate(key:'menu',extensionName:'lth_package')}
+                                        </a>
+                                    </div>
+                                </nav>
+                                <div class="d-none d-lg-flex flex-column flex-xl-row w-100 justify-content-end">
+                                    <nav class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0">
+                                        <div class="nav-item flex-xl-grow-1">
+                                            <form class="form-inline pr-xl-3">
+                                                <div class="input-group input-group-round input-group-sm w-100 flex">
+                                                    <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field" />
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary px-2" type="submit">
+                                                            <span class="mr-2">{f:translate(key:'search',extensionName:'lth_package')}</span>
+                                                            <i class="fal fa-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </nav>
+                                    <nav class="nav align-items-center justify-content-end">
+                                        <div class="nav-item d-none d-lg-block">
+                                            <a class="nav-link px-0 ml-4" href="/{otherLanguageLink}"><span class="mr-1"><i class="fal fa-lg fa-globe"></i></span> {f:translate(key:'language_selector',extensionName:'lth_package')}</a>
+                                        </div>
+                                        <div class="nav-item">
+                                            <a class="nav-link px-0 ml-4" href="{listenLink}"><span class="mr-1"><i class="fal fa-lg fa-volume"></i></span> {f:translate(key:'listen',extensionName:'lth_package')}</a>
+                                        </div>
+                                        <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
+                                            <a class="nav-link" 
+                                               href="#" 
+                                               data-toggle="modal" 
+                                               data-target="#nav-mobile" 
+                                               aria-controls="nav-mobile" 
+                                               aria-expanded="false"
+                                               aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
+                                            <i class="fal fa-bars"></i> {f:translate(key:'menu',extensionName:'lth_package')}</a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="row d-none d-xl-block font-size-xl-lg font-weight-light">
+                                <f:render partial="Navigation/MainNavigation" arguments="{_all}"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

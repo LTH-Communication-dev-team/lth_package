@@ -6,12 +6,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-6 order-lg-12 pt-3 pt-lg-0">
-                        <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" class="w-100" />
+                        <img src="{f:uri.image(src:data.pi_flexform.bannerImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.bannerImage.0.crop)}" class="w-100" />
                     </div>
                     <div class="col-12 col-lg-6 order-lg-1 pb-5 pb-lg-0">
                         <h2>{data.pi_flexform.header}</h2>
                         <p>{data.pi_flexform.bodytext}</p>
-                        <p class="mt-3"><a href="#" class="btn btn-primary">{data.pi_flexform.buttontext}</a></p>
+                        <p class="mt-3"><f:link.typolink parameter="{data.pi_flexform.link}" class="btn btn-primary">{data.pi_flexform.buttontext}</f:link.typolink></p>
                     </div>
                 </div>
             </div>

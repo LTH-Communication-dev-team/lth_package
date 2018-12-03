@@ -1,9 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:if condition="{mobileNavigation}">
         <f:then>
-            <ul class="nav-accordion border-0 nav-collapse font-size-sm nav-undecorated">
-                <li>
-                    <a href=".html" data-target="#" class="nav-link collapse collapsed " data-toggle="collapse" aria-expanded="false" aria-controls="">
+            <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
+                <li class="mobile-nav-item">
+                    <a href="/" class="nav-link">
                         Start
                     </a>
                 </li>
@@ -15,17 +15,26 @@
         <f:for each="{menu}" as="item" iteration="iterator">
             <f:if condition="{item.children}">
                 <f:then>
-                    <li>
-                        <a title="{item.title}" href="#sm-{item.title}" class="nav-link collapse {f:if(condition:item.active,then:'active',else:'collapsed')}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="sm-{item.title}">
-                            <div class="float-right"><i class="fal fa-chevron-right"></i></div>{item.title}
+                    <li class="mobile-nav-item">
+                        <div class="mobile-nav-container">
+                            <a href="#{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                            <a title="{item.title}" href="#sm-{item.title}" class="mobile-nav-toggle {f:if(condition:item.active,then:'active',else:'collapsed')}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="{item.title}">
+                            <span class="collapse-show">
+                                <i class="fal fa-plus-circle"></i>
+                            </span>
+                            <span class="collapse-hide">
+                                <i class="fal fa-minus-circle"></i>
+                            </span>
                         </a>
-                        <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}" id="sm-{item.title}">
+                        </div>
+                        
+                        <ul class="mobile-nav collapse {f:if(condition:item.active,then:' show')}" id="{item.title}">
                             <f:render section="MobileNavigationItem" arguments="{menu:item.children}" />
                         </ul>
                     </li>
                 </f:then>
                 <f:else>
-                    <li><a title="{item.title}" href="{item.link}" class="nav-link">{item.title}</a></li>
+                    <li class="mobile-nav-item"><a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a></li>
                 </f:else>
             </f:if>
         </f:for>

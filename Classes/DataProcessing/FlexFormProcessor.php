@@ -83,12 +83,13 @@ class FlexFormProcessor implements DataProcessorInterface
         if (!is_string($originalValue)) {
             return $processedData;
         }
+
         $flexformData = $this->flexFormService->convertFlexFormContentToArray($originalValue);
 
         //check sys file reference
-        if($flexformData['figureImage'] || $flexformData['carouselImages'] || $flexformData['bannerImage'] || $flexformData['titleImage'] || $flexformData['toggleImage']) {
+        if($flexformData['figureImage']) {
             $i=0;
-            $scope = $flexformData['figureImage'] . $flexformData['carouselImages'] . $flexformData['bannerImage'] . $flexformData['titleImage'] . $flexformData['toggleImage'];
+            $scope = $flexformData['figureImage'];
             $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
                     "uid IN(" . addslashes($scope) .")","","","");
             while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
@@ -96,11 +97,93 @@ class FlexFormProcessor implements DataProcessorInterface
                     'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
             }
             $sortArray = explode(',',$scope);
+            $flexformData['figureImage'] = array();
             foreach($sortArray as $sortKey => $sortValue) {
-                $flexformData['imageItems'][] = $flexformData['imageItemsTemp'][$sortValue];
+                $flexformData['figureImage'][] = $flexformData['imageItemsTemp'][$sortValue];
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($res);
         }
+        if($flexformData['carouselImages']) {
+            $i=0;
+            $scope = $flexformData['carouselImages'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['carouselImages'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['carouselImages'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
+        if($flexformData['bannerImage']) {
+            $i=0;
+            $scope = $flexformData['bannerImage'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['bannerImage'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['bannerImage'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
+        if($flexformData['titleImage']) {
+            $i=0;
+            $scope = $flexformData['titleImage'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['titleImage'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['titleImage'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
+        if($flexformData['toggleImage']) {
+            $i=0;
+            $scope = $flexformData['toggleImage'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['toggleImage'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['toggleImage'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
+        if($flexformData['cardImage']) {
+            $i=0;
+            $scope = $flexformData['cardImage'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['cardImage'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['cardImage'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
+        
         //get sys color
         if($flexformData['backgroundcolor']) {
             $flexformData['backgroundcolor'] = str_replace('.gif','',$flexformData['backgroundcolor']);

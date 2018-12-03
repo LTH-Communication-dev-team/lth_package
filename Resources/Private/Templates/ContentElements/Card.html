@@ -23,7 +23,8 @@
                 <f:link.typolink parameter="{data.pi_flexform.link}" class="card nav-block bg-{data.pi_flexform.backgroundcolor}">
                     <div id="card-{data.uid}" class="card-img" style="height:auto;">
                         <div class="card-img-container">
-                            <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" alt="{data.pi_flexform.figureImage.alternative}" width="NULL" height="NULL" />
+                            <img src="{f:uri.image(src:data.pi_flexform.cardImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" 
+                             class="card-image-top card-image-narrow" />
                         </div>
                     </div>
                     <div class="card-body">
@@ -66,7 +67,7 @@
             <f:then>
                 <div class="card bg-transparent mb-5">
                     <div class="px-lg-9">
-                        <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" 
+                        <img src="{f:uri.image(src:data.pi_flexform.cardImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" 
                              class="card-image-top card-image-narrow" />
                     </div>
                     <div class="card-body">

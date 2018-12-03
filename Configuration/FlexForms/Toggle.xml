@@ -108,6 +108,36 @@
                             <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
                         </TCEforms>
                     </bodytext>
+                    <youtube>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.youtube</label>
+                            <displayCond>FIELD:toggletype:IN:cardA,cardB,cardC</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </youtube>
+                    <youtubePos>
+                        <TCEforms>
+                            <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:toggle.youtubePos</label>
+                            <config>
+                                <type>radio</type>
+                                <default>under</default>
+                                <items type="array">
+                                  <numIndex index="0" type="array">
+                                    <numIndex index="0">Over text</numIndex>
+                                    <numIndex index="1">over</numIndex>
+                                  </numIndex>
+                                  <numIndex index="1" type="array">
+                                    <numIndex index="0">Under text</numIndex>
+                                    <numIndex index="1">under</numIndex>
+                                  </numIndex>
+                                </items>                                
+                            </config>
+                        </TCEforms>
+                    </youtubePos>
                     <toggleItems>
                         <section>1</section>
                         <type>array</type>

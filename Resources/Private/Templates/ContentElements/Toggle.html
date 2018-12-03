@@ -33,17 +33,39 @@
 				<div class="col flex-grow-1">
                                     <f:format.raw>{data.pi_flexform.teaser}</f:format.raw>
 				</div>
-                                <f:if condition="{data.pi_flexform.imageItems.0}">
+                                <f:if condition="{data.pi_flexform.toggleImage.0}">
                                     <f:then>
                                         <div class="col flex-grow-0">
-                                            <img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" class="" />
+                                            <img src="{f:uri.image(src:data.pi_flexform.toggleImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.toggleImage.0.crop)}" class="" />
                                         </div>
                                     </f:then>
                                 </f:if>
                             </div>
                         </div>
                         <div class="expand-content-body">
-                            <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                            
+                            <f:if condition="{data.pi_flexform.youtube}">
+                                <f:then>
+                                    <f:if condition="{data.pi_flexform.youtubePos}=='over'">
+                                        <f:then>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{data.pi_flexform.youtube}" allowfullscreen></iframe>
+                                            </div>
+                                            <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                                        </f:then>
+                                        <f:else>
+                                            <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{data.pi_flexform.youtube}" allowfullscreen></iframe>
+                                            </div>
+                                        </f:else>
+                                    </f:if>
+                                    
+                                </f:then>
+                                <f:else>
+                                    
+                                </f:else>
+                            </f:if>
                         </div>
                     </div>
                     <div class="expand-control">
@@ -62,7 +84,7 @@
                 <div id="{data.uid}-toggle-cardB" class="expand expand-show bg-{data.pi_flexform.backgroundcolor} mb-3">
                     <div class="expand-content">
                         <div class="expand-content-lead">
-                            <p><img src="{f:uri.image(src:data.pi_flexform.imageItems.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.imageItems.0.crop)}" style="width:100%;height:auto;" /></p>
+                            <p><img src="{f:uri.image(src:data.pi_flexform.toggleImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.toggleImage.0.crop)}" style="width:100%;height:auto;" /></p>
                         </div>
                         <div class="expand-content-body">
                             <f:format.raw>{data.pi_flexform.bodytext}</f:format.raw>

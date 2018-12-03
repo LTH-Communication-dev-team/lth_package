@@ -1,9 +1,18 @@
 <f:spaceless>
+    <div class="alert alert-danger fixed-bottom fade hide m-0 border-0 rounded-0 font-size-sm" role="alert">
+        <button id="cookieConsent" type="button" class="float-right border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="alert" aria-label="{f:translate(key:'close',extensionName:'lth_package')}">
+            <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+        </button>
+        {f:translate(key:'cookie.consent',extensionName:'lth_package')} <a href="/om-webbplatsen" class="alert-link">{f:translate(key:'cookie.policy',extensionName:'lth_package')}</a>.
+    </div>
+    
     <div class="modal fade" id="nav-mobile" tabindex="-1" role="dialog" aria-labelledby="mobile-menu-label" aria-hidden="true">
 	<div class="modal-dialog my-0 mx-auto" role="document">
             <div class="modal-content border-0 rounded-0">
-                <nav class="nav border-bottom p-3 flex-row justify-content-end align-items-center">
-                    <p class="sr-only" id="mobile-menu-label">{f:translate(key:'menu',extensionName:'lth_package')}</p>
+                <nav class="nav border-bottom p-3 flex-row justify-content-between align-items-center sticky-top bg-white">
+                    <div id="nav-mobile-label" class="h3 m-0">
+                        <span class="sr-only">{siteTitle}</span>
+                    </div>
                     <button type="button" class="border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="modal" aria-controls="mobileMenu" aria-expanded="false" aria-label="{f:translate(key:'hide_menu',extensionName:'lth_package')}">
                       <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
                     </button>
@@ -12,12 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="alert alert-danger fixed-bottom fade hide m-0 border-0 rounded-0 font-size-sm" role="alert">
-        <button id="cookieConsent" type="button" class="float-right border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="alert" aria-label="{f:translate(key:'close',extensionName:'lth_package')}">
-            <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
-        </button>
-        {f:translate(key:'cookie.consent',extensionName:'lth_package')} <a href="/om-webbplatsen" class="alert-link">{f:translate(key:'cookie.policy',extensionName:'lth_package')}</a>.
-    </div>
+    
     <header class="header nav-undecorated">
         <f:render partial="Structure/TopBar" arguments="{_all}"/>
         <f:render partial="Structure/Header" arguments="{_all}"/>

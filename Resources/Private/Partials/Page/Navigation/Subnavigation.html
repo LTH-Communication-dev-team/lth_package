@@ -12,9 +12,17 @@
                 <f:then>
                     <li>
                         <a title="{item.title}" href="{item.link}" class="nav-link collapse {f:if(condition:item.active,then:'active',else:'collapsed')}">
-                            <div class="float-right"><i class="fal fa-chevron-right"></i></div>{item.title}
+                            <f:if condition="{item.active}">
+                                <f:then>
+                                    <div class="float-right"><i class="fal fa-chevron-right"></i></div>
+                                </f:then>
+                                <f:else>
+                                    <div class="float-right"><i class="fal fa-chevron-down"></i></div>
+                                </f:else>
+                            </f:if>
+                            {item.title}
                         </a>
-                        <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}" id="{item.title}">
+                        <ul class="nav-accordion collapse{f:if(condition:item.active,then:' show')}">
                             <f:render section="SubnavigationItem" arguments="{menu:item.children}" />
                         </ul>
                     </li>

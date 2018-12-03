@@ -706,6 +706,13 @@
                 <trans-unit id="toggle.image">
                     <source>Image</source>
                 </trans-unit>
+                <trans-unit id="toggle.youtube">
+                    <source>Youtube</source>
+                </trans-unit>
+                <trans-unit id="toggle.youtubePos">
+                    <source>Position of Youtube-clip</source>
+                    <target state="translated">Youtube-klippets position</target>
+                </trans-unit>
                 <trans-unit id="content_element.toggle">
                     <source>Toggle</source>
                 </trans-unit>
