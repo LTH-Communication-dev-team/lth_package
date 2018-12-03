@@ -183,6 +183,22 @@ class FlexFormProcessor implements DataProcessorInterface
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($res);
         }
+        if($flexformData['masonryTileImage']) {
+            $i=0;
+            $scope = $flexformData['masonryTileImage'];
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid,title,description,alternative,link,crop","sys_file_reference",
+                    "uid IN(" . addslashes($scope) .")","","","");
+            while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
+                $flexformData['imageItemsTemp'][$row['uid']] = array('uid' => $row['uid'], 'description' => $row['description'], 'title' => $row['title'], 
+                    'alternative' => $row['alternative'], 'link' => $row['link'], 'crop' => $row['crop']);
+            }
+            $sortArray = explode(',',$scope);
+            $flexformData['masonryTileImage'] = array();
+            foreach($sortArray as $sortKey => $sortValue) {
+                $flexformData['masonryTileImage'][] = $flexformData['imageItemsTemp'][$sortValue];
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($res);
+        }
         
         //get sys color
         if($flexformData['backgroundcolor']) {

@@ -31,7 +31,7 @@
                             </config>
                         </TCEforms>
                     </bodytext>
-                    <figureImage>
+                    <masonryTileImage>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:masonrytile.image</label>
                             <config>
@@ -41,7 +41,7 @@
                                 <foreign_sortby>sorting_foreign</foreign_sortby>
                                 <foreign_table_field>tablenames</foreign_table_field>
                                 <foreign_match_fields>
-                                <fieldname>figureImage</fieldname> <!-- CAUTION!! Replace "fal" with the variable name of this field! -->
+                                <fieldname>masonryTileImage</fieldname> <!-- CAUTION!! Replace "fal" with the variable name of this field! -->
                                 </foreign_match_fields>
                                 <foreign_label>uid_local</foreign_label>
                                 <foreign_selector>uid_local</foreign_selector>
@@ -88,7 +88,7 @@
                                 </behaviour>
                             </config>
                         </TCEforms>
-                    </figureImage>
+                    </masonryTileImage>
                     <link>
                         <TCEforms>
                             <exclude>1</exclude>

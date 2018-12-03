@@ -1,11 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
-        <f:if condition="{data.pi_flexform.figureImage}">
+        <f:if condition="{data.pi_flexform.masonryTileImage}">
             <f:then>
                 <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block masonry-tile-img">
                     <div class="masonry-tile-img-bg">
-                        <f:image src="{data.pi_flexform.figureImage}" treatIdAsReference="1" alt="{data.pi_flexform.figureImage.alternative}" title="{data.pi_flexform.figureImage.title}" width="NULL" height="NULL" />
+                        <f:image src="{data.pi_flexform.masonryTileImage}" treatIdAsReference="1" alt="{data.pi_flexform.masonryTileImage.alternative}" title="{data.pi_flexform.masonryTileImage.title}" width="NULL" height="NULL" />
                     </div>
                     <f:if condition="{data.pi_flexform.header}">
                         <f:then>
