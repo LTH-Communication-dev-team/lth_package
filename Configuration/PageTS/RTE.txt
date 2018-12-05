@@ -190,35 +190,15 @@ RTE.default.buttons {
 ################################################
 #### RTE APPEARANCE                         ####
 ################################################
-#RTE.default {
-#
-#    // Allow only buttons which are listed in property "toolbarOrder"
-#    showButtons (
-#        formatblock, blockstyle, textstyle, bold, italic, underline, strikethrough, big, small, subscript, superscript,
-#        orderedlist, unorderedlist, left, center, right, justifyfull, copy, cut, paste,
-#        undo, redo, removeformat, link, unlink,	line, insertparagraphbefore, insertparagraphafter,
-#        chMode, table, tableproperties, toggleborders, tablerestyle,
-#        rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit,
-#        columnproperties, columninsertbefore, columninsertafter, columndelete, columnsplit,
-#        cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge,
-#        insertcharacter, findreplace
-#    )
-#
-#    // Define buttons and order of button that will be shown
-    #toolbarOrder (
-    #	formatblock, blockstyle, textstyle, linebreak,
-    #	bold, italic, underline, strikethrough, big, small, subscript, superscript, bar,
-    #	orderedlist, unorderedlist, bar,
-    #	left, center, right, justifyfull, copy, cut, paste, bar,
-    #	undo, redo, removeformat, bar,
-    #	link, unlink, bar,
-    #	line, insertparagraphbefore, insertparagraphafter, bar,
-    #	chMode, linebreak, table, tableproperties, toggleborders, tablerestyle, bar,
-    #	rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, bar,
-    #	columnproperties, columninsertbefore, columninsertafter, columndelete, columnsplit, bar,
-    #	cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge
-    #)
-
+RTE.default {
+showButtons (formatblock,blockstyle,bold,italic,code,bar,left,center,right,justifyfull,orderedlist,unorderedlist,outdent,indent,insertcharacter,
+link,unlink,image,table,findreplace,chMode,inserttag,removeformat,copy,cut,paste,pastetoggle,undo,redo,toggleborders,tableproperties,rowproperties,
+rowinsertabove,rowinsertunder,rowdelete,rowsplit,columnproperties,columninsertbefore,columninsertafter,columndelete,columnsplit,cellproperties,
+cellinsertbefore,cellinsertafter,celldelete,cellsplit, cellmerge, cleanword)
+toolbarOrder (formatblock,blockstyle,bold,italic,code,bar,left,center,right,justifyfull,bar,orderedlist,unorderedlist,outdent,indent,bar,
+insertcharacter,link,unlink,image,table,bar,findreplace,bar,chMode,inserttag,removeformat,bar,copy,cut,paste,pastetoggle,bar,undo,redo,
+linebreak,toggleborders,bar,tableproperties,bar,rowproperties,rowinsertabove,rowinsertunder,rowdelete,rowsplit,bar,columnproperties,
+columninsertbefore,columninsertafter,columndelete,columnsplit,bar,cellproperties,cellinsertbefore,cellinsertafter,celldelete,cellsplit,cellmerge,cleanword)
 #    // Make the RTE bigger
 #    RTEHeightOverride = 700
 
@@ -238,7 +218,7 @@ RTE.default.buttons {
 #    disableLayoutFieldsetInTableOperations = 1
 #    disableSpacingFieldsetInTableOperations = 1
 #    disableDescriptionFieldsetInTableOperations = 1
-#}
+}
 
 ################################################
 #### PROCESSING RULES                       ####
