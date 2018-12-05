@@ -1,0 +1,39 @@
+/****************************************************************************************
+# Default css file for content edited with htmlArea RTE
+#
+# Defines a few class selectors that can be simply taken as examples by anyone who needs to configure the RTE.
+# This css file is referenced by property RTE.default.contentCSS in the default configuration of htmlArea RTE
+#
+# TYPO3 CVS ID: $Id: dynamiccss.css 955 2005-12-28 00:49:12Z mundaun $
+# ***************************************************************************************/
+
+/* Left, center and right alignment of text in paragraphs and cells.*/
+/* p.align-left, h1.align-left, h2.align-left, h3.align-left, h4.align-left, h5.align-left, h6.align-left, td.align-left { text-align: left; }*/
+/* p.align-center, h1.align-center, h2.align-center, h3.align-center, h4.align-center, h5.align-center, h6.align-center, td.align-center { text-align: center; }*/
+/* p.align-right, h1.align-right, h2.align-right, h3.align-right, h4.align-right, h5.align-right, h6.align-right, td.align-right { text-align: right; }*/
+/* Added by TH */
+p.align-left, td.align-left { text-align: left; }
+p.align-center, td.align-center { text-align: center; }
+p.align-right, td.align-right { text-align: right; }
+p.align-justify, td.align-justify { text-align: justify; }
+h3 { font-weight: bold; font-size: 1em; line-height: 1.0em; }
+table.no-border  { border:none; }
+
+p.newIconList3pil { background: url(/graphics/arrow_icon_right_blue.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.newIconList3pdf { background: url(/objects/lista/images/pdf.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.newIconList3doc { background: url(/objects/lista/images/word.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.newIconList3xls { background: url(/objects/lista/images/excel.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.newIconList3ppt { background: url(/objects/lista/images/powerpoint.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.newIconList3dat { background: url(/objects/lista/images/data.gif) top left no-repeat;padding-bottom: 2px;display: block;padding-left: 20px; }
+p.blueBlock { padding-bottom: 10px;display: block; background-color: #D7EEF7; }
+p.lead {font-size: 1.3125rem; font-family: Georgia,serif;line-height:1.61905;font-weight: 400;}
+
+li.pil { list-style-image: url(/graphics/arrow_icon_right_blue.gif); }
+li.pdf { list-style-image: url(/objects/lista/images/pdf.gif); }
+li.doc { list-style-image: url(/objects/lista/images/word.gif); }
+li.xls{ list-style-image: url(/objects/lista/images/excel.gif); }
+li.ppt { list-style-image: url(/objects/lista/images/powerpoint.gif); }
+li.dat { list-style-image: url(/objects/lista/images/data.gif); }
+li.blueBlock { padding-bottom: 10px;display: block; background-color: #D7EEF7; }
+
+li.pil, li.pdf, li.doc, li.xls, li.ppt, li.dat, li.blueBlock { padding-right:3px; }

@@ -116,7 +116,7 @@ RTE.default {
 
     // Use delivered rte css file that includes a default bootstrap css file.
     // This css file is only for backend purposes and not used in frontend anyways!
-    #contentCSS = typo3conf/ext/bootstrap_package/Resources/Public/Css/RTE/rte.css
+    contentCSS = typo3conf/ext/lth_package/Resources/Public/Css/RTE/rte.css
 
     // Use default schema for microdata
     #schema.sources {
@@ -260,6 +260,11 @@ RTE.default.proc {
 
  #   // List of allowed classes in the RTE
     allowedClasses := addToList(table, table-striped, thead-dark, lead)
+    buttons {
+		blockstyle.tags {
+			p.allowedClasses = lead
+		}
+	}
     #allowedClasses (
     #    table, table-striped
 #, table-bordered, table-hover, table-condensed,
