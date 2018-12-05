@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
+    
+    <f:section name="Main">
+        <blockquote id="blockquote-{data.uid}" class="blockquote">
+            <p class="mb-0">
+                <i class="fas fa-3x fa-quote-right fa-pull-left"></i> {data.pi_flexform.quotation}
+            </p>
+            <footer class="blockquote-footer text-right">{data.pi_flexform.quoted} <cite>{data.pi_flexform.source}</cite></footer>
+        </blockquote>
+    </f:section>
+</html>

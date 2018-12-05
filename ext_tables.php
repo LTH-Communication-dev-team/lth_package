@@ -41,9 +41,9 @@ $iconRegistry->registerIcon(
     ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/banner.svg']
 );
 $iconRegistry->registerIcon(
-    'content-lthpackage-shownews',
+    'content-lthpackage-blockquote',
     \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/Shownews.svg']
+    ['source' => 'EXT:lth_package/Resources/Public/Icons/ContentElements/blockquote.svg']
 );
 $iconRegistry->registerIcon(
     'content-lthpackage-publications',

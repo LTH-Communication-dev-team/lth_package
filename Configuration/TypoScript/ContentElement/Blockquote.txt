@@ -1,0 +1,37 @@
+#####################################################
+########## CTYPE: LTH PACKAGE BLOCKQUOTE ############
+#####################################################
+
+tt_content.blockquote >
+tt_content.blockquote = FLUIDTEMPLATE
+tt_content.blockquote {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = blockquote
+    templateRootPaths {
+        0 = EXT:lth_package/Resources/Private/Templates/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.templateRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        0 = EXT:lth_package/Resources/Private/Partials/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.partialRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
+    }
+    layoutRootPaths {
+        0 = EXT:lth_package/Resources/Private/Layouts/ContentElements/
+        #10 = {$plugin.bootstrap_package_contentelements.view.layoutRootPath}
+        #20 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = LTH\LthPackage\DataProcessing\FlexFormProcessor
+    }
+
+}
+

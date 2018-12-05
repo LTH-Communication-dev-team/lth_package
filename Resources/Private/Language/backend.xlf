@@ -17,46 +17,6 @@
                 <source>Sucker!</source>
             </trans-unit>
 
-            <trans-unit id="content_element.shownews">
-                <source>Show news</source>
-            </trans-unit>
-            <trans-unit id="content_element.shownews.description">
-                <source>Insert Show news with different contents (header / text with image / pure HTML)</source>
-            </trans-unit>
-            <trans-unit id="shownews">
-                <source>Show news</source>
-            </trans-unit>
-            <trans-unit id="shownews.options">
-                <source>Show news Options</source>
-            </trans-unit>
-            <trans-unit id="shownews.interval">
-                <source>Interval in ms</source>
-            </trans-unit>
-            <trans-unit id="shownews.background_image_maxwidth">
-                <source>Max width of background images in px</source>
-            </trans-unit>
-            <trans-unit id="shownews.transition">
-                <source>Transition</source>
-            </trans-unit>
-            <trans-unit id="shownews.transition.slide">
-                <source>Slide</source>
-            </trans-unit>
-            <trans-unit id="shownews.transition.fade">
-                <source>Fade</source>
-            </trans-unit>
-            <trans-unit id="shownews.wrap">
-                <source>Wrap</source>
-            </trans-unit>
-            <trans-unit id="shownews.wrap.description">
-                <source>Start the Carousel from the beginning once it has arrived at the end.</source>
-            </trans-unit>
-
-            <trans-unit id="shownews_item">
-                <source>Show news Item</source>
-            </trans-unit>
-            <trans-unit id="shownews_item.tt_content">
-                <source>Show news</source>
-            </trans-unit>
             <trans-unit id="tt_news.pi_flexform.what_to_display">
                 <source>What to display</source>
             </trans-unit>
@@ -724,6 +684,34 @@
                 </trans-unit>
                 <trans-unit id="toggle_item.tt_content">
                     <source>Toggle</source>
+                </trans-unit>
+                
+                <trans-unit id="content_element.blockquote">
+                    <source>Block quote</source>
+                </trans-unit>
+                <trans-unit id="content_element.blockquote.description">
+                    <source>Insert block quote</source>
+                </trans-unit>
+                <trans-unit id="blockquote">
+                    <source>Block quote</source>
+                </trans-unit>
+                <trans-unit id="blockquote.options">
+                    <source>Block quote Options</source>
+                </trans-unit>
+                <trans-unit id="blockquote_item">
+                    <source>Block quote Item</source>
+                </trans-unit>
+                <trans-unit id="blockquote_item.tt_content">
+                    <source>Block quote</source>
+                </trans-unit>
+                <trans-unit id="blockquote.quotation">
+                    <source>Quotation</source>
+                </trans-unit>
+                <trans-unit id="blockquote.quoted">
+                    <source>Quoted</source>
+                </trans-unit>
+                <trans-unit id="blockquote.source">
+                    <source>Source</source>
                 </trans-unit>
         </body>
     </file>

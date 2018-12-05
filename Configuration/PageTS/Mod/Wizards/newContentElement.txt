@@ -40,6 +40,14 @@ mod.wizards {
                             CType = banner
                         }
                     }
+                    lth_package_blockquote {
+                        iconIdentifier = content-lthpackage-blockquote
+                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.blockquote
+                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.blockquote.description
+                        tt_content_defValues {
+                            CType = blockquote
+                        }
+                    }
                     lth_package_calendar {
                         iconIdentifier = content-lthpackage-calendar
                         title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.calendar
@@ -142,14 +150,6 @@ mod.wizards {
                         description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.toggle.description
                         tt_content_defValues {
                             CType = toggle
-                        }
-                    }
-                    lth_package_shownews {
-                        iconIdentifier = content-lthpackage-shownews
-                        title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.shownews
-                        description = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:content_element.shownews.description
-                        tt_content_defValues {
-                            CType = shownews
                         }
                     }
                     lth_package_publications {
