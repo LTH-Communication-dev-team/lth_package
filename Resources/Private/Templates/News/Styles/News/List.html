@@ -397,7 +397,7 @@
                                                 </f:if>
                                                 <f:if condition="{iterator.index} > 2">
                                                     <f:then>
-                                                        <a href="../preview/event-detail-page.html" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto" title="Modelling Probability of Default in the Nordics - In this Master’s thesis, data from a pediatric intensive care unit for children and yo…">
+                                                        <f:link.page pageUid="73577" additionalParams="{tx_news_pi1: {controller: 'News',action: 'detail', news:newsItem.uid}}" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
                                                             <div class="card-img card-img-lg w-md-auto p-0">
                                                                 <div class="card-img-container">
                                                                     <f:if condition="{newsItem.falMedia}">
@@ -417,7 +417,7 @@
                                                                 <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
                                                                 <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
                                                             </div>
-                                                        </a>
+                                                        </f:link.page>
                                                     </f:then>
                                                 </f:if>
                                             </f:for>

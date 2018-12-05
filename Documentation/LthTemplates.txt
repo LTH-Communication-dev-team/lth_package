@@ -8,7 +8,6 @@ Javascript-filer: Z:\typo3conf\ext\lth_package\Resources\Public\JavaScript
 Typoscript: Z:\typo3conf\ext\lth_package\Configuration\Typoscript
 
 
-
 Huvudmallar: 
         Default: 
             - Backend layout: Z:\typo3conf\ext\lth_package\Configuration\PageTS\Mod\WebLayout\BackendLayouts\default.txt
@@ -57,3 +56,5 @@ Huvudmallar:
 
 
 Content elements Z:\typo3conf\ext\lth_package\Resources\Private\Layouts\ContentElements\Default.html
+
+RTE: Z:\typo3conf\ext\lth_package\Configuration\Typoscript\Helper\ParseFunc.txt

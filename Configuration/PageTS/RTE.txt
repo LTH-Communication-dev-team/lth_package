@@ -65,6 +65,9 @@ RTE.classes {
     thead-dark {
         name = LLL:EXT:lth_package/Resources/Private/Language/locallang_rte.xlf:class.thead-dark
     }
+    lead {
+        name = lead
+    }
     #table-bordered {
     #    name = LLL:EXT:lth_package/Resources/Private/Language/locallang_rte.xlf:class.table-bordered
     #}
@@ -240,6 +243,7 @@ RTE.default.buttons {
 ################################################
 #### PROCESSING RULES                       ####
 ################################################
+
 RTE.default.proc {
 
  #   // convert a-tags to link-tags and some other predefined conversions
@@ -255,7 +259,7 @@ RTE.default.proc {
 #    denyTags = img, center, font, span
 
  #   // List of allowed classes in the RTE
-    allowedClasses := addToList(table, table-striped, thead-dark)
+    allowedClasses := addToList(table, table-striped, thead-dark, lead)
     #allowedClasses (
     #    table, table-striped
 #, table-bordered, table-hover, table-condensed,

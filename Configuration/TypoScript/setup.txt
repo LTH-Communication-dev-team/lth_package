@@ -355,7 +355,7 @@ config {
     typolinkEnableLinksAcrossDomains = 1
     #no_cache = {$config.no_cache}
     pageTitleFirst = 1
-    linkVars = L(0,2)
+    linkVars = L(0|2)
     #prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
     metaCharset = utf-8
@@ -399,6 +399,7 @@ config {
     #baseURL = {$baseURL}
     absRefPrefix = auto
     baseURL >
+    frontend_editing = 1
 }
 
 #========================================================================
