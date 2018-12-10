@@ -1,10 +1,17 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default" />
     <f:section name="Main">
-        <main role="main" class="">
-            <div class="container-fluid mx-0 px-0 nav-undecorated">
-                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos:'0'}"/>
-            </div>
+        <f:if condition="{breadcrumb}">
+            <f:then>
+                <div class="container pt-2 pt-lg-3 ">
+                    <nav aria-label="breadcrumb">
+                        <f:render partial="Navigation/BreadcrumbNavigation" arguments="{_all}"/>
+                    </nav>
+                </div>
+            </f:then>
+        </f:if>
+        <main class="main">
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos:'0'}"/>
         </main>
     </f:section>
 </html>

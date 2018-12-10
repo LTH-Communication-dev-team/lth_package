@@ -1,6 +1,22 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
 
 <div class="">
+    <div class="custom-control custom-radio">
+        <input type="radio" id="formRadio" name="radio" class="custom-control-input" value="value">
+        <f:for each="{field.modifiedSettings}" as="setting" iteration="index">
+            <f:form.radio
+                property="{field.marker}"
+                value="{setting.value}"
+                checked="{vh:Misc.PrefillMultiField(field:field, mail:mail, cycle:index.cycle)}"
+                id="powermail_field_{field.marker}_{index.cycle}"
+                additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field, iteration:index)}"
+                class="custom-control-input" />
+        </f:for>
+        <label class="custom-control-label" for="formRadio">{field.title} <f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if></label>
+    </div>
+</div>
+
+<div class="">
 	<label class="" title="{field.description}">
 		<vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
 	</label>

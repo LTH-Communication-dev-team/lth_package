@@ -206,8 +206,8 @@ page {
             headnavdrop.data = levelfield: -1, tx_lthpackage_headnavdrop, slide
             otherLanguageLink = TEXT
             otherLanguageLink.lang.sv = english
-            subsitetitle = TEXT
-            subsitetitle.data = levelfield: -1, tx_lthpackage_subsitetitle, slide
+            breadcrumb = TEXT
+            breadcrumb.data = levelfield: -1, tx_lthpackage_breadcrumb, slide
             username = TEXT
             username.data = TSFE:fe_user|user|username
             layout = TEXT

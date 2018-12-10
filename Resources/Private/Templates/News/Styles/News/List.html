@@ -312,6 +312,11 @@
                             }
                         </style>
                         <div class="container">
+                            <div class="row mb-3">
+                                <div class="col"><h1 class="">Nyheter</h1></div>
+                            </div>
+                        </div>
+                        <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="masonry-container masonry-container-3by2">
@@ -397,7 +402,7 @@
                                                 </f:if>
                                                 <f:if condition="{iterator.index} > 2">
                                                     <f:then>
-                                                        <f:link.page pageUid="73577" additionalParams="{tx_news_pi1: {controller: 'News',action: 'detail', news:newsItem.uid}}" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
+                                                        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="nav-block masonry-tile-img" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
                                                             <div class="card-img card-img-lg w-md-auto p-0">
                                                                 <div class="card-img-container">
                                                                     <f:if condition="{newsItem.falMedia}">
@@ -417,7 +422,7 @@
                                                                 <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
                                                                 <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
                                                             </div>
-                                                        </f:link.page>
+                                                        </n:link>
                                                     </f:then>
                                                 </f:if>
                                             </f:for>
@@ -446,7 +451,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div id="twitter" name="tab3" class="mb-5 tabContentBox"> 
-                                                <a class="twitter-timeline" href="https://twitter.com/LTHinfo?ref_src=twsrc%5Etfw">Tweets by LTH</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                                <a class="twitter-timeline" data-lang="sv" data-height="600" href="https://twitter.com/LTHinfo?ref_src=twsrc%5Etfw">Tweets by LTHinfo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                             </div>
                                         </div>
                                     </div>

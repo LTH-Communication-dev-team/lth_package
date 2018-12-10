@@ -1,16 +1,16 @@
 plugin.tx_powermail {
     view {
         templateRootPaths {
-            1 = EXT:lth_package/Resources/Private/Templates/Powermail/
-            2 = EXT:powermail/Resources/Private/Templates/
+            1 = EXT:powermail/Resources/Private/Templates/
+            2 = EXT:lth_package/Resources/Private/Templates/Powermail/
         }
         partialRootPaths {
-            1 = EXT:lth_package/Resources/Private/Partials/Powermail/
-            2 = EXT:powermail/Resources/Private/Partials/
+            1 = EXT:powermail/Resources/Private/Partials/
+            2 = EXT:lth_package/Resources/Private/Partials/Powermail/
         }
         layoutRootPaths {
-            1 = EXT:lth_package/Resources/Private/Layouts/Powermail/
-            2 = EXT:powermail/Resources/Private/Layouts/
+            1 = EXT:powermail/Resources/Private/Layouts/
+            2 = EXT:lth_package/Resources/Private/Layouts/Powermail/
         }
     }
 }

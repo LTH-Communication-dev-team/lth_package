@@ -85,11 +85,14 @@ call_user_func(
                             'rows' => '3'
 			]
 		],
-                'tx_lthpackage_subsitetitle' => [
+                'tx_lthpackage_breadcrumb' => [
 			'exclude' => 1,
-			'label'   => 'Show sub site title',
+			'label'   => 'Show breadcrumb navigation (for landingpage only)',
 			'config' => [
-				'type' => 'input'
+                            'type' => 'check',
+                            'items' => [
+                               ['Yes', ''],
+                            ],
 			]
 		]
 	];
@@ -98,7 +101,7 @@ call_user_func(
         
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','metatags','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop','after:abstract');
         
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','title','--linebreak--,tx_lthpackage_leftnav,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_subsitetitle','after:abstract');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','title','--linebreak--,tx_lthpackage_breadcrumb','after:abstract');
 
         }, 'lth_package'
 );
