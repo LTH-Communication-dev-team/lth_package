@@ -325,16 +325,12 @@ page {
     }
 
     includeJSFooterlibs {
-        
-        #jQuery = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery-3.3.1.min.js
-        #
-        #bootstrapbundlemin = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.bundle.min.js
-        #toolkitjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/toolkit.js
         mainminjs = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/main.min.js
-        bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        #bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        bootstrap = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/bootstrap_org.min.js
+
         fontawesomemin = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/fontawesome.min.js
         rwdImageMaps = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery.rwdImageMaps.min.js
-        #masonry = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/masonry.pkgd.min.js
         typeaheadbundlejs = typo3conf/ext/lth_package/Resources/Public/JavaScript/typeahead.bundle.js
         lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
     }
