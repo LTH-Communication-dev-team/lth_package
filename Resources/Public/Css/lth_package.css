@@ -209,24 +209,21 @@ article {
 }
 
 
-.lthPackageProgramArskursTable tbody td {
-    border-top:0px;
+.lthPackageCourseTable h4 {
+    color: #fff !important;
+    background-color: #4d4c44;
+    padding:10px;
+    text-align:left;
+    font-family:hind,sans-serif;
+}
+  
+.lthPackageCourseTable p {
     border-bottom: 6px #ffffff solid;
-    background-color:#e0ede3;
-    border-right:24px #ffffff solid;
-}
-
-.lthPackageProgramArskursTable thead th {
-    border-bottom: 6px #ffffff solid;
-    border-right:24px #ffffff solid;
-}
-
-.lthPackageProgramArskursTable thead tr {
-    background-color:#ffffff;
-}
-
-.lthPackageProgramArskursTable .thead-dark th{
-    border-color:#ffffff;
+    background-color: #e0ede3;
+    margin:0px;
+    padding:10px;
+    text-align:left;
+    width:100%;
 }
 
 /* Safari */
