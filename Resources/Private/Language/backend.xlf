@@ -4,8 +4,11 @@
           product-name="lth_package">
         <header/>
         <body>
-<trans-unit id="bleed">
+            <trans-unit id="bleed">
                 <source>Bleed</source>
+            </trans-unit>
+            <trans-unit id="extraClass">
+                <source>Extra Class</source>
             </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>

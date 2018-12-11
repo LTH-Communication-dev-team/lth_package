@@ -3,7 +3,7 @@
     <f:section name="Main">
         <f:if condition="{data.flexform_bleed}">
             <f:then>
-                <div class="bg-{v:format.replace(substring:'.gif',content:data.flexform_backgroundcolor,replacement:'')}{f:if(condition:data.flexform_topMargin,then:' py-5 ')}{f:if(condition: data.flexform_bottomMargin, then: ' py-lg-9 ')}">
+                <div class="bg-{v:format.replace(substring:'.gif',content:data.flexform_backgroundcolor,replacement:'')}{f:if(condition:data.flexform_topMargin,then:' py-5 ')}{f:if(condition: data.flexform_bottomMargin, then: ' py-lg-9 ')} {data.flexform_extraClass}">
                     <div class="row">
                         <div class="col-12 col-md-10 offset-md-1 text-center">
                             <h2 class="mt-0 mb-7">{data.header}</h2>
@@ -26,7 +26,7 @@
                 </div>
             </f:then>
             <f:else>
-                <div class="bg-{v:format.replace(substring:'.gif',content:data.flexform_backgroundcolor,replacement:'')}{f:if(condition:data.flexform_topMargin,then:' py-5 ')}{f:if(condition: data.flexform_bottomMargin, then: ' py-lg-9 ')}">
+                <div class="bg-{v:format.replace(substring:'.gif',content:data.flexform_backgroundcolor,replacement:'')}{f:if(condition:data.flexform_topMargin,then:' py-5 ')}{f:if(condition: data.flexform_bottomMargin, then: ' py-lg-9 ')} {data.flexform_extraClass}">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-md-10 offset-md-1 text-center">
@@ -51,6 +51,5 @@
                 </div>
             </f:else>
         </f:if>
-            
     </f:section>
 </html>

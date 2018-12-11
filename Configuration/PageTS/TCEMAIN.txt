@@ -461,6 +461,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>5</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>

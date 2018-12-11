@@ -7,6 +7,10 @@
                 <source>Bleed</source>
                 <target state="translated">Utfallande</target>
             </trans-unit>
+            <trans-unit id="extraClass">
+                <source>Extra Class</source>
+                <target state="translated">Extraklass</target>
+            </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
             </trans-unit>
