@@ -286,6 +286,14 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </paddingCol2>
+                            <reverseOrder>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:reverseOrder</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </reverseOrder>
                         </el>
                     </ROOT>
                 </T3DataStructure>

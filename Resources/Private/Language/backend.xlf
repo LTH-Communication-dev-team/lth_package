@@ -10,6 +10,9 @@
             <trans-unit id="extraClass">
                 <source>Extra Class</source>
             </trans-unit>
+            <trans-unit id="reverseOrder">
+                <source>Columns in Reverse Order</source>
+            </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
             </trans-unit>

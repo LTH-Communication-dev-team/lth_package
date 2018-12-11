@@ -11,6 +11,10 @@
                 <source>Extra Class</source>
                 <target state="translated">Extraklass</target>
             </trans-unit>
+            <trans-unit id="reverseOrder">
+                <source>Columns in Reverse Order</source>
+                <target state="translated">Kolumner i omvänd ordning</target>
+            </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
             </trans-unit>
