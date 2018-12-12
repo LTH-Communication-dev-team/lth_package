@@ -40,6 +40,10 @@
                                         <numIndex index="0">Photo and text</numIndex>
                                         <numIndex index="1">phototext</numIndex>
                                     </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Fill</numIndex>
+                                        <numIndex index="1">fill</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
