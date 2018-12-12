@@ -81,6 +81,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>15</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>
@@ -153,6 +162,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>15</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>
@@ -225,6 +243,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>15</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>
@@ -362,6 +389,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>15</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>
@@ -474,7 +510,7 @@ tx_gridelements {
                                     <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
                                     <config>
                                         <type>input</type>
-                                        <size>5</size>
+                                        <size>15</size>
                                     </config>
                                 </TCEforms>
                             </extraClass>
@@ -562,6 +598,15 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </bleed>
+                            <extraClass>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:extraClass</label>
+                                    <config>
+                                        <type>input</type>
+                                        <size>15</size>
+                                    </config>
+                                </TCEforms>
+                            </extraClass>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>

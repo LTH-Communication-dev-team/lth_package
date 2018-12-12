@@ -208,6 +208,9 @@ article {
     animation: spin 2s linear infinite;
 }
 
+.lthPackageCourseTable {
+    margin-bottom:20px;
+}
 
 .lthPackageCourseTable h4 {
     color: #fff !important;

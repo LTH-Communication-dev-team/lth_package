@@ -1,10 +1,5 @@
 <f:spaceless>
-    <div class="alert alert-danger fixed-bottom fade hide m-0 border-0 rounded-0 font-size-sm" role="alert">
-        <button id="cookieConsent" type="button" class="float-right border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="alert" aria-label="{f:translate(key:'close',extensionName:'lth_package')}">
-            <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
-        </button>
-        {f:translate(key:'cookie.consent',extensionName:'lth_package')} <a href="/om-webbplatsen" class="alert-link">{f:translate(key:'cookie.policy',extensionName:'lth_package')}</a>.
-    </div>
+    <f:render partial="Structure/Alert" arguments="{_all}"/>
     
     <div class="modal fade" id="nav-mobile" tabindex="-1" role="dialog" aria-labelledby="mobile-menu-label" aria-hidden="true">
 	<div class="modal-dialog my-0 mx-auto" role="document">

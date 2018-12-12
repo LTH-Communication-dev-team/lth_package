@@ -3,9 +3,9 @@
         <f:then>
             <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
                 <li class="mobile-nav-item">
-                    <a href="/" class="nav-link">
-                        Start
-                    </a>
+                    <div class="mobile-nav-container">
+                        <a href="/" class="nav-link">Start</a>
+                    </div>
                 </li>
                 <f:render section="MobileNavigationItem" arguments="{menu:mobileNavigation}" />
             </ul>
@@ -17,8 +17,8 @@
                 <f:then>
                     <li class="mobile-nav-item">
                         <div class="mobile-nav-container">
-                            <a href="#{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
-                            <a title="{item.title}" href="#sm-{item.title}" class="mobile-nav-toggle {f:if(condition:item.active,then:'active',else:'collapsed')}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="{item.title}">
+                            <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                            <a href="#{item.link}" title="{item.title}" class="mobile-nav-toggle {f:if(condition:item.active,then:'active',else:'collapsed')}" data-target="{item.link}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="{item.link}">
                             <span class="collapse-show">
                                 <i class="fal fa-plus-circle"></i>
                             </span>
