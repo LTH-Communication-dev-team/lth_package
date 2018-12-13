@@ -81,6 +81,32 @@
                             </config>
                         </TCEforms>
                     </readMoreLinkText>
+                    <link>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>Link to Page</label>
+                            <displayCond>FIELD:infoboxtype:IN:readmore</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <eval>trim</eval>
+                                <softref>typolink</softref>
+                                <wizards>
+                                    <_PADDING>2</_PADDING>
+                                    <link>
+                                        <type>popup</type>
+                                        <title>Link</title>
+                                        <icon>EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif</icon>
+                                        <module type="array">
+                                            <name>wizard_link</name>
+                                        </module>
+                                        <icon>link_popup.gif</icon>
+                                        <JSopenParams>height=500,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </link>
                     <icontextcolor>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.icontextcolor</label>

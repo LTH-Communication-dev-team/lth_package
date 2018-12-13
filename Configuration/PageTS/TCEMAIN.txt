@@ -528,7 +528,7 @@ tx_gridelements {
             )
         }
         5-cols-20-20-20-20-20 {
-            title = 5-Columns
+            title = 5-Columns 20-20-20-20-20
             description = 5-columns contentelement
             topLevelLayout = 0
             config {

@@ -119,7 +119,7 @@
             <trans-unit id="infobox.type">
                 <source>Type of infobox</source>
             </trans-unit>
-            <trans-unit id="readMoreLinkText">
+            <trans-unit id="infobox.readMoreLinkText">
                 <source>Text on Read more link (default Read more)</source>
             </trans-unit>
             

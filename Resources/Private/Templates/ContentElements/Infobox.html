@@ -88,12 +88,16 @@
                     <f:if condition="{data.pi_flexform.readMoreLinkText}">
                         <f:then>
                             <div class="text-right font-weight-normal nav-undecorated">
-                                <a href="{data.pi_flexform.link}">{data.pi_flexform.readMoreLinkText}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
+                                <f:link.typolink parameter="{data.pi_flexform.link}">
+                                    {data.pi_flexform.readMoreLinkText}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span>
+                                </f:link.typolink>
                             </div>                            
                         </f:then>
                         <f:else>
                             <div class="text-right font-weight-normal">
-                                <a href="{data.pi_flexform.link}" class="nav-undecorated">{f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i></a>
+                                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-undecorated">
+                                    {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                </f:link.typolink>
                             </div>
                         </f:else>
                     </f:if>
