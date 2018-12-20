@@ -7,7 +7,9 @@
                 <div class="bg-{v:format.replace(substring:'.gif',content:data.flexform_backgroundcolor,replacement:'')}{f:if(condition:data.flexform_topMargin,then:' py-5 ')}{f:if(condition: data.flexform_bottomMargin, then: ' py-lg-9 ')} {data.flexform_extraClass}">
                     <div class="row">
                         <div class="col-12 col-md-10 offset-md-1 text-center">
-                            <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                            <f:if condition="{data.header}">
+                                <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                            </f:if>
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-3 col-lg-3">
                                     <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
@@ -31,7 +33,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-md-10 offset-md-1 text-center">
-                                <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                                <f:if condition="{data.header}">
+                                    <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                                </f:if>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-3 col-lg-3">
                                         <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
