@@ -229,6 +229,10 @@ article {
     width:100%;
 }
 
+.lthPackageCourseTable div > div > div > div > div > div {
+  height:400px;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
