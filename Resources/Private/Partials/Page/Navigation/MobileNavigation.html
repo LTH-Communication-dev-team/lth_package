@@ -18,7 +18,13 @@
                     <li class="mobile-nav-item">
                         <div class="mobile-nav-container">
                             <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
-                            <a href="#{item.link}" title="{item.title}" class="mobile-nav-toggle {f:if(condition:item.active,then:'active',else:'collapsed')}" data-target="{item.link}" data-toggle="collapse" aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" aria-controls="{item.link}">
+                            <a href="#{v:format.replace(substring:' ',content:item.title,replacement:'')}" 
+                               title="{item.title}" 
+                               class="mobile-nav-toggle {f:if(condition:item.current,then:'active',else:'collapsed')}" 
+                               data-target="#{v:format.replace(substring:' ',content:item.title,replacement:'')}" 
+                               data-toggle="collapse" 
+                               aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" 
+                               aria-controls="{v:format.replace(substring:' ',content:item.title,replacement:'')}">
                             <span class="collapse-show">
                                 <i class="fal fa-plus-circle"></i>
                             </span>
@@ -28,7 +34,7 @@
                         </a>
                         </div>
                         
-                        <ul class="mobile-nav collapse {f:if(condition:item.active,then:' show')}" id="{item.title}">
+                        <ul class="mobile-nav collapse {f:if(condition:item.active,then:' show')}" id="{v:format.replace(substring:' ',content:item.title,replacement:'')}">
                             <f:render section="MobileNavigationItem" arguments="{menu:item.children}" />
                         </ul>
                     </li>

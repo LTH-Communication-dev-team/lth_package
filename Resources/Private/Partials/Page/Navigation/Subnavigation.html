@@ -11,13 +11,13 @@
             <f:if condition="{item.children}">
                 <f:then>
                     <li>
-                        <a title="{item.title}" href="{item.link}" class="nav-link collapse {f:if(condition:item.active,then:'active',else:'collapsed')}">
+                        <a title="{item.title}" href="{item.link}" class="nav-link collapse{f:if(condition:item.active,then:' collapse',else:' collapsed')}{f:if(condition:item.current,then:' active',else:'')}">
                             <f:if condition="{item.active}">
                                 <f:then>
-                                    <div class="float-right"><i class="fal fa-chevron-right"></i></div>
+                                    <div class="float-right"><i class="fal fa-chevron-down"></i></div>
                                 </f:then>
                                 <f:else>
-                                    <div class="float-right"><i class="fal fa-chevron-down"></i></div>
+                                    <div class="float-right"><i class="fal fa-chevron-right"></i></div>
                                 </f:else>
                             </f:if>
                             {item.title}
@@ -28,7 +28,7 @@
                     </li>
                 </f:then>
                 <f:else>
-                    <li><a title="{item.title}" href="{item.link}" class="nav-link">{item.title}</a></li>
+                    <li><a title="{item.title}" href="{item.link}" class="nav-link{f:if(condition:item.current,then:' active',else:'')}">{item.title}</a></li>
                 </f:else>
             </f:if>
         </f:for>

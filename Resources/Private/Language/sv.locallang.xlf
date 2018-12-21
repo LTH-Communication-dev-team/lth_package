@@ -40,7 +40,7 @@
             
             <trans-unit id="hide_menu">
                 <source>Hide menu</source>
-                <target>Göm meny</target>
+                <target>Dölj meny</target>
             </trans-unit>
             
             <trans-unit id="listen">
