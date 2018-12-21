@@ -15476,8 +15476,8 @@ a.text-plaster-75:hover {
 }
 
 .card-image-narrow {
-    max-width: 100%;
-    width: 50vw;
+    max-width: 50vw;
+    width: 100%
 }
 
 .card-img-container {

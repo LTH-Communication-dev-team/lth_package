@@ -5170,8 +5170,8 @@
 
             function L(e) {
                 var t = e.ownerDocument.defaultView.getComputedStyle(e),
-                    n = parseFloat(t.marginTop) + parseFloat(t.marginBottom),
-                    r = parseFloat(t.marginLeft) + parseFloat(t.marginRight);
+                    n = parseFloat(t.marginTop || 0) + parseFloat(t.marginBottom || 0),
+                    r = parseFloat(t.marginLeft || 0) + parseFloat(t.marginRight || 0);
                 return {
                     width: e.offsetWidth + r,
                     height: e.offsetHeight + n
@@ -5277,8 +5277,9 @@
                     var r = ""; - 1 !== ["width", "height", "top", "right", "bottom", "left"].indexOf(n) && U(t[n]) && (r = "px"), e.style[n] = t[n] + r
                 })
             }
+            var V = n && /Firefox/i.test(navigator.userAgent);
 
-            function V(e, t, n) {
+            function G(e, t, n) {
                 var r = H(e, function(e) {
                         return e.name === t
                     }),
@@ -5292,22 +5293,22 @@
                 }
                 return i
             }
-            var G = ["auto-start", "auto", "auto-end", "top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-end", "bottom", "bottom-start", "left-end", "left", "left-start"],
-                K = G.slice(3);
+            var K = ["auto-start", "auto", "auto-end", "top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-end", "bottom", "bottom-start", "left-end", "left", "left-start"],
+                $ = K.slice(3);
 
-            function $(e) {
+            function Q(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-                    n = K.indexOf(e),
-                    r = K.slice(n + 1).concat(K.slice(0, n));
+                    n = $.indexOf(e),
+                    r = $.slice(n + 1).concat($.slice(0, n));
                 return t ? r.reverse() : r
             }
-            var Q = {
+            var Y = {
                 FLIP: "flip",
                 CLOCKWISE: "clockwise",
                 COUNTERCLOCKWISE: "counterclockwise"
             };
 
-            function Y(e, t, n, r) {
+            function X(e, t, n, r) {
                 var i = [0, 0],
                     o = -1 !== ["right", "left"].indexOf(r),
                     s = e.split(/(\+|\-)/).map(function(e) {
@@ -5353,7 +5354,7 @@
                     })
                 }), i
             }
-            var X = {
+            var z = {
                     placement: "bottom",
                     positionFixed: !1,
                     eventsEnabled: !0,
@@ -5395,7 +5396,7 @@
                                     s = i.reference,
                                     a = r.split("-")[0],
                                     l = void 0;
-                                return l = U(+n) ? [+n, 0] : Y(n, o, s, a), "left" === a ? (o.top += l[0], o.left -= l[1]) : "right" === a ? (o.top += l[0], o.left += l[1]) : "top" === a ? (o.left += l[0], o.top -= l[1]) : "bottom" === a && (o.left += l[0], o.top += l[1]), e.popper = o, e
+                                return l = U(+n) ? [+n, 0] : X(n, o, s, a), "left" === a ? (o.top += l[0], o.left -= l[1]) : "right" === a ? (o.top += l[0], o.left += l[1]) : "top" === a ? (o.left += l[0], o.top -= l[1]) : "bottom" === a && (o.left += l[0], o.top += l[1]), e.popper = o, e
                             },
                             offset: 0
                         },
@@ -5456,7 +5457,7 @@
                             enabled: !0,
                             fn: function(e, t) {
                                 var n;
-                                if (!V(e.instance.modifiers, "arrow", "keepTogether")) return e;
+                                if (!G(e.instance.modifiers, "arrow", "keepTogether")) return e;
                                 var r = t.element;
                                 if ("string" == typeof r) {
                                     if (!(r = e.instance.popper.querySelector(r))) return e
@@ -5494,14 +5495,14 @@
                                     o = e.placement.split("-")[1] || "",
                                     s = [];
                                 switch (t.behavior) {
-                                    case Q.FLIP:
+                                    case Y.FLIP:
                                         s = [r, i];
                                         break;
-                                    case Q.CLOCKWISE:
-                                        s = $(r);
+                                    case Y.CLOCKWISE:
+                                        s = Q(r);
                                         break;
-                                    case Q.COUNTERCLOCKWISE:
-                                        s = $(r, !0);
+                                    case Y.COUNTERCLOCKWISE:
+                                        s = Q(r, !0);
                                         break;
                                     default:
                                         s = t.behavior
@@ -5547,7 +5548,7 @@
                             order: 800,
                             enabled: !0,
                             fn: function(e) {
-                                if (!V(e.instance.modifiers, "hide", "preventOverflow")) return e;
+                                if (!G(e.instance.modifiers, "hide", "preventOverflow")) return e;
                                 var t = e.offsets.reference,
                                     n = H(e.instance.modifiers, function(e) {
                                         return "preventOverflow" === e.name
@@ -5579,12 +5580,26 @@
                                     u = {
                                         position: i.position
                                     },
-                                    c = {
-                                        left: Math.floor(i.left),
-                                        top: Math.round(i.top),
-                                        bottom: Math.round(i.bottom),
-                                        right: Math.floor(i.right)
-                                    },
+                                    c = function(e, t) {
+                                        var n = e.offsets,
+                                            r = n.popper,
+                                            i = n.reference,
+                                            o = -1 !== ["left", "right"].indexOf(e.placement),
+                                            s = -1 !== e.placement.indexOf("-"),
+                                            a = i.width % 2 == r.width % 2,
+                                            l = i.width % 2 == 1 && r.width % 2 == 1,
+                                            u = function(e) {
+                                                return e
+                                            },
+                                            c = t ? o || s || a ? Math.round : Math.floor : u,
+                                            f = t ? Math.round : u;
+                                        return {
+                                            left: c(l && !s && t ? r.left - 1 : r.left),
+                                            top: f(r.top),
+                                            bottom: f(r.bottom),
+                                            right: c(r.right)
+                                        }
+                                    }(e, window.devicePixelRatio < 2 || !V),
                                     f = "bottom" === n ? "top" : "bottom",
                                     d = "right" === r ? "left" : "right",
                                     h = W("transform"),
@@ -5627,7 +5642,7 @@
                         }
                     }
                 },
-                z = function() {
+                J = function() {
                     function e(t, n) {
                         var r = this,
                             i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
@@ -5689,7 +5704,7 @@
                         }
                     }]), e
                 }();
-            z.Utils = ("undefined" != typeof window ? window : e).PopperUtils, z.placements = G, z.Defaults = X, t.default = z
+            J.Utils = ("undefined" != typeof window ? window : e).PopperUtils, J.placements = K, J.Defaults = z, t.default = J
         }.call(this, n(16))
 }, function(e, t) {
     var n;
@@ -5697,7 +5712,7 @@
         return this
     }();
     try {
-        n = n || Function("return this")() || (0, eval)("this")
+        n = n || new Function("return this")()
     } catch (e) {
         "object" == typeof window && (n = window)
     }
