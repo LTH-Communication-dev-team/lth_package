@@ -1,53 +1,46 @@
 $(document).ready(function() {
-    if($('.masonryAA').length > 0) {
-        $('.masonryA > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-75"><div class="masonry-tile masonry-tile-lg"></div></div>');
-        $('.masonryA > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile"></div></div>');
-
-        $('.masonryA > .masonry > .masonry-col-40 > div:eq(0)').wrap('<div class="masonry-row masonry-row-55"><div class="masonry-tile"></div></div>');
-        $('.masonryA > .masonry > .masonry-col-40 > div:eq(1)').wrap('<div class="masonry-row masonry-row-45"><div class="masonry-tile"></div></div>');
-    }
-    if($('.masonryBB').length > 0) {
-        $('.masonryB > .masonry > .masonry-col-60 > div:eq(0)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
-        $('.masonryB > .masonry > .masonry-col-60 > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
-
-        $('.masonryB > .masonry > .masonry-col-40 > div:eq(0)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile masonry-tile-sm"></div></div>');
-        $('.masonryB > .masonry > .masonry-col-40 > div:eq(1)').wrap('<div class="masonry-row masonry-row-25"><div class="masonry-tile masonry-tile-md"></div></div>');
-        $('.masonryB > .masonry > .masonry-col-40 > div:eq(2)').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile"></div></div>');
-
-    }
-    if($('.masonryCC').length > 0) {
-        $('.masonryC > .masonry-rows > .masonry-row-50:eq(0) > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row  masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
-        //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-60"><div class="masonry-tile"></div></div>');
-        //$('.masonryC > .masonry-rows > .masonry-row-50:eq(1) > div:eq(0)').wrap('<div class="masonry-col masonry-col-64"><div class="masonry-tile masonry-tile-md"></div></div>');
-        /*$('.masonryC > .masonry > .masonry-col-50 > div:eq(1),.masonryC > .masonry > .masonry-col-50 > div:eq(2)').wrap('<div class="masonry-row  masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>')
-        $('.masonryC > .masonry > .masonry-col-60 > div').wrap('<div class="masonry-tile masonry-tile-md"></div>');
-        $('.masonryC > .masonry > .masonry-col-40 > div').wrap('<div class="masonry-tile"></div>');
-        $('.masonryC > .masonry > .masonry-col-50').wrapAll('<div class="masonry-row masonry-row-50"></div>');
-        $('.masonryC > .masonry > .masonry-col-60,.masonryC > .masonry > .masonry-col-40').wrapAll('<div class="masonry-row masonry-row-50"></div>');*/
-    }
-    if($('.masonryDD').length > 0) {
-        /*$('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-tile masonry-tile-sm"></div></div>');
-        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrap('<div class="masonry-tile"></div></div>');
-        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
-        $('.masonryD > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
-        */
-    }
-    if($('.masonryEE').length > 0) {
-        $('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row > .masonry-cols > .masonry-col:eq(1) > .masonry-rows > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm"></div></div>');
-//$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(3)').wrap('<div class="masonry-tile masonry-tile-md"></div></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(0)').wrap('<div class="masonry-col masonry-col-50"></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > div:eq(2)').wrapAll('<div class="masonry-col masonry-col-50"></div></div>')
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-col masonry-col-50"></div>')
-
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(0),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1),.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(2)').wrapAll('<div class="masonry-row masonry-row-50"><div class="masonry-cols"></div></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > div:eq(1)').wrap('<div class="masonry-row masonry-row-50"></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(1), .masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-tile:eq(2)').wrap('<div class="masonry-row masonry-row-50"></div>');
-        //$('.masonryE > .masonry > .masonry-col-50:eq(1) > .masonry-row:eq(0) > .masonry-cols > .masonry-row').wrapAll('<div class="masonry-rows"></div>');
-    }
-    if($('.masonryFF').length > 0) {
-        $('.masonryF > .masonry-rows > .masonry-row > .masonry-col-50:eq(1) > div').wrap('<div class="masonry-row masonry-row-50"><div class="masonry-tile masonry-tile-sm">');
+    if($('.lthPackageContactCard').length > 0) {
+        var emailArray=[];
+        $('.lthPackageContactCard').each(function(){
+            emailArray.push($(this).attr('data-val'));
+        });
+        
+        $.ajax({
+            type : "POST",
+            url : 'index.php',
+            data: {
+                eID: 'lth_package',
+                action: 'getSingleContact',
+                dataSettings: {
+                    email: emailArray.join(','),
+                },
+                syslang: $('html').attr('lang'),
+                sid: Math.random(),
+            },
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                
+            },
+            success: function(d) {
+                var i = 0;
+                $.each( d.data, function( key, aData ) {
+                    if(aData.name) $(".lthPackageContactCard[data-val='"+aData.email+"'] h2").text(aData.name);
+                    if(aData.title) $(".lthPackageContactCard[data-val='"+aData.email+"'] p").text(aData.title);
+                    if(aData.email) $(".lthPackageContactCard[data-val='"+aData.email+"'] .lthPackageContactCardEmail a").text(aData.email).attr('href','mailto:'+aData.email);
+                    if(aData.image) {
+                        $(".lthPackageContactCard[data-val='"+aData.email+"'] img").attr('src',aData.image);
+                    } else {
+                        $(".lthPackageContactCard[data-val='"+aData.email+"'] img").attr('src',"/typo3conf/ext/lth_solr/res/dummy/" + (Math.floor(Math.random() * 10) + 1) + ".jpg");
+                    }
+                    if(aData.phone) {
+                        $(".lthPackageContactCard[data-val='"+aData.email+"'] .lthPackageContactCardPhone a").text(aData.phone).attr('href','tel:'+aData.phone);
+                    }
+                    i++;
+                });
+                
+            }
+        });
     }
     if(!getCookie('cookieConsent')) {
         $('.alert').removeClass('hide').addClass('show');

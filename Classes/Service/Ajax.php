@@ -2,6 +2,8 @@
 $content;
 $action = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('action');
 $data = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('data');
+$syslang = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('syslang');
+$dataSettings = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('dataSettings');
 $sid = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP("sid");
 date_default_timezone_set('Europe/Stockholm');
 $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['lth_solr']);
@@ -50,9 +52,74 @@ switch($action) {
     case 'portalCalendar':
         $content = portalCalendar($data, $config);
         break;
+    case 'getSingleContact':
+        $content = getSingleContact($dataSettings, $config);
+        break;
 }
 
 print $content;
+
+
+function getSingleContact($dataSettings, $config)
+{
+    $fieldArray = array("firstName","lastName","primaryVroleTitle","phone","id","email","mailDelivery","organisationName","primaryAffiliation",
+        "homepage","image","roomNumber","mobile","lucrisPhoto");
+    
+    $email = $dataSettings['email'];
+    $sysLang = $dataSettings['sysLang'];
+    $staffData = array();
+       
+    $client = new Solarium\Client($config);
+    $query = $client->createSelect();
+    $query->setStart(0)->setRows(100);
+    
+    //Staff
+    if($email) {
+        $term .= ' AND ('; 
+        $emailArray = explode(',', $email);
+        foreach($emailArray as $key => $value) {
+            if($i>0) $term .= ' OR ';
+            $term .= 'email:' . $value;
+            $i++;
+        }
+        $term .= ')';
+    }
+    $queryToSet = 'docType:staff' . $term;
+    $query->setQuery($queryToSet);
+    $query->setFields($fieldArray);
+    $response = $client->select($query);
+
+    foreach ($response as $document) {    
+        $id = $document->id;
+        $docType = $document->docType;
+
+        $image='';
+        if($document->image) {
+            $image = '/fileadmin/images/uploads/' . $document->image;
+        } else if($document->lucrisPhoto) {
+            $image = $document->lucrisPhoto;
+        }
+
+        $data[] = array(
+            "email" => $document->email[0],
+            "name" => $document->firstName . ' ' . $document->lastName,
+            "mailDelivery" => $document->mailDelivery,
+            "title" => $document->primaryVroleTitle,
+            "phone" => 'phone',
+            "mobile" => $document->mobile,
+            "organisationName" => $document->organisationName,
+            "primaryAffiliation" => $document->primaryAffiliation,
+            "homepage" => $document->homepage,
+            "image" => $image,
+            "roomNumber" => $document->roomNumber,
+            "mobile" => $document->mobile,
+        );
+    }
+    
+    $resArray = array('data' => $data, 'query' => $queryToSet);
+    
+    return json_encode($resArray);
+}
 
 
 /*************************NEWS*********************************************/
