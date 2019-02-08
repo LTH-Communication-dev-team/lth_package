@@ -169,7 +169,7 @@ $(document).ready(function() {
                 $(this).remove();
             } else {
                 catList[txt] = true;
-                $('.newsCategoryContainer').append('<li class="nav-item"><a href="#">'+txt+'</a></li>');
+                $('.newsCategoryContainer').append('<li class="nav-item">' + $(this).html() + '</li>');
                 $(this).remove();
             }
         });
@@ -374,117 +374,119 @@ function portalCalendar(setStart, more)
 function listCalendar(setStart,type)
 {
     var template = '';
-    if($('#calendar_ids').val()) {
-        alert('id');
-    } else {
-        $.ajax({
-            type : "POST",
-            url : 'index.php',
+    var sysLang = $('html').attr('lang');
+    var calId = $('#lthPackageCalId').val();
+    
+    $.ajax({
+        type : "POST",
+        url : 'index.php',
+        data: {
+            eID: 'lth_package',
+            action: 'listCalendar',
             data: {
-                eID: 'lth_package',
-                action: 'listCalendar',
-                data: {
-                    setStart: setStart
-                },
-                syslang: $('html').attr('lang'),
-                sid: Math.random(),
+                setStart: setStart,
+                calId: calId,
             },
-            //contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            beforeSend: function () {
-                if(type==='cards') {
-                    $('#lthPackageCalendarCards .col .lined-2col').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
-                } else if(type==='list') {
-                    $('#lthPackageCalendarList').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
-                }
-            },
-            success: function(d) {
-                //console.log(d.data);
-                if(d.facet && setStart >= 0) {
-                    if($('#lthPackageCalendarCategories').length === 1) {
-                        $.each( d.facet, function( key, value ) {
-                            $.each( value, function( key1, value1 ) {
-                                $('#lthPackageCalendarCategories').append('<a href="#" class="btn btn-primary mx-1 mb-3">' + value1[0].toString() + ' (' + value1[1] + ')</a>');
-                            });
-                        });
-                    }
-                }
-
-                if(d.data) {
-                    if(type==='cards') {
-                        $('#lthPackageCalendarCards .col .lined-2col').empty();
-                    } else if(type==='list') {
-                        $('#lthPackageCalendarList').empty();
-                    }
-                    $.each( d.data, function( key, aData ) {
-                        if(type==='cards') {
-                            template = $('#lthPackageCalendarCardsTemplate').html();
-                        } else if(type==='list') {
-                            template = $('#lthPackageCalendarListTemplate').html();
-                        }
-                        var title = '';
-                        var categoryName = '';
-                        var pathalias = '';
-                        var id = '';
-                        var link = '';
-                        if(aData.startTime) {
-                            var objDate = new Date(aData.startTime);
-                            var locale = "sv-se";
-                            var calMonth = objDate.toLocaleString(locale, { month: "short" });
-                            var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
-                            var calDate = objDate.getDate();
-                            var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
-                            var calYear = objDate.getFullYear();
-                            template = template.replace('###date###', calDate);
-                            template = template.replace('###month###', calMonth);
-                        }
-                        if(aData.endTime) {
-                            objDate = new Date(aData.endTime);
-                            var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
-                        }
-                        //console.log(calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
-                        if(calDate && calStartTime && calEndTime && calYear && calLongMonth) {
-                            template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
-                        }
-                        //26 april 2018 kl. 13:15–17:00
-                        if(aData.id) id = aData.id;
-                        
-                        if(aData.title) title = aData.title;
-                        if(aData.categoryName) categoryName = aData.categoryName;
-                        if(aData.pathalias) pathalias = aData.pathalias;
-                        template = template.replace('###id###', id);
-                        template = template.replace('###title###', title);
-                        template = template.replace('###categoryName###', categoryName);
-                        template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
-                        //console.log(template);
-                        if(type==='cards') {
-                            $('#lthPackageCalendarCards .col .lined-2col').append(template);
-                        } else if(type==='list') {
-                            $('#lthPackageCalendarList').append(template);
-                        }
-                        
-                        /*$('#' + id).click(function(){
-                            showCalendar(id)
-                        });*/
-                    });
-                    /*$('#lthPackageCalendarCards .col .lined-2col, #lthPackageCalendarList').append(setStart - 6);*/
-                    /*$('#prev-btn').off('click');
-                    $('#next-btn').off('click');
-                    $('#prev-btn').on('click', function(e){
-                        e.preventDefault();
-                        listCalendar(setStart - 6);
-                    });
-                    $('#next-btn').on('click', function(e){
-                        e.preventDefault();
-                        listCalendar(setStart + 6);
-                    });*/
-                } 
-            },
-            failure: function(errMsg) {
-                console.log(errMsg);
+            syslang: sysLang,
+            sid: Math.random(),
+        },
+        //contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            if(type==='cards') {
+                $('#lthPackageCalendarCards').append(getSpinner(sysLang));
+            } else if(type==='list') {
+                $('#lthPackageCalendarList').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
             }
-        });
-    }
+        },
+        success: function(d) {
+            //console.log(d.data);
+            if(d.facet && setStart >= 0) {
+                if($('#lthPackageCalendarCategories').length === 1) {
+                    $.each( d.facet, function( key, value ) {
+                        $.each( value, function( key1, value1 ) {
+                            $('#lthPackageCalendarCategories').append('<a href="#" class="btn btn-primary mx-1 mb-3">' + value1[0].toString() + ' (' + value1[1] + ')</a>');
+                        });
+                    });
+                }
+            }
+
+            if(d.data) {
+                $('.spinner').remove();
+                if(type==='cards') {
+                    $('#lthPackageCalendarCards').empty();
+                } else if(type==='list') {
+                    $('#lthPackageCalendarList').empty();
+                }
+                $.each( d.data, function( key, aData ) {
+                    if(type==='cards') {
+                        template = $('#lthPackageCalendarCardsTemplate').html();
+                    } else if(type==='list') {
+                        template = $('#lthPackageCalendarListTemplate').html();
+                    }
+                    var title = '';
+                    var categoryName = '';
+                    var pathalias = '';
+                    var id = '';
+                    var link = '';
+                    if(aData.startTime) {
+                        var objDate = new Date(aData.startTime);
+                        var locale = "sv-se";
+                        var calMonth = objDate.toLocaleString(locale, { month: "short" });
+                        var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
+                        var calDate = objDate.getDate();
+                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calYear = objDate.getFullYear();
+                        template = template.replace('###date###', calDate);
+                        template = template.replace('###month###', calMonth);
+                    }
+                    if(aData.endTime) {
+                        objDate = new Date(aData.endTime);
+                        var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                    }
+                    //console.log(calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
+                    if(calDate && calStartTime && calEndTime && calYear && calLongMonth) {
+                        template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
+                    }
+                    //26 april 2018 kl. 13:15–17:00
+                    if(aData.id) id = aData.id;
+
+                    if(aData.title) title = aData.title;
+                    if(aData.categoryName) categoryName = aData.categoryName;
+                    if(aData.pathalias) pathalias = aData.pathalias;
+                    template = template.replace('###id###', id);
+                    template = template.replace(/###title###/g, title);
+                    template = template.replace('###categoryName###', categoryName);
+                    template = template.replace('###link###', '/event/' + encodeURIComponent(title) + '(' + id + ')');
+                    //console.log(template);
+                    if(type==='cards') {
+                        $('#lthPackageCalendarCards').append(template);
+                    } else if(type==='list') {
+                        $('#lthPackageCalendarList').append(template);
+                    }
+
+                    /*$('#' + id).click(function(){
+                        showCalendar(id)
+                    });*/
+                });
+                /*$('#lthPackageCalendarCards .col .lined-2col, #lthPackageCalendarList').append(setStart - 6);*/
+                /*$('#prev-btn').off('click');
+                $('#next-btn').off('click');
+                $('#prev-btn').on('click', function(e){
+                    e.preventDefault();
+                    listCalendar(setStart - 6);
+                });
+                $('#next-btn').on('click', function(e){
+                    e.preventDefault();
+                    listCalendar(setStart + 6);
+                });*/
+            } 
+        },
+        failure: function(errMsg) {
+            console.log(errMsg);
+        }
+    });
+
 }
 
 
@@ -494,6 +496,7 @@ function showCalendar()
     //var eventId = $('#lthPackageEventId').val();
     var eventId = window.location.href.split('(').pop().split(')').shift();
     var calId = $('#lthPackageCalId').val();
+    var sysLang = $('html').attr('lang');
     
     if(eventId) {
         $.ajax({
@@ -506,16 +509,18 @@ function showCalendar()
                     calId: calId,
                     eventId: eventId
                 },
-                syslang: $('html').attr('lang'),
+                syslang: sysLang,
                 sid: Math.random(),
             },
             //contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: function () {
-                $('#lthPackageCalendarShow').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
+                $('#lthPackageCalendarShow article').append(getSpinner(sysLang));
             },
             success: function(d) {
-                $('#lthPackageCalendarShow').empty();
+                $('.spinner').remove();
+                
+                $('#lthPackageCalendarShow article').empty();
                 
                 if(d.data) {
                     if(d.data.startTime) {
@@ -535,27 +540,33 @@ function showCalendar()
                     //$('#lthPackageCalendar .col .lined-2col').empty();
 
                     if(d.data.title) {
+                        $('#lthPackageCalendarShow article').append('<h1></h1>');
                         $('#page_title h1, article h1').text(d.data.title).css('max-width','650px').css('margin-bottom','18px');
                     }
                     if(d.data.lead) {
-                        $('#lthPackageCalendarShow').append('<p>' + d.data.lead + '</p>');
+                        $('#lthPackageCalendarShow article').append('<p>' + d.data.lead + '</p>');
                     }
                     if(d.data.abstract) {
-                        $('#lthPackageCalendarShow').append('<p>' + d.data.abstract + '</p>');
+                        $('#lthPackageCalendarShow article').append('<p>' + d.data.abstract + '</p>');
                     }
-                    $('#lthPackageCalendarShow').append('<p><b>Plats: </b>' + d.data.location + '</p>');
-                    if(d.data.location) {
-                        $('#lthPackageCalendarShow').append('<p><b>Plats: </b>' + calYear + calMonth + calDate + calStartTime + '</p>');
-                    }
+                    //$('#lthPackageCalendarShow article').append('<p><b>Plats: </b>' + d.data.location + '</p>');
+                    /*if(d.data.location) {
+                        $('#lthPackageCalendarShow article').append('<p><b>Plats: </b>' + calYear + calMonth + calDate + calStartTime + '</p>');
+                    }*/
                     if(d.data.prevId) {
-                        $('#lthPackagePrevBtn').attr('href','event/' + d.data.prevTitle + '(' + d.data.prevId + ')');
+                        $('#lthPackagePrevBtn').attr('href','/event/' + d.data.prevTitle + '(' + d.data.prevId + ')');
                     } else {
                         $('#lthPackagePrevBtn').hide();
                     }
                     if(d.data.nextId) {
-                        $('#lthPackageNextBtn').attr('href','event/' + d.data.nextTitle + '(' + d.data.nextId + ')');
+                        $('#lthPackageNextBtn').attr('href','/event/' + d.data.nextTitle + '(' + d.data.nextId + ')');
                     } else {
                         $('#lthPackageNextBtn').hide();
+                    }
+                    //Right column
+                    $('#lthPackageCalendarRightColDate').html('<strong>' + calDate + ' ' + calLongMonth + ' ' + calYear + '<br />' + calStartTime + '-' + calEndTime + '</strong>');
+                    if(d.data.location) {
+                        $('#lthPackageCalendarRightColPlace').append(d.data.location);
                     }
                 } 
             },
@@ -588,6 +599,24 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+function getSpinner(sysLang)
+{
+    var loadText;
+    if(sysLang==='sv') {
+        loadText = 'Laddar...';
+    } else {
+        loadText = 'Loading...';
+    }
+    
+    var content = '<div class="spinner text-center">';
+    content += '<p class="text-primary"><i class="fal fa-circle-notch fa-3x fa-spin"></i></p>';
+    content += '<p class="font-weight-bold">' + loadText + '</p>';
+    content += '</div>';
+    
+    return content;
 }
 
 /*

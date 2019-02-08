@@ -18,7 +18,8 @@ tx_news.templateLayouts {
     4 = News Cards in a row or column
     5 = Old lth frontpage
     6 = LTH News portal
-    7 = LTH Detail News
+    7 = LTH All News
+    8 = LTH Detail News
 }
 
 

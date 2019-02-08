@@ -178,7 +178,7 @@
                         </div>
                     </f:then>
                 </f:if>
-                
+
                 <f:if condition="{settings.templateLayout} == 5">
                     <f:then>
                         <style>
@@ -417,7 +417,7 @@
                                                             </div>
                                                             <div class="card-body p-0 pt-3 pb-6 py-md-0">
                                                                 <div class="meta mb-0">
-                                                                    <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: "%d %M %Y")}</date>
+                                                                    <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: '%d %m %Y')}</date>
                                                                 </div>
                                                                 <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
                                                                 <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
@@ -460,7 +460,70 @@
                         </div>
                       
                     </f:then>
-                </f:if>        
+                </f:if>
+                
+                <f:if condition="{settings.templateLayout} == 7">
+                    <f:then>
+                        <div class="container mb-lg-10">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 mb-5 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h1 class=" mt-0 mb-5">Alla nyheter</h1>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                                    <f:if condition="{newsItem.categories}">
+                                                        <f:for each="{newsItem.categories}" as="category">
+                                                            <li class="nav-item newsCategoryLista">
+                                                                <f:link.page title="{category.title}" class="nav-link py-1" pageUid="{settings.listPid}"
+                                                                    additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.uid}}}">
+                                                                    {category.title}    
+                                                                </f:link.page>
+                                                            </li>
+                                                        </f:for>
+                                                    </f:if>
+                                                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
+                                                        <div class="card-img card-img-lg w-md-auto p-0">
+                                                            <div class="card-img-container">
+                                                                <f:if condition="{newsItem.falMedia}">
+                                                                    <f:then>
+                                                                        <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:news.2.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
+                                                                    </f:then>
+                                                                    <f:else>
+                                                                        <img src="typo3conf/ext/lth_package/Resources/Public/Images/seal-300x200@1x.jpg" alt="desc" class=" item-list-item-image">
+                                                                    </f:else>
+                                                                </f:if>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body p-0 pt-3 pb-6 py-md-0">
+                                                            <div class="meta  mb-0">
+                                                                <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: "%-d %B %Y")}</date>
+                                                            </div>
+
+                                                            <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
+                                                            <p>{newsItem.teaser}</p>
+                                                        </div>
+                                                    </n:link>
+                                                </f:for>
+                                            </n:widget.paginate>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
+                                    <div class="bg-flower-25 p-5 mb-5">
+                                        <h3 class="mt-0 mb-3">Nyhetskategorier</h3>
+                                        <ul class="nav flex-column nmx-3 newsCategoryContainer"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:then>
+                </f:if>
                         
                 
                 <f:if condition="{settings.templateLayout} == ">
@@ -479,7 +542,7 @@
                                             <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
                                         </f:for>
                                     </n:widget.paginate>
-                                </f:else>e
+                                </f:else>
                             </f:if>	
                         </div>         
                     </f:then>

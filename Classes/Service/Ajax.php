@@ -319,7 +319,7 @@ function listCalendar($data, $config)
     }
     
     if($data["calId"]) {
-        $queryToSet = ' AND calender_ids:' . $calId;
+        $queryToSet .= ' AND calendarIds:' . $data["calId"];
     }
     
     $query->setQuery($queryToSet);

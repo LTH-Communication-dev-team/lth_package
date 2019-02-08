@@ -3,7 +3,7 @@
     <f:section name="Main">
         <f:if condition="{data.pi_flexform.layout}=='cards'">
             <f:then>
-                <div id="calendar-{data.uid}" class="container py-4">
+                <div class="container py-4" id="calendar-{data.uid}">
                     <div class="row my-8">
                         <div class="col-12 text-center">
                             <h1>{f:translate(key:'calendar',extensionName:'lth_package')}</h1>
@@ -23,24 +23,23 @@
                         </div>
                     </div>
                     <div class="row my-5" id="lthPackageCalendarCards">
-                        <div class="col">
-                            <div class="lined lined-2col">
-                                
-                            </div>
-                        </div>
                     </div>
+                    <input type="hidden" id="lthPackageCalId" value="{data.pi_flexform.calId}" />
                     <script id="lthPackageCalendarCardsTemplate" type="text/x-jquery-templ">
-                        <div class="lined-item p-0">
-                            <a id="###id###" href="###link###" class="nav-block nav-block-plaster-25 px-5 py-3 nmx-3 d-flex flex-row h-100">
-                                <div class="calendar-list-date">
-                                    <h1>###date###</h1>
-                                    <p>###month###</p>
-                                </div>
-                                <div class="calendar-card-text">
-                                    <div class="calendar-card-meta">
-                                        <date datetime="###dateTime###">###dateTime###</date>&nbsp;|&nbsp;<span class="calendar-card-category">###categoryName###</span>
-                                        <p class="calendar-card-title nav-block-link">###title###</p>
+                        <div class="col-12 col-lg-6 col-lined">
+                            <a id="###id###" href="###link###" title="###title###" class="card card-item nav-block bg-transparent flex-row card-item-lined h-100 nav-block-hover-plaster-25 p-2 py-md-3 nmx-2">
+                                <div class="card-date">
+                                    <div class="calendar-date-box">
+                                        <h1>###date###</h1>
+                                        <p>###month###</p>
                                     </div>
+                                </div>
+                                <div class="card-body p-2">
+                                    <div class="meta">
+                                        <date class="meta-date" datetime="###dateTime###">###dateTime###</date>
+                                        <span class="meta-category">###categoryName###</span>
+                                    </div>
+                                    <h3 class="nav-block-link mt-0 mb-2 h5">###title###</h3>
                                 </div>
                             </a>
                         </div>
@@ -120,11 +119,39 @@
         </f:if>
         <f:if condition="{data.pi_flexform.layout}=='single'">
             <f:then>
-                <div id="lthPackageCalendarShow" class="border-bottom pb-3"></div>
-                <div>
-                    <a id="lthPackagePrevBtn" href="javascript:" class="btn btn-warning">Prev</a>
-                    <a id="lthPackageNextBtn" href="javascript:" class="btn btn-primary">Next</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="d-none d-xl-block col-xl-3 collapse"></div>
+                        <div class="col-12 col-xl-9 mb-6 mb-xl-0">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 mb-6 mb-lg-0" id="lthPackageCalendarShow">
+
+                                    <article></article>
+                                    <div>
+                                        <a id="lthPackagePrevBtn" href="javascript:" class="btn btn-warning">Föregående händelse</a>&nbsp;
+                                        <a id="lthPackageNextBtn" href="javascript:" class="btn btn-primary">Nästa händelse</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="bg-plaster-25 mb-3 p-3">
+                                        <div class="m-0 p-2 text-center">
+                                            <i class="fal fa-calendar-alt" style="font-size:72px;"></i>
+                                        </div>
+                                        <p class="text-center text-uppercase" id="lthPackageCalendarRightColDate">
+
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="bg-plaster-25 mb-3 p-5">
+                                        <h3 class="mt-0">Lokal</h3>
+                                        <p id="lthPackageCalendarRightColPlace"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+               
             </f:then>
         </f:if>
 
