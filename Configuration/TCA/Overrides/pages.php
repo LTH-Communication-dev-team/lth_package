@@ -101,7 +101,7 @@ call_user_func(
         
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','metatags','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop','after:abstract');
         
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','title','--linebreak--,tx_lthpackage_breadcrumb','after:abstract');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','title','--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_pagetitle','after:abstract');
 
         }, 'lth_package'
 );

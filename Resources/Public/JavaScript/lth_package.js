@@ -59,10 +59,10 @@ $(document).ready(function() {
         portalCalendar(0,false);
     }
     if($('#lthPackageCalendarCards').length > 0) {
-        listCalendar(0,'cards');
+        listCalendar(0,'cards', 6);
     }
     if($('#lthPackageCalendarList').length > 0) {
-        listCalendar(0,'list');
+        listCalendar(0,'list', 10000);
     }
     
     if($('#lthPackageCalendarShow').length > 0) {
@@ -371,12 +371,56 @@ function portalCalendar(setStart, more)
 }
 
 
-function listCalendar(setStart,type)
+function listCalendar(setStart, type, numRows)
 {
     var template = '';
     var sysLang = $('html').attr('lang');
     var calId = $('#lthPackageCalId').val();
+    var catId = '';
     
+    var startTime = '';
+    var endTime = '*';
+    
+    if($('.culdesac').length === 0) {
+        window.location.href;
+        catId = catId.substring(0, catId.length-1).split('/').pop();
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        var hh = today.getHours();
+        var ss = today.getSeconds();
+
+        //$('#datetimepicker1').attr('data-val', yyyy+'-'+mm+'-'+dd + ' ' + hh + ':' + ss);
+        //$('#datetimepicker2').attr('data-val', yyyy+'-'+mm+'-'+dd + ' ' + hh + ':' + ss);
+        $('#datetimepicker1').val(yyyy+'-'+mm+'-'+dd);
+        $('#datetimepicker2').val(yyyy+'-'+mm+'-'+dd);
+        $('#datetimepicker1, #datetimepicker2').datetimepicker();
+        
+        $('#lthPackageCategorySearchButton').click(function() {
+            listCalendar(setStart, type, numRows);
+        }).addClass('culdesac');
+        startTime = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+ss+':00Z';
+    } else {
+        startTime = $('#datetimepicker1').val();
+        if(startTime.indexOf(':') > 0) {
+            startTime = startTime.replace(/\//g, '-').replace(' ', 'T') + ':00Z';
+        } else {
+            startTime =$('#datetimepicker1').val() +'T00:00:00Z';
+        }
+        endTime = $('#datetimepicker2').val();
+        if(endTime.indexOf(':') > 0) {
+            endTime = endTime.replace(/\//g, '-').replace(' ', 'T') + ':00Z';
+        } else {
+            endTime =$('#datetimepicker2').val() +'T00:00:00Z';
+        }
+        catId = $('#lthPackageCalendarSelectCategories').val();
+        if(endTime < startTime) {
+            alert('Sluttiden får inte vara större än starttiden.');
+            return false;
+        }
+    }
+
     $.ajax({
         type : "POST",
         url : 'index.php',
@@ -386,6 +430,11 @@ function listCalendar(setStart,type)
             data: {
                 setStart: setStart,
                 calId: calId,
+                catId: catId,
+                startTime: startTime,
+                endTime: endTime,
+                numRows: numRows,
+                query: $('#lthPackageCategorySearchField').val(),
             },
             syslang: sysLang,
             sid: Math.random(),
@@ -394,18 +443,26 @@ function listCalendar(setStart,type)
         dataType: "json",
         beforeSend: function () {
             if(type==='cards') {
-                $('#lthPackageCalendarCards').append(getSpinner(sysLang));
+                $('#lthPackageCalendarCards').empty().append(getSpinner(sysLang));
             } else if(type==='list') {
-                $('#lthPackageCalendarList').html('<img class="lthsolr_loader" style="height:16px; width:16px;" src="/fileadmin/templates/images/ajax-loader.gif" />');
+                $('#lthPackageCalendarList').empty().append(getSpinner(sysLang));
             }
         },
         success: function(d) {
             //console.log(d.data);
             if(d.facet && setStart >= 0) {
-                if($('#lthPackageCalendarCategories').length === 1) {
+                if($('#lthPackageCalendarCategories').length === 1 && $('#lthPackageCalendarCategories option').length === 1) {
                     $.each( d.facet, function( key, value ) {
                         $.each( value, function( key1, value1 ) {
-                            $('#lthPackageCalendarCategories').append('<a href="#" class="btn btn-primary mx-1 mb-3">' + value1[0].toString() + ' (' + value1[1] + ')</a>');
+                            $('#lthPackageCalendarCategories').append('<a href="/events/' + encodeURIComponent(value1[0]) + '/" class="btn btn-primary mx-1 mb-3">' + value1[0].toString() + ' (' + value1[1] + ')</a>');
+                        });
+                    });
+                }
+
+                if($('#lthPackageCalendarSelectCategories').length === 1 && $('#lthPackageCalendarSelectCategories option').length === 1) {
+                    $.each( d.facet, function( key, value ) {
+                        $.each( value, function( key1, value1 ) {
+                            $('#lthPackageCalendarSelectCategories').append('<option value="' + encodeURIComponent(value1[0]) + '">' + value1[0] + '</option>');
                         });
                     });
                 }
@@ -413,11 +470,6 @@ function listCalendar(setStart,type)
 
             if(d.data) {
                 $('.spinner').remove();
-                if(type==='cards') {
-                    $('#lthPackageCalendarCards').empty();
-                } else if(type==='list') {
-                    $('#lthPackageCalendarList').empty();
-                }
                 $.each( d.data, function( key, aData ) {
                     if(type==='cards') {
                         template = $('#lthPackageCalendarCardsTemplate').html();
@@ -531,23 +583,37 @@ function showCalendar()
                         var calDate = objDate.getDate();
                         var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         var calYear = objDate.getFullYear();
-
+                        $('#lthPackageCalendarShow .calendar-date-box h1').text(calDate);
+                        $('#lthPackageCalendarShow .calendar-date-box p').text(calLongMonth);
+                        $('.meta-date').text(calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                        
                     }
                     if(d.data.endTime) {
                         objDate = new Date(d.data.endTime);
                         var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                     }
-                    //$('#lthPackageCalendar .col .lined-2col').empty();
+                    
+                    if(d.data.categoryName) {
+                        $('.meta-category').text(d.data.categoryName);
+                    }
+                    
+                    if(d.data.image) {
+                        $('#lthPackageCalendarShow .event-title').after('<figure class="figure"><img src="'+d.data.image + '" alt="' + d.data.title + '" class=" figure-img img-fluid m-0"></figure>');                    }
+                    if(d.data.imageCaption) {
+                        $('#lthPackageCalendarShow figure').append('<figcaption class="figure-caption bg-dark text-white p-2">' + d.data.imageCaption + '</figcaption>');
+                    }
 
                     if(d.data.title) {
-                        $('#lthPackageCalendarShow article').append('<h1></h1>');
-                        $('#page_title h1, article h1').text(d.data.title).css('max-width','650px').css('margin-bottom','18px');
+                        $('#lthPackageCalendarShow .event-title__heading h1').text(d.data.title);
+                        //$('#page_title h1, article h1').text(d.data.title).css('max-width','650px').css('margin-bottom','18px');
                     }
                     if(d.data.lead) {
-                        $('#lthPackageCalendarShow article').append('<p>' + d.data.lead + '</p>');
+                        //$('#lthPackageCalendarShow article').append('<p>' + d.data.lead + '</p>');
+                        $('#lthPackageCalendarShow .event-text').append('<p>' + d.data.lead + '</p>');
                     }
                     if(d.data.abstract) {
-                        $('#lthPackageCalendarShow article').append('<p>' + d.data.abstract + '</p>');
+                        //$('#lthPackageCalendarShow article').append('<p>' + d.data.abstract + '</p>');
+                        $('#lthPackageCalendarShow .event-text').append('<p>' + d.data.abstract + '</p>');
                     }
                     //$('#lthPackageCalendarShow article').append('<p><b>Plats: </b>' + d.data.location + '</p>');
                     /*if(d.data.location) {
@@ -564,10 +630,8 @@ function showCalendar()
                         $('#lthPackageNextBtn').hide();
                     }
                     //Right column
-                    $('#lthPackageCalendarRightColDate').html('<strong>' + calDate + ' ' + calLongMonth + ' ' + calYear + '<br />' + calStartTime + '-' + calEndTime + '</strong>');
-                    if(d.data.location) {
-                        $('#lthPackageCalendarRightColPlace').append(d.data.location);
-                    }
+                    $('.col-lg-3').html('<div class="infobox bg-sky-50"><p><strong>Om händelsen</strong><br />' + calDate + ' ' + calLongMonth + ' kl ' + calStartTime + ' till' + calEndTime + '</p>' +
+                            '<p><strong>Plats</strong><br />' + d.data.location + '</p></div>');
                 } 
             },
             failure: function(errMsg) {

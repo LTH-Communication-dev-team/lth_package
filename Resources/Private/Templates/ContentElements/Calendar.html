@@ -89,29 +89,94 @@
         </f:if>
         <f:if condition="{data.pi_flexform.layout}=='list'">
             <f:then>
-                <div id="calendar-{data.uid}">
-                    <h2>{f:translate(key:'calendar',extensionName:'lth_package')}</h2>
-                    <div id="lthPackageCalendarList" class="border-bottom pb-3"></div>
-                    <div class="mt-5 text-right font-weight-normal">
-                        <f:if condition="{data.pi_flexform.listingPage}">
-                            <f:then>
-                                <f:link.typolink parameter="{data.pi_flexform.listingPage}">{f:translate(key:'more_events',extensionName:'lth_package')}&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-lg"></i></span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <a href="events" class="nav-undecorated">{f:translate(key:'more_events',extensionName:'lth_package')}&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-lg"></i></span></a>
-                            </f:else>
-                        </f:if>
+                <div class="row mb-3">
+                    <div class="col">
+                        <h1>Kalendarium</h1>
                     </div>
+                    
+                </div>
+                <div class="col-12 col-lg-8 order-lg-1" id="calendar-{data.uid}">
+                    
+                    <form class="form my-5">
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <div class="form-group">
+                                    <label class=" w-100">
+                                        Datum från
+                                        <div class="input-group date">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent text-bronze">
+                                                    <i class="fal fa-calendar-alt fa-lg"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="date" value=""  id="datetimepicker1" />
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md">
+                                <div class="form-group">
+                                    <label class=" w-100">
+                                        Datum till
+                                        <div class="input-group date">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent text-bronze">
+                                                    <i class="fal fa-calendar-alt  fa-lg"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="date" value=""  id="datetimepicker2" />
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <div class="form-group">
+                                    <label class=" w-100">
+                                        <select class="form-control custom-select" name="category" id="lthPackageCalendarSelectCategories" placeholder="Kategori">
+                                            <option value="">Kategori</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md">
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <div class="form-group">
+                                    <label class=" w-100">
+                                        <div class="input-group rounded-0">
+                                            <input type="text" class="form-control" name="text" value="" id="lthPackageCategorySearchField" placeholder="Skriv för att filtrera">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary rounded-0" id="lthPackageCategorySearchButton" type="button">Sök</button>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="lthPackageCalendarList" style="max-width:760px;" class="border-bottom py-md-3 nm-md-3">
+
                 </div>
                 <script id="lthPackageCalendarListTemplate" type="text/x-jquery-templ">
-                    <a href="###link###" id="###id###" class="nav-block nav-block-plaster-25 p-3 nmx-3 d-flex flex-row align-items-center">
-                        <div class="calendar-list-date">
-                            <h1 class="m-0">###date###</h1>
-                            <p class="m-0">###month###</p>
+                    <a href="###link###" id="###id###" class="card card-item nav-block bg-transparent flex-row p-0 p-md-3 mb-3 mb-md-0 nav-block-hover-plaster-25" title="###title###">
+                        <div class="card-date p-0">
+                            <div class="calendar-date-box">
+                                <h1>###date###</h1>
+                                <p>###month###</p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <p class="mb-2 font-size-sm"><date datetime="###dateTime###">###dateTime###</date> | ###categoryName###</p>
-                            <p class="m-0"><span class="nav-block-link">###title###</span></p>
+                        <div class="card-body p-0 pl-3 pl-md-0">
+                            <div class="meta">
+                                <date class="meta-date" datetime="###dateTime###">###dateTime###</date>
+                                <span class="meta-category">###categoryName###</span>
+                            </div>
+                            <h3 class="nav-block-link mt-0 mb-2 h4">###title###</h3>
                         </div>
                     </a>
                 </script>
@@ -119,39 +184,34 @@
         </f:if>
         <f:if condition="{data.pi_flexform.layout}=='single'">
             <f:then>
-                <div class="container">
-                    <div class="row">
-                        <div class="d-none d-xl-block col-xl-3 collapse"></div>
-                        <div class="col-12 col-xl-9 mb-6 mb-xl-0">
-                            <div class="row">
-                                <div class="col-12 col-lg-8 mb-6 mb-lg-0" id="lthPackageCalendarShow">
-
-                                    <article></article>
-                                    <div>
-                                        <a id="lthPackagePrevBtn" href="javascript:" class="btn btn-warning">Föregående händelse</a>&nbsp;
-                                        <a id="lthPackageNextBtn" href="javascript:" class="btn btn-primary">Nästa händelse</a>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <div class="bg-plaster-25 mb-3 p-3">
-                                        <div class="m-0 p-2 text-center">
-                                            <i class="fal fa-calendar-alt" style="font-size:72px;"></i>
-                                        </div>
-                                        <p class="text-center text-uppercase" id="lthPackageCalendarRightColDate">
-
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="bg-plaster-25 mb-3 p-5">
-                                        <h3 class="mt-0">Lokal</h3>
-                                        <p id="lthPackageCalendarRightColPlace"></p>
-                                    </div>
-                                </div>
+                <div  id="lthPackageCalendarShow">
+                    <div class="event-title d-flex mb-5">
+                        <div class="event-title__date">
+                            <div class="calendar-date-box">
+                                <h1></h1>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="event-title__heading">
+                            <h1></h1>
+                        </div>
+                        <div class="event-title__meta">
+                            <div class="meta ">
+                                <date class="meta-date"></date>
+                                <span class="meta-category"></span>
                             </div>
                         </div>
                     </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-9 event-text">
+
+                        </div>
+                    </div>
+                    <div>
+                        <a id="lthPackagePrevBtn" href="javascript:" class="btn btn-warning">Föregående händelse</a>&nbsp;
+                        <a id="lthPackageNextBtn" href="javascript:" class="btn btn-primary">Nästa händelse</a>
+                    </div>
                 </div>
-               
             </f:then>
         </f:if>
 

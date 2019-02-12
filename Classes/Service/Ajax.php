@@ -308,7 +308,7 @@ function listCalendar($data, $config)
     
     $query = $client->createSelect();
 
-    if(intval($setStart) >= 0) {
+    /*if(intval($setStart) >= 0) {
         $queryToSet = 'docType:calendar AND startTime:[' . $currentDate . ' TO *]';
         $query->addSorts(array("dateOrder" => "asc"));
         $query->setStart($setStart)->setRows(6);
@@ -316,19 +316,42 @@ function listCalendar($data, $config)
         $queryToSet = 'docType:calendar AND startTime:[* TO ' . $currentDate . ']';
         $query->addSorts(array("dateOrder" => "desc"));
         $query->setStart(abs($setStart + 6))->setRows(6);
-    }
+    }*/
+    $queryToSet = 'docType:calendar';
     
     if($data["calId"]) {
         $queryToSet .= ' AND calendarIds:' . $data["calId"];
     }
     
+    if($data["catId"] && $data["catId"] !== 'events') {
+        //$queryToSet .= ' AND categoryName:' . urldecode($data["catId"]);
+        $query->addFilterQuery(array('key' => 'category', 'query' => 'categoryName:'. urldecode($data["catId"]), 'tag'=>'dt'));
+    }
+    
+    if($data["query"]) {
+        $query->addFilterQuery(array('key' => 'query', 'query' => 'title:*'. $data["query"] . '*', 'tag'=>'dt'));
+    }
+    
+    if($data["startTime"]) {
+        $queryToSet .= ' AND startTime:['.$data['startTime'].' TO ' . $data['endTime'] . ']';
+    }
+    
     $query->setQuery($queryToSet);
+    
+    $query->setStart(0)->setRows($data['numRows']);
     
     $query->setFields($fieldArray);
     
+    $sortArray = array(
+        'startTime' => 'asc'
+    );
+    
+    $query->addSorts($sortArray);
+    
     $facetSet = $query->getFacetSet();
         
-    $facetSet->createFacetField('category')->setField('categoryName');
+    //$facetSet->createFacetField('category')->setField('categoryName');
+    $facetSet->createFacetField('category')->setField('categoryName')->setExcludes(array("dt"));
     
     $response = $client->select($query);
     
@@ -376,7 +399,7 @@ function showCalendar($data, $config)
             )
         )
     );
-    $fieldArray = array("id","title","lead","abstract","categoryId","categoryName","startTime","endTime","location","dateOrder");
+    $fieldArray = array("id","abstract","categoryId","categoryName","dateOrder","image","imageCaption","lead","startTime","endTime","location","title");
     
     $client = new Solarium\Client($config);
     
@@ -394,15 +417,17 @@ function showCalendar($data, $config)
     
     foreach ($response as $document) {
         $data = array(
-            "id" => $document->id,
-            "title" => $document->title,
-            "lead" => $document->lead,
             "abstract" => $document->abstract,
-            "startTime" => $document->startTime,
-            "endTime" => $document->endTime,
-            "location" => $document->location,
             "categoryName" => $document->categoryName,
             "dateOrder" => $document->dateOrder,
+            "endTime" => $document->endTime,
+            "id" => $document->id,
+            "image" => $document->image,
+            "imageCaption" => $document->imageCaption,
+            "lead" => $document->lead,
+            "location" => $document->location,
+            "startTime" => $document->startTime,
+            "title" => $document->title,
         );
     }
     
