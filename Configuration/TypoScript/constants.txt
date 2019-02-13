@@ -2,6 +2,9 @@ mainNavigationEntryLevel = 0
 subNavigationEntryLevel = 1
 mobileNavigationEntryLevel = -1
 tabNavigationEntryLevel = 1
+footerPath =
+shortcutIcon = favicon_lth.ico
+
 plugin.tx_news {
         view {
                 templateRootPath = EXT:lth_package/Resources/Private/Templates/News/

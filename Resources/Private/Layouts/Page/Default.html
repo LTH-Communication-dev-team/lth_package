@@ -22,7 +22,5 @@
         <f:render partial="Structure/Header" arguments="{_all}"/>
     </header>
     <f:render section="Main"/>
-    <footer class="footer">
-        <f:render partial="Structure/Footer" arguments="{_all}"/>
-    </footer>
+    <f:format.raw>{footerContent}</f:format.raw>
 </f:spaceless>

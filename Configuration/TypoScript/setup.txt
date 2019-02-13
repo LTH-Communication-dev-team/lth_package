@@ -200,6 +200,9 @@ page {
             author.10.date = Y-m-d
             author.10.wrap = &nbsp;&#124;&nbsp;|
             author.10.ifEmpty.data = register:SYS_LASTCHANGED
+            footerContent = FILE
+            footerContent.file.lang.sv = {$footerPath}/foot_novo.txt
+            footerContent.file.lang.en = {$footerPath}/foot_novo_en.txt
             headnav = TEXT
             headnav.data = levelfield: -1, tx_lthpackage_headnav, slide
             headnavdrop = TEXT
@@ -279,6 +282,8 @@ page {
             attribute = content
         }
     }
+
+    shortcutIcon = typo3conf/ext/lth_package/Resources/Public/Icons/{$shortcutIcon}
 
     includeCSS {
         #f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
