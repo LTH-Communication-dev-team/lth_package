@@ -94,14 +94,22 @@ call_user_func(
                                ['Yes', ''],
                             ],
 			]
-		]
+		],
+                'tx_lthpackage_mainclass' => [
+			'exclude' => 1,
+			'label'   => 'Extra class for main-tag',
+			'config' => [
+                            'type' => 'input',
+                            'cols' => '20',
+			]
+		],
 	];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$tempPagesColumns);
         
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','metatags','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop','after:abstract');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','metatags','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop','after:description');
         
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','title','--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_pagetitle','after:abstract');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_mainclass','after:content_from_pid');
 
         }, 'lth_package'
 );

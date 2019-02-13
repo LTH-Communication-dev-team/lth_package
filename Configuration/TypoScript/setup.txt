@@ -200,6 +200,8 @@ page {
             author.10.date = Y-m-d
             author.10.wrap = &nbsp;&#124;&nbsp;|
             author.10.ifEmpty.data = register:SYS_LASTCHANGED
+            breadcrumb = TEXT
+            breadcrumb.data = page:tx_lthpackage_breadcrumb
             footerContent = FILE
             footerContent.file.lang.sv = {$footerPath}/foot_novo.txt
             footerContent.file.lang.en = {$footerPath}/foot_novo_en.txt
@@ -207,10 +209,11 @@ page {
             headnav.data = levelfield: -1, tx_lthpackage_headnav, slide
             headnavdrop = TEXT
             headnavdrop.data = levelfield: -1, tx_lthpackage_headnavdrop, slide
+            mainClass = TEXT
+            mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
             otherLanguageLink.lang.sv = english
-            breadcrumb = TEXT
-            breadcrumb.data = levelfield: -1, tx_lthpackage_breadcrumb, slide
+            
             username = TEXT
             username.data = TSFE:fe_user|user|username
             layout = TEXT

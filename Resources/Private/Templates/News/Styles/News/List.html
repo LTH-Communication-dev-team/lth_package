@@ -37,89 +37,125 @@
                 </f:if>
                 <f:if condition="{settings.templateLayout} == 3">
                     <f:then>
-                        <div class="bg-plaster-50 nav-undecorated">
+                        <div class="bg-plaster-50">
                             <div class="container py-4">
                                 <div class="row my-8">
                                     <div class="col-12 text-center">
                                         <h1>Nyheter</h1>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit uisque eu diam elit morbi sollicitudin</p>
                                         <div class="mt-5">
                                             <f:link.page title="{category.item.title}" class="btn btn-outline-dark mx-1 mb-3" pageUid="{settings.listPid}"
 							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">Fler nyheter
                                             </f:link.page>
-                                            <a href="#" class="btn btn-outline-dark mx-1 mb-3">Press och media</a>
-                                            <a href="#" class="btn btn-outline-dark mx-1 mb-3">Kontakt</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-8">
                                     <div class="col-12 col-lg-6 mb-5 mb-lg-0">
-                                        <n:link newsItem="{news.0}" settings="{settings}" title="{news.0.title}" class="card nav-block">
-                                            <f:if condition="{news.0.mediaPreviews}">
+                                        <n:link newsItem="{news.0}" settings="{settings}" title="{news.0.title}" class="card nav-block h-100">
+                                            <f:if condition="{news.0.falmedia}">
                                                 <f:then>
-                                                    <f:media class="card-img-top" file="{news.0.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                    <div class="card-img p-2">
+                                                        <div class="card-img-container">
+                                                            <f:media file="{news.0.falmedia.0}" alt="{mediaElement.originalResource.title}" />
+                                                        </div>
+                                                    </div>
                                                 </f:then>
                                             </f:if>
                                             <div class="card-body">
-                                                <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.0.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.0.category}</p>
-                                                <h2 class="card-title nav-block-link mt-2">{news.0.title}</h2>
-                                                <p class="card-text">{news.0.teaser}</p>
+                                                <div class="meta">
+                                                    <date class="meta-date">{f:format.date(date: news.0.datetime, format: "%Y-%m-%d")}</date>
+                                                    <span class="meta-category">{news.0.category}</span>
+                                                </div>
+                                                <h3 class="h2 nav-block-link m-0">{news.0.title}</h3>
+                                                <p class="mt-3">{news.0.teaser}</p>
                                             </div>
                                         </n:link>
                                     </div>
                                     <div class="col-12 col-lg-6">
                                         <div class="row">
                                             <div class="col-12 col-md-6 mb-5 ">
-                                                <n:link newsItem="{news.1}" settings="{settings}" title="{news.1.title}" class="card nav-block">
-                                                    <f:if condition="{news.1.mediaPreviews}">
+                                                <n:link newsItem="{news.1}" settings="{settings}" title="{news.1.title}" class="card nav-block h-100">
+                                                    <f:if condition="{news.1.falmedia}">
                                                         <f:then>
-                                                            <f:media class="card-img-top" file="{news.1.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                            <div class="card-img p-2">
+                                                                <div class="card-img-container">
+                                                                    <f:media file="{news.1.falmedia.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                                </div>
+                                                            </div>
                                                         </f:then>
                                                     </f:if>
                                                     <div class="card-body">
-                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.1.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.1.category}</p>
-                                                        <h3 class="card-title nav-block-link my-0">{news.1.title}</h3>
+                                                        <div class="meta">
+                                                            <date class="meta-date">{f:format.date(date: news.1.datetime, format: "%Y-%m-%d")}</date>
+                                                            <span class="meta-category">{news.1.category}</span>
+                                                        </div>
+                                                        <h3 class=" h2 nav-block-link m-0">{news.1.title}</h3>
+                                                        <p class="mt-0"></p>
                                                     </div>
                                                 </n:link>
                                             </div>
                                             <div class="col-12 col-md-6 mb-5">
-                                                <n:link newsItem="{news.2}" settings="{settings}" title="{news.2.title}" class="card nav-block">
-                                                    <f:if condition="{news.2.mediaPreviews}">
+                                                <n:link newsItem="{news.2}" settings="{settings}" title="{news.2.title}" class="card nav-block h-100">
+                                                    <f:if condition="{news.2.falmedia}">
                                                         <f:then>
-                                                            <f:media class="card-img-top" file="{news.2.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                            <div class="card-img p-2">
+                                                                <div class="card-img-container">
+                                                                    <f:media file="{news.2.falmedia.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                                </div>
+                                                            </div>
                                                         </f:then>
                                                     </f:if>
                                                     <div class="card-body">
-                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.2.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.2.category}</p>
-                                                        <h3 class="card-title nav-block-link my-0">{news.2.title}</h3>
+                                                        <div class="meta">
+                                                            <date class="meta-date">{f:format.date(date: news.2.datetime, format: "%Y-%m-%d")}</date>
+                                                            <span class="meta-category">{news.2.category}</span>
+                                                        </div>
+                                                        <h3 class="h2 nav-block-link m-0">{news.2.title}</h3>
+                                                        <p class="mt-0"></p>
                                                     </div>
                                                 </n:link>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-md-6 mb-5 mb-md-0">
-                                                <n:link newsItem="{news.3}" settings="{settings}" title="{news.3.title}" class="card nav-block">
-                                                    <f:if condition="{news.3.mediaPreviews}">
+                                                <n:link newsItem="{news.3}" settings="{settings}" title="{news.3.title}" class="card nav-block h-100">
+                                                    <f:if condition="{news.3.falmedia}">
                                                         <f:then>
-                                                            <f:media class="card-img-top" file="{news.3.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                            <div class="card-img p-2">
+                                                                <div class="card-img-container">
+                                                                    <f:media file="{news.3.falmedia.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                                </div>
+                                                            </div>
                                                         </f:then>
                                                     </f:if>
                                                     <div class="card-body">
-                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.3.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.3.category}</p>
-                                                        <h3 class="card-title nav-block-link my-0">{news.3.title}</h3>
+                                                        <div class="meta">
+                                                            <date class="meta-date">{f:format.date(date: news.3.datetime, format: "%Y-%m-%d")}</date>
+                                                            <span class="meta-category">{news.3.category}</span>
+                                                        </div>
+                                                        <h3 class="h2 nav-block-link m-0">{news.3.title}</h3>
+                                                        <p class="mt-0"></p>
                                                     </div>
                                                 </n:link>
                                             </div>
                                             <div class="col-12 col-md-6">
-                                                <n:link newsItem="{news.4}" settings="{settings}" title="{news.4.title}" class="card nav-block">
-                                                    <f:if condition="{news.4.mediaPreviews}">
+                                                <n:link newsItem="{news.4}" settings="{settings}" title="{news.4.title}" class="card nav-block h-100">
+                                                    <f:if condition="{news.4.falmedia}">
                                                         <f:then>
-                                                            <f:media class="card-img-top" file="{news.4.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                            <div class="card-img p-2">
+                                                                <div class="card-img-container">
+                                                                    <f:media file="{news.4.falmedia.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+                                                                </div>
+                                                            </div>
                                                         </f:then>
                                                     </f:if>
                                                     <div class="card-body">
-                                                        <p class="card-text mb-2 font-size-sm"><date>{f:format.date(date: news.4.datetime, format: "%Y-%m-%d")}</date> &nbsp;|&nbsp; {news.4.category}</p>
-                                                        <h3 class="card-title nav-block-link my-0">{news.4.title}</h3>
+                                                        <div class="meta">
+                                                            <date class="meta-date">{f:format.date(date: news.4.datetime, format: "%Y-%m-%d")}</date>
+                                                            <span class="meta-category">{news.4.category}</span>
+                                                        </div>
+                                                        <h3 class="h2 nav-block-link m-0">{news.4.title}</h3>
+                                                        <p class="mt-0"></p>
                                                     </div>
                                                 </n:link>
                                             </div>
@@ -417,7 +453,7 @@
                                                             </div>
                                                             <div class="card-body p-0 pt-3 pb-6 py-md-0">
                                                                 <div class="meta mb-0">
-                                                                    <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: '%d %m %Y')}</date>
+                                                                    <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: '%-d %B %Y')}</date>
                                                                 </div>
                                                                 <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
                                                                 <p><f:format.crop maxCharacters="200">{newsItem.teaser}</f:format.crop></p>
@@ -431,9 +467,9 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class=" mt-5 text-right font-weight-normal">
-                                                <a href="../../#.html" class="nav-undecorated ">
-                                                    Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right fa-w-16 fa-lg"></i>
-                                                </a>
+                                                <f:link.page title="{category.item.title}" class="nav-undecorated" pageUid="{settings.listPid}"
+							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right fa-w-16 fa-lg"></i>
+                                                </f:link.page>
                                             </div>
                                         </div>
                                     </div>

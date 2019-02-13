@@ -14,7 +14,7 @@ TCEMAIN {
 tx_news.templateLayouts {
     1 = List
     2 = Short list
-    3 = Top Story and three News
+    3 = News Cards Front Page
     4 = News Cards in a row or column
     5 = Old lth frontpage
     6 = LTH News portal
