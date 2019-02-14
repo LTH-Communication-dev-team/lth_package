@@ -3,6 +3,16 @@
     <!--
             =====================
                     Templates/News/List.html
+    tx_news.templateLayouts {
+    1 = List
+    2 = Short list
+    3 = News Cards Front Page
+    4 = News Cards in a row or column
+    5 = Old lth frontpage
+    6 = LTH News portal
+    7 = LTH All News
+    8 = LTH Detail News
+}
     -->
 
     <f:section name="content">
@@ -433,7 +443,18 @@
                                             <f:for each="{news}" as="newsItem" iteration="iterator">
                                                 <f:if condition="{newsItem.categories}">
                                                     <f:for each="{newsItem.categories}" as="newsCategoryItem">
-                                                        <li class="nav-item newsCategoryList"><a href="#" class="nav-link py-1">{newsCategoryItem.title}</a></li>
+                                                        <li class="nav-item newsCategoryList">
+                                                            <f:if condition="{newsCategoryItem.shortcut}">
+                                                                <f:then>
+                                                                    <f:link.page pageUid="{newsCategoryItem.shortcut}" class="nav-link py-1">
+                                                                        {newsCategoryItem.title}
+                                                                    </f:link.page>
+                                                                </f:then>
+                                                                <f:else>
+                                                                    <a href="#" class="nav-link py-1">{newsCategoryItem.title}</a>
+                                                                </f:else>
+                                                            </f:if>
+                                                        </li>
                                                     </f:for>
                                                 </f:if>
                                                 <f:if condition="{iterator.index} > 2">
@@ -500,26 +521,36 @@
                 
                 <f:if condition="{settings.templateLayout} == 7">
                     <f:then>
+                        <style>
+                            .newsCategoryList {
+                                display:none;
+                            }
+                        </style>
                         <div class="container mb-lg-10">
                             <div class="row">
                                 <div class="col-12 col-lg-8 mb-5 mb-lg-0">
                                     <div class="row">
                                         <div class="col">
                                             <h1 class=" mt-0 mb-5">Alla nyheter</h1>
-
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
                                             <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-                                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator"> 
                                                     <f:if condition="{newsItem.categories}">
-                                                        <f:for each="{newsItem.categories}" as="category">
-                                                            <li class="nav-item newsCategoryLista">
-                                                                <f:link.page title="{category.title}" class="nav-link py-1" pageUid="{settings.listPid}"
-                                                                    additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.uid}}}">
-                                                                    {category.title}    
-                                                                </f:link.page>
+                                                        <f:for each="{newsItem.categories}" as="newsCategoryItem">
+                                                            <li class="nav-item newsCategoryList">
+                                                                <f:if condition="{newsCategoryItem.shortcut}">
+                                                                    <f:then>
+                                                                        <f:link.page pageUid="{newsCategoryItem.shortcut}" class="nav-link py-1">
+                                                                            {newsCategoryItem.title}
+                                                                        </f:link.page>
+                                                                    </f:then>
+                                                                    <f:else>
+                                                                        <a href="#" class="nav-link py-1">{newsCategoryItem.title}</a>
+                                                                    </f:else>
+                                                                </f:if>
                                                             </li>
                                                         </f:for>
                                                     </f:if>
@@ -540,7 +571,6 @@
                                                             <div class="meta  mb-0">
                                                                 <date class="meta-date" datetime="{f:format.date(date: newsItem.datetime, format: '%Y-%m-%d')}">{f:format.date(date: newsItem.datetime, format: "%-d %B %Y")}</date>
                                                             </div>
-
                                                             <h3 class="nav-block-link mt-0 mb-2 h4">{newsItem.title}</h3>
                                                             <p>{newsItem.teaser}</p>
                                                         </div>
@@ -593,7 +623,7 @@
 	<!--TYPO3SEARCH_begin-->
             </f:else>
         </f:if>
-</f:section>
+    </f:section>
 </html>
 
 <!--
