@@ -2,28 +2,54 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <a id="{data.header}"></a>
-    <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> py-5 py-lg-9  {data.flexform_extraClass}">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-10 offset-md-1 text-center">
-                    <f:if condition="{data.header}">
-                        <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
-                    </f:if>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <f:format.raw>{data.tx_gridelements_view_column_13}</f:format.raw>
+    <f:if condition="{data.flexform_bleed}">
+        <f:then>
+            <div class="container-fluid bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> py-5 {data.flexform_extraClass}">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <f:if condition="{data.header}">
+                            <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                        </f:if>
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <f:format.raw>{data.tx_gridelements_view_column_13}</f:format.raw>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </f:then>
+        <f:else>
+            <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> py-5 py-lg-9 {data.flexform_extraClass}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1 text-center">
+                            <f:if condition="{data.header}">
+                                <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                            </f:if>
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <f:format.raw>{data.tx_gridelements_view_column_13}</f:format.raw>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
 </f:section>
 
 </html>
