@@ -10,25 +10,20 @@
                                 <li data-target="#carousel-{data.uid}" data-slide-to="{iterator.index}" class="{f:if(condition: iterator.isFirst,then:'active')}"><span class="sr-only">{imageItem.alternative}</span></li>
                             </f:for>
                         </ol>
-                        <div class="carousel-controls-container">
-                            <div class="carousel-controls">
-				<div class="carousel-controls-play"><i class="fas fa-play"></i></div>
-				<div class="carousel-controls-pause"><i class="fas fa-pause"></i></div>
-                            </div>
-                        </div>
+                        
                         <div class="carousel-inner">
                             <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
                                 <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}">
-                                        <f:link.typolink parameter="{imageItem.link}" class="nav-block h-100">
-                                            <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" class="carousel-img" />
-                                        </f:link.typolink>
-					<div class="carousel-caption">
-                                            <div class="container">
-						<p>
-                                                    <span class="a nav-block-link">{imageItem.alternative}&nbsp;<span class="ml-1 text-nowrap"><i class="fal fa-chevron-circle-right fa-sm"></i></span></span>
-						</p>
-                                            </div>
-					</div>
+                                    <f:link.typolink parameter="{imageItem.link}" class="nav-block h-100">
+                                        <div class="carousel-img-container">
+                                            <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" alt="{imageItem.alternative}" class="carousel-img" />
+                                        </div>
+                                        <div class="carousel-caption">
+                                            <p>
+                                                <span class="a nav-block-link">{imageItem.alternative}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span>
+                                            </p>
+                                        </div>
+                                    </f:link.typolink>                                    
                                 </div>
                             </f:for>    
                         </div>
