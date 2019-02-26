@@ -106,10 +106,8 @@ call_user_func(
 	];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$tempPagesColumns);
-        
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','metatags','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop','after:description');
-        
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_mainclass','after:content_from_pid');
+                
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_mainclass','after:content_from_pid');
 
         }, 'lth_package'
 );

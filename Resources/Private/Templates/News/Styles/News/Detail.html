@@ -33,11 +33,16 @@
                                             </f:if>
                                         </h1>
                                         <p class="lead">{newsItem.teaser}</p>
-                                        <p class="attribution">Ulrika Oredsson – Publicerad den 11 juni 2018</p>
-                                        <figure class="figure">
-                                            <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
-                                            <figcaption class="figure-caption bg-dark text-white p-2">Bildtext proin porttitor auctor augue a aliquet risus dignissim at. Foto: Förnamn Efternamn</figcaption>
-                                        </figure>
+                                        <p class="attribution">{newsItem.author} – Publicerad den {f:format.date(date: newsItem.datetime, format: '%-d %B %Y')}</p>
+                                        <f:if condition="{newsItem.falMedia}">
+                                            <f:then>
+                                                <figure class="figure">
+                                                    <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
+                                                    <figcaption class="figure-caption bg-dark text-white p-2">{newsItem.falMedia.0.description}</figcaption>
+                                                </figure> 
+                                            </f:then>
+                                        </f:if>
+                                        
                                     </div>
                                 </div>
                                 <div class="row mt-6">
