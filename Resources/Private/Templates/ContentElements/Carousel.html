@@ -10,7 +10,12 @@
                                 <li data-target="#carousel-{data.uid}" data-slide-to="{iterator.index}" class="{f:if(condition: iterator.isFirst,then:'active')}"><span class="sr-only">{imageItem.alternative}</span></li>
                             </f:for>
                         </ol>
-                        
+                        <div class="carousel-controls-container">
+                            <div class="carousel-controls">
+                                <div class="carousel-controls-play"></div>
+                                <div class="carousel-controls-pause"></div>
+                            </div>
+                        </div>
                         <div class="carousel-inner">
                             <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
                                 <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}">

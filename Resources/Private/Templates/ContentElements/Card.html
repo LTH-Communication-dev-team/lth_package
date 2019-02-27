@@ -109,5 +109,23 @@
                 </div>
             </f:then>
         </f:if>
+        
+        <f:if condition="{data.pi_flexform.cardType}=='contact'">
+            <f:then>
+                <article class="mt-4 mt-lg-6 d-flex flex-column flex-lg-row border-bottom border-lg-bottom-0 pb-3 pb-lg-0 lthPackageContactCard" data="{data.pi_flexform.email}">
+                    <div class="mb-3 mb-lg-0 mr-lg-5">
+                        <img src="#" alt="#" class=" img-staff-list">
+                    </div>
+                    <div>
+                        <h2 class="mt-0"><a href="#" class="nav-undecorated"></a></h2>
+                        <p></p>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link px-0 py-1" href=""></a></li>
+                            <li class="nav-item"><a class="nav-link px-0 py-1" href=""></a></li>
+                        </ul>
+                    </div>
+                </article>
+            </f:then>
+        </f:if>
     </f:section>
 </html>

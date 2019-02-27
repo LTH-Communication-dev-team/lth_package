@@ -87,12 +87,7 @@
                 <source>Calendar</source>
                 <target>Kalendarium</target>
             </trans-unit>
-            
-            <trans-unit id="more_events">
-                <source>More events</source>
-                <target>Fler händelser</target>
-            </trans-unit>
-            
+                       
             <trans-unit id="contact">
                 <source>Contact</source>
                 <target>Kontakt</target>
@@ -115,27 +110,27 @@
             
             <trans-unit id="menu">
                 <source>Menu</source>
-                <source>Meny</source>
+                <target>Meny</target>
             </trans-unit>
             
             <trans-unit id="more_events">
                 <source>More events</source>
-                <source>Fler händelser</source>
+                <target>Fler händelser</target>
             </trans-unit>
             
             <trans-unit id="search">
                 <source>Search</source>
-                <source>Sök</source>
+                <target>Sök</target>
             </trans-unit>
             
             <trans-unit id="show_and_hide_searchfield">
                 <source>Show and hide searchfield</source>
-                <source>Visa och dölj sökfält</source>
+                <target>Visa och dölj sökfält</target>
             </trans-unit>
            
            <trans-unit id="show_menu">
                 <source>Show menu</source>
-                <source>Visa meny</source>
+                <target>Visa meny</target>
             </trans-unit>
         </body>
     </file>

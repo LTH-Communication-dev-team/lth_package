@@ -1,4 +1,17 @@
 $(document).ready(function() {
+    if($('.carousel-controls-play').length > 0) {
+        $('.carousel-controls-play').toggle();
+        $('.carousel-controls-play').click(function () {
+            $('.carousel').carousel('cycle');
+            $('.carousel-controls-play').toggle();
+            $('.carousel-controls-pause').toggle();
+        });
+        $('.carousel-controls-pause').click(function () {
+            $('.carousel').carousel('pause');
+            $('.carousel-controls-play').toggle();
+            $('.carousel-controls-pause').toggle();
+        });
+    }
     if($('.lthPackageContactCard').length > 0) {
         var emailArray=[];
         $('.lthPackageContactCard').each(function(){

@@ -44,6 +44,10 @@
                                         <numIndex index="0">Fill</numIndex>
                                         <numIndex index="1">fill</numIndex>
                                     </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Contact</numIndex>
+                                        <numIndex index="1">contact</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -78,6 +82,15 @@
                             </config>
                         </TCEforms>
                     </htmltext>
+                    <email>
+                        <TCEforms>
+                            <label>Email</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </email>
                     <backgroundcolor>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.backgroundcolor</label>

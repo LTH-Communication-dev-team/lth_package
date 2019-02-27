@@ -77,10 +77,6 @@
                 <source>Calendar</source>
             </trans-unit>
             
-            <trans-unit id="more_events">
-                <source>More events</source>
-            </trans-unit>
-            
             <trans-unit id="contact">
                 <source>Contact</source>
             </trans-unit>
