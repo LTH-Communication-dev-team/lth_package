@@ -3,7 +3,7 @@
     <f:section name="Main">
         <f:if condition="{data.pi_flexform.infoboxtype}=='default'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                     <f:if condition="{data.pi_flexform.header}">
                         <f:then>
                             <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
@@ -15,7 +15,7 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='contact'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                     <h3 class="h3 mt-0 mb-3">{f:translate(key:'contact',extensionName:'lth_package')}</h3>
                     <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
                 </div>
@@ -23,7 +23,7 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='icons'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                     <f:for each="{data.pi_flexform.iconItems}" as="iconItem" iteration="iteration">
                         <div class="row mb-5">
                             <div class="col-12 col-xl mb-5 mb-xl-0 d-flex flex-row">
@@ -51,7 +51,7 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='iconsvertical'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                     <f:for each="{data.pi_flexform.iconItems}" as="iconItem" iteration="iteration">
                         <div class="row mb-3">
                             <div class="col-2 text-center">
@@ -68,7 +68,7 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='nav'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                         <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
                         <ul class="nav flex-column gcpx-0 gcpy-1">
                             <f:for each="{data.pi_flexform.linkItems}" as="linkItem" iteration="iteration">
@@ -82,7 +82,7 @@
         </f:if>
         <f:if condition="{data.pi_flexform.infoboxtype}=='readmore'">
             <f:then>
-                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                     <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
                     <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
                     <f:if condition="{data.pi_flexform.readMoreLinkText}">

@@ -149,6 +149,14 @@
                             </config>
                         </TCEforms>
                     </backgroundcolor>
+                    <fullHeight>
+                        <TCEforms>
+                            <label>Stretch infobox to 100% of container height</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </fullHeight>
                     <icons>
                         <section>1</section>
                         <type>array</type>
