@@ -25,22 +25,17 @@
                             </ul>
                             <ul class="navbar-nav flex-row ml-5">
                                 <f:if condition="{headnavdrop}">
-                                    <li class="nav-item dropdown dropdown-hover">
-                                        <a class="nav-link dropdown-toggle px-3" href="/" id="navbarDropdown" aria-haspopup="true">
-                                            {f:translate(key:'info_for',extensionName:'lth_package')} &nbsp;<i class="fal fa-chevron-down"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right text-primary" aria-labelledby="navbarDropdown">
-                                            <lth:explode data="{headnavdrop}" as="rows">
-                                                <f:if condition="{rows}">
-                                                        <f:for each="{rows}" as="row" iteration="iterateRow">
-                                                            <lth:explode data="{row}" delimiter="," as="content">
-                                                                <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
-                                                            </lth:explode>
-                                                        </f:for>
-                                                </f:if>
-                                            </lth:explode>
-                                        </div>
-                                    </li>
+                                    <lth:explode data="{headnavdrop}" as="rows">
+                                        <f:if condition="{rows}">
+                                                <f:for each="{rows}" as="row" iteration="iterateRow">
+                                                    <lth:explode data="{row}" delimiter="," as="content">
+                                                        <li class="nav-item">
+                                                            <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
+                                                        </li>
+                                                    </lth:explode>
+                                                </f:for>
+                                        </f:if>
+                                    </lth:explode>
                                 </f:if>
                             </ul>
                         </f:then>
