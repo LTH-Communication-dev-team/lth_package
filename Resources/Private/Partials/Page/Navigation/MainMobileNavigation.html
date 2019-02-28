@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{mobileNavigation}">
+        <f:then>
+            <div class="modal fade" id="nav-mobile" tabindex="-1" role="dialog" aria-labelledby="nav-mobile-label" aria-hidden="true">
+                <div class="modal-dialog my-0 mx-auto" role="document">
+                    <div class="modal-content border-0 rounded-0">
+                        <nav class="nav border-bottom p-3 flex-row justify-content-between align-items-center sticky-top bg-white">
+                            <div id="nav-mobile-label" class="h3 m-0">
+                                <span class="sr-only"></span>
+                            </div>
+                            <button type="button" class="border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="modal" aria-controls="mobileMenu" aria-expanded="false" aria-label="{f:translate(key:'hide_menu',extensionName:'lth_package')}">
+                                <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+                            </button>
+                        </nav>
+                        <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
+                           <f:render section="MobileNavigationItem" arguments="{menu:mobileNavigation}" />
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+    </f:if>
+    <f:section name="MobileNavigationItem">
+        <f:for each="{menu}" as="item" iteration="iterator">
+            <f:if condition="{item.children}">
+                <f:then>
+                    <li class="mobile-nav-item">
+                        <div class="mobile-nav-container">
+                            <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                            <a href="#{v:format.replace(substring:' ',content:item.title,replacement:'')}" 
+                               title="{item.title}" 
+                               class="mobile-nav-toggle {f:if(condition:item.current,then:'active',else:'collapsed')}" 
+                               data-target="#{v:format.replace(substring:' ',content:item.title,replacement:'')}" 
+                               data-toggle="collapse" 
+                               aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" 
+                               aria-controls="{v:format.replace(substring:' ',content:item.title,replacement:'')}">
+                            <span class="collapse-show">
+                                <i class="fal fa-plus-circle"></i>
+                            </span>
+                            <span class="collapse-hide">
+                                <i class="fal fa-minus-circle"></i>
+                            </span>
+                        </a>
+                        </div>
+                        
+                        <ul class="mobile-nav collapse {f:if(condition:item.active,then:' show')}" id="{v:format.replace(substring:' ',content:item.title,replacement:'')}">
+                            <f:render section="MobileNavigationItem" arguments="{menu:item.children}" />
+                        </ul>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="mobile-nav-item"><a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a></li>
+                </f:else>
+            </f:if>
+        </f:for>
+    </f:section>
+</html>

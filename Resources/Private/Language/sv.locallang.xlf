@@ -43,6 +43,11 @@
                 <target>Dölj meny</target>
             </trans-unit>
             
+            <trans-unit id="show_menu">
+                <source>Show menu</source>
+                <target>Visa meny</target>
+            </trans-unit>
+            
             <trans-unit id="listen">
                 <source>Listen</source>
                 <target>Lyssna</target>
@@ -116,6 +121,11 @@
             <trans-unit id="more_events">
                 <source>More events</source>
                 <target>Fler händelser</target>
+            </trans-unit>
+            
+            <trans-unit id="more">
+                <source>More</source>
+                <target>Mer</target>
             </trans-unit>
             
             <trans-unit id="search">

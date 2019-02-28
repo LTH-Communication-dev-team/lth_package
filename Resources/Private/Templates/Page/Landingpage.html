@@ -12,6 +12,8 @@
         </f:if>
         
         <main class="main {mainClass}">
+            <!-- MOBILE MENU -->
+            <f:render partial="Navigation/MainMobileNavigation" arguments="{_all}"/>
             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos:'0'}"/>
         </main>
     </f:section>

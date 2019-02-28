@@ -10,6 +10,8 @@
             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1'}"/>
         </f:if>
         <main class="">
+            <!-- MOBILE MENU -->
+            <f:render partial="Navigation/MainMobileNavigation" arguments="{_all}"/>
             <div class="container">
                 <f:render partial="Navigation/Tabnavigation" arguments="{_all}"/>
             </div>
