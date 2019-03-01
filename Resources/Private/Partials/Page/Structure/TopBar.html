@@ -23,20 +23,25 @@
                                     </f:if>
                                 </lth:explode>
                             </ul>
+                        </f:then>
+                        <f:else>
+                            .
+                        </f:else>
+                    </f:if>    
+                    <f:if condition="{headnavdrop}">
+                        <f:then>
                             <ul class="navbar-nav flex-row ml-5">
-                                <f:if condition="{headnavdrop}">
-                                    <lth:explode data="{headnavdrop}" as="rows">
-                                        <f:if condition="{rows}">
-                                                <f:for each="{rows}" as="row" iteration="iterateRow">
-                                                    <lth:explode data="{row}" delimiter="," as="content">
-                                                        <li class="nav-item">
-                                                            <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
-                                                        </li>
-                                                    </lth:explode>
-                                                </f:for>
-                                        </f:if>
-                                    </lth:explode>
-                                </f:if>
+                                <lth:explode data="{headnavdrop}" as="rows">
+                                    <f:if condition="{rows}">
+                                        <f:for each="{rows}" as="row" iteration="iterateRow">
+                                            <lth:explode data="{row}" delimiter="," as="content">
+                                                <li class="nav-item">
+                                                    <a title="{content.0}" class="dropdown-item" href="{content.1}">{content.0}</a>
+                                                </li>
+                                            </lth:explode>
+                                        </f:for>
+                                    </f:if>
+                                </lth:explode>
                             </ul>
                         </f:then>
                     </f:if>
