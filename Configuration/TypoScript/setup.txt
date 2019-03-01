@@ -208,9 +208,11 @@ page {
             footerContent.file.lang.sv = {$footerPath}/foot_novo.txt
             footerContent.file.lang.en = {$footerPath}/foot_novo_en.txt
             headnav = TEXT
-            headnav.data = levelfield: -1, tx_lthpackage_headnav, slide
+            headnav.data = levelfield:-1, tx_lthpackage_headnav, slide
+            headnava = TEXT
+            headnava.value = .
             headnavdrop = TEXT
-            headnavdrop.data = levelfield: -1, tx_lthpackage_headnavdrop, slide
+            headnavdrop.data = levelfield:-1, tx_lthpackage_headnavdrop, slide
             mainClass = TEXT
             mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
