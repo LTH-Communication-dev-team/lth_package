@@ -85,6 +85,7 @@ page {
                 expandAll = 1
                 includeSpacer = 0
                 levels = 7
+                includeNotInMenu = 0
                 as = mainNavigation
             }
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -100,7 +101,7 @@ page {
             30 {
                 special = rootline
                 special.range = 0|-1
-                includeNotInMenu = 1
+                includeNotInMenu = 0
                 if {
                     value = {$page.theme.breadcrumbEnableLevel}
                     value {
