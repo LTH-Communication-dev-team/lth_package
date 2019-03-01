@@ -82,8 +82,9 @@ page {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
                 entryLevel = {$mainNavigationEntryLevel}
-                levels = 1
-                includeSpacer = 1
+                expandAll = 1
+                includeSpacer = 0
+                levels = 7
                 as = mainNavigation
             }
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
