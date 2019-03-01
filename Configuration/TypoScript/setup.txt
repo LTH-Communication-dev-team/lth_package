@@ -209,8 +209,6 @@ page {
             footerContent.file.lang.en = {$footerPath}/foot_novo_en.txt
             headnav = TEXT
             headnav.data = levelfield:-1, tx_lthpackage_headnav, slide
-            headnava = TEXT
-            headnava.value = .
             headnavdrop = TEXT
             headnavdrop.data = levelfield:-1, tx_lthpackage_headnavdrop, slide
             mainClass = TEXT
