@@ -100,7 +100,7 @@ page {
             30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             30 {
                 special = rootline
-                special.range = 0|-1
+                special.range = 1|-1
                 includeNotInMenu = 0
                 if {
                     value = {$page.theme.breadcrumbEnableLevel}
