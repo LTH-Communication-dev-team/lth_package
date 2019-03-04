@@ -528,7 +528,7 @@
                         </style>
                         <div class="container mb-lg-10">
                             <div class="row">
-                                <div class="col-12 col-lg-8 mb-5 mb-lg-0">
+                                <div class="col-12 mb-5 mb-lg-0">
                                     <div class="row">
                                         <div class="col">
                                             <h1 class=" mt-0 mb-5">Alla nyheter</h1>
@@ -538,22 +538,6 @@
                                         <div class="col">
                                             <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
                                                 <f:for each="{paginatedNews}" as="newsItem" iteration="iterator"> 
-                                                    <f:if condition="{newsItem.categories}">
-                                                        <f:for each="{newsItem.categories}" as="newsCategoryItem">
-                                                            <li class="nav-item newsCategoryList">
-                                                                <f:if condition="{newsCategoryItem.shortcut}">
-                                                                    <f:then>
-                                                                        <f:link.page pageUid="{newsCategoryItem.shortcut}" class="nav-link py-1">
-                                                                            {newsCategoryItem.title}
-                                                                        </f:link.page>
-                                                                    </f:then>
-                                                                    <f:else>
-                                                                        <a href="#" class="nav-link py-1">{newsCategoryItem.title}</a>
-                                                                    </f:else>
-                                                                </f:if>
-                                                            </li>
-                                                        </f:for>
-                                                    </f:if>
                                                     <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
                                                         <div class="card-img card-img-lg w-md-auto p-0">
                                                             <div class="card-img-container">
@@ -578,12 +562,6 @@
                                                 </f:for>
                                             </n:widget.paginate>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
-                                    <div class="bg-flower-25 p-5 mb-5">
-                                        <h3 class="mt-0 mb-3">Nyhetskategorier</h3>
-                                        <ul class="nav flex-column nmx-3 newsCategoryContainer"></ul>
                                     </div>
                                 </div>
                             </div>
