@@ -307,7 +307,14 @@ page {
         typeaheadbundlejs = typo3conf/ext/lth_package/Resources/Public/JavaScript/typeahead.bundle.js
         lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
     }
-
+    headerData.5 = TEXT
+    headerData.5 {
+        field = nav_title // title
+        stdWrap.append = TEXT
+        stdWrap.append.data = TSFE:tmpl|sitetitle
+        stdWrap.append.noTrimWrap = | &#124; ||
+        noTrimWrap = |<title>|</title>|
+    }
 }
 
 #google_tracker
@@ -339,10 +346,12 @@ page.headerData.50.value (
 #### CONFIG ####
 ################
 config {
-    absRefPrefix = /
     typolinkEnableLinksAcrossDomains = 1
     #no_cache = {$config.no_cache}
-    pageTitleFirst = 1
+    #pageTitleFirst = 1
+    #pageTitleSeparator = |
+    #pageTitleSeparator.noTrimWrap = | | |
+    noPageTitle = 2
     linkVars = L(0|2)
     #prefixLocalAnchors = {$config.prefixLocalAnchors}
     renderCharset = utf-8
