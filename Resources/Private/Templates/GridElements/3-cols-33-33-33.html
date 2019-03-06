@@ -5,19 +5,19 @@
     <f:if condition="{data.flexform_bleed}">
         <f:then>
             <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> py-5 {data.flexform_extraClass}">
-                <div class="row">
+                <div class="row no-gutters">
                     <div class="col-sm-12">
                         <f:if condition="{data.header}">
                             <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
                         </f:if>
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-lg-4 pr-lg-3">
                                 <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
                             </div>
-                            <div class="col-12 col-lg-4">
+                            <div class="col-12 col-lg-4 px-lg-2">
                                 <f:format.raw>{data.tx_gridelements_view_column_12}</f:format.raw>
                             </div>
-                            <div class="col-12 col-lg-4">
+                            <div class="col-12 col-lg-4 pl-lg-3">
                                 <f:format.raw>{data.tx_gridelements_view_column_13}</f:format.raw>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <f:if condition="{data.header}">
                                 <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
                             </f:if>
-                            <div class="row justify-content-center no-gutters">
+                            <div class="row justify-content-center">
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
                                 </div>
