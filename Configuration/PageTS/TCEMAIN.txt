@@ -20,6 +20,7 @@ tx_news.templateLayouts {
     6 = LTH News portal
     7 = LTH All News
     8 = LTH Detail News
+    9 = Old staff pages price
 }
 
 
