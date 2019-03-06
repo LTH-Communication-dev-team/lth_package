@@ -563,10 +563,10 @@
                             </f:then>
                         </f:if>
 
-                        <f:if condition="{settings.templateLayout} == 7">
+                        <f:if condition="{settings.templateLayout} == 9">
                             <f:then>
-                                <h2>{settings.header}</h2>
                                 <div class="news-items bg_beige">
+                                    <h2>Utmärkelser</h2>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
                                         <div class="news-item"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></div>
                                     </f:for>
