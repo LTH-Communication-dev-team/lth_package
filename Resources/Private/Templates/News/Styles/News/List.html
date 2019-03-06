@@ -11,7 +11,7 @@
     5 = Old lth frontpage
     6 = LTH News portal
     7 = LTH All News
-    8 = LTH Detail News
+    8 = LTH Old Staff News
 }
     -->
 
@@ -564,7 +564,16 @@
                     </f:then>
                 </f:if>
                         
-                
+                <f:if condition="{settings.templateLayout} == 8">
+                    <f:then>
+                        <h2>{settings.header}</h2>
+                        <div class="news-items bg_beige">
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <div class="news-item"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></div>
+                            </f:for>
+                        </div>
+                    </f:then>
+                </f:if>
                 <f:if condition="{settings.templateLayout} == ">
                     <f:then>                      
                         
@@ -598,7 +607,3 @@
         </f:if>
     </f:section>
 </html>
-
-<!--
-
--->
