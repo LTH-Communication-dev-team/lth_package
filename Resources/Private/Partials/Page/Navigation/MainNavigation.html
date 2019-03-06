@@ -3,7 +3,7 @@
         <f:for each="{mainNavigation}" as="mainNavigationItem" iteration="iterator">
             <f:if condition="{mainNavigationItem.children}">
                <f:then>
-                   <li class="nav-item dropdown dropdown-hover">
+                   <li class="nav-item dropdown dropdown-hover{f:if(condition:mainNavigationItem.active,then:' active')}">
                        <a title="{mainNavigationItem.title}" class="nav-link  text-nowrap dropdown-toggle{f:if(condition:mainNavigationItem.active,then:' active')}" href="{mainNavigationItem.link}" id="dropdown-{mainNavigationItem.title}" aria-haspopup="true">
                            {mainNavigationItem.title}
                        </a>
@@ -15,7 +15,7 @@
                    </li>
                 </f:then>
                 <f:else>
-                    <li class="nav-item">
+                    <li class="nav-item{f:if(condition:mainNavigationItem.active,then:' active')}">
                         <a title="{mainNavigationItem.title}" class="nav-link text-nowrap" href="{mainNavigationItem.link}">{mainNavigationItem.title}</a>
                     </li>
                 </f:else>
