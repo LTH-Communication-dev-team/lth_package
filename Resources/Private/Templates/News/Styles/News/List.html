@@ -23,7 +23,7 @@
             </f:then>
             <f:else>
                 <f:if condition="{news}">
-                    <f:then>
+                    <f:then>                           
                         <f:if condition="{settings.templateLayout} == 1">
                             <f:then>
                                 <f:for each="{news}" as="newsItem" iteration="iterator">
@@ -518,7 +518,7 @@
                             </f:then>
                         </f:if>
 
-                        <f:if condition="{settings.templateLayout} == 7">
+                        <f:if condition="{settings.isStaffNews}">
                             <f:then>
                                 <style>
                                     .newsCategoryList {
@@ -562,7 +562,7 @@
                                 </div>
                             </f:then>
                         </f:if>
-                        <f:if condition="{settings.templateLayout} == ">
+                        <f:if condition="{settings.templateLayout} == 999">
                             <f:then>                      
 
                                 <div class="news-list-view" id="news-container-{contentObjectData.uid}">
