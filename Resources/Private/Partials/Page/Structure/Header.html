@@ -27,17 +27,7 @@
                                         <a class="ml-2 p-1 d-block nav-undecorated"
                                            href="/english/"><i class="fal fa-globe"></i><br/>{f:translate(key:'language_selector',extensionName:'lth_package')}</a>
                                     </div>
-                                    <!--<div class="nav-item">
-                                        <a class="ml-2 p-1 d-block nav-undecorated" 
-                                           href="#" 
-                                           data-toggle="modal" 
-                                           data-target="#nav-mobile"
-                                           aria-controls="nav-mobile" 
-                                           aria-expanded="false" 
-                                           aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
-                                            <i class="fal fa-bars"></i><br />{f:translate(key:'menu',extensionName:'lth_package')}
-                                        </a>
-                                    </div>-->
+                                    
                                 </nav>
                                 <div class="d-none d-lg-flex flex-column flex-xl-row w-100 justify-content-end">
                                     <nav class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0">
@@ -62,7 +52,7 @@
                                         <div class="nav-item">
                                             <a class="nav-link px-0 ml-4" href="{listenLink}"><span class="mr-1"><i class="fal fa-lg fa-volume"></i></span> {f:translate(key:'listen',extensionName:'lth_package')}</a>
                                         </div>
-                                        <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
+                                        <!-- <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
                                             <a class="nav-link" 
                                                href="#" 
                                                data-toggle="modal" 
@@ -71,7 +61,7 @@
                                                aria-expanded="false"
                                                aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
                                             <i class="fal fa-bars"></i> {f:translate(key:'menu',extensionName:'lth_package')}</a>
-                                        </div>
+                                        </div> -->
                                     </nav>
                                 </div>
                             </div>
@@ -118,9 +108,9 @@
         </div>
          Login box test end -->
         <div class="header-search-form collapse collapse-lg pb-2 px-2" id="header-search-form">
-            <form action="/sok/" class="form-inline px-lg-3">
+            <form action="//lth.se/sok" class="form-inline px-lg-3">
                 <div class="input-group input-group-round input-group-sm w-100 flex">
-                    <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field-mobile" />
+                    <input type="search" class="form-control form-control-sm border-right-0" id="header-search-field-mobile" name="query" />
                     <div class="input-group-append">
                         <button class="btn btn-primary px-2" type="submit">
                             <span class="mr-2">{f:translate(key:'search',extensionName:'lth_package')}</span>
