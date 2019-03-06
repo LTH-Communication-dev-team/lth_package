@@ -516,7 +516,7 @@ function listCalendar(setStart, type, numRows)
                     //26 april 2018 kl. 13:15–17:00
                     if(aData.id) id = aData.id;
 
-                    if(aData.title) title = aData.title.toString().toLowerCase();
+                    if(aData.title) title = aData.title.toString();
                     if(aData.categoryName) categoryName = aData.categoryName;
                     if(aData.pathalias) pathalias = aData.pathalias;
                     template = template.replace('###id###', id);
