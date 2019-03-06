@@ -57,10 +57,18 @@
                 <f:then>
                     <li class="mobile-nav-item">
                         <div class="mobile-nav-container">
-                            <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                            <f:if condition="{item.current}">
+                                <f:then>
+                                    <span class="nav-link active">{item.title}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                                </f:else>
+                            </f:if>
+                            
                             <a href="#{v:format.replace(substring:' ',content:item.title,replacement:'-')}" 
                                title="{item.title}" 
-                               class="mobile-nav-toggle {f:if(condition:item.current,then:'active',else:'collapsed')}" 
+                               class="mobile-nav-toggle{f:if(condition:item.active,then:'',else:' collapsed')}" 
                                data-target="#{v:format.replace(substring:' ',content:item.title,replacement:'-')}" 
                                data-toggle="collapse" 
                                aria-expanded="{f:if(condition:item.active,then:'true',else:'false')}" 
@@ -80,7 +88,18 @@
                     </li>
                 </f:then>
                 <f:else>
-                    <li class="mobile-nav-item"><a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a></li>
+                    <li class="mobile-nav-item">
+                        <div class="mobile-nav-container">
+                            <f:if condition="{item.current}">
+                                <f:then>
+                                    <span class="nav-link active">{item.title}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{item.link}" class="nav-link" title="{item.title}">{item.title}</a>
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </li>
                 </f:else>
             </f:if>
         </f:for>

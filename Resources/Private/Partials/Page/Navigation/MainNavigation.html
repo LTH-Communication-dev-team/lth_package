@@ -9,7 +9,7 @@
                        </a>
                        <div class="dropdown-menu font-size-base" aria-labelledby="dropdown-{mainNavigationItem.title}">
                            <f:for each="{mainNavigationItem.children}" as="mainNavigationItemChild" iteration="iteratorChild">
-                               <a title="{mainNavigationItemChild.title}" class="dropdown-item" href="{mainNavigationItemChild.link}">{mainNavigationItemChild.title}</a>
+                               <a title="{mainNavigationItemChild.title}" class="dropdown-item{f:if(condition:mainNavigationItemChild.current,then:' active')}" href="{mainNavigationItemChild.link}">{mainNavigationItemChild.title}</a>
                            </f:for>
                        </div>
                    </li>
