@@ -5,6 +5,9 @@ tabNavigationEntryLevel = 1
 footerPath =
 shortcutIcon = favicon_lth.ico
 google_tracker =
+logo = lth
+logoLinkSv = /
+logoLinkEn = /english/
 
 plugin.tx_news {
     view {
