@@ -525,9 +525,9 @@
                                         display:none;
                                     }
                                 </style>
-                                <div class="container mb-lg-10">
+                                <div class="container mb-lg-10 mt-lg-5">
                                     <div class="row">
-                                        <div class="col-12 mb-5 mb-lg-0">
+                                        <div class="col-12">
                                             <div class="row">
                                                 <div class="col">
                                                     <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
@@ -568,7 +568,8 @@
                                     <h2>Utmärkelser</h2>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
                                         <div class="news-item start-grid-7"><p class="news-title"><n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">{newsItem.title}</n:link></p></div>
-                                    </f:for>                                    
+                                    </f:for>
+                                    <p class="archiveButton archive_link"><a href="http://www.lth.se/omlth/priser-och-utmaerkelser/">Fler utmärkelser<span class="archive_icon"></span></a></p>
                                 </div>
                             </f:then>
                         </f:if>
