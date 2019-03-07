@@ -19,7 +19,7 @@
                 <f:then>
                     <div class="container">
                         <div class="row">
-                            <div class="col-12 col-lg-8 mb-lg-5">
+                            <div class="col-12 col-lg-8 mb-lg-5 mt-lg-5">
                                 <div class="row">
                                     <div class="col">
                                         <h1 class="mb-5">
@@ -53,6 +53,10 @@
                             </div>
                             <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
                                 <div class="d-flex flex-column-reverse flex-lg-column">
+                                    <f:if condition="{newsItem.contentElements}">
+					<!-- content elements -->
+					<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+                                    </f:if>
                                     <!--
                                     <div class="infobox bg-copper-25 mt-5 mt-lg-0">
                                         <h3 class="mt-0 mb-3">Johannes Stripple</h3>
@@ -167,8 +171,8 @@
 		</f:if>
             </f:then>
 	</f:if>
-            </f:then>
-            </f:if>
+    </f:then>
+    </f:if>
 </f:section>
 
 <f:section name="headline">
