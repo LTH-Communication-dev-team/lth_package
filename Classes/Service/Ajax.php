@@ -368,7 +368,7 @@ function listCalendar($data, $config)
     foreach ($response as $document) {
         $data[] = array(
             "id" => $document->id,
-            "title" => $document->title,
+            "title" => fixChar($document->title),
             "startTime" => $document->startTime,
             "endTime" => $document->endTime,
             "location" => $document->location,
@@ -378,6 +378,17 @@ function listCalendar($data, $config)
     }
     $resArray = array('data' => $data, 'facet' => $facetResult, 'query' => $queryToSet);
     return json_encode($resArray);
+}
+
+
+function fixChar($input)
+{
+    if($input) {
+        $input = str_replace(':','', $input);
+        $input = str_replace('#','', $input);
+        $input = str_replace('?','', $input);
+    }
+    return $input;
 }
 
 
