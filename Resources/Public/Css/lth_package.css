@@ -183,21 +183,28 @@ article {
     height: 300px;
   }
   */
-  #header-search-field {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-  }
-  .tt-suggestion.tt-selectable {
-      white-space: nowrap;
-  }
-  .tt-dataset.tt-dataset-0 {
-      background-color:#ffffff;
-      margin-top:15px;
-      padding:12px;
-      border:1px solid #cccccc;
-      border-radius:15px;
-  }
+#header-search-field {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.tt-suggestion.tt-selectable {
+    white-space: nowrap;
+}
+.tt-dataset.tt-dataset-0 {
+    background-color:#ffffff;
+    margin-top:15px;
+    padding:12px;
+    border:1px solid #cccccc;
+    border-radius:15px;
+}
 
+.lthPackageHeaderDepartment {
+    min-width:335px;
+}
+.lthPackageHeaderDepartment > .twitter-typeahead {width:81%; display: block; }
+.lthPackageHeaderDepartment > .twitter-typeahead > .tt-hint, 
+.lthPackageHeaderDepartment > .twitter-typeahead > .tt-input, 
+.lthPackageHeaderDepartment > .twitter-typeahead > .tt-menu { width: 100% !important; display:block;}
 
 .lthPackageLoader {
     border-radius: 50%;
@@ -227,6 +234,10 @@ article {
     padding:10px;
     text-align:left;
     width:100%;
+}
+
+.lthPackageNoRightpadding {
+    padding-right:0px !important;
 }
 
 /* Safari */

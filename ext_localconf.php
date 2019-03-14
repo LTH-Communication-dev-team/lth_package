@@ -80,4 +80,4 @@ if (!class_exists('TYPO3\CMS\Frontend\DataProcessing\MenuProcessor')) {
 /***************
  * Unset tx_news realurl autoconfig
  */
-//unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
+unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);

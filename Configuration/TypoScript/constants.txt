@@ -8,6 +8,12 @@ google_tracker =
 logo = lth
 logoLinkSv = /
 logoLinkEn = /english/
+header = Header
+siteTitleSv =
+siteSubTitleSv =
+siteTitleEn =
+siteSubTitleEn =
+extraTopBarLink =
 
 plugin.tx_news {
     view {

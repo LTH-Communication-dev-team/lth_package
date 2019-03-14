@@ -39,24 +39,24 @@ tt_content.navigation {
             includeNotInMenu = 0
             as = subNavigation
         }
-        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-        30 {
-            special = rootline
-            special.range = 0|-1
-            includeNotInMenu = 1
-            #if {
-            #    value = {$page.theme.breadcrumbEnableLevel}
-            #    value {
-            #        insertData = 1
-            #        prioriCalc = 1
-            #        stdWrap.wrap = |-1
-            #    }
-            #    isGreaterThan {
-            #        data = level
-            #    }
-            #}
-            as = breadcrumbNavigation
-        }
+        #30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        #30 {
+        #    special = rootline
+        #    special.range = 1|-1
+        #    includeNotInMenu = 0
+        #    if {
+        #        value = {$page.theme.breadcrumbEnableLevel}
+         #       value {
+        #            insertData = 1
+        #            prioriCalc = 1
+        #            stdWrap.wrap = |-1
+        #        }
+        #        isGreaterThan {
+        #            data = level
+        #        }
+        #    }
+        #    as = breadcrumbNavigation
+        #}
         50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
         50 {
             entryLevel = {$tabNavigationEntryLevel}

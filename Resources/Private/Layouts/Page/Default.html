@@ -2,8 +2,14 @@
     <f:render partial="Structure/Alert" arguments="{_all}"/>
     <header class="header nav-undecorated">
         <f:render partial="Structure/TopBar" arguments="{_all}"/>
-        <f:render partial="Structure/Header" arguments="{_all}"/>
+        <f:if condition="{header}=='Header'">
+            <f:render partial="Structure/Header" arguments="{_all}"/>
+        </f:if>
+        <f:if condition="{header}=='HeaderDepartment'">
+            <f:render partial="Structure/HeaderDepartment" arguments="{_all}"/>
+        </f:if>
     </header>
     <f:render section="Main"/>
     <f:format.raw>{footerContent}</f:format.raw>
+    <f:format.raw>{baSettings}</f:format.raw>
 </f:spaceless>

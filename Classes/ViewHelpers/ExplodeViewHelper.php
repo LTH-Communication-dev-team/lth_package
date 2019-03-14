@@ -50,7 +50,7 @@ class ExplodeViewHelper extends AbstractViewHelper implements CompilableInterfac
      */
     public function render($data, $as = 'items', $delimiter = LF)
     {
-        $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => $delimiter, 'crdate' => time()));
+        //$GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => $delimiter, 'crdate' => time()));
         return self::renderStatic(
             [
                 'data' => $data,

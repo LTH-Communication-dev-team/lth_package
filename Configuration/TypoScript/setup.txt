@@ -185,12 +185,7 @@ page {
         ### VARIABLES ###
         #################
         variables {
-            pageTitle = TEXT
-            pageTitle.data = page:subtitle // page:nav_title // page:title
-            siteTitle = TEXT
-            siteTitle.data = TSFE:tmpl|setup|sitetitle
-            rootPage = TEXT
-            rootPage.data = leveluid:0
+                       
             author = COA
             author.5 = TEXT
             author.5.data = levelfield:-1, author_email, slide
@@ -202,8 +197,13 @@ page {
             author.10.date = Y-m-d
             author.10.wrap = &nbsp;&#124;&nbsp;|
             author.10.ifEmpty.data = register:SYS_LASTCHANGED
+            baSettings = TEXT
+            baSettings.lang.sv = <script type="text/javascript"><!--//--><![CDATA[//><!--var _baLocale = "se", _baMode = " ";//--><!]]></script>
+            baSettings.lang.en = <script type="text/javascript"><!--//--><![CDATA[//><!--var _baLocale = "en", _baMode = " ";//--><!]]></script>
             breadcrumb = TEXT
             breadcrumb.data = page:tx_lthpackage_breadcrumb
+            extraTopBarLink = TEXT
+            extraTopBarLink.value = {$extraTopBarLink}
             footerContent = FILE
             footerContent.file.lang.sv = {$footerPath}/foot_novo.txt
             footerContent.file.lang.en = {$footerPath}/foot_novo_en.txt
@@ -211,6 +211,12 @@ page {
             headnav.data = levelfield:-1, tx_lthpackage_headnav, slide
             headnavdrop = TEXT
             headnavdrop.data = levelfield:-1, tx_lthpackage_headnavdrop, slide
+            header = TEXT
+            header.value = {$header}
+            layout = TEXT
+            layout {
+                field = layout
+            }
             logo = TEXT
             logo.lang.sv = {$logo}_logo
             logo.lang.en = {$logo}_logo_en
@@ -221,13 +227,18 @@ page {
             mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
             otherLanguageLink.lang.sv = english
-            
+            pageTitle = TEXT
+            pageTitle.data = page:subtitle // page:nav_title // page:title
+            rootPage = TEXT
+            rootPage.data = leveluid:0
+            siteTitle = TEXT
+            siteTitle.lang.sv = {$siteTitleSv}
+            siteTitle.lang.en = {$siteTitleEn}
+            siteSubTitle = TEXT
+            siteSubTitle.lang.sv = {$siteSubTitleSv}
+            siteSubTitle.lang.en = {$siteSubTitleEn}
             username = TEXT
             username.data = TSFE:fe_user|user|username
-            layout = TEXT
-            layout {
-                field = layout
-            }
         }
 
         stdWrap.replacement {
@@ -302,6 +313,7 @@ page {
         #toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
         maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.css
         lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
+        #browsealoud = https://plus.browsealoud.com/modules/2.5.6/css/browsealoud.css?v=2.5.1
     }
 
     includeJSFooterlibs {
@@ -312,6 +324,8 @@ page {
         rwdImageMaps = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery.rwdImageMaps.min.js
         typeaheadbundlejs = typo3conf/ext/lth_package/Resources/Public/JavaScript/typeahead.bundle.js
         lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
+
+        ba = http://www.browsealoud.com/plus/scripts/ba.js
     }
     headerData.5 = TEXT
     headerData.5 {
