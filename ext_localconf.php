@@ -81,3 +81,6 @@ if (!class_exists('TYPO3\CMS\Frontend\DataProcessing\MenuProcessor')) {
  * Unset tx_news realurl autoconfig
  */
 unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news']);
+
+// Register for hook to show preview of tt_content element of CType="yourextensionkey_newcontentelement" in page module
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['lth_package_infobox'] = \LTH\LthPackage\Hooks\PageLayoutView\NewContentElementPreviewRenderer::class;

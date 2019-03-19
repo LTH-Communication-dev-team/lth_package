@@ -116,7 +116,8 @@ RTE.default {
 
     // Use delivered rte css file that includes a default bootstrap css file.
     // This css file is only for backend purposes and not used in frontend anyways!
-    contentCSS = typo3conf/ext/lth_package/Resources/Public/Css/RTE/rte.css
+    contentCSS = 
+    #typo3conf/ext/lth_package/Resources/Public/Css/RTE/rte.css
 
     // Use default schema for microdata
     #schema.sources {

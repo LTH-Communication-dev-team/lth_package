@@ -70,10 +70,10 @@
             <f:then>
                 <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
                         <h3 class="h3 mt-0 mb-3">{data.pi_flexform.header}</h3>
-                        <ul class="nav flex-column gcpx-0 gcpy-1">
+                        <ul class="nav flex-column">
                             <f:for each="{data.pi_flexform.linkItems}" as="linkItem" iteration="iteration">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{linkItem.link}">{linkItem.linktext}</a>
+                                    <a class="nav-link px-0 py-1" href="{linkItem.link}">{linkItem.linktext}</a>
                                 </li>
                             </f:for>
                         </ul>
