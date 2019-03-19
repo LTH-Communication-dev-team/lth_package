@@ -202,6 +202,12 @@ page {
             baSettings.lang.en = <script type="text/javascript"><!--//--><![CDATA[//><!--var _baLocale = "en", _baMode = " ";//--><!]]></script>
             breadcrumb = TEXT
             breadcrumb.data = page:tx_lthpackage_breadcrumb
+            colorTitle = TEXT
+            colorTitle.lang.sv = {$colorTitleSe}
+            colorTitle.lang.en = {$colorTitleEn}
+            colorTitleLink = TEXT
+            colorTitleLink.lang.sv = {$colorTitleLinkSe}
+            colorTitleLink.lang.en = {$colorTitleLinkEn}
             extraTopBarLink = TEXT
             extraTopBarLink.value = {$extraTopBarLink}
             footerContent = FILE
@@ -311,9 +317,8 @@ page {
         #f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
         #googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
         #toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
-        maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.css
+        maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.min.css
         lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
-        #browsealoud = https://plus.browsealoud.com/modules/2.5.6/css/browsealoud.css?v=2.5.1
     }
 
     includeJSFooterlibs {
