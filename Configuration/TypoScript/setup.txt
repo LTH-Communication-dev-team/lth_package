@@ -317,7 +317,7 @@ page {
         #f = typo3conf/ext/lth_package/Resources/Public/Css/f.css
         #googleapis = https://fonts.googleapis.com/css?family=Hind:300,500&amp;subset=latin-ext
         #toolkitcss = typo3conf/ext/lth_package/Resources/Public/Css/toolkit.css
-        maincss = typo3conf/ext/lth_package/Resources/Public/Css/main.min.css
+        maincss = typo3conf/ext/lth_package/Resources/Public/Css/Dist/main.min.css
         lthpackagecss = typo3conf/ext/lth_package/Resources/Public/Css/lth_package.css
     }
 

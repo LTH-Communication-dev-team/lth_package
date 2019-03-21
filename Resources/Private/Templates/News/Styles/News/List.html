@@ -175,20 +175,15 @@
                                 </div>
                             </f:then>
                         </f:if>
-
+                        
                         <f:if condition="{settings.templateLayout} == 4">
                             <f:then>
-                                <div class="bg-plaster-50">
-                                    <div class="container py-4">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h2>Nyheter</h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
+                                <div class="container py-4">
+                                    <div class="swipe swipe-sm-none" id="news-card">
+                                        <div class="row swipe-inner" style="width: calc(300% - 30px);">
                                             <f:for each="{news}" as="newsItem" iteration="iterator">
-                                                <div class="col-12 col-lg">
-                                                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card nav-block h-100">
+                                                <div class="col-12 col-lg swipe-target" id="news-card-target-{iterator.index}">
+                                                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card nav-block nav-block-plaster-25 nav-block-hover-plaster-25 h-100">
                                                         <f:if condition="{newsItem.falMedia}">
                                                             <f:then>
                                                                 <div class="card-img p2">
@@ -203,27 +198,19 @@
                                                                 <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
                                                                 <span class="meta-category">{newsItem.categories.0.title}</span>
                                                             </div>
-                                                            <h3 class="h2 nav-block-link m-0">{newsItem.title}</h3>
-                                                            <p class=" mt-3">{newsItem.teaser}</p>
+                                                            <h3 class="card-title nav-block-link mt-2">{newsItem.title}</h3>
+                                                            <!-- <p class=" mt-3"><f:format.crop maxCharacters="50" append="&nbsp;[...]">{newsItem.teaser}</f:format.crop></p> -->
                                                         </div>
                                                     </n:link>
                                                 </div>
                                             </f:for>
                                         </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="mt-5 text-right font-weight-normal">
-                                                    <f:link.page pageUid="{settings.listPid}" class="nav-undecorated">
-                                                        Fler nyheter&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
-                                                    </f:link.page>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
+                                    <div class="swipe-steps d-sm-none" data-spy="scroll-x" data-source="#news-card"></div>
                                 </div>
                             </f:then>
                         </f:if>
-
+                        
                         <f:if condition="{settings.templateLayout} == 5">
                             <f:then>
                                 <style>
