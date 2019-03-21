@@ -177,7 +177,9 @@
                         </f:if>
                         
                         <f:if condition="{settings.templateLayout} == 4">
+                            
                             <f:then>
+                                <v:variable.set name="test" value="" />
                                 <div class="container py-4">
                                     <div class="swipe swipe-sm-none" id="news-card">
                                         <div class="row swipe-inner" style="width: calc(300% - 30px);">
@@ -196,7 +198,11 @@
                                                         <div class="card-body">
                                                             <div class="meta">
                                                                 <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
-                                                                <span class="meta-category">{newsItem.categories.0.title}</span>
+                                                                <span class="meta-category">
+                                                                    <f:for each="{newsItem.categories}" as="categoryItem" iteration="cIterator">
+                                                                        <v:condition.string.contains then="{categoryItem.title}" haystack="{settings.categories}" needle="{test}{categoryItem.uid}"></v:condition.string.contains>
+                                                                    </f:for>
+                                                                </span>
                                                             </div>
                                                             <h3 class="card-title nav-block-link mt-2">{newsItem.title}</h3>
                                                             <!-- <p class=" mt-3"><f:format.crop maxCharacters="50" append="&nbsp;[...]">{newsItem.teaser}</f:format.crop></p> -->
