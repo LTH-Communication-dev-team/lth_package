@@ -180,40 +180,43 @@
                             
                             <f:then>
                                 <v:variable.set name="test" value="" />
-                                <div class="container py-4">
-                                    <div class="swipe swipe-sm-none" id="news-card">
-                                        <div class="row swipe-inner" style="width: calc(300% - 30px);">
-                                            <f:for each="{news}" as="newsItem" iteration="iterator">
-                                                <div class="col-12 col-lg swipe-target" id="news-card-target-{iterator.index}">
-                                                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card nav-block nav-block-plaster-25 nav-block-hover-plaster-25 h-100">
-                                                        <f:if condition="{newsItem.falMedia}">
-                                                            <f:then>
-                                                                <div class="card-img p2">
-                                                                    <div class="card-img-container">
-                                                                        <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.0.falMedia.0.crop)}" title="{newsItem.0.falMedia.0.title}" alt="{newsItem.0.falMedia.0.alt}" />
+                                <div class="bg-plaster-50">
+                                                                        <div class="container py-4">
+                                        <div class="swipe swipe-sm-none" id="news-card">
+                                            <div class="row swipe-inner" style="width: calc(300% - 30px);">
+                                                <f:for each="{news}" as="newsItem" iteration="iterator">
+                                                    <div class="col-12 col-lg swipe-target" id="news-card-target-{iterator.index}">
+                                                        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="card nav-block nav-block-plaster-25 nav-block-hover-plaster-25 h-100">
+                                                            <f:if condition="{newsItem.falMedia}">
+                                                                <f:then>
+                                                                    <div class="card-img p2">
+                                                                        <div class="card-img-container">
+                                                                            <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.0.falMedia.0.crop)}" title="{newsItem.0.falMedia.0.title}" alt="{newsItem.0.falMedia.0.alt}" />
+                                                                        </div>
                                                                     </div>
+                                                                </f:then>
+                                                            </f:if>
+                                                            <div class="card-body">
+                                                                <div class="meta">
+                                                                    <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
+                                                                    <span class="meta-category">
+                                                                        <f:for each="{newsItem.categories}" as="categoryItem" iteration="cIterator">
+                                                                            <v:condition.string.contains then="{categoryItem.title}" haystack="{settings.categories}" needle="{test}{categoryItem.uid}"></v:condition.string.contains>
+                                                                        </f:for>
+                                                                    </span>
                                                                 </div>
-                                                            </f:then>
-                                                        </f:if>
-                                                        <div class="card-body">
-                                                            <div class="meta">
-                                                                <date class="meta-date">{f:format.date(date: newsItem.datetime, format: "%Y-%m-%d")}</date>
-                                                                <span class="meta-category">
-                                                                    <f:for each="{newsItem.categories}" as="categoryItem" iteration="cIterator">
-                                                                        <v:condition.string.contains then="{categoryItem.title}" haystack="{settings.categories}" needle="{test}{categoryItem.uid}"></v:condition.string.contains>
-                                                                    </f:for>
-                                                                </span>
+                                                                <h3 class="card-title nav-block-link mt-2">{newsItem.title}</h3>
+                                                                <!-- <p class=" mt-3"><f:format.crop maxCharacters="50" append="&nbsp;[...]">{newsItem.teaser}</f:format.crop></p> -->
                                                             </div>
-                                                            <h3 class="card-title nav-block-link mt-2">{newsItem.title}</h3>
-                                                            <!-- <p class=" mt-3"><f:format.crop maxCharacters="50" append="&nbsp;[...]">{newsItem.teaser}</f:format.crop></p> -->
-                                                        </div>
-                                                    </n:link>
-                                                </div>
-                                            </f:for>
+                                                        </n:link>
+                                                    </div>
+                                                </f:for>
+                                            </div>
                                         </div>
+                                        <div class="swipe-steps d-sm-none" data-spy="scroll-x" data-source="#news-card"></div>
                                     </div>
-                                    <div class="swipe-steps d-sm-none" data-spy="scroll-x" data-source="#news-card"></div>
                                 </div>
+
                             </f:then>
                         </f:if>
                         
