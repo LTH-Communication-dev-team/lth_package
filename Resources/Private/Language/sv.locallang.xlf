@@ -128,6 +128,11 @@
                 <target>Mer</target>
             </trans-unit>
             
+            <trans-unit id="news">
+                <source>News</source>
+                <target>Nyheter</target>
+            </trans-unit>
+            
             <trans-unit id="search">
                 <source>Search</source>
                 <target>Sök</target>
