@@ -98,9 +98,9 @@
                 <target>Kontakt</target>
             </trans-unit>
             
-            <trans-unit id="read_more">
-                <source>Read more</source>
-                <target>Läs mer</target>
+            <trans-unit id="latest_news">
+                <source>Latest News</source>
+                <target>Senaste nyheter</target>
             </trans-unit>
             
             <trans-unit id="login">
@@ -118,19 +118,34 @@
                 <target>Meny</target>
             </trans-unit>
             
-            <trans-unit id="more_events">
-                <source>More events</source>
-                <target>Fler händelser</target>
-            </trans-unit>
-            
             <trans-unit id="more">
                 <source>More</source>
                 <target>Mer</target>
             </trans-unit>
             
+            <trans-unit id="more_events">
+                <source>More events</source>
+                <target>Fler händelser</target>
+            </trans-unit>
+            
+            <trans-unit id="more_news">
+                <source>More news</source>
+                <target>Fler nyheter</target>
+            </trans-unit>
+            
             <trans-unit id="news">
                 <source>News</source>
                 <target>Nyheter</target>
+            </trans-unit>
+            
+            <trans-unit id="news_categories">
+                <source>News categories</source>
+                <target>Nyhetskategorier</target>
+            </trans-unit>
+            
+            <trans-unit id="read_more">
+                <source>Read more</source>
+                <target>Läs mer</target>
             </trans-unit>
             
             <trans-unit id="search">
