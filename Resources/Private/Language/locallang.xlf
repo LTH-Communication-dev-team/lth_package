@@ -69,14 +69,6 @@
                 <source>To Lund University</source>
             </trans-unit>
             
-            <trans-unit id="info_for">
-                <source>Info for</source>
-            </trans-unit>
-            
-            <trans-unit id="language_selector">
-                <source>Svenska</source>
-            </trans-unit>
-            
             <trans-unit id="calendar">
                 <source>Calendar</source>
             </trans-unit>
@@ -85,8 +77,12 @@
                 <source>Contact</source>
             </trans-unit>
             
-            <trans-unit id="read_more">
-                <source>Read more</source>
+            <trans-unit id="info_for">
+                <source>Info for</source>
+            </trans-unit>
+            
+            <trans-unit id="language_selector">
+                <source>Svenska</source>
             </trans-unit>
             
             <trans-unit id="login">
@@ -109,6 +105,14 @@
                 <source>More</source>
             </trans-unit>
             
+            <trans-unit id="news">
+                <source>News</source>
+            </trans-unit>
+            
+            <trans-unit id="read_more">
+                <source>Read more</source>
+            </trans-unit>
+            
             <trans-unit id="search">
                 <source>Search</source>
             </trans-unit>
@@ -116,6 +120,7 @@
             <trans-unit id="show_and_hide_searchfield">
                 <source>Show and hide searchfield</source>
             </trans-unit>
+            
             <trans-unit id="show_menu">
                 <source>Show menu</source>
             </trans-unit>
