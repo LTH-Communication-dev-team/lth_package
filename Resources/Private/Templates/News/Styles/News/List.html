@@ -354,7 +354,7 @@
                                 </style>
                                 <div class="container">
                                     <div class="row mt-5">
-                                        <div class="col"><h1 class="">Nyheter</h1></div>
+                                        <div class="col"><h1 class=""><f:translate key="news" /></h1></div>
                                     </div>
                                 </div>
                                 <div class="container">
@@ -454,7 +454,7 @@
                                                         </f:if>
                                                         <f:if condition="{iterator.index} > 2">
                                                             <f:then>
-                                                                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="nav-block masonry-tile-img" class="card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
+                                                                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="masonry-tile-img card card-item nav-block bg-transparent flex-column flex-md-row mb-6 h-auto">
                                                                     <div class="card-img card-img-lg w-md-auto p-0">
                                                                         <div class="card-img-container">
                                                                             <f:if condition="{newsItem.falMedia}">
