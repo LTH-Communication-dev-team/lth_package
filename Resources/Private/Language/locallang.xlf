@@ -85,6 +85,10 @@
                 <source>Svenska</source>
             </trans-unit>
             
+            <trans-unit id="latest_news">
+                <source>Latest News</source>
+            </trans-unit>
+            
             <trans-unit id="login">
                 <source>Login</source>
             </trans-unit>
@@ -97,16 +101,24 @@
                 <source>Menu</source>
             </trans-unit>
             
-            <trans-unit id="more_events">
-                <source>More events</source>
-            </trans-unit>
-            
             <trans-unit id="more">
                 <source>More</source>
             </trans-unit>
             
+            <trans-unit id="more_events">
+                <source>More events</source>
+            </trans-unit>
+            
+            <trans-unit id="more_news">
+                <source>More news</source>
+            </trans-unit>
+            
             <trans-unit id="news">
                 <source>News</source>
+            </trans-unit>
+            
+            <trans-unit id="news_categories">
+                <source>News categories</source>
             </trans-unit>
             
             <trans-unit id="read_more">
