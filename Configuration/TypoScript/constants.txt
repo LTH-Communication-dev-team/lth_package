@@ -2,6 +2,7 @@ mainNavigationEntryLevel = 0
 subNavigationEntryLevel = 1
 mobileNavigationEntryLevel = 0
 mobileNavigationExtraPages =
+mobileNavigationExtraPagesOneLevel =
 tabNavigationEntryLevel = 1
 footerPath =
 shortcutIcon = favicon_lth.ico
