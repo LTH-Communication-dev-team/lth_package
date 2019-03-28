@@ -83,6 +83,9 @@
             <trans-unit id="infobox.type.contact">
                 <source>Contact</source>
             </trans-unit>
+            <trans-unit id="infobox.type.contactwithimage">
+                <source>Contact with image</source>
+            </trans-unit>
             <trans-unit id="infobox.type.icons">
                 <source>Icons</source>
             </trans-unit>
@@ -450,22 +453,22 @@
                 </trans-unit>
                 
                 <trans-unit id="content_element.teasercards">
-                    <source>Cards</source>
+                    <source>Teaser Cards</source>
                 </trans-unit>
                 <trans-unit id="content_element.teasercards.description">
-                    <source>Cards</source>
+                    <source>Teaser Cards</source>
                 </trans-unit>
                 <trans-unit id="teasercards">
-                    <source>Cards</source>
+                    <source>Teaser Cards</source>
                 </trans-unit>
                 <trans-unit id="teasercards.options">
-                    <source>Cards Options</source>
+                    <source>Teaser Cards Options</source>
                 </trans-unit>
                 <trans-unit id="teasercards_item">
-                    <source>Cards Item</source>
+                    <source>Teaser Cards Item</source>
                 </trans-unit>
                 <trans-unit id="teasercards_item.tt_content">
-                    <source>Cards</source>
+                    <source>Teaser Cards</source>
                 </trans-unit>
                 <trans-unit id="teasercards.title">
                     <source>Title</source>
