@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <f:layout name="Detail" />
 
@@ -15,6 +15,7 @@
     </style>
     <f:if condition="{newsItem}">
         <f:then>
+            <n:metaTag property="og:title" content="{newsItem.title}" />
             <f:if condition="{settings.templateLayout} == 8">
                 <f:then>
                     <div class="container">
@@ -36,6 +37,7 @@
                                         <p class="attribution">{newsItem.author} – Publicerad den {f:format.date(date: newsItem.datetime, format: '%-d %B %Y')}</p>
                                         <f:if condition="{newsItem.falMedia}">
                                             <f:then>
+                                                <n:metaTag property="og:image" content="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.falMedia.0.crop)}" />
                                                 <figure class="figure">
                                                     <img src="{f:uri.image(src:newsItem.falMedia.0.uid,treatIdAsReference:1,crop:newsItem.falMedia.0.crop)}" title="{newsItem.falMedia.0.title}" alt="{newsItem.falMedia.0.alt}" />
                                                     <figcaption class="figure-caption bg-dark text-white p-2">{newsItem.falMedia.0.description}</figcaption>
@@ -53,45 +55,19 @@
                             </div>
                             <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
                                 <div class="d-flex flex-column-reverse flex-lg-column">
+                                    
                                     <f:if condition="{newsItem.contentElements}">
-					<!-- content elements -->
-					<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+                                        <f:for each="{newsItem.contentElements}" as="element">
+                                            
+                                            <f:if condition="{element.CType}=='textmedia'">
+                                                <f:then>
+                                                    <v:content.render contentUids="{0: element.uid}"/>
+                                                </f:then>
+                                                
+                                            </f:if>
+                                        </f:for>
                                     </f:if>
-                                    <!--
-                                    <div class="infobox bg-copper-25 mt-5 mt-lg-0">
-                                        <h3 class="mt-0 mb-3">Johannes Stripple</h3>
-                                        <div class="mb-3 text-center">
-                                            <img src="../../images/_content/avatar-b@1x.jpg" srcset="../../images/_content/avatar-b@1x.jpg 1x, ../../images/_content/avatar-b@2x.jpg 2x" alt="Johannes Stripple" class=" mw-100">
 
-                                        </div>
-                                        <p>Johannes Stripple är docent i statsvetenskap med inriktning mot miljö- och klimatpolitik. Johannes har studerat många olika aspekter av hur samhället hanterar klimatutmaningen.</p>
-                                        <p><a href="#">Läs mer om Johannes Stripple</a></p>
-                                        <h3 class="mt-0 mb-3">Caroline Mårtensson</h3>
-                                        <div class="mb-3 text-center">
-                                            <img src="../../images/_content/avatar-a@1x.jpg" srcset="../../images/_content/avatar-a@1x.jpg 1x, ../../images/_content/avatar-a@2x.jpg 2x" alt="Caroline Mårtensson" class=" mw-100">
-
-                                        </div>
-                                        <p>Caroline Mårtensson är konstnär, initiativtagare och projektledare för klimatvandringarna i Kristianstads vattenrike.</p>
-                                    </div>
-
-                                    <div class="tag-list">
-                                        <p><strong>Kategorier:</strong></p>
-                                        <ul class="nav nav-pills">
-                                            <li class="nav-item m-0">
-                                                <a href="../../#.html" class="btn  btn-outline-primary btn-sm px-3 mr-2 mb-3">Utbildning</a>
-
-                                            </li>
-                                            <li class="nav-item m-0">
-                                                <a href="../../#.html" class="btn  btn-outline-primary btn-sm px-3 mr-2 mb-3">Seminarium</a>
-
-                                            </li>
-                                            <li class="nav-item m-0">
-                                                <a href="../../#.html" class="btn  btn-outline-primary btn-sm px-3 mr-2 mb-3">Naturvetenskap</a>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -173,7 +149,7 @@
 	</f:if>
     </f:then>
     </f:if>
-</f:section>
+</f:section>   
 
 <f:section name="headline">
 	<h1 itemprop="headline">{newsItem.title}</h1>
