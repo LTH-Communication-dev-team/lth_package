@@ -143,6 +143,16 @@ page {
                     isTrue = {$mobileNavigationExtraPages}
                 }
             }
+            70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            70 {
+                special = list
+                special.value = {$mobileNavigationExtraPagesOneLevel}
+                includeNotInMenu = 1
+                as = extraMobileNavigationOneLevel
+                if {
+                    isTrue = {$mobileNavigationExtraPagesOneLevel}
+                }
+            }
             #40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             #40 {
             #    special = language
