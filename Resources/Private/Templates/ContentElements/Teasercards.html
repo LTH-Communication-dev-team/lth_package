@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
         <div id="cards-{data.uid}" class="bg-{data.pi_flexform.backgroundcolor} py-9">
@@ -10,23 +10,25 @@
                         <f:if condition="{data.pi_flexform.buttons}">
                             <div class="mt-5">
                                 <f:for each="{data.pi_flexform.buttons}" as="button">
-                                    <f:link.page pageUid="{button.container.link}" class="btn btn-primary mx-1 mb-3">{button.container.title}</f:link.page>
+                                    <f:link.typolink parameter="{button.container.link}" class="btn btn-outline-dark mx-1 mb-3">{button.container.title}</f:link.typolink>
                                 </f:for>
                             </div>
                         </f:if>
                     </div>
                 </div>
                 <div class="row">
-                    <f:for each="{data.pi_flexform.imageItems}" as="imageItem">
-                        <div class="col-12 col-lg-4 mb-3 mx-auto">
-                            <a href="{imageItem.link}" class="card nav-block">
-                                <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" class="card-img-top" />
-                                <div class="card-body">
-                                    <h2 class="card-title mt-0">{imageItem.title}</h2>
-                                    <p class="card-text">{imageItem.description}</p>
-                                    <div class="nav-block-link">{imageItem.alternative}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                    <f:for each="{data.pi_flexform.cards}" as="card">
+                        <div class="col mb-3">
+                            <f:link.typolink parameter="{card.container.link}" class="card nav-block h-100">
+                                <div class="card-img-container">
+                                    <img src="/fileadmin{lth:getimagefromid(uid:card.container.cardImage)}" class="card-img p-2" />
                                 </div>
-                            </a>
+                                <div class="card-body">
+                                    <h3 class="h2 nav-block-link m-0">{card.container.title}</h3>
+                                    <p class="mt-3">{card.container.bodytext}</p>
+                                    <div class="nav-block-link">{card.container.readMoreLinkText}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span></div>
+                                </div>
+                            </f:link.typolink>
                         </div>
                     </f:for>
                 </div>
