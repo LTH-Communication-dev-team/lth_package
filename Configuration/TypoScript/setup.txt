@@ -367,7 +367,7 @@ page {
             field = title
             htmlSpecialChars = 1
         }
-        wrap = <title>|</title><meta property="og:title" content="|">
+        wrap = <title>|</title>
     }
     page.headerData.5 >
     page.headerData.5 < temp.newsTitle
