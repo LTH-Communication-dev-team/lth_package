@@ -130,6 +130,19 @@ page {
                 levels = 1
                 as = tabNavigation
             }
+            60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            60 {
+                special = list
+                special.value = {$mobileNavigationExtraPages}
+                levels = 7
+                expandAll = 1
+                includeSpacer = 0
+                includeNotInMenu = 1
+                as = extraMobileNavigation
+                if {
+                    isTrue = {$mobileNavigationExtraPages}
+                }
+            }
             #40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             #40 {
             #    special = language
@@ -137,16 +150,6 @@ page {
             #    as = languagenavigation
             #    if {
             #        isTrue = {$page.theme.language.languageValue}
-            #    }
-            #}
-            #50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            #50 {
-            ##    special = {$page.theme.meta.navigationType}
-            #    special.value = {$page.theme.meta.navigationValue}
-            #    includeNotInMenu = {$page.theme.meta.includeNotInMenu}
-            #    as = metanavigation
-             #   if {
-            #        isTrue = {$page.theme.meta.navigationValue}
             #    }
             #}
         }
@@ -342,6 +345,36 @@ page {
     }
 }
 
+[globalVar = GP:tx_news_pi1|news > 0]
+    temp.newsTitle = RECORDS
+    temp.newsTitle {
+        dontCheckPid = 1
+        tables = tx_news_domain_model_news
+        source.data = GP:tx_news_pi1|news
+        source.intval = 1
+        conf.tx_news_domain_model_news = TEXT
+        conf.tx_news_domain_model_news {
+            field = title
+            htmlSpecialChars = 1
+        }
+        wrap = <title>|</title><meta property="og:title" content="|">
+    }
+    page.headerData.5 >
+    page.headerData.5 < temp.newsTitle
+[else]
+    # OpenGraph Tags
+    page.meta {
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+    }
+[global]
+
 #google_tracker
 [globalVar = LIT: = {$google_tracker}]
 [ELSE]
@@ -466,29 +499,6 @@ plugin.tx_news {
             errorHandling = showStandaloneTemplate,EXT:lth_package/Resources/Private/Templates/News/DetailNotFound.html,404
         }
     }
-}
-
-plugin.tx_news {
-	
-    templateRootPaths {
-            0 = EXT:news/Resources/Private/Templates/
-            1 = EXT:news/Resources/Private/Templates/Styles/Twb/Templates
-            2 = {$plugin.tx_news.view.twb.templateRootPath}
-    }
-
-    partialRootPaths {
-            0 = EXT:news/Resources/Private/Partials/
-            1 = EXT:news/Resources/Private/Templates/Styles/Twb/Partials/
-            2 = {$plugin.tx_news.view.twb.partialRootPath}
-    }
-
-    layoutRootPaths {
-            0 = EXT:news/Resources/Private/Layouts/
-            1 = EXT:news/Resources/Private/Templates/Styles/Twb/Layouts/
-            2 = {$plugin.tx_news.view.twb.layoutRootPath}
-    }
-
-    widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:news/Resources/Private/Templates/Styles/Twb/Templates/
 }
 
 ##############################
