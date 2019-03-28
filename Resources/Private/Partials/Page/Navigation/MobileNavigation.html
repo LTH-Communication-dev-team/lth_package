@@ -2,65 +2,15 @@
     <f:if condition="{mobileNavigation}">
         <f:then>
             <f:for each="{mobileNavigation}" as="myitem" iteration="myiterator">
-               <div class="modal fade" id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}" tabindex="-1" role="dialog" aria-labelledby="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" aria-hidden="true">
-                    <div class="modal-dialog my-0 mx-auto" role="document">
-                        <div class="modal-content border-0 rounded-0">
-                            <nav class="nav border-bottom p-3 flex-row justify-content-between align-items-center sticky-top bg-white" style="padding-right: 33px; margin-right: -17px;">
-                                <div id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" class="h3 m-0">
-                                    <span class="sr-only"></span>
-                                </div>
-                                <button type="button" class="border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="modal" aria-controls="mobileMenu" aria-expanded="false" aria-label="{f:translate(key:'hide_menu',extensionName:'lth_package')}">
-                                    <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
-                                </button>
-                            </nav>
-                            <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
-                               <li class="mobile-nav-item">
-                                   <div class="mobile-nav-container">
-                                       <a href="{myitem.link}" class="nav-link">{myitem.title}
-                                            <span class="ml-1">
-                                                <i class="fal fa-chevron-circle-right fa-sm"></i>
-                                            </span>
-                                       </a>
-                                   </div>
-                                   <ul class="mobile-nav collapse show" id="{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}">
-                                       <f:render section="MobileNavigationItem" arguments="{menu:myitem.children}" />
-                                   </ul>
-                               </li>
-                           </ul>
-                        </div>
-                    </div>
-                </div>
+               <f:render section="MobileNavigationMain" arguments="{_all}" />
             </f:for>
             <f:for each="{extraMobileNavigation}" as="myitem" iteration="myiterator">
-                <div class="modal fade" id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}" tabindex="-1" role="dialog" aria-labelledby="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" aria-hidden="true">
-                    <div class="modal-dialog my-0 mx-auto" role="document">
-                        <div class="modal-content border-0 rounded-0">
-                            <nav class="nav border-bottom p-3 flex-row justify-content-between align-items-center sticky-top bg-white" style="padding-right: 33px; margin-right: -17px;">
-                                <div id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" class="h3 m-0">
-                                    <span class="sr-only"></span>
-                                </div>
-                                <button type="button" class="border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="modal" aria-controls="mobileMenu" aria-expanded="false" aria-label="{f:translate(key:'hide_menu',extensionName:'lth_package')}">
-                                    <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
-                                </button>
-                            </nav>
-                            <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
-                               <li class="mobile-nav-item">
-                                   <div class="mobile-nav-container">
-                                       <a href="{myitem.link}" class="nav-link">{myitem.title}
-                                            <span class="ml-1">
-                                                <i class="fal fa-chevron-circle-right fa-sm"></i>
-                                            </span>
-                                       </a>
-                                   </div>
-                                   <ul class="mobile-nav collapse show" id="{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}">
-                                       <f:render section="MobileNavigationItem" arguments="{menu:myitem.children}" />
-                                   </ul>
-                               </li>
-                           </ul>
-                        </div>
-                    </div>
-                </div>
+                <f:render section="MobileNavigationMain" arguments="{_all}" />
             </f:for>
+            <f:for each="{extraMobileNavigationOneLevel}" as="myitem" iteration="myiterator">
+                <f:render section="MobileNavigationMain" arguments="{_all}" />
+            </f:for>
+            
             <div class="mobile-nav-bar font-size-sm font-size-sm-base d-xl-none">
                 <nav class="nav ml-2 flex-grow-1">
                     <f:for each="{mobileNavigation}" as="myitem" iteration="myiterator">
@@ -79,6 +29,40 @@
             </div>
         </f:then>
     </f:if>
+    
+    
+    <f:section name="MobileNavigationMain">
+        <div class="modal fade" id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}" tabindex="-1" role="dialog" aria-labelledby="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" aria-hidden="true">
+            <div class="modal-dialog my-0 mx-auto" role="document">
+                <div class="modal-content border-0 rounded-0">
+                    <nav class="nav border-bottom p-3 flex-row justify-content-between align-items-center sticky-top bg-white" style="padding-right: 33px; margin-right: -17px;">
+                        <div id="nav-mobile--{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}-label" class="h3 m-0">
+                            <span class="sr-only"></span>
+                        </div>
+                        <button type="button" class="border-0 bg-transparent cursor-pointer lh-0 p-2 nm-2" data-dismiss="modal" aria-controls="mobileMenu" aria-expanded="false" aria-label="{f:translate(key:'hide_menu',extensionName:'lth_package')}">
+                            <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+                        </button>
+                    </nav>
+                    <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
+                       <li class="mobile-nav-item">
+                           <div class="mobile-nav-container">
+                               <a href="{myitem.link}" class="nav-link">{myitem.title}
+                                    <span class="ml-1">
+                                        <i class="fal fa-chevron-circle-right fa-sm"></i>
+                                    </span>
+                               </a>
+                           </div>
+                           <ul class="mobile-nav collapse show" id="{v:format.replace(substring:' ',content:myitem.title,replacement:'-')}">
+                               <f:render section="MobileNavigationItem" arguments="{menu:myitem.children}" />
+                           </ul>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </f:section>
+    
+    
     <f:section name="MobileNavigationItem">
 
         <f:for each="{menu}" as="item" iteration="iterator">
