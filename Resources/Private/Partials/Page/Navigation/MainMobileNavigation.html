@@ -15,45 +15,7 @@
                         <ul class="mobile-nav mobile-nav-root border-0 nav-collapse font-size-sm nav-undecorated">
                             <!-- MainMenu Pages -->
                             <f:render section="MobileNavigationItem" arguments="{menu:mobileNavigation}" />
-                            <!-- TargetGroups Pages -->
-                            <f:if condition="{headnav}">
-                                <f:then>
-                                    <lth:explode data="{headnav}" as="rows">
-                                        <f:if condition="{rows}">
-                                            <f:for each="{rows}" as="row" iteration="rowIterator">
-                                                <li class="mobile-nav-item">
-                                                    <lth:explode data="{row}" delimiter="," as="content">
-                                                        <a href="{content.1}" class="nav-link" title="{content.0}">{content.0}</a>
-                                                    </lth:explode>
-                                                </li>
-                                            </f:for>
-                                        </f:if>
-                                    </lth:explode>                                    
-                                </f:then>
-                                <f:else>
-                                    <li class="mobile-nav-item">
-                                        <a href="alumn" class="nav-link" title="alumn">alumn</a>
-                                    </li>
-                                </f:else>
-                            </f:if>
-                            <f:if condition="{headnavdrop}">
-                                <f:then>
-                                    <lth:explode data="{headnavdrop}" as="rows">
-                                        <f:if condition="{rows}">
-                                            <f:for each="{rows}" as="row" iteration="rowIterator">
-                                                <li class="mobile-nav-item">
-                                                    <lth:explode data="{row}" delimiter="," as="content">
-                                                        <a href="{content.1}" class="nav-link" title="{content.0}">{content.0}</a>
-                                                    </lth:explode>
-                                                </li>
-                                            </f:for>
-                                        </f:if>
-                                    </lth:explode>                                    
-                                </f:then>
-                                <f:else>
-                                    <li class="mobile-nav-item"><a href="/bibliotek/" class="nav-link" title="bibliotek">Bibliotek</a></li>
-                                </f:else>
-                            </f:if>
+                            <f:render section="MobileNavigationItem" arguments="{menu:extraMobileNavigation}" />                           
                         </ul>
                     </div>
                 </div>
