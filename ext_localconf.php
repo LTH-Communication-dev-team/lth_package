@@ -84,3 +84,13 @@ unset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_au
 
 // Register for hook to show preview of tt_content element of CType="yourextensionkey_newcontentelement" in page module
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['lth_package_infobox'] = \LTH\LthPackage\Hooks\PageLayoutView\NewContentElementPreviewRenderer::class;
+
+/** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
+$signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher');
+$signalSlotDispatcher->connect(
+    'GeorgRinger\\News\\Controller\\NewsController',
+    'detailAction',
+    'Lth\\Lthpackage\\Slots\\NewsControllerSlot',
+    'detailActionSlot',
+    TRUE
+);
