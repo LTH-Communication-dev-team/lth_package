@@ -12,48 +12,72 @@ $(document).ready(function() {
             $('.carousel-controls-pause').toggle();
         });
     }
-    if($('.lthPackageContactCard').length > 0) {
-        var emailArray=[];
-        $('.lthPackageContactCard').each(function(){
-            emailArray.push($(this).attr('data-val'));
-        });
-        
-        $.ajax({
-            type : "POST",
-            url : 'index.php',
-            data: {
-                eID: 'lth_package',
-                action: 'getSingleContact',
-                dataSettings: {
-                    email: emailArray.join(','),
+    if($('.lthPackageContactCard, .lthPackageContactInfobox').length > 0) {
+        var email = $('.lthPackageContactCard, .lthPackageContactInfobox').attr('data-email');
+        if(email) {
+            $.ajax({
+                type : "POST",
+                url : 'index.php',
+                data: {
+                    eID: 'lth_package',
+                    action: 'getSingleContact',
+                    dataSettings: {
+                        email: email,
+                    },
+                    syslang: $('html').attr('lang'),
+                    sid: Math.random(),
                 },
-                syslang: $('html').attr('lang'),
-                sid: Math.random(),
-            },
-            //contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            beforeSend: function () {
-                
-            },
-            success: function(d) {
-                var i = 0;
-                $.each( d.data, function( key, aData ) {
-                    if(aData.name) $(".lthPackageContactCard[data-val='"+aData.email+"'] h2").text(aData.name);
-                    if(aData.title) $(".lthPackageContactCard[data-val='"+aData.email+"'] p").text(aData.title);
-                    if(aData.email) $(".lthPackageContactCard[data-val='"+aData.email+"'] .lthPackageContactCardEmail a").text(aData.email).attr('href','mailto:'+aData.email);
-                    if(aData.image) {
-                        $(".lthPackageContactCard[data-val='"+aData.email+"'] img").attr('src',aData.image);
-                    } else {
-                        $(".lthPackageContactCard[data-val='"+aData.email+"'] img").attr('src',"/typo3conf/ext/lth_solr/res/dummy/" + (Math.floor(Math.random() * 10) + 1) + ".jpg");
-                    }
-                    if(aData.phone) {
-                        $(".lthPackageContactCard[data-val='"+aData.email+"'] .lthPackageContactCardPhone a").text(aData.phone).attr('href','tel:'+aData.phone);
-                    }
-                    i++;
-                });
-                
-            }
-        });
+                //contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+
+                },
+                success: function(d) {
+                    var i = 0;
+                    $.each( d.data, function( key, aData ) {
+                        if(aData.email) {
+                            if($(".lthPackageContactCard[data-email='"+aData.email+"'] h5, .lthPackageContactInfobox[data-email='"+aData.email+"'] h3").text() === '' && aData.name) {
+                                $(".lthPackageContactCard[data-email='"+aData.email+"'] h5, .lthPackageContactInfobox[data-email='"+aData.email+"'] h3").text(aData.name);
+                            }
+                            //if(aData.title) $(".lthPackageContactCard[data-email='"+aData.email+"'] p").text(aData.title);
+                            //$(".lthPackageContactCard[data-email='"+aData.email+"'] .card-text:eq(0) a").text(aData.email).attr('href','mailto:'+aData.email);
+                            if($(".lthPackageContactCard[data-email='"+aData.email+"'] img, .lthPackageContactInfobox[data-email='"+aData.email+"'] img").attr('src') === '' && aData.image) {
+                                $(".lthPackageContactCard[data-email='"+aData.email+"'] img, .lthPackageContactInfobox[data-email='"+aData.email+"'] img").attr('src', aData.image);
+                                if(aData.name) { 
+                                    $(".lthPackageContactCard[data-email='"+aData.email+"'] img, .lthPackageContactInfobox[data-email='"+aData.email+"'] img").attr('alt', aData.name);
+                                }
+                            }
+                            if($('#lthPackageContactCardPhone').val()) {
+                                var pData = $('#lthPackageContactCardPhone').val();
+                                $(".lthPackageContactCard[data-email='"+aData.email+"'] .card-text:eq(1)").append('<a href="tel:'+pData + '">' + pData + '</a>');
+                            } else if(aData.phone) {
+                                $.each(aData.phone, function( pKey, pData ) {
+                                    if(pData && pData!=='NULL') $(".lthPackageContactCard[data-email='"+aData.email+"'] .card-text:eq(1)").append('<a href="tel:'+pData + '">' + pData + '</a>');
+                                });
+                            }
+                            if($('#lthPackageContactCardMobile').val()) {
+                                var mData = $('#lthPackageContactCardPhone').val();
+                                if($(".lthPackageContactCard[data-email='"+aData.email+"'] .card-text:eq(1)").text() !== '') {
+                                    $(".lthPackageContactCard[data-email='"+aData.email+"']  .card-text:eq(1)").append(' och ');
+                                }
+                                $(".lthPackageContactCard[data-email='"+aData.email+"']  .card-text:eq(1)").append('<a href="tel:'+mData + '">' + mData + '</a>');
+                            } else if(aData.mobile) {
+                                $.each(aData.mobile, function( mKey, mData ) {
+                                    if(mData && mData!=='NULL') {
+                                        if($(".lthPackageContactCard[data-email='"+aData.email+"'] .card-text:eq(1)").text() !== '') {
+                                            $(".lthPackageContactCard[data-email='"+aData.email+"']  .card-text:eq(1)").append(' och ');
+                                        }
+                                        $(".lthPackageContactCard[data-email='"+aData.email+"']  .card-text:eq(1)").append('<a href="tel:'+mData + '">' + mData + '</a>');
+                                    }
+                                });
+                            }
+                        }     
+                        i++;
+                    });
+
+                }
+            });
+        }
     }
     if(!getCookie('cookieConsent')) {
         $('.alert').removeClass('hide').addClass('show');
