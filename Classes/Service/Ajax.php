@@ -95,7 +95,9 @@ function getSingleContact($dataSettings, $config)
 
         $image='';
         if($document->image) {
-            $image = '/fileadmin/images/uploads/' . $document->image;
+            $image = $document->image;
+            if(!stristr($image, 'fileadmin')) $image = '/fileadmin' . $image;
+            if(substr($image,0,1) !== '/') $image = '/' . $image;
         } else if($document->lucrisPhoto) {
             $image = $document->lucrisPhoto;
         }
@@ -105,8 +107,7 @@ function getSingleContact($dataSettings, $config)
             "name" => $document->firstName . ' ' . $document->lastName,
             "mailDelivery" => $document->mailDelivery,
             "title" => $document->primaryVroleTitle,
-            "phone" => 'phone',
-            "mobile" => $document->mobile,
+            "phone" => $document->phone,
             "organisationName" => $document->organisationName,
             "primaryAffiliation" => $document->primaryAffiliation,
             "homepage" => $document->homepage,
