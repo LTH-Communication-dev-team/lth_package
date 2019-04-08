@@ -246,6 +246,8 @@ page {
             mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
             otherLanguageLink.lang.sv = english
+            otherLanguageVersion = TEXT
+            otherLanguageVersion.data = page:tx_lthpackage_otherlanguageversion
             pageTitle = TEXT
             pageTitle.data = page:subtitle // page:nav_title // page:title
             rootPage = TEXT
@@ -342,6 +344,8 @@ page {
         rwdImageMaps = typo3conf/ext/lth_package/Resources/Public/JavaScript/Dist/jquery.rwdImageMaps.min.js
         typeaheadbundlejs = typo3conf/ext/lth_package/Resources/Public/JavaScript/typeahead.bundle.js
         lth_package = typo3conf/ext/lth_package/Resources/Public/JavaScript/lth_package.js
+        #rsalibrary = typo3/sysext/rsaauth/Resources/Public/JavaScript/RsaLibrary.js
+        #rsaencryption = /typo3/sysext/rsaauth/Resources/Public/JavaScript/RsaEncryption.js
 
         ba = http://www.browsealoud.com/plus/scripts/ba.js
     }
@@ -466,14 +470,6 @@ config {
     frontend_editing = 1
 }
 
-#========================================================================
-# https Fix. Replace http in baseURL. Replace with absrefprefix in future
-# afer fixing extension that don't work eg. feedit -MP 2013/12/02
-#========================================================================
-#[globalString = _SERVER|HTTPS=on]
-#    config.baseURL := replaceString(http|https).  
-#[global]
-
 
 #############################
 #### LANGUAGE CONDITIONS ####
@@ -524,4 +520,15 @@ lib.gpvar {
     insertData = 1
     wrap3 = {|}
   }
+}
+
+
+tx_ajaxlogin_widget = PAGE
+tx_ajaxlogin_widget {
+	typeNum = 4444
+	config.disableAllHeaderCode = 1
+	config.stat = 0
+
+	10 < tt_content.list.20.ajaxlogin_widget
+	10 = USER_INT
 }

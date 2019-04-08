@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
     <div class="border-bottom">
         <div class="container-fluid mw-xl">
             <div class="row m-0 py-3 py-lg-5">
@@ -52,16 +52,6 @@
                                         <div class="nav-item">
                                             <a class="nav-link px-0 ml-4" href="javascript:" onclick="toggleBar();" title="Aktivera talande webb" id="bapluslogo" data-bapdf="11"><span class="mr-1"><i class="fal fa-lg fa-volume"></i></span> {f:translate(key:'listen',extensionName:'lth_package')}</a>
                                         </div>
-                                        <!-- <div class="nav-item d-none d-lg-block d-xl-none border-left ml-3 pl-3">
-                                            <a class="nav-link" 
-                                               href="#" 
-                                               data-toggle="modal" 
-                                               data-target="#nav-mobile" 
-                                               aria-controls="nav-mobile" 
-                                               aria-expanded="false"
-                                               aria-label="{f:translate(key:'show_menu',extensionName:'lth_package')}">
-                                            <i class="fal fa-bars"></i> {f:translate(key:'menu',extensionName:'lth_package')}</a>
-                                        </div> -->
                                     </nav>
                                 </div>
                             </div>
@@ -74,39 +64,7 @@
             </div>
         </div>
         <f:render partial="Navigation/MobileNavigation" arguments="{_all}"/>
-        <!-- Login box test start 
-        <div class="full-width-dropdown__lvl-down js__full-width-dropdown__lvl-down _lvl-2 full-width-dropdown__login" data-parent-lvl1="229">
-            <div class="m-auto">
-		<form action="http://vkans-th0.kh.lth.lu.se/" onsubmit="return true;" method="post">
-			<div class="hidden">
-				<input type="hidden" name="logintype" value="login">
-				<input type="hidden" name="pid" value="178">
-				<input type="hidden" name="redirect_url" value="?eID=FlyOutAjaxLoginController&amp;returnUrl=https%3A%2F%2Ftypo3.org%2F&amp;cHash=f39081a83e725c491517fe02937d570a">
-			</div>
-			<h4>Enter your credentials below to sign in</h4>
-			<div class="form-control__wrp">
-				<input class="form-control" name="user" type="text" onfocusout="isEmpty(this)" id="login-user">
-				<span class="form-control__placeholder">Username</span>
-				<i class="form-control__icon fa fa-user" aria-hidden="true"></i>
-			</div>
-			<div class="form-control__wrp">
-				<input class="form-control" name="pass" data-rsa-encryption="" onfocus="rsaauthInit()" onfocusout="isEmpty(this)" type="password" id="login-pass">
-				<span class="form-control__placeholder">Password</span>
-				<i class="form-control__icon fa fa-key" aria-hidden="true"></i>
-			</div>
-			<div class="d-flex justify-content-end align-items-center form-nav">
-				
-					<a href="https://my.typo3.org/index.php?id=12&amp;tx_felogin_pi1%5Bforgot%5D=1" class="small">Forgot password?</a>
-				
-				<button type="submit" class="btn btn-outline-light btn-lg">Login</button>
-				
-					<a href="https://my.typo3.org/index.php?id=2" class="btn btn-outline-light btn-lg">Sign up</a>
-				
-			</div>
-		</form>
-            </div>
-        </div>
-         Login box test end -->
+        
         <div class="header-search-form collapse collapse-lg pb-2 px-2" id="header-search-form">
             <form action="//lth.se/sok" class="form-inline px-lg-3">
                 <div class="input-group input-group-round input-group-sm w-100 flex">

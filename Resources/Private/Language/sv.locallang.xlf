@@ -88,6 +88,11 @@
                 <target>English</target>
             </trans-unit>
             
+            <trans-unit id="language_selector_page">
+                <source>Denna sida på svenska</source>
+                <target>This page in English</target>
+            </trans-unit>
+            
             <trans-unit id="calendar">
                 <source>Calendar</source>
                 <target>Kalendarium</target>

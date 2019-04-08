@@ -30,7 +30,19 @@
                         <div class="row">
                             <div class="col-12 col-lg-8 mb-6 mb-lg-0">
                                 <article>
-                                    <h1>{pageTitle}</h1>
+                                    <f:if condition="{otherLanguageVersion}">
+                                        <f:then>
+                                            <div style="position:relative;">
+                                                <h1>{pageTitle}</h1>
+                                                <div style="position:absolute;top:5px;right:0px;">
+                                                    <f:link.typolink parameter="{otherLanguageVersion}" class="dropdown-item ">{f:translate(key:'language_selector_page',extensionName:'lth_package')}</f:link.typolink>
+                                                </div>
+                                            </div>
+                                        </f:then>
+                                        <f:else>
+                                           <h1>{pageTitle}</h1> 
+                                        </f:else>
+                                    </f:if>
                                     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
                                 </article>
                             </div>

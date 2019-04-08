@@ -6,3 +6,5 @@ solrPath=
 solrPort=
   # cat=basic/dev/163; type=input; label=Solr Timeout
 solrTimeout=
+  # cat=basic/dev/164; type=input; label=DCE elements to convert
+dceElements=

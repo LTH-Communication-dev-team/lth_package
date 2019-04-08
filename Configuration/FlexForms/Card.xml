@@ -54,6 +54,7 @@
                     </cardType>
                     <header>
                         <TCEforms>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.title</label>
                             <config>
                                 <type>input</type>
@@ -63,6 +64,7 @@
                     </header>
                     <bodytext>
                         <TCEforms>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.bodytext</label>
                             <config>
                                 <type>text</type>
@@ -74,6 +76,7 @@
                     </bodytext>
                     <htmltext>
                         <TCEforms>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.htmltext</label>
                             <config>
                                 <type>text</type>
@@ -91,8 +94,39 @@
                             </config>
                         </TCEforms>
                     </email>
+                    <name>
+                        <TCEforms>
+                            <displayCond>FIELD:cardType:IN:contact</displayCond>
+                            <label>Name</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </name>
+                    <phone>
+                        <TCEforms>
+                            <displayCond>FIELD:cardType:IN:contact</displayCond>
+                            <label>Phone</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </phone>
+                    <mobile>
+                        <TCEforms>
+                            <displayCond>FIELD:cardType:IN:contact</displayCond>
+                            <label>Mobile</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </mobile>
                     <backgroundcolor>
                         <TCEforms>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.backgroundcolor</label>
                             <config>
                                 <type>select</type>
@@ -116,6 +150,7 @@
                     <link>
                         <TCEforms>
                             <exclude>1</exclude>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>Link to Page</label>
                             <config>
                                 <type>input</type>
@@ -140,6 +175,7 @@
                     </link>
                     <readMoreLinkText>
                         <TCEforms>
+                            <displayCond>FIELD:cardType:IN:default,highlighted,teaser,cta,phototext,fill</displayCond>
                             <label>Read-More Text (text on read-more-link)</label>
                             <config>
                                 <type>input</type>

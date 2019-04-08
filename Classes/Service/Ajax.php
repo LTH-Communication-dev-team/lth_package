@@ -55,9 +55,69 @@ switch($action) {
     case 'getSingleContact':
         $content = getSingleContact($dataSettings, $config);
         break;
+    case 'login':
+        $content = login($data);
+        break;
 }
 
 print $content;
+
+
+function login($data)
+{
+    $pid = 1534; //?????
+    $loginData = array(
+        'username' => $data['loginUser'],
+        'uident'   => $data['loginUser'],
+        'status'   => 'login',
+    );
+
+    $GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController', $GLOBALS['TYPO3_CONF_VARS'], 0, 0);
+    $GLOBALS['TSFE']->initFEuser();
+    $GLOBALS['TSFE']->set_no_cache();
+    $GLOBALS['TSFE']->fe_user->checkPid = 0; //do not use a particular pid
+    $info = $GLOBALS['TSFE']->fe_user->getAuthInfoArray();
+    $user = $GLOBALS['TSFE']->fe_user->fetchUserRecord($info['db_user'], $loginData['username']);
+    
+    if ( isset($user) && $user != '' ) {
+        $userId       = $user['uid'];
+        $userPassword = $user['password'];
+        $success      = false;
+        $pid = getTreePids($pid);
+        if (in_array($user['pid'], $pid)  && \TYPO3\CMS\Saltedpasswords\Utility\SaltedPasswordsUtility::isUsageEnabled('FE')) {
+            $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => '88', 'crdate' => time()));
+            $objSalt = \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory::getSaltingInstance($userPassword);
+            if (is_object($objSalt))
+            {
+                    $success = $objSalt->checkPassword($password,$userPassword);
+            }
+        }
+        if ( $success ) {
+            $GLOBALS['TSFE']->fe_user->createUserSession($user);
+            $GLOBALS['TSFE']->fe_user->user = $GLOBALS['TSFE']->fe_user->fetchUserSession();
+            # https://forge.typo3.org/issues/62194
+            # Create Session
+            $reflection = new \ReflectionClass($GLOBALS['TSFE']->fe_user);
+            $setSessionCookieMethod = $reflection->getMethod('setSessionCookie');
+            $setSessionCookieMethod->setAccessible(TRUE);
+            $setSessionCookieMethod->invoke($GLOBALS['TSFE']->fe_user);
+            return true;
+        }
+    }
+    return false;
+}
+
+
+function getTreePids($parent = 0, $as_array = true)
+{
+    $depth = 999999;
+    $queryGenerator = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Core\\Database\\QueryGenerator' );
+    $childPids = $queryGenerator->getTreeList($parent, $depth, 0, 1); //Will be a string like 1,2,3
+    if($as_array) {
+        $childPids = explode(',',$childPids );
+    }
+    return $childPids;
+}
 
 
 function getSingleContact($dataSettings, $config)

@@ -86,8 +86,8 @@ $(document).ready(function() {
         $('.alert').removeClass('show').addClass('hide');
         setCookie('cookieConsent');
     });
-    if($('.full-width-dropdown__login').length > 0 && $('#lth_package_login').length > 0) {
-        $('#lth_package_login').click(function() {
+    if($('.full-width-dropdown__login').length > 0 && $('.lthPackageLogin').length > 0) {
+        $('.lthPackageLogin').click(function() {
             $('.full-width-dropdown__login').toggle(500);
         });
     }

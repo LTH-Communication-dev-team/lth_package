@@ -111,19 +111,27 @@
         
         <f:if condition="{data.pi_flexform.cardType}=='contact'">
             <f:then>
-                <article class="mt-4 mt-lg-6 d-flex flex-column flex-lg-row border-bottom border-lg-bottom-0 pb-3 pb-lg-0 lthPackageContactCard" data="{data.pi_flexform.email}">
-                    <div class="mb-3 mb-lg-0 mr-lg-5">
-                        <img src="#" alt="#" class=" img-staff-list">
+                <div class="card bg-transparent mb-5 lthPackageContactCard" data-email="{data.pi_flexform.email}">
+                    <div class="px-lg-9">
+                        <f:if condition="{data.pi_flexform.cardImage}">
+                            <f:then>
+                                <img src="{f:uri.image(src:data.pi_flexform.cardImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.cardimage.0.crop)}" 
+                            class="card-image-top card-image-narrow" />
+                            </f:then>
+                            <f:else>
+                                <img src="" alt="" class="card-image-top card-image-narrow" />
+                            </f:else>
+                        </f:if> 
+                        
                     </div>
-                    <div>
-                        <h2 class="mt-0"><a href="#" class="nav-undecorated"></a></h2>
-                        <p></p>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link px-0 py-1" href=""></a></li>
-                            <li class="nav-item"><a class="nav-link px-0 py-1" href=""></a></li>
-                        </ul>
+                    <div class="card-body">
+                        <h5 class="card-title mt-0">{data.pi_flexform.name}</h5>
+                        <p class="card-text"><a href="mailto:{data.pi_flexform.email}">{data.pi_flexform.email}</a></p>
+                        <p class="card-text"></p>
+                        <input type="hidden" name="lthPackageContactCardPhone" id="lthPackageContactCardPhone" value="{data.pi_flexform.phone}" />
+                        <input type="hidden" name="lthPackageContactCardmobile" id="lthPackageContactCardMobile" value="{data.pi_flexform.mobile}" />
                     </div>
-                </article>
+                </div>
             </f:then>
         </f:if>
     </f:section>

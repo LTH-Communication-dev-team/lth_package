@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <div class="news-administration">
+        <f:flashMessages />
+        <f:render section="content" arguments="{_all}" />
+    </div>
+    
+    <f:section name="content">
+        {dces -> f:format.raw()}
+    </f:section>
+    
+    <f:link.action action="{action}" style="display:{display};" class="btn btn-primary">{btnText}</f:link.action>
+</html>

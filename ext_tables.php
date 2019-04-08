@@ -6,30 +6,34 @@ if (!defined('TYPO3_MODE')) {
 /***************
  * Make the extension configuration accessible
  */
-if (!is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY])) {
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]))
+{
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]);
 }
 
 /***************
- * Backend Styling
+ * Backend
  */
-if (TYPO3_MODE == 'BE') {
+if (TYPO3_MODE == 'BE')
+{
     include_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Classes/Service/class.tx_lthpackage_addFieldsToFlexForm.php');
 
- /*   if (!isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['Logo'])
-        || empty($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['Logo'])
-    ) {
-        $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['Logo'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/Backend/TopBarLogo@2x.png';
-    }
-    $GLOBALS['TBE_STYLES']['logo'] = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['Logo'];
-
-    */
-    /*$GLOBALS['TBE_MODULES']['_configuration'][$_EXTKEY] = array (
-        'jsFiles' => array (
-            'EXT:' . $_EXTKEY . '/Resources/Public/JavaScript/Dist/spectrum.js',
-        ),
-    );*/
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+        'LTH.' . $_EXTKEY,
+        'web',          // Main area
+        'mod1',         // Name of the module
+        '',             // Position of the module
+        [               // Allowed controller action combinations
+            'Convertdce' => 'index, all, update, updateAll',
+        ],
+        [               // Additional configuration
+            'access'    => 'user,group',
+            'icon'      => 'EXT:lth_package/ext_icon.gif',
+            'labels'    => 'LLL:EXT:lth_package/Resources/Private/Language/locallang_mod.xlf',
+        ]
+    );
 }
+
 
 /***************
  * Register Icons

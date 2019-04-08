@@ -59,55 +59,79 @@ $extensionKey = 'lth_package';
     'Bootstrap Package: Content Previews'
 );*/
 
-	/***************
-	 * New field in table:pages
-	 */
+/***************
+ * New field in table:pages
+ */
 call_user_func(
     function ($extKey) {
 	$tempPagesColumns = [
-		
-
-		'tx_lthpackage_headnav' => [
-			'exclude' => 1,
-			'label'   => 'Head navigation menu items',
-			'config' => [
-                            'type' => 'text',
-                            'cols' => '20',
-                            'rows' => '3'
-			]
-		],
-                'tx_lthpackage_headnavdrop' => [
-			'exclude' => 1,
-			'label'   => 'Head navigation dropdown items',
-			'config' => [
-                            'type' => 'text',
-                            'cols' => '20',
-                            'rows' => '3'
-			]
-		],
-                'tx_lthpackage_breadcrumb' => [
-			'exclude' => 1,
-			'label'   => 'Show breadcrumb navigation (for landingpage only)',
-			'config' => [
-                            'type' => 'check',
-                            'items' => [
-                               ['Yes', ''],
+            'tx_lthpackage_headnav' => [
+                'exclude' => 1,
+                'label'   => 'Head navigation menu items',
+                'config' => [
+                    'type' => 'text',
+                    'cols' => '20',
+                    'rows' => '3'
+                ]
+            ],
+            'tx_lthpackage_headnavdrop' => [
+                'exclude' => 1,
+                'label'   => 'Head navigation dropdown items',
+                'config' => [
+                    'type' => 'text',
+                    'cols' => '20',
+                    'rows' => '3'
+                ]
+            ],
+            'tx_lthpackage_breadcrumb' => [
+                'exclude' => 1,
+                'label'   => 'Show breadcrumb navigation (for landingpage only)',
+                'config' => [
+                    'type' => 'check',
+                    'items' => [
+                       ['Yes', ''],
+                    ],
+                ]
+            ],
+            'tx_lthpackage_mainclass' => [
+                'exclude' => 1,
+                'label'   => 'Extra class for main-tag',
+                'config' => [
+                    'type' => 'input',
+                    'cols' => '20',
+                ]
+            ],
+            'tx_lthpackage_otherlanguageversion' => [
+                'exclude' => 1,
+                'label'   => 'Other language version',
+                'config' => [
+                    'type' => 'input',
+                    'size' => 30,
+                    'eval' => 'trim',
+                    'wizards' => [
+                        '_PADDING' => 2,
+                        'link' => [
+                            'type' => 'popup',
+                            'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
+                            'icon' => 'link_popup.gif',
+                            'module' => [
+                                'name' => 'wizard_element_browser',
+                                'urlParameters' => [
+                                    'mode' => 'wizard',
+                                    'act' => 'page'
+                                ]
                             ],
-			]
-		],
-                'tx_lthpackage_mainclass' => [
-			'exclude' => 1,
-			'label'   => 'Extra class for main-tag',
-			'config' => [
-                            'type' => 'input',
-                            'cols' => '20',
-			]
-		],
-	];
+                            'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
+                        ],
+                    ],
+                    'softref' => 'typolink',
+                ],
+            ],
+        ];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$tempPagesColumns);
                 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,tx_lthpackage_mainclass','after:content_from_pid');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_mainclass,--linebreak--,tx_lthpackage_otherlanguageversion','after:content_from_pid');
 
         }, 'lth_package'
 );

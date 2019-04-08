@@ -85,6 +85,10 @@
                 <source>Svenska</source>
             </trans-unit>
             
+            <trans-unit id="language_selector_page">
+                <source>Denna sida på svenska</source>
+            </trans-unit>
+            
             <trans-unit id="latest_news">
                 <source>Latest News</source>
             </trans-unit>

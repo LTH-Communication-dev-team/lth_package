@@ -91,6 +91,11 @@
             </trans-unit>
             <trans-unit id="infobox.type.contact">
                 <source>Contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            <trans-unit id="infobox.type.contactwithimage">
+                <source>Contact with image</source>
+                <target>Kontakt med bild</target>
             </trans-unit>
             <trans-unit id="infobox.type.icons">
                 <source>Icons</source>

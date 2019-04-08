@@ -275,9 +275,9 @@
 			</ul>
 		</div>
 	</f:if>
-</f:section>
+    </f:section>
 
-<f:section name="infobox">
+    <f:section name="infobox">
         <f:if condition="{data.pi_flexform.infoboxtype}=='default'">
             <f:then>
                 <div id="infobox-{data.uid}" class="infobox bg-{v:format.replace(substring:'.gif',content:data.pi_flexform.backgroundcolor,replacement:'')}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
@@ -409,5 +409,5 @@
                 </div>
             </f:then>
         </f:if>
-</f:section>
+    </f:section>
 </html>

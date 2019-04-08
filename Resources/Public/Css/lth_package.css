@@ -1,4 +1,4 @@
-/* .full-width-dropdown__login {
+ .full-width-dropdown__login {
         display:none;
         position:absolute;
         top:170px;
@@ -19,7 +19,7 @@
         max-width: 695px;
     }
 }
-
+/*
 .border-bottom {
     position:relative;
 }

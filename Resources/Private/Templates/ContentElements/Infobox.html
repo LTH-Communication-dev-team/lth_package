@@ -105,5 +105,33 @@
                 </div>
             </f:then>
         </f:if>
+        <f:if condition="{data.pi_flexform.infoboxtype}=='contactwithimage'">
+            <f:then>
+                <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor} mt-5 mt-lg-0 lthPackageContactInfobox" data-email="{data.pi_flexform.email}">
+                    <h3 class="mt-0 mb-3">{data.pi_flexform.header}</h3>
+                    <div class="mb-3 text-center">
+                        <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="mw-100">
+                    </div>
+                    <p>
+                        <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                    </p>
+                    <p>
+                        <f:if condition="{data.pi_flexform.readMoreLinkText}">
+                            <f:then>
+                                <f:link.typolink parameter="{data.pi_flexform.link}">
+                                    {data.pi_flexform.readMoreLinkText}
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:link.typolink parameter="{data.pi_flexform.link}">
+                                    {f:translate(key:'read_more',extensionName:'lth_package')}
+                                </f:link.typolink>
+                            </f:else>
+                        </f:if>
+                    </p>
+                </div>
+            </f:then>
+        </f:if>
+        
     </f:section>
 </html>
