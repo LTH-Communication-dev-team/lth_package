@@ -802,12 +802,12 @@ tx_gridelements {
                             1 {
                                 name = Top Left (Masonry A)
                                 colPos = 11
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Top Right (Masonry A)
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -816,12 +816,12 @@ tx_gridelements {
                             1 {
                                 name = Bottom Left (MasonryA)
                                 colPos = 21
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Bottom Right (MasonryA)
                                 colPos = 22
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -843,12 +843,12 @@ tx_gridelements {
                                 name = Top Left (Masonry B)
                                 colPos = 11
                                 rowspan = 2
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Top Right 1 (Masonry B)
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -857,7 +857,7 @@ tx_gridelements {
                             1 {
                                 name = Top Right 2 (Masonry B)
                                 colPos = 21
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -866,12 +866,12 @@ tx_gridelements {
                             1 {
                                 name = Bottom Left (Masonry B)
                                 colPos = 31
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Bottom Right (Masonry B)
                                 colPos = 32
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -893,12 +893,12 @@ tx_gridelements {
                                 name = Top Left (Masonry C)
                                 colPos = 11
                                 rowspan = 2
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Top Right 1 (Masonry C)
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -907,7 +907,7 @@ tx_gridelements {
                             1 {
                                 name = Top Right 2 (Masonry C)
                                 colPos = 21
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -916,12 +916,12 @@ tx_gridelements {
                             1 {
                                 name = Bottom Left (Masonry C)
                                 colPos = 31
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Bottom Right (Masonry C)
                                 colPos = 32
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -981,18 +981,18 @@ tx_gridelements {
                                 name = Top Left (Masonry E)
 				rowspan = 3
                                 colPos = 11
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
 				name = Top Right 1 (Masonry E)
 				rowspan = 2
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             3 {
 				name = Top Right 2 (Masonry E)
                                 colPos = 13
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
 			}
                     }
@@ -1001,7 +1001,7 @@ tx_gridelements {
                             1 {
 				name = Top Right 3 (Masonry E)
                                 colPos = 21
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
 			}
                     }
@@ -1011,7 +1011,7 @@ tx_gridelements {
 				name = Bottom Right (Masonry E)
 				colspan = 2
                                 colPos = 31
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
 			}
                     }
@@ -1033,12 +1033,12 @@ tx_gridelements {
                                 name = Top Left (Masonry F)
                                 rowspan = 2
                                 colPos = 11
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Top Right 1 (Masonry F)
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -1047,7 +1047,7 @@ tx_gridelements {
                             1 {
                                 name = Top Right 2 (Masonry F)
                                 colPos = 21
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -1056,12 +1056,12 @@ tx_gridelements {
                             1 {
                                 name = Bottom left (Masonry F)
                                 colPos = 31
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Bottom Right (Masonry F)
                                 colPos = 32
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -1084,17 +1084,17 @@ tx_gridelements {
                                 name = Top Left (Masonry G)
                                 rowspan = 2
                                 colPos = 11
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Top Right 1 (Masonry G)
                                 colPos = 12
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             3 {
                                 name = Top Right 2 (Masonry G)
                                 colPos = 13
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -1104,7 +1104,7 @@ tx_gridelements {
                                 name = Top Right 3 (Masonry G)
                                 colPos = 21
                                 colspan = 2
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
@@ -1113,13 +1113,13 @@ tx_gridelements {
                             1 {
                                 name = Bottom left (Masonry G)
                                 colPos = 31
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                             2 {
                                 name = Bottom Right (Masonry G)
                                 colPos = 32
                                 colspan = 2
-                                allowed = embed,masonrytile,infographics,html
+                                allowed = embed,masonrytile,infographics,html,carousel
                             }
                         }
                     }
