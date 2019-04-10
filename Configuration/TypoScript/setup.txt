@@ -250,8 +250,7 @@ page {
             mainClass = TEXT
             mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
-            otherLanguageLink.lang.sv = english
-            otherLanguageLink.lang.sv = english
+            otherLanguageLink.value = {otherLanguageLink}
             otherLanguageVersion = TEXT
             otherLanguageVersion.data = page:tx_lthpackage_otherlanguageversion
             pageTitle = TEXT
