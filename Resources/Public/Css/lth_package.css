@@ -19,6 +19,21 @@
         max-width: 695px;
     }
 }
+
+.lthpackageOtherPageLink {
+    position:absolute;
+    top:5px;
+    right:0px;
+}
+
+.lthpackageOtherPageLink a {
+    text-decoration: none;
+}
+
+.lthpackageOtherPageLink a:hover {
+    text-decoration: underline;
+}
+
 /*
 .border-bottom {
     position:relative;
