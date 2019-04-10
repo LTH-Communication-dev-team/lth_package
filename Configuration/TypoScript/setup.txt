@@ -232,6 +232,9 @@ page {
             headnavdrop.data = levelfield:-1, tx_lthpackage_headnavdrop, slide
             header = TEXT
             header.value = {$header}
+            homeLink = TEXT
+            homeLink.lang.sv = {$homeLinkSv}
+            homeLink.lang.en = {$homeLinkEn}
             layout = TEXT
             layout {
                 field = layout
@@ -247,6 +250,7 @@ page {
             mainClass = TEXT
             mainClass.data = page:tx_lthpackage_mainclass
             otherLanguageLink = TEXT
+            otherLanguageLink.lang.sv = english
             otherLanguageLink.lang.sv = english
             otherLanguageVersion = TEXT
             otherLanguageVersion.data = page:tx_lthpackage_otherlanguageversion
