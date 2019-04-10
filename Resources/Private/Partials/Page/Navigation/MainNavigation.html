@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
-    <ul class="nav justify-content-end nav-header-main flex-nowrap">
+    <ul class="nav{f:if(condition:'{header} == \'HeaderDepartment\'', then: '', else: ' justify-content-end')} nav-header-main flex-nowrap">
         <f:for each="{mainNavigation}" as="mainNavigationItem" iteration="iterator">
             <f:if condition="{mainNavigationItem.children}">
                <f:then>

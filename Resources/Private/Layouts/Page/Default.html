@@ -1,14 +1,17 @@
 <f:spaceless>
     <f:render partial="Structure/Alert" arguments="{_all}"/>
     <header class="header nav-undecorated">
-        <f:render partial="Structure/TopBar" arguments="{_all}"/>
+        
         <f:if condition="{header}=='Header'">
+            <f:render partial="Structure/TopBar" arguments="{_all}"/>
             <f:render partial="Structure/Header" arguments="{_all}"/>
         </f:if>
         <f:if condition="{header}=='HeaderDepartment'">
+            <f:render partial="Structure/TopBarDepartment" arguments="{_all}"/>
             <f:render partial="Structure/HeaderDepartment" arguments="{_all}"/>
         </f:if>
         <f:if condition="{header}=='HeaderTest'">
+            <f:render partial="Structure/TopBar" arguments="{_all}"/>
             <f:render partial="Structure/HeaderTest" arguments="{_all}"/>
         </f:if>
     </header>

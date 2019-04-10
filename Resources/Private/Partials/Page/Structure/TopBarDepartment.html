@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="bg-dark d-none d-lg-block">
+        <div class="container-fluid mw-xl py-0">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark font-size-sm p-0 text-white">
+                <div class="collapse navbar-collapse nmx-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav bd-navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.lu.se/">{f:translate(key:'to_lund_university',extensionName:'lth_package')}</a>
+                        </li>
+                        <f:format.raw>{extraTopBarLink}</f:format.raw>
+                    </ul>    
+                    <ul class="navbar-nav flex-row ml-auto">  
+                        <li class="nav-item">
+                            <a class="nav-link px-0 ml-4" href="#">
+                                <span class="mr-1"><i class="fal fa-lg fa-globe"></i></span> {f:translate(key:'language_selector',extensionName:'lth_package')}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-0 ml-4" href="javascript:" onclick="toggleBar();" title="Aktivera talande webb" id="bapluslogo" data-bapdf="11">
+                                <span class="mr-1"><i class="fal fa-lg fa-volume"></i></span> {f:translate(key:'listen',extensionName:'lth_package')}
+                            </a>
+                        </li>
+                        <f:security.ifAuthenticated>
+                            <li class="nav-item">
+                                <a class="nav-link px-0 ml-4" href="?logintype=logout">
+                                    <span class="mr-1"><i class="fal fa-lg fa-user"></i></span> {f:translate(key:'logout',extensionName:'lth_package')}
+                                </a>
+                            </li>                            
+                        </f:security.ifAuthenticated>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</html>
