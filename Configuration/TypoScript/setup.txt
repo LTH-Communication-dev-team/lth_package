@@ -236,6 +236,8 @@ page {
             layout {
                 field = layout
             }
+            login = TEXT
+            login.data = levelfield:-1, tx_lthpackage_login, slide
             logo = TEXT
             logo.lang.sv = {$logo}_logo
             logo.lang.en = {$logo}_logo_en

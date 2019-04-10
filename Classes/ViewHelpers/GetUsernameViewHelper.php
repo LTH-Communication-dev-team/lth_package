@@ -24,7 +24,7 @@ namespace LTH\LthPackage\ViewHelpers;
  * GetUsernameViewHelper 
  */
 class GetUsernameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
-	public function render (){
-		return strval($GLOBALS['TSFE']->fe_user->user['username']);
-	}
+    public function render (){
+        return strval($GLOBALS['TSFE']->fe_user->user['name']);
+    }
 }

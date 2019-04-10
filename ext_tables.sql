@@ -11,9 +11,10 @@ CREATE TABLE tt_content (
 CREATE TABLE pages (
     tx_lthpackage_headnav varchar(255) DEFAULT '' NOT NULL,
     tx_lthpackage_headnavdrop varchar(255) DEFAULT '' NOT NULL,
-    tx_lthpackage_breadcrumb int(11) unsigned DEFAULT '0',
+    tx_lthpackage_breadcrumb int(11) unsigned DEFAULT '0' NOT NULL,
     tx_lthpackage_mainclass varchar(255) DEFAULT '' NOT NULL,
     tx_lthpackage_otherlanguageversion varchar(50) DEFAULT '' NOT NULL,
+    tx_lthpackage_login int(11) unsigned DEFAULT '0' NOT NULL,
 );
 
 
@@ -23,9 +24,10 @@ CREATE TABLE pages (
 CREATE TABLE pages_language_overlay (
     tx_lthpackage_headnav varchar(255) DEFAULT '' NOT NULL,
     tx_lthpackage_headnavdrop varchar(255) DEFAULT '' NOT NULL,
-    tx_lthpackage_breadcrumb int(11) unsigned DEFAULT '0',
+    tx_lthpackage_breadcrumb int(11) unsigned DEFAULT '0' NOT NULL,
     tx_lthpackage_mainclass varchar(255) DEFAULT '' NOT NULL,
     tx_lthpackage_otherlanguageversion varchar(50) DEFAULT '' NOT NULL,
+    tx_lthpackage_login int(11) unsigned DEFAULT '0' NOT NULL,
 );
 
 #

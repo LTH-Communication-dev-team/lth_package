@@ -8,6 +8,9 @@
         <f:if condition="{header}=='HeaderDepartment'">
             <f:render partial="Structure/HeaderDepartment" arguments="{_all}"/>
         </f:if>
+        <f:if condition="{header}=='HeaderTest'">
+            <f:render partial="Structure/HeaderTest" arguments="{_all}"/>
+        </f:if>
     </header>
     <f:render section="Main"/>
     <f:format.raw>{footerContent}</f:format.raw>

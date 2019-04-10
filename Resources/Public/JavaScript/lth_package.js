@@ -1,3 +1,10 @@
+if (typeof TYPO3RsaEncryptionPublicKeyUrl === 'undefined') {
+    var protocol = location.protocol;
+    var slashes = protocol.concat("//");
+    var host = slashes.concat(window.location.hostname);
+    var TYPO3RsaEncryptionPublicKeyUrl = host + '/index.php?eID=RsaPublicKeyGenerationController';
+}
+
 $(document).ready(function() {
     if($('.carousel-controls-play').length > 0) {
         $('.carousel-controls-play').toggle();
@@ -89,6 +96,15 @@ $(document).ready(function() {
     if($('.full-width-dropdown__login').length > 0 && $('.lthPackageLogin').length > 0) {
         $('.lthPackageLogin').click(function() {
             $('.full-width-dropdown__login').toggle(500);
+        });
+        $(document).mouseup(function(e) {
+            var container = $(".full-width-dropdown__login");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) 
+            {
+                container.hide();
+            }
         });
     }
 
@@ -208,6 +224,25 @@ $(document).ready(function() {
                 catList[txt] = true;
                 $('.newsCategoryContainer').append('<li class="nav-item">' + $(this).html() + '</li>');
                 $(this).remove();
+            }
+        });
+    }
+    
+    if (typeof b64map === 'undefined') {
+        $.ajax({
+            url: '/typo3/sysext/rsaauth/Resources/Public/JavaScript/RsaLibrary.js',
+            dataType: "script",
+            async: false,
+            success: function(data){
+                
+            }
+        });
+        $.ajax({
+            url: '/typo3/sysext/rsaauth/Resources/Public/JavaScript/RsaEncryption.js',
+            dataType: "script",
+            async: false,
+            success: function(data){
+                
             }
         });
     }

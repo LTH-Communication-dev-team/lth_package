@@ -70,8 +70,10 @@
                                 <div class="flex-column d-lg-block d-none flex-xl-row w-100 justify-content-end pr-5">
                                     <nav class="nav align-items-center justify-content-end">
                                         <div class="nav-item d-none d-lg-block">
-                                            <a class="nav-link px-0 ml-4" href="#"><span class="mr-1"><i class="fal fa-lg fa-globe"></i></span>
-                                                {f:translate(key:'language_selector',extensionName:'lth_package')}</a>
+                                            <a class="nav-link px-0 ml-4" href="#">
+                                                <span class="mr-1"><i class="fal fa-lg fa-globe"></i></span>
+                                                {f:translate(key:'language_selector',extensionName:'lth_package')}
+                                            </a>
                                         </div>
                                         <div class="nav-item">
                                             <a class="nav-link px-0 ml-4" href="javascript:" onclick="toggleBar();" title="Aktivera talande webb" id="bapluslogo" data-bapdf="11">
@@ -79,6 +81,13 @@
                                                 {f:translate(key:'listen',extensionName:'lth_package')}
                                             </a>
                                         </div>
+                                        <f:security.ifAuthenticated>
+                                            <div class="nav-item">
+                                                <a class="nav-link px-0 ml-4" href="?logintype=logout">
+                                                    <span class="mr-1"><i class="fal fa-lg fa-user"></i></span> {f:translate(key:'logout',extensionName:'lth_package')}
+                                                </a>
+                                            </div>
+                                        </f:security.ifAuthenticated>
                                     </nav>
                                     <nav class="nav align-items-center justify-content-end flex-1 mb-3 mb-xl-0">
                                         <div class="nav-item flex-xl-grow-1 flex-lg-grow-1">

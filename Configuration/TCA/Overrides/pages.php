@@ -127,11 +127,21 @@ call_user_func(
                     'softref' => 'typolink',
                 ],
             ],
+            'tx_lthpackage_login' => [
+                'exclude' => 1,
+                'label'   => 'Show login or logout link',
+                'config' => [
+                    'type' => 'check',
+                    'items' => [
+                       ['Yes', ''],
+                    ],
+                ]
+            ],
         ];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$tempPagesColumns);
                 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_mainclass,--linebreak--,tx_lthpackage_otherlanguageversion','after:content_from_pid');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_mainclass,--linebreak--,tx_lthpackage_otherlanguageversion,--linebreak--,tx_lthpackage_login','after:content_from_pid');
 
         }, 'lth_package'
 );

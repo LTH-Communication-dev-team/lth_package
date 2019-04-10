@@ -191,7 +191,7 @@ $iconRegistry->registerIcon(
     unset($GLOBALS['TBE_MODULES_EXT']['xMOD_db_new_content_el']['addElClasses']['tx_indexed_search_pi_wizicon']);
 }*/
 
-$GLOBALS["TYPO3_CONF_VARS"]["FE"]["addRootLineFields"] .= ",author,author_email,tx_lthpackage_headnav,tx_lthpackage_headnavdrop";
+$GLOBALS["TYPO3_CONF_VARS"]["FE"]["addRootLineFields"] .= ",author,author_email,tx_lthpackage_headnav,tx_lthpackage_headnavdrop,tx_lthpackage_login";
 
 
 /***************

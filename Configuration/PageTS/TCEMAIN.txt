@@ -827,6 +827,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         MasonryB {
             title = MasonryB
@@ -877,6 +897,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         MasonryC {
             title = MasonryC
@@ -927,6 +967,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         MasonryD {
             title = MasonryD
@@ -965,6 +1025,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         MasonryE {
             title = MasonryE
@@ -1017,6 +1097,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         MasonryF {
             title = MasonryF
@@ -1067,6 +1167,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
 
         MasonryG {
@@ -1125,6 +1245,26 @@ tx_gridelements {
                     }
                 }
             }
+            flexformDS (
+                <T3DataStructure>
+                    <meta>
+                        <langDisable>1</langDisable>
+                    </meta>
+                    <ROOT type="array">
+                        <type>array</type>
+                        <el type="array">
+                            <bleed>
+                                <TCEforms>
+                                    <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:bleed</label>
+                                    <config>
+                                        <type>check</type>
+                                    </config>
+                                </TCEforms>
+                            </bleed>
+                        </el>
+                    </ROOT>
+                </T3DataStructure>
+            )
         }
         NavBlockDark {
             title = NavBlockDark
