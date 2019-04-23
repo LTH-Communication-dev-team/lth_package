@@ -581,7 +581,7 @@ function listCalendar(setStart, type, numRows)
                     template = template.replace('###id###', id);
                     template = template.replace(/###title###/g, title);
                     template = template.replace('###categoryName###', categoryName);
-                    template = template.replace('###link###', '/event/' + encodeURIComponent(title) + '(' + id + ')/');
+                    template = template.replace('###link###', '/event/' + encodeURIComponent(title.replace('/','')) + '(' + id + ')/');
                     //console.log(template);
                     if(type==='cards') {
                         $('#lthPackageCalendarCards').append(template);
