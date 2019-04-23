@@ -296,7 +296,7 @@ function portalCalendar(setStart, more)
                         //var calMonth = objDate.toLocaleString(locale, { month: "short" });
                         var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
                         var calDate = objDate.getDate();
-                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calStartTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         //var calYear = objDate.getFullYear();
                         template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
                     }
@@ -306,7 +306,7 @@ function portalCalendar(setStart, more)
                     if(aData.location) location = aData.location;
                     if(aData.image) image = aData.image;
                     template = template.replace('###id###', id);
-                    template = template.replace(/###title###/g, title);
+                    template = template.replace(/###title###/g, title.replace('/',''));
                     template = template.replace('###categoryName###', categoryName);
                     template = template.replace('###location###', location);
                     template = template.replace('###image###', image);
@@ -331,7 +331,7 @@ function portalCalendar(setStart, more)
                         //var calMonth = objDate.toLocaleString(locale, { month: "short" });
                         var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
                         var calDate = objDate.getDate();
-                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calStartTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         //var calYear = objDate.getFullYear();
                         template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
                     }
@@ -367,7 +367,7 @@ function portalCalendar(setStart, more)
                         //var calMonth = objDate.toLocaleString(locale, { month: "short" });
                         var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
                         var calDate = objDate.getDate();
-                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calStartTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         //var calYear = objDate.getFullYear();
                         template = template.replace('###dateTime###', calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
                     }
@@ -559,14 +559,14 @@ function listCalendar(setStart, type, numRows)
                         var calMonth = objDate.toLocaleString(locale, { month: "short" });
                         var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
                         var calDate = objDate.getDate();
-                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calStartTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         var calYear = objDate.getFullYear();
                         template = template.replace('###date###', calDate);
                         template = template.replace('###month###', calMonth);
                     }
                     if(aData.endTime) {
                         objDate = new Date(aData.endTime);
-                        var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calEndTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                     }
                     //console.log(calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
                     if(calDate && calStartTime && calEndTime && calYear && calLongMonth) {
@@ -653,7 +653,7 @@ function showCalendar()
                         var calMonth = objDate.toLocaleString(locale, { month: "short" });
                         var calLongMonth = objDate.toLocaleString(locale, { month: "long" });
                         var calDate = objDate.getDate();
-                        var calStartTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calStartTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                         var calYear = objDate.getFullYear();
                         $('#lthPackageCalendarShow .calendar-date-box h1').text(calDate);
                         $('#lthPackageCalendarShow .calendar-date-box p').text(calLongMonth);
@@ -662,7 +662,7 @@ function showCalendar()
                     }
                     if(d.data.endTime) {
                         objDate = new Date(d.data.endTime);
-                        var calEndTime = objDate.getHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        var calEndTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                     }
                     
                     if(d.data.categoryName) {
