@@ -306,11 +306,11 @@ function portalCalendar(setStart, more)
                     if(aData.location) location = aData.location;
                     if(aData.image) image = aData.image;
                     template = template.replace('###id###', id);
-                    template = template.replace(/###title###/g, title.replace('/',''));
+                    template = template.replace(/###title###/g, title);
                     template = template.replace('###categoryName###', categoryName);
                     template = template.replace('###location###', location);
                     template = template.replace('###image###', image);
-                    template = template.replace('###link###', 'event/' + encodeURIComponent(title) + '(' + id + ')');
+                    template = template.replace('###link###', 'event/' + encodeURIComponent(title.replace('/','')) + '(' + id + ')');
                     //console.log(i);
                     $('#lthPackageCalendarPortalTop > div:eq('+i+')').html(template);
                     i++;                    
