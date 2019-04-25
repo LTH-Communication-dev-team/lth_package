@@ -17,7 +17,7 @@ mod {
                                         name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.top
                                         colPos = 1
                                         colspan = 2
-                                        allowed = list,login,menu,header,html,mailform,,image,staff,textmedia,calendar,gridelements_pi1,embed,figure,blockquote,infobox,carousel,banner,infographics,nav,progress,cards,title,toggle,masonry,navigation,card
+                                        #allowed = list,login,menu,header,html,mailform,image,staff,textmedia,calendar,gridelements_pi1,embed,figure,blockquote,infobox,carousel,banner,infographics,nav,progress,cards,title,toggle,masonry,navigation,card
                                     }
                                 }
                             }
@@ -29,9 +29,9 @@ mod {
                                         allowed = list,login,menu,header,html,mailform,,image,staff,textmedia,calendar,gridelements_pi1,embed,figure,blockquote,infobox,carousel,banner,infographics,nav,progress,cards,title,toggle,masonry,navigation,card
                                     }
                                     2 {
-                                       name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.right
-                                       colPos = 2
-                                        allowed = list,login,menu,header,html,mailform,,image,staff,textmedia,calendar,gridelements_pi1,embed,figure,blockquote,infobox,carousel,banner,infographics,nav,progress,cards,title,toggle,masonry,navigation,card
+                                        name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.right
+                                        colPos = 2
+                                        #allowed = list,login,menu,header,html,mailform,image,staff,textmedia,calendar,gridelements_pi1,embed,figure,blockquote,infobox,carousel,banner,infographics,nav,progress,cards,title,toggle,masonry,navigation,card
                                     }
                                 }
                             }
