@@ -60,6 +60,8 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
             if($header) {
                 if(strlen($header) > 50) $header = substr ($header, 0, 49);
                 $headerContent .= '<b>Infobox(' . $infoboxtype . ')<br />' . $header . '</b>';
+            } else {
+                $headerContent .= '<b>Infobox(' . $infoboxtype . ')</b>';
             }
             if($bodytext) {
                 if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
