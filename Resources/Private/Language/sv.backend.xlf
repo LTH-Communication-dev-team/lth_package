@@ -12,8 +12,8 @@
                 <target state="translated">Extraklass</target>
             </trans-unit>
             <trans-unit id="reverseOrder">
-                <source>Columns in Reverse Order</source>
-                <target state="translated">Kolumner i omvänd ordning</target>
+                <source>Show columns in Reverse Order in mobile</source>
+                <target state="translated">Visa kolumner i omvänd ordning i mobilläge</target>
             </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
@@ -97,14 +97,21 @@
                 <source>Contact with image</source>
                 <target>Kontakt med bild</target>
             </trans-unit>
+            <trans-unit id="infobox.type.textwithimage">
+                <source>Text with image</source>
+                <target>Text med bild</target>
+            </trans-unit>
             <trans-unit id="infobox.type.icons">
                 <source>Icons</source>
+                <target>Ikoner</target>
             </trans-unit>
             <trans-unit id="infobox.type.iconsvertical">
                 <source>Icons Vertical</source>
+                <target>Vertikala ikoner</target>
             </trans-unit>
             <trans-unit id="infobox.type.nav">
                 <source>Navigation</source>
+                <target>Navigering</target>
             </trans-unit>
             <trans-unit id="infobox.type.readmore">
                 <source>Read more</source>

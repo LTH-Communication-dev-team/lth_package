@@ -11,7 +11,7 @@
                 <source>Extra Class</source>
             </trans-unit>
             <trans-unit id="reverseOrder">
-                <source>Columns in Reverse Order</source>
+                <source>Show columns in Reverse Order in mobile</source>
             </trans-unit>
             <trans-unit id="theme_name">
                 <source>Lth Package</source>
@@ -85,6 +85,9 @@
             </trans-unit>
             <trans-unit id="infobox.type.contactwithimage">
                 <source>Contact with image</source>
+            </trans-unit>
+            <trans-unit id="infobox.type.textwithimage">
+                <source>Text with image</source>
             </trans-unit>
             <trans-unit id="infobox.type.icons">
                 <source>Icons</source>

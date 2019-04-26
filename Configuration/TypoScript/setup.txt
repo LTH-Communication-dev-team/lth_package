@@ -253,6 +253,8 @@ page {
             otherLanguageLink.value = {$otherLanguageLink}
             otherLanguageVersion = TEXT
             otherLanguageVersion.data = page:tx_lthpackage_otherlanguageversion
+            reverseOrder = TEXT
+            reverseOrder.data = page:tx_lthpackage_reverseorder
             pageTitle = TEXT
             pageTitle.data = page:subtitle // page:nav_title // page:title
             rootPage = TEXT

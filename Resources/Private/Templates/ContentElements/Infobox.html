@@ -87,15 +87,15 @@
                     <f:format.html><p>{data.pi_flexform.bodytext}</p></f:format.html>
                     <f:if condition="{data.pi_flexform.readMoreLinkText}">
                         <f:then>
-                            <div class="text-right font-weight-normal nav-undecorated">
-                                <f:link.typolink parameter="{data.pi_flexform.link}">
+                            <div class="text-right font-weight-normal">
+                                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-undecorated">
                                     {data.pi_flexform.readMoreLinkText}&nbsp;<span class="ml-1"><i class="fal fa-chevron-circle-right fa-lg"></i></span>
                                 </f:link.typolink>
                             </div>                            
                         </f:then>
                         <f:else>
                             <div class="text-right font-weight-normal">
-                                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-undecorated">
+                                <f:link.typolink parameter="{data.pi_flexform.link}">
                                     {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
                                 </f:link.typolink>
                             </div>
@@ -115,23 +115,57 @@
                     <p>
                         <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
                     </p>
-                    <p>
+                    <div class="text-right font-weight-normal">
                         <f:if condition="{data.pi_flexform.readMoreLinkText}">
                             <f:then>
                                 <f:link.typolink parameter="{data.pi_flexform.link}">
-                                    {data.pi_flexform.readMoreLinkText}
+                                    {data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
                                 </f:link.typolink>
                             </f:then>
                             <f:else>
                                 <f:link.typolink parameter="{data.pi_flexform.link}">
-                                    {f:translate(key:'read_more',extensionName:'lth_package')}
+                                    {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
                                 </f:link.typolink>
                             </f:else>
                         </f:if>
-                    </p>
+                    </div>
                 </div>
             </f:then>
         </f:if>
-        
+        <f:if condition="{data.pi_flexform.infoboxtype}=='textwithimage'">
+            <f:then>
+                <div id="infobox-{data.uid}" class="mt-5 mt-lg-0">
+                    <div class="text-center">
+                        <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="mw-100">
+                    </div>
+                    <div class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                        
+                        <h3 class="mt-0 mb-3">{data.pi_flexform.header}</h3>
+                        <p>
+                            <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                        </p>
+
+                        <f:if condition="{data.pi_flexform.link}">
+                            <f:then>
+                                <div class="text-right font-weight-normal">
+                                    <f:if condition="{data.pi_flexform.data.pi_flexform.readMoreLinkText}">
+                                        <f:then>
+                                            <f:link.typolink parameter="{data.pi_flexform.link}">
+                                                {data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                            </f:link.typolink>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.typolink parameter="{data.pi_flexform.link}">
+                                                {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                            </f:link.typolink>
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                            </f:then>    
+                        </f:if>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
     </f:section>
 </html>

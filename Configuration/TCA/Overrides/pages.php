@@ -137,11 +137,21 @@ call_user_func(
                     ],
                 ]
             ],
+            'tx_lthpackage_reverseorder' => [
+                'exclude' => 1,
+                'label'   => 'Show right column first in mobile',
+                'config' => [
+                    'type' => 'check',
+                    'items' => [
+                       ['Yes', ''],
+                    ],
+                ]
+            ],
         ];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$tempPagesColumns);
                 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_mainclass,--linebreak--,tx_lthpackage_otherlanguageversion,--linebreak--,tx_lthpackage_login','after:content_from_pid');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages','layout','--linebreak--,tx_lthpackage_headnav,--linebreak--,tx_lthpackage_headnavdrop,--linebreak--,tx_lthpackage_breadcrumb,--linebreak--,tx_lthpackage_mainclass,--linebreak--,tx_lthpackage_otherlanguageversion,--linebreak--,tx_lthpackage_login,--linebreak--,tx_lthpackage_reverseorder','after:content_from_pid');
 
         }, 'lth_package'
 );
