@@ -182,7 +182,7 @@
                     <infoboxImage>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:card.image</label>
-                            <displayCond>FIELD:infoboxtype:IN:readmore,textwithimage,contactwithimage</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contactwithimage</displayCond>
                             <config>
                                 <type>inline</type>
                                 <foreign_table>sys_file_reference</foreign_table>
@@ -886,38 +886,6 @@
                             </container>
                         </el>
                     </icons>
-                    <links>
-                        <section>1</section>
-                        <type>array</type>
-                        <displayCond>FIELD:infoboxtype:IN:nav</displayCond>
-                        <el>
-                            <container>
-                                <title>Link</title>
-                                <type>array</type>
-                                <el>
-                                    <linktext>
-                                        <TCEforms>
-                                            <label>Link text</label>
-                                            <config>
-                                                <type>input</type>
-                                                <size>48</size>
-                                            </config>
-                                        </TCEforms>
-                                    </linktext>
-                                    
-                                    <link>
-                                        <TCEforms>
-                                            <label>Link</label>
-                                            <config>
-                                                <type>input</type>
-                                                <size>48</size>
-                                            </config>
-                                        </TCEforms>
-                                    </link>
-                                </el>
-                            </container>
-                        </el>
-                    </links>
                     <fixColorBoxes>
                         <TCEforms>
                             <config>
