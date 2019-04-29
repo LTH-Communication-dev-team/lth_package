@@ -434,16 +434,19 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     'link' => $link,
                     'alttext' => $alttext
                 );
-                $dceArray[$uid] = array('pi_flexform' => $this->convertToContent($convertArray), 'colpos' => $colpos, 'sorting' => $sorting);
+                $dceArray[$uid] = array('pi_flexform' => $this->convertToContent($convertArray), 'colpos' => $colpos, 'sorting' => $sorting, 'pid' => $pid);
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($res);
-            
+            /*echo '<pre>';
+            print_r($dceArray);
+            echo '</pre>';
+            die();*/
             if($dceArray) {
                 
                 foreach ($dceArray as $key => $value) {
                     //hide existing
                     $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.intval($key), array('hidden' => 1, 'tstamp' => time()));
-                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($pid), 'CType' => 'infobox',
+                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($value['pid']), 'CType' => 'infobox',
                         'pi_flexform' => trim($value['pi_flexform']), 
                         'crdate' => time(), 
                         'tstamp' => time(), 
