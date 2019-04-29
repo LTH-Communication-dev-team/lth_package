@@ -1,32 +1,34 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
-        <f:if condition="{data.pi_flexform.masonryTileImage}">
-            <f:then>
-                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block masonry-tile-img">
-                    <div class="masonry-tile-img-bg">
-                        <f:image src="{data.pi_flexform.masonryTileImage.0.uid}" treatIdAsReference="1" alt="{data.pi_flexform.masonryTileImage.0.alternative}" title="{data.pi_flexform.masonryTileImage.0.title}" width="NULL" height="NULL" />
-                    </div>
-                    <f:if condition="{data.pi_flexform.header}">
-                        <f:then>
-                            <div class="masonry-tile-img-content">
-                                <div class="blockline">
-                                    <h1><span class="a nav-block-link">{data.pi_flexform.header}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span>
-                                    </h1>
+        <div class="masonry-tile">
+            <f:if condition="{data.pi_flexform.masonryTileImage}">
+                <f:then>
+                    <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block masonry-tile-img">
+                        <div class="masonry-tile-img-bg">
+                            <f:image src="{data.pi_flexform.masonryTileImage.0.uid}" treatIdAsReference="1" alt="{data.pi_flexform.masonryTileImage.0.alternative}" title="{data.pi_flexform.masonryTileImage.0.title}" width="NULL" height="NULL" />
+                        </div>
+                        <f:if condition="{data.pi_flexform.header}">
+                            <f:then>
+                                <div class="masonry-tile-img-content">
+                                    <div class="blockline">
+                                        <h1><span class="a nav-block-link">{data.pi_flexform.header}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span>
+                                        </h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </f:then>
-                    </f:if>
-                </f:link.typolink>
-            </f:then>
-            <f:else>
-                <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block nav-block-{data.pi_flexform.backgroundcolor} nav-block-fade-{data.pi_flexform.backgroundcolor}">      
-                    <div class="p-3 p-lg-5">
-                        <h1><span class="a nav-block-link">{data.pi_flexform.header}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span></h1>
-                        <p>{data.pi_flexform.bodytext}</p>
-                    </div>
-                </f:link.typolink>
-            </f:else>
-        </f:if>
+                            </f:then>
+                        </f:if>
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:link.typolink parameter="{data.pi_flexform.link}" class="nav-block nav-block-{data.pi_flexform.backgroundcolor} nav-block-fade-{data.pi_flexform.backgroundcolor}">      
+                        <div class="p-3 p-lg-5">
+                            <h1><span class="a nav-block-link">{data.pi_flexform.header}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span></h1>
+                            <p>{data.pi_flexform.bodytext}</p>
+                        </div>
+                    </f:link.typolink>
+                </f:else>
+            </f:if>
+        </div>
     </f:section>
 </html>
