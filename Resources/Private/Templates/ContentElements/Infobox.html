@@ -2,45 +2,19 @@
     <f:layout name="Default"/>
     <f:section name="Main">
         <f:if condition="{data.pi_flexform.infoboxtype}=='default'">
-            <f:then>
-                <div id="infobox-{data.uid}" class="mt-5 mt-lg-0{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
-                    <f:if condition="{data.pi_flexform.infoboxImage}">
-                        <div class="text-center">
-                            <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="mw-100">
-                        </div>                        
-                    </f:if>
-                    <div class="infobox bg-{data.pi_flexform.backgroundcolor}">
-                        <f:if condition="{data.pi_flexform.header}">
-                            <h3 class="mt-0 mb-3">{data.pi_flexform.header}</h3>
-                        </f:if>
-                        <f:if condition="{data.pi_flexform.bodytext}">
-                            <p>
-                                <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
-                            </p>
-                        </f:if>
-                        <f:if condition="{data.pi_flexform.link}">
-                            <f:then>
-                                <div class="text-right font-weight-normal">
-                                    <f:if condition="{data.pi_flexform.readMoreLinkText}">
-                                        <f:then>
-                                            <f:link.typolink parameter="{data.pi_flexform.link}">
-                                                {data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
-                                            </f:link.typolink>
-                                        </f:then>
-                                        <f:else>
-                                            <f:link.typolink parameter="{data.pi_flexform.link}">
-                                                {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
-                                            </f:link.typolink>
-                                        </f:else>
-                                    </f:if>
-                                </div>
-                            </f:then>    
-                        </f:if>
-                    </div>
-                </div>
-            </f:then>
+                <f:render section="default" arguments="{_all}" />
         </f:if>
-
+        <f:if condition="{data.pi_flexform.infoboxtype}=='readmore'">
+                <f:render section="default" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.pi_flexform.infoboxtype}=='contact'">
+                <f:render section="default" arguments="{_all}" />
+        </f:if>
+        <f:if condition="{data.pi_flexform.infoboxtype}=='nav'">
+                <f:render section="default" arguments="{_all}" />
+        </f:if>
+        
+        
         <f:if condition="{data.pi_flexform.infoboxtype}=='icons'">
             <f:then>
                 <div id="infobox-{data.uid}" class="infobox bg-{data.pi_flexform.backgroundcolor} {data.pi_flexform.icontextcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
@@ -116,5 +90,42 @@
             </f:then>
         </f:if>
         
+    </f:section>
+    <f:section name="default">
+        <div id="infobox-{data.uid}" class="mt-5 mt-lg-0{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
+                    <f:if condition="{data.pi_flexform.infoboxImage}">
+                        <div class="text-center">
+                            <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="mw-100">
+                        </div>                        
+                    </f:if>
+                    <div class="infobox bg-{data.pi_flexform.backgroundcolor}">
+                        <f:if condition="{data.pi_flexform.header}">
+                            <h3 class="mt-0 mb-3">{data.pi_flexform.header}</h3>
+                        </f:if>
+                        <f:if condition="{data.pi_flexform.bodytext}">
+                            <p>
+                                <f:format.html>{data.pi_flexform.bodytext}</f:format.html>
+                            </p>
+                        </f:if>
+                        <f:if condition="{data.pi_flexform.link}">
+                            <f:then>
+                                <div class="text-right font-weight-normal">
+                                    <f:if condition="{data.pi_flexform.readMoreLinkText}">
+                                        <f:then>
+                                            <f:link.typolink parameter="{data.pi_flexform.link}">
+                                                {data.pi_flexform.readMoreLinkText}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                            </f:link.typolink>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.typolink parameter="{data.pi_flexform.link}">
+                                                {f:translate(key:'read_more',extensionName:'lth_package')}&nbsp;<i class="fal fa-chevron-circle-right  fa-lg"></i>
+                                            </f:link.typolink>
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                            </f:then>    
+                        </f:if>
+                    </div>
+                </div>
     </f:section>
 </html>
