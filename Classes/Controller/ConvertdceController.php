@@ -269,8 +269,8 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 $sorting = $row['sorting'];
                 
                 $header = "";
-                $cardImage = "";
-                $cardType = "";
+                $infoboxImage = "";
+                $infoboxtype = "default";
                 $lead = "";
                 $backgroundcolor = "";
                 $link = "";
@@ -280,32 +280,24 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 
                 $header = $this->get_string_between($bodytext, '<b>Header:</b><span class="simpleValue">', '</span>');
                 $lead = $this->get_string_between($bodytext, '<b>Lead:</b><span class="simpleValue">', '</span>');
-                $cardImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
+                $infoboxImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
                 $backgroundcolor = $this->get_string_between($bodytext, '<b>Backgroundcolor:</b><span class="simpleValue">', '</span>');
                 $link = $this->get_string_between($bodytext, '<b>Link:</b><span class="simpleValue">', '</span>');
                 $alttext = $this->get_string_between($bodytext, '<b>Alttext:</b><span class="simpleValue">', '</span>');
                 
-                if($cardImage) {
+                if($infoboxImage) {
                     
-                    $cardImage = str_replace('fileadmin', '', $cardImage);
-                    $cardImage = str_replace('//', '/', $cardImage);
-                    $res1 = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid AS imageUid","sys_file","identifier='$cardImage'","","","");
+                    $infoboxImage = str_replace('fileadmin', '', $infoboxImage);
+                    $infoboxImage = str_replace('//', '/', $infoboxImage);
+                    $res1 = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid AS imageUid","sys_file","identifier='$infoboxImage'","","","");
                     $row1 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res1);
-                    $cardImage = $row1['imageUid'];
-                    if($link) {
-                        $cardType = 'teaser';
-                    } else {
-                        $cardType = 'highlighted';
-                    }
-                    if($cardImage) {
+                    $infoboxImage = $row1['imageUid'];
+                    
+                    if($infoboxImage) {
                         $GLOBALS['TYPO3_DB']->exec_INSERTquery('sys_file_reference', array('pid' => intval($pageUid), 'table_local' => 'sys_file',
-                            'uid_local' => $cardImage, 'title' => $alttext, 'alternative' => $alttext, 'crdate' => time(), 'tstamp' => time()));
-                        $cardImage = $GLOBALS['TYPO3_DB']->sql_insert_id();
-                    } else {
-                        $cardType = 'cta';
-                    }
-                } else {
-                    $cardType = 'cta';
+                            'uid_local' => $infoboxImage, 'title' => $alttext, 'alternative' => $alttext, 'crdate' => time(), 'tstamp' => time()));
+                        $infoboxImage = $GLOBALS['TYPO3_DB']->sql_insert_id();
+                    } 
                 }
                 //<b>Header:</b> <span class="simpleValue">Dean's blog</span>
                 if($backgroundcolor) {
@@ -323,8 +315,8 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     'bodytext' => $lead,
                     'promoimage' => $promoimage,
                     'backgroundcolor' => $backgroundcolor,
-                    'cardImage' => $cardImage,
-                    'cardType' => $cardType,
+                    'infoboxImage' => $infoboxImage,
+                    'infoboxtype' => $infoboxtype,
                     'link' => $link,
                     'alttext' => $alttext,
                     'colpos' => $colpos,
@@ -340,7 +332,7 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 foreach ($dceArray as $key => $value) {
                     //hide existing
                     $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.intval($key), array('hidden' => 1, 'tstamp' => time()));
-                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($pageUid), 'CType' => 'card',
+                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($pageUid), 'CType' => 'infobox',
                         'pi_flexform' => trim($value), 'crdate' => time(), 'tstamp' => time(), 'colpos' => $colpos, 'sorting' => $sorting));
                 }
             }
@@ -391,8 +383,8 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 
                 $alttext = "";
                 $backgroundcolor = "";
-                $cardImage = "";
-                $cardType = "";
+                $infoboxImage = "";
+                $infoboxtype = "default";
                 $header = "";
                 $lead = "";
                 $link = "";
@@ -402,31 +394,23 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 
                 $header = $this->get_string_between($bodytext, '<b>Header:</b><span class="simpleValue">', '</span>');
                 $lead = $this->get_string_between($bodytext, '<b>Lead:</b><span class="simpleValue">', '</span>');
-                $cardImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
+                $infoboxImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
                 $backgroundcolor = $this->get_string_between($bodytext, '<b>Backgroundcolor:</b><span class="simpleValue">', '</span>');
                 $link = $this->get_string_between($bodytext, '<b>Link:</b><span class="simpleValue">', '</span>');
                 $alttext = $this->get_string_between($bodytext, '<b>Alttext:</b><span class="simpleValue">', '</span>');
                 
-                if($cardImage) {
-                    $cardImage = str_replace('fileadmin', '', $cardImage);
-                    $cardImage = str_replace('//', '/', $cardImage);
-                    $res1 = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid AS imageUid","sys_file","identifier='$cardImage'","","","");
+                if($infoboxImage) {
+                    $infoboxImage = str_replace('fileadmin', '', $infoboxImage);
+                    $infoboxImage = str_replace('//', '/', $infoboxImage);
+                    $res1 = $GLOBALS['TYPO3_DB']->exec_SELECTquery("uid AS imageUid","sys_file","identifier='$infoboxImage'","","","");
                     $row1 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res1);
-                    $cardImage = $row1['imageUid'];
-                    if($link) {
-                        $cardType = 'teaser';
-                    } else {
-                        $cardType = 'highlighted';
-                    }
-                    if($cardImage) {
+                    $infoboxImage = $row1['imageUid'];
+                    
+                    if($infoboxImage) {
                         $GLOBALS['TYPO3_DB']->exec_INSERTquery('sys_file_reference', array('pid' => intval($pageUid), 'table_local' => 'sys_file',
-                            'uid_local' => $cardImage, 'title' => $alttext, 'alternative' => $alttext, 'crdate' => time(), 'tstamp' => time()));
-                        $cardImage = $GLOBALS['TYPO3_DB']->sql_insert_id();
-                    } else {
-                        $cardType = 'cta';
+                            'uid_local' => $infoboxImage, 'title' => $alttext, 'alternative' => $alttext, 'crdate' => time(), 'tstamp' => time()));
+                        $infoboxImage = $GLOBALS['TYPO3_DB']->sql_insert_id();
                     }
-                } else {
-                    $cardType = 'cta';
                 }
                 
                 //<b>Header:</b> <span class="simpleValue">Dean's blog</span>
@@ -444,8 +428,8 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     'pid' => $pid,
                     'header' => $header,
                     'bodytext' => $lead,
-                    'cardImage' => $cardImage,
-                    'cardType' => $cardType,
+                    'infoboxImage' => $infoboxImage,
+                    'infoboxtype' => $infoboxtype,
                     'backgroundcolor' => $backgroundcolor,
                     'link' => $link,
                     'alttext' => $alttext
@@ -459,7 +443,7 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 foreach ($dceArray as $key => $value) {
                     //hide existing
                     $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.intval($key), array('hidden' => 1, 'tstamp' => time()));
-                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($pid), 'CType' => 'card',
+                    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tt_content', array('pid' => intval($pid), 'CType' => 'infobox',
                         'pi_flexform' => trim($value['pi_flexform']), 
                         'crdate' => time(), 
                         'tstamp' => time(), 
@@ -513,17 +497,14 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     <data>
         <sheet index="sDEF">
             <language index="lDEF">
-                <field index="cardType">
-                    <value index="vDEF">###cardType###</value>
+                <field index="infoboxtype">
+                    <value index="vDEF">###infoboxtype###</value>
                 </field>
                 <field index="header">
                     <value index="vDEF">###header###</value>
                 </field>
                 <field index="bodytext">
                     <value index="vDEF">###bodytext###</value>
-                </field>
-                <field index="htmltext">
-                    <value index="vDEF"></value>
                 </field>
                 <field index="email">
                     <value index="vDEF"></value>
@@ -537,8 +518,8 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 <field index="readMoreLinkText">
                     <value index="vDEF"></value>
                 </field>
-                <field index="cardImage">
-                    <value index="vDEF">###cardImage###</value>
+                <field index="infoboxImage">
+                    <value index="vDEF">###infoboxImage###</value>
                 </field>
             </language>
         </sheet>

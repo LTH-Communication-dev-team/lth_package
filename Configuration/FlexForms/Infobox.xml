@@ -25,32 +25,16 @@
                                         <numIndex index="1">default</numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.contact</numIndex>
-                                        <numIndex index="1">contact</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.icons</numIndex>
                                         <numIndex index="1">icons</numIndex>
                                     </numIndex>
-                                    <numIndex index="3" type="array">
+                                    <numIndex index="2" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.iconsvertical</numIndex>
                                         <numIndex index="1">iconsvertical</numIndex>
                                     </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.nav</numIndex>
-                                        <numIndex index="1">nav</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.readmore</numIndex>
-                                        <numIndex index="1">readmore</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
+                                    <numIndex index="3" type="array">
                                         <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.contactwithimage</numIndex>
                                         <numIndex index="1">contactwithimage</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.type.textwithimage</numIndex>
-                                        <numIndex index="1">textwithimage</numIndex>
                                     </numIndex>
                                 </items>
                             </config>
@@ -69,7 +53,7 @@
                     <header>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.header</label>
-                            <displayCond>FIELD:infoboxtype:IN:default,nav,readmore,textwithimage,contactwithimage</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contactwithimage</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>20</size>
@@ -80,7 +64,7 @@
                     <bodytext>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.bodytext</label>
-                            <displayCond>FIELD:infoboxtype:IN:default,contact,readmore,textwithimage,contactwithimage</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contactwithimage</displayCond>
                             <config>
                                 <type>text</type>
                                 <cols>48</cols>
@@ -92,7 +76,7 @@
                     <readMoreLinkText>
                         <TCEforms>
                             <label>LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:infobox.readMoreLinkText</label>
-                            <displayCond>FIELD:infoboxtype:IN:readmore,textwithimage,contactwithimage</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contactwithimage</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>20</size>
@@ -103,7 +87,7 @@
                         <TCEforms>
                             <exclude>1</exclude>
                             <label>Link to Page</label>
-                            <displayCond>FIELD:infoboxtype:IN:readmore,textwithimage,contactwithimage</displayCond>
+                            <displayCond>FIELD:infoboxtype:IN:default,contactwithimage</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>30</size>
