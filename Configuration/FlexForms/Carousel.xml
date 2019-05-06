@@ -69,6 +69,14 @@
                             </config>
                         </TCEforms>
                     </carouselImages>
+                    <halfHeight>
+                        <TCEforms>
+                            <label>Set carousel-items to 450px height</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </halfHeight>
                 </el>
             </ROOT>
         </sDEF>

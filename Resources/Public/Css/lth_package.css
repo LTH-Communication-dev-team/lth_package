@@ -255,6 +255,11 @@ article {
     padding-right:0px !important;
 }
 
+/* Subsites */
+@media (min-width: 768px) {
+    .subsite-item-height {height:450px!important;}
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }

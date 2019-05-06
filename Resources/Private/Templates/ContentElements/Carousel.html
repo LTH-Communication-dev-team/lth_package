@@ -20,7 +20,7 @@
                         </div>
                         <div class="carousel-inner">
                             <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
-                                <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}">
+                                <div class="carousel-item{f:if(condition: iterator.isFirst,then:' active')}{f:if(condition: data.pi_flexform.halfHeight,then:' subsite-item-height')}">
                                     <f:link.typolink parameter="{imageItem.link}" class="nav-block h-100">
                                         <div class="carousel-img-container">
                                             <img src="{f:uri.image(src:imageItem.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:imageItem.crop)}" alt="{imageItem.alternative}" class="carousel-img" />
