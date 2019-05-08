@@ -33,14 +33,14 @@
                                     <f:if condition="{otherLanguageVersion}">
                                         <f:then>
                                             <div style="position:relative;">
-                                                <h1>{pageTitle}</h1>
+                                                <h1 id="pageTitle">{pageTitle}</h1>
                                                 <div class="lthpackageOtherPageLink">
                                                     <f:link.typolink parameter="{otherLanguageVersion}" class="dropdown-item ">{f:translate(key:'language_selector_page',extensionName:'lth_package')}</f:link.typolink>
                                                 </div>
                                             </div>
                                         </f:then>
                                         <f:else>
-                                           <h1>{pageTitle}</h1> 
+                                           <h1 id="pageTitle">{pageTitle}</h1> 
                                         </f:else>
                                     </f:if>
                                     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
