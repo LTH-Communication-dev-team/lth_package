@@ -181,7 +181,17 @@
                             <f:then>
                                 <v:variable.set name="test" value="" />
                                 <div class="bg-plaster-50">
-                                                                        <div class="container py-4">
+                                    <div class="container py-4">
+                                        <div class="row my-8">
+                                            <div class="col-12 text-center">
+                                                <h1>Nyheter</h1>
+                                                <div class="mt-5">
+                                                    <f:link.page title="{category.item.title}" class="btn btn-outline-dark mx-1 mb-3" pageUid="{settings.listPid}"
+                                                                additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">Fler nyheter
+                                                    </f:link.page>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="swipe swipe-sm-none" id="news-card">
                                             <div class="row swipe-inner" style="width: calc(300% - 30px);">
                                                 <f:for each="{news}" as="newsItem" iteration="iterator">
