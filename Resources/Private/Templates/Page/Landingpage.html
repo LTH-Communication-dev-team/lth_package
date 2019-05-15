@@ -15,13 +15,28 @@
             <!-- MOBILE MENU -->
             <f:render partial="Navigation/MainMobileNavigation" arguments="{_all}"/>
             <f:if condition="{colorTitle}">
-                <div class="container nmt-6">
-                    <div class="row p-3">
-                        <div class="col p-4 bg-plaster-50 nav-undecorated">
-                            <h1 class="h2 my-0"><a href="{colorTitleLink}">{colorTitle}</a></h1>
+                <f:then>
+                    <div class="container nmt-6">
+                        <div class="row p-3">
+                            <div class="col p-4 bg-plaster-50 nav-undecorated">
+                                <f:if condition="{otherLanguageVersion}">
+                                    <f:then>
+                                        <div style="position:relative;">
+                                            <h1 class="h2 my-0"><a href="{colorTitleLink}">{colorTitle}</a></h1>
+                                            <div class="lthpackageOtherPageLink">
+                                                <f:link.typolink parameter="{otherLanguageVersion}" class="dropdown-item ">{f:translate(key:'language_selector_page',extensionName:'lth_package')}</f:link.typolink>
+                                            </div>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <h1 class="h2 my-0"><a href="{colorTitleLink}">{colorTitle}</a></h1>
+                                    </f:else>
+                                </f:if>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </f:then>
+                
             </f:if>
             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos:'0'}"/>
         </main>
