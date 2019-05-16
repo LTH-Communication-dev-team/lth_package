@@ -113,6 +113,11 @@
                 <target>Logga in</target>
             </trans-unit>
             
+            <trans-unit id="lth_in_media">
+                <source>LTH in media</source>
+                <target>LTH i media</target>
+            </trans-unit>
+            
             <trans-unit id="logout">
                 <source>Logout</source>
                 <target>Logga ut</target>
