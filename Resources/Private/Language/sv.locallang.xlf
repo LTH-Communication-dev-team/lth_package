@@ -158,6 +158,11 @@
                 <target>Sök</target>
             </trans-unit>
             
+            <trans-unit id="share">
+                <source>Share</source>
+                <target>Dela</target>
+            </trans-unit>
+            
             <trans-unit id="show_and_hide_searchfield">
                 <source>Show and hide searchfield</source>
                 <target>Visa och dölj sökfält</target>

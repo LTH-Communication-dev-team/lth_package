@@ -58,6 +58,9 @@ switch($action) {
     case 'login':
         $content = login($data);
         break;
+    case 'getLthimedia':
+        $content = getLthimedia();
+        break;
 }
 
 print $content;
@@ -345,6 +348,39 @@ function portalCalendar($data, $config)
 }
 
 
+function getLthimedia()
+{
+    $rss = new DOMDocument();
+    $rss->load("http://www.retriever-info.com/feed/2005659/lth/index.xml");
+    $feed = array();
+    $finalContent= '';
+    $year = "1-1-" . "2014";
+    //$listLength = 5;
+    //$year = "Fri, 17 Oct 2014 04:46:57 +0000";
+    //$year = "";
+    $item = array();
+    $feedLength = 4;
+    $i = 0;
+    //
+    foreach ($rss->getElementsByTagName('item') as $node) {
+        $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => '???', 'crdate' => time()));
+        if($i > 4) {
+            break;
+        }
+        $item[] = array ( 
+            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+            //'desc' => substr($node->getElementsByTagName('description')->item(0)->nodeValue,0,60) . '... <a href=' . $node->getElementsByTagName('link')->item(0)->nodeValue . '>[L?s mer]</a>',
+            'desc' => substr($node->getElementsByTagName('description')->item(0)->nodeValue,0,60),
+            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+            //'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+        );
+        $i++;
+    }
+    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => print_r($item, true), 'crdate' => time()));
+    return json_encode(array('data' => $item, 'debug' => '???'));
+}
+
+
 function listCalendar($data, $config)
 {    
     $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['lth_package']);
@@ -363,7 +399,7 @@ function listCalendar($data, $config)
             )
         )
     );
-    $fieldArray = array("id","title","categoryId","categoryName","startTime","endTime","location","pathalias");
+    $fieldArray = array("id","title","categoryId","categoryName","startTime","endTime","location","nid","pathalias");
     
     $client = new Solarium\Client($config);
     
@@ -378,7 +414,7 @@ function listCalendar($data, $config)
         $query->addSorts(array("dateOrder" => "desc"));
         $query->setStart(abs($setStart + 6))->setRows(6);
     }*/
-    $queryToSet = 'docType:calendar';
+    $queryToSet = 'docType:calendar AND nid:[* TO *]';
     
     if($data["calId"]) {
         $queryToSet .= ' AND calendarIds:' . $data["calId"];
@@ -429,6 +465,7 @@ function listCalendar($data, $config)
     foreach ($response as $document) {
         $data[] = array(
             "id" => $document->id,
+            "nid" => $document->nid,
             "title" => fixChar($document->title),
             "startTime" => $document->startTime,
             "endTime" => $document->endTime,
@@ -471,13 +508,19 @@ function showCalendar($data, $config)
             )
         )
     );
-    $fieldArray = array("id","abstract","categoryId","categoryName","dateOrder","image","imageCaption","lead","startTime","endTime","location","title");
+    $fieldArray = array("id","abstract","categoryId","categoryName","dateOrder","image","imageCaption","lead","nid","startTime","endTime","location","title");
     
     $client = new Solarium\Client($config);
     
     $query = $client->createSelect();
-
-    $queryToSet = 'docType:calendar AND id:' . addslashes($eventId);
+    
+    $eventId = trim($eventId,'/');
+    if(intval($eventId)) {
+        $queryToSet = 'docType:calendar AND nid:' . $eventId;
+    } else {
+        $queryToSet = 'docType:calendar AND pathalias:' . str_replace('/myevent','', $eventId);
+    }
+    
     
     $query->setQuery($queryToSet);
     
@@ -497,6 +540,7 @@ function showCalendar($data, $config)
             "image" => $document->image,
             "imageCaption" => $document->imageCaption,
             "lead" => $document->lead,
+            "nid" => $document->nid,
             "location" => $document->location,
             "startTime" => $document->startTime,
             "title" => $document->title,

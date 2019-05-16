@@ -1,4 +1,5 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:lth="http://typo3.org/ns/LTH/LthPackage/ViewHelpers" 
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <f:layout name="Detail" />
 
@@ -55,7 +56,27 @@
                             </div>
                             <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
                                 <div class="d-flex flex-column-reverse flex-lg-column">
-                                    
+                                    <div id="share-{{pageData.uid}}" class="mt-5 mt-lg-0 bg-sky-25">
+                                        <div class="infobox">
+                                            <h3 class="mt-0 mb-3">Dela{f:translate(key:share,extensionName:lth_package)}</h3>
+                                            <p>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u={lth:GetHost()}?{pageData.uid}&tx_news_pi1[news]={newsItem.uid}" class="mr-2" target="_blank" title="Share on Facebook" >
+                                                    <i class="fab fa-facebook-square fa-2x"></i></a>
+                                                <a href="https://twitter.com/intent/tweet?url={lth:GetHost()}?{pageData.uid}&tx_news_pi1[news]={newsItem.uid}" class="mr-2" target="_blank" title="Share on Twitter" >
+                                                    <i class="fab fa-twitter-square fa-2x"></i></a>
+                                                <a href="https://www.linkedin.com/shareArticle?url={lth:GetHost()}?{pageData.uid}&tx_news_pi1[news]={newsItem.uid}" class="mr-2" target="_blank" title="Share on LinkedIn" >
+                                                    <i class="fab fa-linkedin fa-2x"></i></a>
+                                                <a href="javascript:void(0)" title="Show link" onclick="$('.showUrl').toggle();">
+                                                    <i class="fas fa-link" style="font-size: 1.5em; padding-bottom:2px;"></i>
+                                                </a>
+                                                <span class="showUrl" style="display:none;">
+                                                    <a href="{lth:GetHost()}?{pageData.uid}&tx_news_pi1[news]={newsItem.uid}">
+                                                        {lth:GetHost()}?{pageData.uid}&tx_news_pi1[news]={newsItem.uid}
+                                                    </a>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                     <f:if condition="{newsItem.contentElements}">
                                         <f:for each="{newsItem.contentElements}" as="element">
                                             

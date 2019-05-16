@@ -23,7 +23,6 @@ tx_news.templateLayouts {
     9 = Old staff pages price
 }
 
-
 tx_gridelements {
     overruleRecords = 1
 

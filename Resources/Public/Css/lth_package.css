@@ -18,6 +18,9 @@
         width: 100%;
         max-width: 695px;
     }
+    .lthInMediaContainer {
+        padding:15px;
+    }
 }
 
 .lthpackageOtherPageLink {

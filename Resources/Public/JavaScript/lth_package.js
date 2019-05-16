@@ -228,6 +228,32 @@ $(document).ready(function() {
         });
     }
     
+    if($('.lthInMediaContainer').length > 0) {
+        //$('.lthInMediaContainer').load('/fileadmin/mpTest/lthImedia.php');
+        var sysLang = $('html').attr('lang')
+        $.ajax({
+            type : "POST",
+            url : 'index.php',
+            data: {
+                eID: 'lth_package',
+                action: 'getLthimedia',
+                sysLang: sysLang,
+                sid: Math.random(),
+            },
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                $('.lthInMediaContainer').append(getSpinner(sysLang));
+            },
+            success: function(d) {
+                $('.spinner').remove();
+                $.each( d.data, function( key, aData ) {
+                    $('.lthInMediaContainer').append('<p><a href="' + aData.link +  '" title="' + aData.title + '" target="_blank">' + aData.title + '</a></p>');
+                });
+            }
+        });
+    }
+    
     if (typeof b64map === 'undefined') {
         $.ajax({
             url: '/typo3/sysext/rsaauth/Resources/Public/JavaScript/RsaLibrary.js',
@@ -454,7 +480,7 @@ function listCalendar(setStart, type, numRows)
     var endTime = '*';
     
     if($('.culdesac').length === 0) {
-        window.location.href;
+        //window.location.href;
         catId = catId.substring(0, catId.length-1).split('/').pop();
         var today = new Date();
         var dd = today.getDate();
@@ -553,6 +579,11 @@ function listCalendar(setStart, type, numRows)
                     var pathalias = '';
                     var id = '';
                     var link = '';
+                    var calEndTime = '';
+                    var toText = ' till ';
+                    if(sysLang==='en') {
+                        toText = ' to ';
+                    }
                     if(aData.startTime) {
                         var objDate = new Date(aData.startTime);
                         var locale = "sv-se";
@@ -566,22 +597,26 @@ function listCalendar(setStart, type, numRows)
                     }
                     if(aData.endTime) {
                         objDate = new Date(aData.endTime);
-                        var calEndTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        calEndTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
                     }
                     //console.log(calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
                     if(calDate && calStartTime && calEndTime && calYear && calLongMonth) {
-                        template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + ' ' + calEndTime);
+                        if(calStartTime === calEndTime) {
+                            template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime);
+                        } else {
+                            template = template.replace(/###dateTime###/g, calDate + ' ' + calLongMonth + ' ' + calYear + ' kl. ' + calStartTime + toText + calEndTime);
+                        }
                     }
                     //26 april 2018 kl. 13:15–17:00
                     if(aData.id) id = aData.id;
 
                     if(aData.title) title = aData.title.toString();
                     if(aData.categoryName) categoryName = aData.categoryName;
-                    if(aData.pathalias) pathalias = aData.pathalias;
+                    if(aData.pathalias) pathalias = '/' + aData.pathalias;
                     template = template.replace('###id###', id);
                     template = template.replace(/###title###/g, title);
                     template = template.replace('###categoryName###', categoryName);
-                    template = template.replace('###link###', '/event/' + encodeURIComponent(title.replace('/','')) + '(' + id + ')/');
+                    template = template.replace('###link###', pathalias);
                     //console.log(template);
                     if(type==='cards') {
                         $('#lthPackageCalendarCards').append(template);
@@ -618,9 +653,24 @@ function showCalendar()
 {
     //alert(window.location.href);
     //var eventId = $('#lthPackageEventId').val();
-    var eventId = window.location.href.split('(').pop().split(')').shift();
+    var eventId;
+    if(window.location.href.indexOf('event') > 0) {
+        eventId = '/event/' + window.location.href.split('/event/').pop();
+    } else {
+        eventId = window.location.href.split('&').pop();
+    }
+    
     var calId = $('#lthPackageCalId').val();
     var sysLang = $('html').attr('lang');
+    var pageId = $('body').attr('id').replace('p','');
+    var shareHost = window.location.protocol + '//' + window.location.hostname;
+    var nid = '';
+    var shareHeader = 'Dela';
+    var icsHeader = 'Spara händelsen till din kalender';
+    if(sysLang==='en') {
+        shareHeader = 'Share';
+        icsHeader = 'Save the event to your calendar';
+    }
     
     if(eventId) {
         $.ajax({
@@ -657,7 +707,19 @@ function showCalendar()
                         var calYear = objDate.getFullYear();
                         $('#lthPackageCalendarShow .calendar-date-box h1').text(calDate);
                         $('#lthPackageCalendarShow .calendar-date-box p').text(calLongMonth);
-                        $('.meta-date').text(calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                        var toText = ' till ';
+                        if(sysLang==='en') {
+                            toText = ' to ';
+                        }
+                        if(d.data.endTime) {
+                            objDate = new Date(d.data.endTime);
+                            var calEndTime = objDate.getUTCHours() + ':' + (objDate.getMinutes()<10?'0':'') + objDate.getMinutes();
+                        }
+                        if(calStartTime === calEndTime) {
+                            $('.meta-date').text(calDate + ' ' + calLongMonth + ', kl ' + calStartTime);
+                        } else {
+                            $('.meta-date').text(calDate + ' ' + calLongMonth + ', kl ' + calStartTime + toText + calEndTime);
+                        }
                         
                     }
                     if(d.data.endTime) {
@@ -687,10 +749,9 @@ function showCalendar()
                         //$('#lthPackageCalendarShow article').append('<p>' + d.data.abstract + '</p>');
                         $('#lthPackageCalendarShow .event-text').append('<p>' + d.data.abstract + '</p>');
                     }
-                    //$('#lthPackageCalendarShow article').append('<p><b>Plats: </b>' + d.data.location + '</p>');
-                    /*if(d.data.location) {
-                        $('#lthPackageCalendarShow article').append('<p><b>Plats: </b>' + calYear + calMonth + calDate + calStartTime + '</p>');
-                    }*/
+                    if(d.data.nid) {
+                        nid = d.data.nid;
+                    }
                     if(d.data.prevId) {
                         $('#lthPackagePrevBtn').attr('href','/event/' + d.data.prevTitle + '(' + d.data.prevId + ')');
                     } else {
@@ -702,8 +763,38 @@ function showCalendar()
                         $('#lthPackageNextBtn').hide();
                     }
                     //Right column
-                    $('.col-lg-3').html('<div class="infobox bg-sky-50"><p><strong>Om händelsen</strong><br />' + calDate + ' ' + calLongMonth + ' kl ' + calStartTime + ' till' + calEndTime + '</p>' +
-                            '<p><strong>Plats</strong><br />' + d.data.location + '</p></div>');
+                    
+                    var share = '<div id="share-' + pageId + '" class="mt-5 mt-lg-0 bg-sky-25">' +
+                    '<div class="infobox">' +
+                    '<h3 class="mt-0 mb-3">' + shareHeader + '</h3>' +
+                    '<p>' +
+                    '<a href="https://www.facebook.com/sharer/sharer.php?u=' + shareHost + '?' + pageId + '&' + nid + '" class="mr-2" target="_blank" title="Share on Facebook" >' +
+                    '<i class="fab fa-facebook-square fa-2x"></i></a>' +
+                    '<a href="https://twitter.com/intent/tweet?url=' + shareHost + '?' + pageId + '&' + nid + '" class="mr-2" target="_blank" title="Share on Twitter" >' +
+                    '<i class="fab fa-twitter-square fa-2x"></i></a>' +
+                    '<a href="https://www.linkedin.com/shareArticle?url=' + shareHost + '?' + pageId + '&' + nid + '" class="mr-2" target="_blank" title="Share on LinkedIn" >' +
+                    '<i class="fab fa-linkedin fa-2x"></i></a>' +
+                    '<a href="javascript:void(0)" title="Show link" onclick="$(\'.showUrl\').toggle();">' +
+                    '<i class="fas fa-link" style="font-size: 1.5em; padding-bottom:2px;"></i>' +
+                    '</a>' +
+                    '<span class="showUrl" style="display:none;">' +
+                    '<a href="' + shareHost + '?' + pageId + '&' + nid + '">' + shareHost + '?' + pageId + '&' + nid + 
+                    '</a>' +
+                    '</span>' +
+                    '</p>' +
+                    '<p><a href="https://www.lu.se/node/'+nid+'/event.ics">' + icsHeader + '</a></p>';
+                    '</div>' +
+                    '</div>';
+                            
+                    var about = '<div class="infobox bg-sky-50"><p><strong>Om händelsen</strong><br />' + calDate + ' ' + calLongMonth + ' kl ' + calStartTime + toText + calEndTime + '</p>' +
+                            '<p><strong>Plats</strong><br />' + d.data.location + '</p></div>';
+                    
+                    if(calStartTime === calEndTime) {
+                        about = '<div class="infobox bg-sky-50"><p><strong>Om händelsen</strong><br />' + calDate + ' ' + calLongMonth + ' kl ' + calStartTime + '</p>' +
+                            '<p><strong>Plats</strong><br />' + d.data.location + '</p></div>';
+                    }
+                    
+                    $('.col-lg-3').html(about + share);
                 } 
             },
             failure: function(errMsg) {

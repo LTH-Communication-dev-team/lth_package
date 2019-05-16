@@ -133,6 +133,10 @@
                 <source>Search</source>
             </trans-unit>
             
+            <trans-unit id="share">
+                <source>Share</source>
+            </trans-unit>
+            
             <trans-unit id="show_and_hide_searchfield">
                 <source>Show and hide searchfield</source>
             </trans-unit>
