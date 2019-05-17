@@ -17,6 +17,8 @@
     <f:if condition="{newsItem}">
         <f:then>
             <n:metaTag property="og:title" content="{newsItem.title}" />
+            <n:metaTag property="og:description" content="{newsItem.teaser}" />
+            <n:metaTag property="description" content="{newsItem.teaser}" />
             <f:if condition="{settings.templateLayout} == 8">
                 <f:then>
                     <div class="container">

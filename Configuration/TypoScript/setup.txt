@@ -382,6 +382,11 @@ page {
     }
     page.headerData.5 >
     page.headerData.5 < temp.newsTitle
+    page.meta {
+            description >
+            author >
+            keywords >
+        }
 [else]
     # OpenGraph Tags
     page.meta {
