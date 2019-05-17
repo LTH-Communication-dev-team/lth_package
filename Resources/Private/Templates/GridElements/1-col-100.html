@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <a id="{data.header}"></a>
+        <f:if condition="{data.flexform_bleed}">
+            <f:then>
+                <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {data.flexform_extraClass}">
+                    <div class="row no-gutters">
+                        <f:if condition="{data.header}">
+                            <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                        </f:if>
+                        <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="container bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {data.flexform_extraClass}">
+                    <div class="row">
+                        <f:if condition="{data.header}">
+                            <h2 class="mt-0 mb-7"><f:format.case mode="capital">{data.header}</f:format.case></h2>
+                        </f:if>
+                        <f:format.raw>{data.tx_gridelements_view_column_11}</f:format.raw>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+        
+    </f:section>
+</html>
