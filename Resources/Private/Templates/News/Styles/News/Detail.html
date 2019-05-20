@@ -87,13 +87,10 @@
                                                     <v:content.render contentUids="{0: element.uid}"/>
                                                 </f:then>
                                                 <f:else>
-                                                    
+                                                    <lth:OtherContent otherId="{0: element.uid}" />
                                                 </f:else>
                                             </f:if>
                                         </f:for>
-                                    </f:if>
-                                    <f:if condition="{extendedVariables.data}">
-                                        <f:render section="{extendedVariables.data.cType}" arguments="{data:extendedVariables.data}"/>
                                     </f:if>
                                 </div>
                             </div>
