@@ -61,6 +61,10 @@ switch($action) {
     case 'getLthimedia':
         $content = getLthimedia();
         break;
+    case 'getLthimedia':
+    case 'getLthimediaAll':
+        $content = getLthimedia($action);
+        break;
 }
 
 print $content;
@@ -348,7 +352,7 @@ function portalCalendar($data, $config)
 }
 
 
-function getLthimedia()
+function getLthimedia($action)
 {
     $rss = new DOMDocument();
     $rss->load("http://www.retriever-info.com/feed/2005659/lth/index.xml");
@@ -359,24 +363,28 @@ function getLthimedia()
     //$year = "Fri, 17 Oct 2014 04:46:57 +0000";
     //$year = "";
     $item = array();
-    $feedLength = 4;
+    if($action==='getLthimedia') {
+        $feedLength = 4;
+    } else {
+        $feedLength = 20;
+    }
     $i = 0;
-    //
     foreach ($rss->getElementsByTagName('item') as $node) {
-        $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => '???', 'crdate' => time()));
-        if($i > 4) {
+        if($i > 4 && $action==='getLthimedia') {
             break;
         }
+        
         $item[] = array ( 
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            //'desc' => substr($node->getElementsByTagName('description')->item(0)->nodeValue,0,60) . '... <a href=' . $node->getElementsByTagName('link')->item(0)->nodeValue . '>[L?s mer]</a>',
-            'desc' => substr($node->getElementsByTagName('description')->item(0)->nodeValue,0,60),
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            //'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+            'title' => (string)$node->getElementsByTagName('title')->item(0)->nodeValue,
+            'description' => (string)$node->getElementsByTagName('description')->item(0)->nodeValue,
+            'link' => (string)$node->getElementsByTagName('link')->item(0)->nodeValue,
+            'date' => date('Y-m-d', strtotime($node->getElementsByTagName('docdate')->item(0)->nodeValue)),
         );
+        
         $i++;
     }
-    $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => print_r($item, true), 'crdate' => time()));
+    //$GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_devlog', array('msg' => print_r($item, true), 'crdate' => time()));
+
     return json_encode(array('data' => $item, 'debug' => '???'));
 }
 

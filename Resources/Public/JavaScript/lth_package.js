@@ -248,7 +248,35 @@ $(document).ready(function() {
             success: function(d) {
                 $('.spinner').remove();
                 $.each( d.data, function( key, aData ) {
-                    $('.lthInMediaContainer').append('<p><a href="' + aData.link +  '" title="' + aData.title + '" target="_blank">' + aData.title + '</a></p>');
+                    $('.lthInMediaContainer').append('<p><a href="' + aData.link +  '" title="' + aData.title + '">' + aData.title + '</a></p>');
+                });
+            }
+        });
+    }
+    
+    
+    if($('.lthInMediaContainerFullList').length > 0) {
+        //$('.lthInMediaContainer').load('/fileadmin/mpTest/lthImedia.php');
+        var sysLang = $('html').attr('lang')
+        $.ajax({
+            type : "POST",
+            url : 'index.php',
+            data: {
+                eID: 'lth_package',
+                action: 'getLthimediaAll',
+                sysLang: sysLang,
+                sid: Math.random(),
+            },
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function () {
+                $('.lthInMediaContainerFullList').append(getSpinner(sysLang));
+            },
+            success: function(d) {
+                $('.spinner').remove();
+                $.each( d.data, function( key, aData ) {
+                    $('.lthInMediaContainerFullList').append('<article class="py-4 border-bottom"><h3 class="mt-0"><a href="' + aData.link +  '" title="' + 
+                            aData.title + '"></h3>' + aData.title + '</a><br/><em>' + aData.date + '</em><br/><p>' + aData.description + '</p></<article>');
                 });
             }
         });
