@@ -19,10 +19,12 @@
 
             <trans-unit id="previous">
                 <source>Previous</source>
+                <target>Förra</target>
             </trans-unit>
 
             <trans-unit id="next">
                 <source>Next</source>
+                <target>Nästa</target>
             </trans-unit>
 
             <trans-unit id="externalmediaunsupported">
