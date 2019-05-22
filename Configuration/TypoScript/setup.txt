@@ -260,8 +260,8 @@ page {
             rootPage = TEXT
             rootPage.data = leveluid:0
             searchLink = TEXT
-            searchLink.lang.sv = /sok
-            searchLink.lang.en = /search
+            searchLink.lang.sv = {$searchLinkSv}
+            searchLink.lang.en = {$searchLinkEn}
             siteTitle = TEXT
             siteTitle.lang.sv = {$siteTitleSv}
             siteTitle.lang.en = {$siteTitleEn}

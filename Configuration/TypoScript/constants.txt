@@ -25,7 +25,8 @@ colorTitleEn =
 colorTitleLinkSe = 
 colorTitleLinkEn =
 headnav = 
-searchLink =
+searchLinkSv = /sok
+searchLinkEn = /english/search
 
 page {
     meta {
