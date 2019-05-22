@@ -24,6 +24,8 @@ colorTitleSe =
 colorTitleEn =
 colorTitleLinkSe = 
 colorTitleLinkEn =
+headnav = 
+searchLink =
 
 page {
     meta {
