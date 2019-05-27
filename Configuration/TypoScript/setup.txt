@@ -249,6 +249,8 @@ page {
             logoLink.lang.en = {$logoLinkEn}
             mainClass = TEXT
             mainClass.data = page:tx_lthpackage_mainclass
+            oneLangOnly = TEXT
+            oneLangOnly.value = {$oneLangOnly}
             otherLanguageLink = TEXT
             otherLanguageLink.value = {$otherLanguageLink}
             otherLanguageVersion = TEXT

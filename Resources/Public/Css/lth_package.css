@@ -1,4 +1,8 @@
- .full-width-dropdown__login {
+.nav-link-sm {
+    padding: .1rem .3rem
+}
+
+.full-width-dropdown__login {
         display:none;
         position:absolute;
         top:170px;
