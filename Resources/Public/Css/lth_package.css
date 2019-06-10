@@ -1,3 +1,7 @@
+.lthPackageLthInMedia {
+    display:none;   
+}
+
 .nav-link-sm {
     padding: .1rem .3rem
 }
@@ -212,7 +216,10 @@ article {
 .tt-suggestion.tt-selectable {
     white-space: nowrap;
 }
-.tt-dataset.tt-dataset-0 {
+.tt-highlight {
+    display:inline-block;
+}
+.tt-dataset.tt-dataset-0, .tt-dataset.tt-dataset-1, .tt-dataset.tt-dataset-2, .tt-dataset.tt-dataset-3 {
     background-color:#ffffff;
     margin-top:15px;
     padding:12px;
