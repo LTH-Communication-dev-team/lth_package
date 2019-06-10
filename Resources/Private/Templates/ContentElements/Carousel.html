@@ -8,7 +8,7 @@
                         <ol class="carousel-indicators">
                             <f:for each="{data.pi_flexform.carouselImages}" as="imageItem" iteration="iterator">
                                 <li data-target="#carousel-{data.uid}" data-slide-to="{iterator.index}" class="{f:if(condition: iterator.isFirst,then:'active')}">
-                                    <span class="sr-only">{imageItem.alternative}</span>
+                                    <span class="sr-only">{f:if(condition:imageItem.title,then:imageItem.title,else:imageItem.alternative)}</span>
                                 </li>
                             </f:for>
                         </ol>
@@ -27,7 +27,7 @@
                                         </div>
                                         <div class="carousel-caption">
                                             <p>
-                                                <span class="a nav-block-link">{imageItem.alternative}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span>
+                                                <span class="a nav-block-link">{f:if(condition:imageItem.title,then:imageItem.title,else:imageItem.alternative)}&nbsp;<i class="fal fa-chevron-circle-right fa-sm"></i></span>
                                             </p>
                                         </div>
                                     </f:link.typolink>                                    
