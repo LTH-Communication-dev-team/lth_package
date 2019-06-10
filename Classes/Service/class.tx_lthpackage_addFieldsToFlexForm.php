@@ -151,6 +151,7 @@ class user_lthpackageflex_addFieldsToFlexForm
         $facetSet = $query->getFacetSet();
         
         $facetSet->createFacetField('ci')->setField('calendarIds');
+        $facetSet->setSort(SORT_INDEX);
 
         $queryToSet = 'docType:calendar';
 
