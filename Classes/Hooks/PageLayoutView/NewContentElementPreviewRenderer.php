@@ -50,6 +50,35 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
                             if ($val == 'bodytext') {
                                 $bodytext = (string)$n->value;
                             }
+                        }
+                    }
+                }
+            }
+            if($header) {
+                if(strlen($header) > 50) $header = substr ($header, 0, 49);
+                $headerContent .= '<b>Infobox<br />' . $header . '</b>';
+            } else {
+                $headerContent .= '<b>Infobox</b>';
+            }
+            if($bodytext) {
+                if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
+                $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+            }
+            $drawItem = false;
+        } else if ($row['CType'] === 'masonrytile') {
+            $pi_flexform = $row['pi_flexform'];
+            if($pi_flexform) {
+                $xml = simplexml_load_string($pi_flexform);
+                $test = $xml->data->sheet[0]->language;
+                if($test) {
+                    foreach ($test->field as $n) {
+                        foreach($n->attributes() as $name => $val) {
+                            if ($val == 'header') {
+                                $header = (string)$n->value;
+                            }
+                            if ($val == 'bodytext') {
+                                $bodytext = (string)$n->value;
+                            }
                             if ($val == 'infoboxtype') {
                                 $infoboxtype = (string)$n->value;
                             }
