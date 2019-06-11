@@ -50,15 +50,18 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
                             if ($val == 'bodytext') {
                                 $bodytext = (string)$n->value;
                             }
+                            if ($val == 'infoboxtype') {
+                                $infoboxtype = (string)$n->value;
+                            }
                         }
                     }
                 }
             }
             if($header) {
                 if(strlen($header) > 50) $header = substr ($header, 0, 49);
-                $headerContent .= '<b>Infobox<br />' . $header . '</b>';
+                $headerContent .= '<b>Infobox (' . $infoboxtype . ')<br />' . $header . '</b>';
             } else {
-                $headerContent .= '<b>Infobox</b>';
+                $headerContent .= '<b>Infobox (' . $infoboxtype . ')</b>';
             }
             if($bodytext) {
                 if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
@@ -79,18 +82,15 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
                             if ($val == 'bodytext') {
                                 $bodytext = (string)$n->value;
                             }
-                            if ($val == 'infoboxtype') {
-                                $infoboxtype = (string)$n->value;
-                            }
                         }
                     }
                 }
             }
             if($header) {
                 if(strlen($header) > 50) $header = substr ($header, 0, 49);
-                $headerContent .= '<b>Infobox (' . $infoboxtype . ')<br />' . $header . '</b>';
+                $headerContent .= '<b>Masonry Tile<br />' . $header . '</b>';
             } else {
-                $headerContent .= '<b>Infobox (' . $infoboxtype . ')</b>';
+                $headerContent .= '<b>Masonry Tile</b>';
             }
             if($bodytext) {
                 if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
