@@ -58,14 +58,19 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
                 }
             }
             if($header) {
-                if(strlen($header) > 50) $header = substr ($header, 0, 49);
+                if(strlen($header) > 50) $header = substr ($header, 0, 49) . '...';
                 $headerContent .= '<b>Infobox (' . $infoboxtype . ')<br />' . $header . '</b>';
             } else {
                 $headerContent .= '<b>Infobox (' . $infoboxtype . ')</b>';
             }
             if($bodytext) {
-                if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
-                $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                if(strlen($bodytext) > 100) {
+                    $bodytext = substr($bodytext, 0, 99) . '...';
+                    $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                } else {
+                    $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                }
+                
             }
             $drawItem = false;
         } else if ($row['CType'] === 'masonrytile') {
@@ -87,14 +92,19 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
                 }
             }
             if($header) {
-                if(strlen($header) > 50) $header = substr ($header, 0, 49);
+                if(strlen($header) > 50) $header = substr ($header, 0, 49) . '...';
                 $headerContent .= '<b>Masonry Tile<br />' . $header . '</b>';
             } else {
                 $headerContent .= '<b>Masonry Tile</b>';
             }
             if($bodytext) {
-                if(strlen($bodytext) > 100) $bodytext = substr ($bodytext, 0, 99);
-                $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                if(strlen($bodytext) > 100) {
+                    $bodytext = substr($bodytext, 0, 99) . '...';
+                    $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                } else {
+                    $itemContent .= '<p>' . strip_tags($bodytext) . '</p>';
+                }
+                
             }
             $drawItem = false;
         }
