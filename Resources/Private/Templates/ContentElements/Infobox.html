@@ -94,8 +94,8 @@
     <f:section name="default">
         <div id="infobox-{data.uid}" class="mt-5 mt-lg-0 bg-{data.pi_flexform.backgroundcolor}{f:if(condition: data.pi_flexform.fullHeight, then: ' h-100')}">
             <f:if condition="{data.pi_flexform.infoboxImage}">
-                <div class="text-center">
-                    <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="mw-100">
+                <div class="">
+                    <img src="{f:uri.image(src:data.pi_flexform.infoboxImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.infoboxImage.0.crop)}" alt="{data.pi_flexform.header}" class="w-100">
                 </div>                        
             </f:if>
             <div class="infobox">
