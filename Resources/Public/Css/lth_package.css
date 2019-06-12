@@ -1,3 +1,7 @@
+.lthPackageGrid .infobox {
+    margin-bottom:0px !important;
+}
+
 .lthPackageLthInMedia {
     display:none;   
 }
