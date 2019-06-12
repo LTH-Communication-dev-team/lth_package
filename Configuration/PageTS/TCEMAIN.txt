@@ -538,7 +538,7 @@ tx_gridelements {
                             </paddingTop>
                             <paddingBottom>
                                 <TCEforms>
-                                    <label>Padding-top</label>
+                                    <label>Padding-bottom</label>
                                     <config>
                                         <type>select</type>
                                         <renderType>selectSingle</renderType>
