@@ -480,6 +480,118 @@ tx_gridelements {
                                     </config>
                                 </TCEforms>
                             </extraClass>
+                            <paddingTop>
+                                <TCEforms>
+                                    <label>Padding-top</label>
+                                    <config>
+                                        <type>select</type>
+                                        <renderType>selectSingle</renderType>
+                                        <default>pt-5</default>
+                                        <items type="array">
+                                            <numIndex index="0" type="array">
+                                                <numIndex index="0">0 rem</numIndex>
+                                                <numIndex index="1">pt-0</numIndex>
+                                            </numIndex>
+                                            <numIndex index="1" type="array">
+                                                <numIndex index="0">0.25 rem</numIndex>
+                                                <numIndex index="1">pt-1</numIndex>
+                                            </numIndex>
+                                            <numIndex index="2" type="array">
+                                                <numIndex index="0">0.5 rem</numIndex>
+                                                <numIndex index="1">pt-2</numIndex>
+                                            </numIndex>
+                                            <numIndex index="3" type="array">
+                                                <numIndex index="0">1 rem</numIndex>
+                                                <numIndex index="1">pt-3</numIndex>
+                                            </numIndex>
+                                            <numIndex index="4" type="array">
+                                                <numIndex index="0">1.5 rem</numIndex>
+                                                <numIndex index="1">pt-4</numIndex>
+                                            </numIndex>
+                                            <numIndex index="5" type="array">
+                                                <numIndex index="0">2 rem</numIndex>
+                                                <numIndex index="1">pt-5</numIndex>
+                                            </numIndex>
+                                            <numIndex index="6" type="array">
+                                                <numIndex index="0">2.5 rem</numIndex>
+                                                <numIndex index="1">pt-6</numIndex>
+                                            </numIndex>
+                                            <numIndex index="7" type="array">
+                                                <numIndex index="0">3 rem</numIndex>
+                                                <numIndex index="1">pt-7</numIndex>
+                                            </numIndex>
+                                            <numIndex index="8" type="array">
+                                                <numIndex index="0">3.5 rem</numIndex>
+                                                <numIndex index="1">pt-8</numIndex>
+                                            </numIndex>
+                                            <numIndex index="9" type="array">
+                                                <numIndex index="0">4 rem</numIndex>
+                                                <numIndex index="1">pt-9</numIndex>
+                                            </numIndex>
+                                            <numIndex index="10" type="array">
+                                                <numIndex index="0">4.5 rem</numIndex>
+                                                <numIndex index="1">pt-10</numIndex>
+                                            </numIndex>
+                                        </items>
+                                    </config>
+                                </TCEforms>
+                            </paddingTop>
+                            <paddingBottom>
+                                <TCEforms>
+                                    <label>Padding-top</label>
+                                    <config>
+                                        <type>select</type>
+                                        <renderType>selectSingle</renderType>
+                                        <default>pb-5</default>
+                                        <items type="array">
+                                            <numIndex index="0" type="array">
+                                                <numIndex index="0">0 rem</numIndex>
+                                                <numIndex index="1">pb-0</numIndex>
+                                            </numIndex>
+                                            <numIndex index="1" type="array">
+                                                <numIndex index="0">0.25 rem</numIndex>
+                                                <numIndex index="1">pb-1</numIndex>
+                                            </numIndex>
+                                            <numIndex index="2" type="array">
+                                                <numIndex index="0">0.5 rem</numIndex>
+                                                <numIndex index="1">pb-2</numIndex>
+                                            </numIndex>
+                                            <numIndex index="3" type="array">
+                                                <numIndex index="0">1 rem</numIndex>
+                                                <numIndex index="1">pb-3</numIndex>
+                                            </numIndex>
+                                            <numIndex index="4" type="array">
+                                                <numIndex index="0">1.5 rem</numIndex>
+                                                <numIndex index="1">pb-4</numIndex>
+                                            </numIndex>
+                                            <numIndex index="5" type="array">
+                                                <numIndex index="0">2 rem</numIndex>
+                                                <numIndex index="1">pb-5</numIndex>
+                                            </numIndex>
+                                            <numIndex index="6" type="array">
+                                                <numIndex index="0">2.5 rem</numIndex>
+                                                <numIndex index="1">pb-6</numIndex>
+                                            </numIndex>
+                                            <numIndex index="7" type="array">
+                                                <numIndex index="0">3 rem</numIndex>
+                                                <numIndex index="1">pb-7</numIndex>
+                                            </numIndex>
+                                            <numIndex index="8" type="array">
+                                                <numIndex index="0">3.5 rem</numIndex>
+                                                <numIndex index="1">pb-8</numIndex>
+                                            </numIndex>
+                                            <numIndex index="9" type="array">
+                                                <numIndex index="0">4 rem</numIndex>
+                                                <numIndex index="1">pb-9</numIndex>
+                                            </numIndex>
+                                            <numIndex index="10" type="array">
+                                                <numIndex index="0">4.5 rem</numIndex>
+                                                <numIndex index="1">pb-10</numIndex>
+                                            </numIndex>
+                                        </items>
+                                    </config>
+                                </TCEforms>
+                            </paddingBottom>
                             <fixColorBoxes>
                                 <TCEforms>
                                     <config>
