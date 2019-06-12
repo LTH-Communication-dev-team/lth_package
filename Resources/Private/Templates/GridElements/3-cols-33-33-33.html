@@ -4,7 +4,7 @@
     <a id="{data.header}"></a>
     <f:if condition="{data.flexform_bleed}">
         <f:then>
-            <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {f:if(condition:data.flexform_paddingTop,then:data.flexform_paddingTop,else:'pt-5')} {f:if(condition:data.flexform_paddingBottom,then:data.flexform_paddingBottom,else:'pb-5')} {data.flexform_extraClass}">
+            <div class="lthPackageGrid bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {f:if(condition:data.flexform_paddingTop,then:data.flexform_paddingTop,else:'pt-5')} {f:if(condition:data.flexform_paddingBottom,then:data.flexform_paddingBottom,else:'pb-5')} {data.flexform_extraClass}">
                 <div class="row no-gutters">
                     <div class="col-sm-12">
                         <f:if condition="{data.header}">
@@ -26,7 +26,7 @@
             </div>
         </f:then>
         <f:else>
-            <div class="bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {f:if(condition:data.flexform_paddingTop,then:data.flexform_paddingTop,else:'pt-5')} {f:if(condition:data.flexform_paddingBottom,then:data.flexform_paddingBottom,else:'pb-5')} {data.flexform_extraClass}">
+            <div class="lthPackageGrid bg-<v:format.replace substring=".gif" content="{data.flexform_backgroundcolor}" replacement="" /> {f:if(condition:data.flexform_paddingTop,then:data.flexform_paddingTop,else:'pt-5')} {f:if(condition:data.flexform_paddingBottom,then:data.flexform_paddingBottom,else:'pb-5')} {data.flexform_extraClass}">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-10 offset-md-1 text-center">
