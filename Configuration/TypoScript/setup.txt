@@ -247,6 +247,9 @@ page {
             logoLink = TEXT
             logoLink.lang.sv = {$logoLinkSv}
             logoLink.lang.en = {$logoLinkEn}
+            luLink = TEXT
+            luLink.lang.sv = {$luLinkSv}
+            luLink.lang.en = {$luLinkEn}
             mainClass = TEXT
             mainClass.data = page:tx_lthpackage_mainclass
             oneLangOnly = TEXT
