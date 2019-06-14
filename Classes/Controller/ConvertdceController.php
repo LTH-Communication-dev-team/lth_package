@@ -260,12 +260,13 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         $pageUid = $this->pageUid;
         if($pageUid) {
             //$GLOBALS['TYPO3_DB']->store_lastBuiltQuery = 1;
-            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('t.uid, p.title, t.bodytext, t.colpos, t.sorting','tt_content t join pages p on t.pid = p.uid',
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('t.uid, p.title, t.bodytext, t.colpos, t.sorting, t.pi_flexform','tt_content t join pages p on t.pid = p.uid',
                     "t.CType IN(" . $this->dceElements . ") AND t.deleted = 0 AND p.uid = " . intval($pageUid),'','','');
             while ($row = $GLOBALS["TYPO3_DB"]->sql_fetch_assoc($res)) {
                 $bodytext = $row['bodytext'];
                 $uid = $row['uid'];
                 $colpos = $row['colpos'];
+                $pi_flexform = $row['pi_flexform'];
                 $sorting = $row['sorting'];
                 
                 $header = "";
@@ -276,14 +277,40 @@ class ConvertdceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 $link = "";
                 $alttext = "";
                 
-                if($bodytext) $bodytext = preg_replace('/(\>)\s*(\<)/m', '$1$2', $bodytext);
-                
-                $header = $this->get_string_between($bodytext, '<b>Header:</b><span class="simpleValue">', '</span>');
-                $lead = $this->get_string_between($bodytext, '<b>Lead:</b><span class="simpleValue">', '</span>');
-                $infoboxImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
-                $backgroundcolor = $this->get_string_between($bodytext, '<b>Backgroundcolor:</b><span class="simpleValue">', '</span>');
-                $link = $this->get_string_between($bodytext, '<b>Link:</b><span class="simpleValue">', '</span>');
-                $alttext = $this->get_string_between($bodytext, '<b>Alttext:</b><span class="simpleValue">', '</span>');
+                if($bodytext) { $bodytext = preg_replace('/(\>)\s*(\<)/m', '$1$2', $bodytext);
+                    $header = $this->get_string_between($bodytext, '<b>Header:</b><span class="simpleValue">', '</span>');
+                    $lead = $this->get_string_between($bodytext, '<b>Lead:</b><span class="simpleValue">', '</span>');
+                    $infoboxImage = $this->get_string_between($bodytext, '<b>Promoimage:</b><span class="simpleValue">', '</span>');
+                    $backgroundcolor = $this->get_string_between($bodytext, '<b>Backgroundcolor:</b><span class="simpleValue">', '</span>');
+                    $link = $this->get_string_between($bodytext, '<b>Link:</b><span class="simpleValue">', '</span>');
+                    $alttext = $this->get_string_between($bodytext, '<b>Alttext:</b><span class="simpleValue">', '</span>');
+                } else if($pi_flexform) {
+                    if($pi_flexform) {
+                        $xml = simplexml_load_string($pi_flexform);
+                        $test = $xml->data->sheet[0]->language;
+                        if($test) {
+                            foreach ($test->field as $n) {
+                                foreach($n->attributes() as $name => $val) {
+                                    if ($val == 'settings.header') {
+                                        $header = (string)$n->value;
+                                    }
+                                    if ($val == 'settings.lead') {
+                                        $lead = (string)$n->value;
+                                    }
+                                    if ($val == 'settings.backgroundcolor') {
+                                        $backgroundcolor = (string)$n->value;
+                                    }
+                                    if ($val == 'settings.link') {
+                                        $link = (string)$n->value;
+                                    }
+                                    if ($val == 'settings.promoimage') {
+                                        $infoboxImage = (string)$n->value;
+                                    }
+                                }
+                            }
+                        }
+                    }                            
+                }
                 
                 if($infoboxImage) {
                     
