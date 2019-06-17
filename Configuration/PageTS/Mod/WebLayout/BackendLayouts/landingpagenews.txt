@@ -1,0 +1,33 @@
+#########################################
+#### BACKENDLAYOUT: LANDINGPAGE NEWS ####
+#########################################
+mod {
+    web_layout {
+        BackendLayouts {
+            landingpagenews {
+                title = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.landingpagenews
+                config {
+                    backend_layout {
+                        colCount = 2
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.normal
+                                        colPos = 0
+                                    }
+                                    2 {
+                                        name = LLL:EXT:lth_package/Resources/Private/Language/backend.xlf:backend_layout.column.right
+                                        colPos = 2
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:lth_package/Resources/Public/Images/BackendLayouts/landingpage.gif
+            }
+        }
+    }
+}
