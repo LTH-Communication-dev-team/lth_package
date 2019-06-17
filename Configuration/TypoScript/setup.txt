@@ -55,6 +55,9 @@ page {
             pagets__landingpage = TEXT
             pagets__landingpage.value = Landingpage
 
+            pagets__landingpagenews = TEXT
+            pagets__landingpagenews.value = Landingpagenews
+
             pagets__tabnavigation = TEXT
             pagets__tabnavigation.value = Tabnavigation
 
