@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <f:if condition="{breadcrumb}">
+            <f:then>
+                <div class="container pt-2 pt-lg-3">
+                    <nav aria-label="breadcrumb">
+                        <f:render partial="Navigation/BreadcrumbNavigation" arguments="{_all}"/>
+                    </nav>
+                </div>
+            </f:then>
+        </f:if>
+        
+        <main class="{mainClass}">
+            <!-- MOBILE MENU -->
+            <f:render partial="Navigation/MainMobileNavigation" arguments="{_all}"/>
+            <f:if condition="{colorTitle}">
+                <f:then>
+                    <div class="container nmt-6">
+                        <div class="row p-3">
+                            <div class="col p-4 bg-plaster-50 nav-undecorated">
+                                <f:if condition="{otherLanguageVersion}">
+                                    <f:then>
+                                        <div style="position:relative;">
+                                            <h1 class="h2 my-0"><a href="{colorTitleLink}">{colorTitle}</a></h1>
+                                            <div class="lthpackageOtherPageLink">
+                                                <f:link.typolink parameter="{otherLanguageVersion}" class="dropdown-item ">{f:translate(key:'language_selector_page',extensionName:'lth_package')}</f:link.typolink>
+                                            </div>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <h1 class="h2 my-0"><a href="{colorTitleLink}">{colorTitle}</a></h1>
+                                    </f:else>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+                
+            </f:if>
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos:'0'}"/>
+        </main>
+    </f:section>
+</html>
