@@ -167,6 +167,10 @@
                 <source>Landing page</source>
                 <target state="translated">Landningssida</target>
             </trans-unit>
+            <trans-unit id="backend_layout.landingpagenews">
+                <source>Landing page for news portal only</source>
+                <target state="translated">Landningssida, endast för nyhetsportal</target>
+            </trans-unit>
             <trans-unit id="backend_layout.tabnavigation">
                 <source>Tab navigation</source>
                 <target state="translated">Tab-navigering</target>

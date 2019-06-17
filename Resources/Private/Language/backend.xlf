@@ -150,6 +150,9 @@
             <trans-unit id="backend_layout.landingpage">
                 <source>Landing page</source>
             </trans-unit>
+            <trans-unit id="backend_layout.landingpagenews">
+                <source>Landing page for news portal only</source>
+            </trans-unit>
             <trans-unit id="backend_layout.tabnavigation">
                 <source>Tab navigation</source>
             </trans-unit>
