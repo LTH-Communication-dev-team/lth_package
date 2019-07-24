@@ -18,6 +18,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Figure.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infobox.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Infographics.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/List.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Masonrytile.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Navigation.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:lth_package/Configuration/TypoScript/ContentElement/Progress.txt">
@@ -436,7 +437,6 @@ page.headerData.50.value (
 ####################
 
 
-
 ################
 #### CONFIG ####
 ################
@@ -545,7 +545,6 @@ lib.gpvar {
     wrap3 = {|}
   }
 }
-
 
 tx_ajaxlogin_widget = PAGE
 tx_ajaxlogin_widget {
