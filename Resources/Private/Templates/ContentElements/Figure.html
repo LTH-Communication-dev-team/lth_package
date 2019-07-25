@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default"/>
     <f:section name="Main">
-        <figure class="figure" style="{data.pi_flexform.marginTop}{data.pi_flexform.marginRight}{data.pi_flexform.marginBottom}{data.pi_flexform.marginLeft}{data.pi_flexform.maxWidth}{data.pi_flexform.maxHeight}">
+        <figure class="figure" style="margin:{data.pi_flexform.marginTop} {data.pi_flexform.marginRight} {data.pi_flexform.marginBottom} {data.pi_flexform.marginLeft};{data.pi_flexform.maxWidth}{data.pi_flexform.maxHeight}">
             <img class="figure-img img-fluid m-0" src="{f:uri.image(src:data.pi_flexform.figureImage.0.uid,treatIdAsReference:1, width:'NULL',height:'NULL',crop:data.pi_flexform.figureImage.0.crop)}" />
             <f:if condition="{data.pi_flexform.figureImage.description}">
                 <figcaption class="figure-caption bg-dark text-white p-2">{data.pi_flexform.figureImage.description}</figcaption>
