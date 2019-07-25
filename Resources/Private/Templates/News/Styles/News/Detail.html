@@ -54,14 +54,19 @@
                                     <div class="col-12 col-lg-10 offset-lg-1">
                                         <f:format.html>{newsItem.bodytext}</f:format.html>
                                         <f:if condition="{newsItem.contentElements}">
-                                        <f:for each="{newsItem.contentElements}" as="element">
-                                            <f:if condition="{element.CType}=='textmedia'">
-                                                <f:then>
-                                                    <v:content.render contentUids="{0: element.uid}"/>
-                                                </f:then>
-                                            </f:if>
-                                        </f:for>
-                                    </f:if>
+                                            <f:for each="{newsItem.contentElements}" as="element">
+                                                <f:if condition="{element.CType}=='textmedia'">
+                                                    <f:then>
+                                                        <v:content.render contentUids="{0: element.uid}"/>
+                                                    </f:then>
+                                                </f:if>
+                                                <f:if condition="{element.CType}=='embed'">
+                                                    <f:then>
+                                                        <v:content.render contentUids="{0: element.uid}"/>
+                                                    </f:then>
+                                                </f:if>
+                                            </f:for>
+                                        </f:if>
                                     </div>
                                     
                                 </div>
