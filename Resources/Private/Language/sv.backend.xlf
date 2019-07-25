@@ -398,7 +398,8 @@
             </trans-unit>
             
             <trans-unit id="embed.embed">
-                <source>Embed</source>
+                <source><![CDATA[Embed (https://www.youtube.com/embed/xxxxxxxxxxx)]]></source>
+                <target state="translated"><![CDATA[Embed (https://www.youtube.com/embed/xxxxxxxxxxx)]]></target>
             </trans-unit>
             
             <trans-unit id="content_element.embed">
