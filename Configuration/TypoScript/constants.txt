@@ -1,3 +1,4 @@
+breadcrumbEntryLevel = 1
 colorTitleSe = 
 colorTitleEn =
 colorTitleLinkSe = 
