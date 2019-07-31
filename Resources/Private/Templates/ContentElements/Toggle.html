@@ -3,7 +3,7 @@
     <f:section name="Main">
         <f:if condition="{data.pi_flexform.toggletype}=='accordion'">
             <f:then>
-                <div id="{data.uid}-toggle-accordion" class="accordion">
+                <div id="toggle-accordion-{data.uid}" class="accordion">
                     <f:for each="{data.pi_flexform.toggleItem}" as="toggleItem" iteration="iterator">
                         <div class="card">
                             <div class="card-header" id="heading{iterator.index}">
@@ -13,7 +13,7 @@
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapse{iterator.index}" class="collapse{f:if(condition: iterator.isFirst,then:' show')}" aria-labelledby="heading{iterator.index}" data-parent="#{data.uid}-toggle-accordion">
+                            <div id="collapse{iterator.index}" class="collapse{f:if(condition: iterator.isFirst,then:' show')}" aria-labelledby="heading{iterator.index}" data-parent="#toggle-accordion-{data.uid}">
                                 <div class="card-body">
                                     <f:format.raw><p>{toggleItem.bodytext}</p></f:format.raw>
                                 </div>
