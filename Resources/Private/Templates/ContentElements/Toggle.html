@@ -8,12 +8,12 @@
                         <div class="card">
                             <div class="card-header" id="heading{iterator.index}">
                                 <h5>
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{iterator.index}" aria-expanded="{f:if(condition:iterator.isFirst,then:'true',else:'false')}" aria-controls="collapse{iterator.index}">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{iterator.index}" aria-expanded="false" aria-controls="collapse{iterator.index}">
                                         <div class="float-right"><i class="fal fa-chevron-right"></i></div>{toggleItem.toggleshowhide}
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapse{iterator.index}" class="collapse{f:if(condition: iterator.isFirst,then:' show')}" aria-labelledby="heading{iterator.index}" data-parent="#toggle-accordion-{data.uid}">
+                            <div id="collapse{iterator.index}" class="collapse" aria-labelledby="heading{iterator.index}" data-parent="#toggle-accordion-{data.uid}">
                                 <div class="card-body">
                                     <f:format.raw><p>{toggleItem.bodytext}</p></f:format.raw>
                                 </div>
